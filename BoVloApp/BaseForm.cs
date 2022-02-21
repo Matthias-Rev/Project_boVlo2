@@ -17,6 +17,8 @@ namespace BoVloApp
             InitializeComponent();
             this.BackColor = Color.FromArgb(215, 215, 215);
             this.WindowState = FormWindowState.Maximized;
+            this.Width = 1920;
+            this.Height = 1080;
         }
     }
 }
