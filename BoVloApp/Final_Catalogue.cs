@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BoVloApp
 {
-    public partial class Login : Form
+    public partial class Final_Catalogue : Form
     {
-        public Login()
+        public Final_Catalogue()
         {
             InitializeComponent();
         }

@@ -37,7 +37,7 @@ namespace BoVloApp
             // 
             // CATALOGUE
             // 
-            this.CATALOGUE.Location = new System.Drawing.Point(226, 206);
+            this.CATALOGUE.Location = new System.Drawing.Point(268, 191);
             this.CATALOGUE.Name = "CATALOGUE";
             this.CATALOGUE.Size = new System.Drawing.Size(200, 50);
             this.CATALOGUE.TabIndex = 0;

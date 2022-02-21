@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace BoVloApp
 {
-    public partial class Menu : BaseForm
+    public partial class Menu : Form
     {
         public Menu()
         {

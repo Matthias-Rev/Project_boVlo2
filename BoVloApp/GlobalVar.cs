@@ -10,7 +10,7 @@ namespace BoVloApp
 {
     public class GlobalVar
     {
-        static public List<Button> GetAllButtons(BaseForm f)
+        static public List<Button> GetAllButtons(Form f)
         {
             List<Button> resultList = new List<Button>();
             foreach (Control a in f.Controls)
