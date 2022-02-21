@@ -29,10 +29,17 @@ namespace BoVloApp
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // Final_Catalogue
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.Name = "Final_Catalogue";
             this.Text = "Final_Catalogue";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
