@@ -23,10 +23,36 @@ namespace BoVloApp
                 btn.FlatStyle = FlatStyle.System;
                 btn.Size = new Size(button_size_x, button_size_y);
             }
-
-            COMMANDES.Location = GlobalVar.SetLocation(this, -500,-100, COMMANDES);
+            int x_space = 300;
+            int y_space = 100;
+            Titel.Location = GlobalVar.SetLocation(this, 0, -400, Titel);
+            COMMANDES.Location = GlobalVar.SetLocation(this, -x_space, -y_space, COMMANDES);
+            STOCK.Location = GlobalVar.SetLocation(this, x_space, y_space, STOCK);
+            CATALOGUE.Location = GlobalVar.SetLocation(this, -x_space, y_space, CATALOGUE);
+            CALENDRIER.Location = GlobalVar.SetLocation(this, x_space, -y_space, CALENDRIER);
         }
         private void COMMANDES_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CATALOGUE_Click(object sender, EventArgs e)
+        {
+            GlobalVar.menupage.Hide();
+            GlobalVar.cataloguepage.ShowDialog();
+        }
+
+        private void CALENDRIER_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void STOCK_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
