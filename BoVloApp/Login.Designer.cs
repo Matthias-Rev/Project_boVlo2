@@ -41,26 +41,31 @@ namespace BoVloApp
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(678, 500);
+            this.textBox1.Location = new System.Drawing.Point(133, 127);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(378, 31);
+            this.textBox1.Size = new System.Drawing.Size(430, 34);
             this.textBox1.TabIndex = 1;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(682, 600);
+            this.textBox2.Location = new System.Drawing.Point(137, 250);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(376, 31);
+            this.textBox2.Size = new System.Drawing.Size(426, 34);
             this.textBox2.TabIndex = 2;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.Utilisateur);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox1.Location = new System.Drawing.Point(545, 396);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(656, 362);
+            this.groupBox1.Size = new System.Drawing.Size(809, 443);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Login";
@@ -71,16 +76,17 @@ namespace BoVloApp
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(300, -270);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 25);
+            this.label2.Size = new System.Drawing.Size(65, 28);
             this.label2.TabIndex = 0;
             this.label2.Text = "label2";
             // 
             // Utilisateur
             // 
             this.Utilisateur.AutoSize = true;
-            this.Utilisateur.Location = new System.Drawing.Point(680, 460);
+            this.Utilisateur.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Utilisateur.Location = new System.Drawing.Point(133, 86);
             this.Utilisateur.Name = "Utilisateur";
-            this.Utilisateur.Size = new System.Drawing.Size(94, 25);
+            this.Utilisateur.Size = new System.Drawing.Size(114, 30);
             this.Utilisateur.TabIndex = 4;
             this.Utilisateur.Text = "Utilisateur:";
             this.Utilisateur.Click += new System.EventHandler(this.Utilisateur_Click);
@@ -88,9 +94,10 @@ namespace BoVloApp
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(680, 560);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(137, 210);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 25);
+            this.label1.Size = new System.Drawing.Size(149, 30);
             this.label1.TabIndex = 5;
             this.label1.Text = "Mot de passe:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -98,9 +105,10 @@ namespace BoVloApp
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(867, 151);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(762, 131);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 25);
+            this.label3.Size = new System.Drawing.Size(294, 106);
             this.label3.TabIndex = 6;
             this.label3.Text = "BOVLO";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -111,10 +119,6 @@ namespace BoVloApp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1898, 1024);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.Utilisateur);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.groupBox1);
             this.Name = "Login";
             this.Text = "Login";
