@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\cashb\\Source\\Repos\\Matthias-Rev\\Project_boVlo2\\BoVloApp\\BoVloApp.csproj": {}
+    "C:\\Users\\Tanguy\\Source\\Repos\\Matthias-Rev\\Project_boVlo2\\BoVloApp\\BoVloApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\cashb\\Source\\Repos\\Matthias-Rev\\Project_boVlo2\\BoVloApp\\BoVloApp.csproj": {
+    "C:\\Users\\Tanguy\\Source\\Repos\\Matthias-Rev\\Project_boVlo2\\BoVloApp\\BoVloApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cashb\\Source\\Repos\\Matthias-Rev\\Project_boVlo2\\BoVloApp\\BoVloApp.csproj",
+        "projectUniqueName": "C:\\Users\\Tanguy\\Source\\Repos\\Matthias-Rev\\Project_boVlo2\\BoVloApp\\BoVloApp.csproj",
         "projectName": "BoVloApp",
-        "projectPath": "C:\\Users\\cashb\\Source\\Repos\\Matthias-Rev\\Project_boVlo2\\BoVloApp\\BoVloApp.csproj",
-        "packagesPath": "C:\\Users\\cashb\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cashb\\Source\\Repos\\Matthias-Rev\\Project_boVlo2\\BoVloApp\\obj\\",
+        "projectPath": "C:\\Users\\Tanguy\\Source\\Repos\\Matthias-Rev\\Project_boVlo2\\BoVloApp\\BoVloApp.csproj",
+        "packagesPath": "C:\\Users\\Tanguy\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Tanguy\\Source\\Repos\\Matthias-Rev\\Project_boVlo2\\BoVloApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\cashb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Tanguy\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -57,7 +57,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -17,3 +17,4 @@ C:\Users\Tanguy\Source\Repos\Matthias-Rev\Project_boVlo2\BoVloApp\obj\Debug\net5
 C:\Users\Tanguy\Source\Repos\Matthias-Rev\Project_boVlo2\BoVloApp\obj\Debug\net5.0-windows\BoVloApp.genruntimeconfig.cache
 C:\Users\Tanguy\Source\Repos\Matthias-Rev\Project_boVlo2\BoVloApp\obj\Debug\net5.0-windows\BoVloApp.BaseForm.resources
 C:\Users\Tanguy\Source\Repos\Matthias-Rev\Project_boVlo2\BoVloApp\obj\Debug\net5.0-windows\BoVloApp.Menu.resources
+C:\Users\Tanguy\Source\Repos\Matthias-Rev\Project_boVlo2\BoVloApp\obj\Debug\net5.0-windows\BoVloApp.Login.resources
