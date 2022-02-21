@@ -1,8 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "5sFo26s7UV0WaPdvnBLQstfmDA8guRCKLSYaGvmNMW+J6yHfW/lsj4A1VwDCPK7P8wcCagkWJo69JAhwlJ70MA==",
+<<<<<<< HEAD
+  "dgSpecHash": "4A4Tjdspyz5eK+s7oK8nxtUJOSv5kmYbBBvl7vUGRy7Vpi3yLqC5Vg4T5IpM5/oR61ztdxVbBxxXWfy37wnNMw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Tanguy\\Source\\Repos\\Matthias-Rev\\Project_boVlo2\\BoVloApp\\BoVloApp.csproj",
+  "projectFilePath": "C:\\Users\\edgar\\Source\\Repos\\Project_boVlo2\\BoVloApp\\BoVloApp.csproj",
+=======
+  "dgSpecHash": "tqn2of765IUl/H5LH0dhkwPOL1buAgfAU1bBLcv9WqJCK7HTyN9H9apm9/dUQdiDdJcN13IdhSLJFgCIhCJJRw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Tanguy\\Source\\Repos\\Project_boVlo2\\BoVloApp\\BoVloApp.csproj",
+>>>>>>> 389c8a8688bf336e2a9d9fd762b108c58da7c612
   "expectedPackageFiles": [],
   "logs": []
 }

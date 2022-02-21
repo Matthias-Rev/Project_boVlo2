@@ -17,7 +17,11 @@ namespace BoVloApp
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Menu());           
+<<<<<<< HEAD
+            Application.Run(new Catalogue());           
+=======
+            Application.Run(GlobalVar.menupage);
+>>>>>>> 389c8a8688bf336e2a9d9fd762b108c58da7c612
         }
     }
 }

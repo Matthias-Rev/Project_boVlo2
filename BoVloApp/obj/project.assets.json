@@ -8,19 +8,27 @@
     "net5.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Tanguy\\.nuget\\packages\\": {}
+    "C:\\Users\\edgar\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Tanguy\\Source\\Repos\\Matthias-Rev\\Project_boVlo2\\BoVloApp\\BoVloApp.csproj",
+<<<<<<< HEAD
+      "projectUniqueName": "C:\\Users\\edgar\\Source\\Repos\\Project_boVlo2\\BoVloApp\\BoVloApp.csproj",
       "projectName": "BoVloApp",
-      "projectPath": "C:\\Users\\Tanguy\\Source\\Repos\\Matthias-Rev\\Project_boVlo2\\BoVloApp\\BoVloApp.csproj",
+      "projectPath": "C:\\Users\\edgar\\Source\\Repos\\Project_boVlo2\\BoVloApp\\BoVloApp.csproj",
+      "packagesPath": "C:\\Users\\edgar\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\edgar\\Source\\Repos\\Project_boVlo2\\BoVloApp\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\Tanguy\\Source\\Repos\\Project_boVlo2\\BoVloApp\\BoVloApp.csproj",
+      "projectName": "BoVloApp",
+      "projectPath": "C:\\Users\\Tanguy\\Source\\Repos\\Project_boVlo2\\BoVloApp\\BoVloApp.csproj",
       "packagesPath": "C:\\Users\\Tanguy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Tanguy\\Source\\Repos\\Matthias-Rev\\Project_boVlo2\\BoVloApp\\obj\\",
+      "outputPath": "C:\\Users\\Tanguy\\Source\\Repos\\Project_boVlo2\\BoVloApp\\obj\\",
+>>>>>>> 389c8a8688bf336e2a9d9fd762b108c58da7c612
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Tanguy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\edgar\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -63,7 +71,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

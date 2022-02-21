@@ -7,4 +7,8 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = BoVloApp
-build_property.ProjectDir = C:\Users\cashb\source\repos\Matthias-Rev\Project_boVlo2\BoVloApp\
+<<<<<<< HEAD
+build_property.ProjectDir = C:\Users\edgar\Source\Repos\Project_boVlo2\BoVloApp\
+=======
+build_property.ProjectDir = C:\Users\Tanguy\Source\Repos\Project_boVlo2\BoVloApp\
+>>>>>>> 389c8a8688bf336e2a9d9fd762b108c58da7c612

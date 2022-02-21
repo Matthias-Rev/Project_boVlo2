@@ -22,7 +22,7 @@ namespace BoVloApp
             }
             return resultList;
         }
-        static public Point SetLocation(Form f, int x, int y, Button b)
+        static public Point SetLocation(Form f, int x, int y, Control b)
         {
             int form_horizontal_center = f.Width / 2;
             int form_vertical_center = f.Height / 2;
@@ -32,6 +32,7 @@ namespace BoVloApp
             y = form_vertical_center - y_mid + y;
             return new Point(x,y);
         }
-
+        static public Menu menupage = new Menu();
+        static public Catalogue cataloguepage = new Catalogue();
     }
 }
