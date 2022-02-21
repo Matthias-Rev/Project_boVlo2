@@ -1,14 +1,20 @@
 {
   "version": 2,
-<<<<<<< HEAD
-  "dgSpecHash": "4A4Tjdspyz5eK+s7oK8nxtUJOSv5kmYbBBvl7vUGRy7Vpi3yLqC5Vg4T5IpM5/oR61ztdxVbBxxXWfy37wnNMw==",
+  "dgSpecHash": "YKB+ygWjskE9zHJHfYPDaTWrvFJ1T/tafkPsy7U18cUraNHJD1Rmz953Tn8IYjldOlY/y/7a+xuFlGMngNgW8Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\edgar\\Source\\Repos\\Project_boVlo2\\BoVloApp\\BoVloApp.csproj",
-=======
-  "dgSpecHash": "tqn2of765IUl/H5LH0dhkwPOL1buAgfAU1bBLcv9WqJCK7HTyN9H9apm9/dUQdiDdJcN13IdhSLJFgCIhCJJRw==",
-  "success": true,
-  "projectFilePath": "C:\\Users\\Tanguy\\Source\\Repos\\Project_boVlo2\\BoVloApp\\BoVloApp.csproj",
->>>>>>> 389c8a8688bf336e2a9d9fd762b108c58da7c612
-  "expectedPackageFiles": [],
-  "logs": []
+  "projectFilePath": "C:\\Users\\edgar\\source\\repos\\Project_boVlo2\\BoVloApp\\BoVloApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\edgar\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.14\\microsoft.netcore.app.host.win-x64.5.0.14.nupkg.sha512",
+    "C:\\Users\\edgar\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\edgar\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\edgar\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\edgar\\source\\repos\\Project_boVlo2\\BoVloApp\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

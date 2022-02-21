@@ -13,19 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
-      "projectUniqueName": "C:\\Users\\edgar\\Source\\Repos\\Project_boVlo2\\BoVloApp\\BoVloApp.csproj",
+      "projectUniqueName": "C:\\Users\\edgar\\source\\repos\\Project_boVlo2\\BoVloApp\\BoVloApp.csproj",
       "projectName": "BoVloApp",
-      "projectPath": "C:\\Users\\edgar\\Source\\Repos\\Project_boVlo2\\BoVloApp\\BoVloApp.csproj",
+      "projectPath": "C:\\Users\\edgar\\source\\repos\\Project_boVlo2\\BoVloApp\\BoVloApp.csproj",
       "packagesPath": "C:\\Users\\edgar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\edgar\\Source\\Repos\\Project_boVlo2\\BoVloApp\\obj\\",
-=======
-      "projectUniqueName": "C:\\Users\\Tanguy\\Source\\Repos\\Project_boVlo2\\BoVloApp\\BoVloApp.csproj",
-      "projectName": "BoVloApp",
-      "projectPath": "C:\\Users\\Tanguy\\Source\\Repos\\Project_boVlo2\\BoVloApp\\BoVloApp.csproj",
-      "packagesPath": "C:\\Users\\Tanguy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Tanguy\\Source\\Repos\\Project_boVlo2\\BoVloApp\\obj\\",
->>>>>>> 389c8a8688bf336e2a9d9fd762b108c58da7c612
+      "outputPath": "C:\\Users\\edgar\\source\\repos\\Project_boVlo2\\BoVloApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\edgar\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -63,6 +55,24 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[5.0.0, 5.0.0]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[5.0.14, 5.0.14]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[5.0.0, 5.0.0]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[5.0.0, 5.0.0]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
@@ -71,8 +81,16 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\edgar\\source\\repos\\Project_boVlo2\\BoVloApp\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

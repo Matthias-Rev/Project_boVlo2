@@ -19,18 +19,55 @@ namespace BoVloApp
 
         private void button1_Click(object sender, EventArgs e) //panier
         {
-
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            this.picture.Image = Properties.Resources.Velo_ville_rose;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            this.picture.Image = Properties.Resources.Velo_ville_turquoise;
         }
+
+        private void buttonPre_Click(object sender, EventArgs e)
+        {
+            if (this.veloType.Text == "City")
+            {
+                this.veloType.Text = "Adventure";
+            }
+
+            else if (this.veloType.Text == "Adventure") 
+            {
+                this.veloType.Text = "Explorer";
+            }
+
+            else if (this.veloType.Text == "Explorer")
+            {
+                this.veloType.Text = "City";
+            }
+        }
+
+        private void buttonNext_Click(object sender, EventArgs e)
+        {
+            if (this.veloType.Text == "City")
+            {
+                this.veloType.Text = "Explorer";
+            }
+
+            else if (this.veloType.Text == "Explorer")
+            {
+                this.veloType.Text = "Adventure";
+            }
+
+            else if (this.veloType.Text == "Adventure")
+            {
+                this.veloType.Text = "City";
+            }
+        }
+    
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -55,7 +92,7 @@ namespace BoVloApp
 
         private void button7_Click(object sender, EventArgs e)
         {
-
+            this.picture.Image = Properties.Resources.Velo_ville_cream;
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
@@ -63,7 +100,7 @@ namespace BoVloApp
 
         }
 
-        private void button11_Click(object sender, EventArgs e)
+        private void button11_Click(object sender, EventArgs e) //btn pour back
         {
             Form menu = new Menu();
             menu.ShowDialog(); 
@@ -73,5 +110,19 @@ namespace BoVloApp
         {
 
         }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void turquoise_Click(object sender, EventArgs e)
+        {
+            this.picture.Image = Properties.Resources.Velo_ville_bleu;
+
+        }
+
+
+
     }
 }
