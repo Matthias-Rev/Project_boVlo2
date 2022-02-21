@@ -10,12 +10,13 @@ using System.Windows.Forms;
 
 namespace BoVloApp
 {
-    public partial class Form1 : Form
+    public partial class BaseForm : Form
     {
-        public Form1()
+        public BaseForm()
         {
             InitializeComponent();
+            this.BackColor = Color.FromArgb(215, 215, 215);
+            this.WindowState = FormWindowState.Maximized;
         }
-
     }
 }
