@@ -37,7 +37,7 @@ namespace BoVloApp
             // 
             // CATALOGUE
             // 
-            this.CATALOGUE.Location = new System.Drawing.Point(14, 24);
+            this.CATALOGUE.Location = new System.Drawing.Point(268, 191);
             this.CATALOGUE.Name = "CATALOGUE";
             this.CATALOGUE.Size = new System.Drawing.Size(200, 50);
             this.CATALOGUE.TabIndex = 0;
@@ -46,7 +46,7 @@ namespace BoVloApp
             // 
             // COMMANDES
             // 
-            this.COMMANDES.Location = new System.Drawing.Point(431, 311);
+            this.COMMANDES.Location = new System.Drawing.Point(654, 356);
             this.COMMANDES.Name = "COMMANDES";
             this.COMMANDES.Size = new System.Drawing.Size(200, 50);
             this.COMMANDES.TabIndex = 1;
@@ -56,7 +56,7 @@ namespace BoVloApp
             // 
             // STOCK
             // 
-            this.STOCK.Location = new System.Drawing.Point(380, 200);
+            this.STOCK.Location = new System.Drawing.Point(654, 206);
             this.STOCK.Name = "STOCK";
             this.STOCK.Size = new System.Drawing.Size(200, 50);
             this.STOCK.TabIndex = 2;
@@ -65,7 +65,7 @@ namespace BoVloApp
             // 
             // CALENDRIER
             // 
-            this.CALENDRIER.Location = new System.Drawing.Point(50, 319);
+            this.CALENDRIER.Location = new System.Drawing.Point(226, 356);
             this.CALENDRIER.Name = "CALENDRIER";
             this.CALENDRIER.Size = new System.Drawing.Size(200, 50);
             this.CALENDRIER.TabIndex = 3;
@@ -76,12 +76,13 @@ namespace BoVloApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1062, 673);
+            this.ClientSize = new System.Drawing.Size(1902, 1033);
             this.Controls.Add(this.COMMANDES);
             this.Controls.Add(this.CALENDRIER);
             this.Controls.Add(this.STOCK);
             this.Controls.Add(this.CATALOGUE);
             this.Name = "Menu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mainmenu";
             this.ResumeLayout(false);
 
