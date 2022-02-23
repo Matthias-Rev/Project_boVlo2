@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "5sFo26s7UV0WaPdvnBLQstfmDA8guRCKLSYaGvmNMW+J6yHfW/lsj4A1VwDCPK7P8wcCagkWJo69JAhwlJ70MA==",
+  "dgSpecHash": "jkZwdVedDc/4X3Tq9ulKw24B3STXbYpRxvneZ5yHY1BGS97CjyRIUli4UGCLZn865sI8SWj5WrSWw7qipXGa7w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Tanguy\\Source\\Repos\\Matthias-Rev\\Project_boVlo2\\BoVloApp\\BoVloApp.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "D:\\ecam\\Sotware Engineering 2\\Code\\BoVloApp\\BoVloApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Revei\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.14\\microsoft.netcore.app.host.win-x64.5.0.14.nupkg.sha512",
+    "C:\\Users\\Revei\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\Revei\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\Revei\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
