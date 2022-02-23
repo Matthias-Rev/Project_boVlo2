@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace BoVloApp
 {
-    public partial class Final_Catalogue : BaseForm
+    public partial class Final_Catalogue : Form
     {
         public Final_Catalogue()
         {
