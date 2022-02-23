@@ -2,6 +2,6 @@
 # Ce fichier .gitignore a été automatiquement créé par Microsoft(R) Visual Studio.
 ################################################################################
 
-/BoVloApp/obj
-/BoVloApp/bin
-/.vs
+/BoVloApp/obj/*
+/BoVloApp/bin/*
+/.vs/*
