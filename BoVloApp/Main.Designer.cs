@@ -34,7 +34,6 @@
             this.Logout_button = new System.Windows.Forms.Button();
             this.Menu_button = new System.Windows.Forms.Button();
             this.Main_panel = new System.Windows.Forms.Panel();
-            this.Login_Panel = new System.Windows.Forms.Panel();
             this.Topbar_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -88,6 +87,7 @@
             this.Logout_button.TabIndex = 2;
             this.Logout_button.Text = "Se déconnecter";
             this.Logout_button.UseVisualStyleBackColor = false;
+            this.Logout_button.Click += new System.EventHandler(this.Logout_button_Click);
             // 
             // Menu_button
             // 
@@ -110,16 +110,6 @@
             this.Main_panel.Size = new System.Drawing.Size(1904, 978);
             this.Main_panel.TabIndex = 1;
             // 
-            // Login_Panel
-            // 
-            this.Login_Panel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Login_Panel.AutoSize = true;
-            this.Login_Panel.Location = new System.Drawing.Point(0, 0);
-            this.Login_Panel.Margin = new System.Windows.Forms.Padding(0);
-            this.Login_Panel.Name = "Login_Panel";
-            this.Login_Panel.Size = new System.Drawing.Size(0, 0);
-            this.Login_Panel.TabIndex = 2;
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -128,10 +118,10 @@
             this.ClientSize = new System.Drawing.Size(1904, 1041);
             this.Controls.Add(this.Main_panel);
             this.Controls.Add(this.Topbar_panel);
-            this.Controls.Add(this.Login_Panel);
             this.Name = "Main";
             this.Text = "Main";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
             this.Topbar_panel.ResumeLayout(false);
             this.Topbar_panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -146,7 +136,6 @@
         private System.Windows.Forms.Button Menu_button;
         private System.Windows.Forms.Button Logout_button;
         private System.Windows.Forms.Panel Main_panel;
-        private System.Windows.Forms.Panel Login_Panel;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label Username_label;
     }

@@ -53,6 +53,7 @@ namespace BoVloApp
             this.password_input.Location = new System.Drawing.Point(100, 101);
             this.password_input.Margin = new System.Windows.Forms.Padding(2);
             this.password_input.Name = "password_input";
+            this.password_input.PasswordChar = '*';
             this.password_input.Size = new System.Drawing.Size(300, 25);
             this.password_input.TabIndex = 2;
             // 

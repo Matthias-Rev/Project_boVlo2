@@ -39,6 +39,10 @@ namespace BoVloApp
         {
 
         }
+        static public void ResetXML()
+        {
+            WriteXML("", "");
+        }
         static public void WriteXML(string key, string value)
         {
             XmlSerializer serializer = new XmlSerializer(typeof(Session));

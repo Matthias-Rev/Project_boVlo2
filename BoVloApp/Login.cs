@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-
 namespace BoVloApp
 {
     public partial class Login : Form
@@ -17,11 +16,11 @@ namespace BoVloApp
             //check credentials in database
             if (user_input.Text == "User" && password_input.Text == "123")
             {
-
-               GlobalVar.WriteXML("username", user_input.Text);
-               this.Dispose();
+                GlobalVar.WriteXML("username", user_input.Text);
+                Main main = new Main();
+                main.Show();
+                Hide();
             }
         }
-
     }
 }
