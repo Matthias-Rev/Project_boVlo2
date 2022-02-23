@@ -5,6 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Serialization;
+using System.IO;
+using System.Xml.Linq;
 
 namespace BoVloApp
 {
@@ -32,7 +35,26 @@ namespace BoVloApp
             y = form_vertical_center - y_mid + y;
             return new Point(x,y);
         }
+        static public void ReadXML(string key)
+        {
+
+        }
+        static public void WriteXML(string key, string value)
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(Session));
+            using (StreamWriter writer = new StreamWriter(@"..\..\..\Resources\sessionvariables.xml"))
+            {
+                Session session = new Session();
+                if(key == "username")
+                {
+                    session.username = value;
+                }
+                serializer.Serialize(writer, session);
+                writer.Close();
+            }
+        }
         static public Menu menupage = new Menu();
         static public Catalogue cataloguepage = new Catalogue();
+        public string username;
     }
 }

@@ -15,6 +15,7 @@ namespace BoVloApp
         public Menu()
         {
             InitializeComponent();
+
             var myBtns = GlobalVar.GetAllButtons(this);
             int button_size_x = 400;
             int button_size_y = 100;
@@ -53,6 +54,11 @@ namespace BoVloApp
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Menu_Load(object sender, EventArgs e)
         {
 
         }
