@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace BoVloApp
 {
     public partial class Login : Form
@@ -15,36 +7,26 @@ namespace BoVloApp
         public Login()
         {
             InitializeComponent();
+            Titel.Location = GlobalVar.SetLocation(this, 0, -400, Titel);
+            Login_box.Location = GlobalVar.SetLocation(this, 0, 0, Login_box);
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void login_button_Click(object sender, EventArgs e)
         {
-
+            //check credentials in database
+            //if (user_input.Text == "User" && password_input.Text == "123")
+            if (password_input.Text == "123")
+            {
+                GlobalVar.WriteXML("username", user_input.Text);
+                Main main = new Main();
+                main.Show();
+                Hide();
+            }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void Login_FormClosing(object sender, FormClosingEventArgs e)
         {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Utilisateur_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
+            Application.Exit();
         }
     }
 }

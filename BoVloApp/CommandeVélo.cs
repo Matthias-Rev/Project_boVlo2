@@ -10,12 +10,11 @@ using System.Windows.Forms;
 
 namespace BoVloApp
 {
-    public partial class Form1 : Form
+    public partial class CommandeVélo : Form
     {
-        public Form1()
+        public CommandeVélo()
         {
             InitializeComponent();
         }
-
     }
 }

@@ -16,5 +16,25 @@ namespace BoVloApp
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // go to the next windows
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            // addd to the database
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            // addd to the database
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            // addd to the database
+        }
     }
 }
