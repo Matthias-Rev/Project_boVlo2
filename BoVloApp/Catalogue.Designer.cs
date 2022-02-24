@@ -41,7 +41,6 @@ namespace BoVloApp
             this.button7 = new System.Windows.Forms.Button();
             this.couleurFIxe = new System.Windows.Forms.TextBox();
             this.picture = new System.Windows.Forms.PictureBox();
-            this.btn = new System.Windows.Forms.Button();
             this.btnAjouter = new System.Windows.Forms.Button();
             this.nbreAjout = new System.Windows.Forms.TextBox();
             this.turquoise = new System.Windows.Forms.Button();
@@ -180,17 +179,6 @@ namespace BoVloApp
             this.picture.TabStop = false;
             this.picture.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // btn
-            // 
-            this.btn.Location = new System.Drawing.Point(202, 44);
-            this.btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn.Name = "btn";
-            this.btn.Size = new System.Drawing.Size(62, 29);
-            this.btn.TabIndex = 16;
-            this.btn.Text = "<--";
-            this.btn.UseVisualStyleBackColor = true;
-            this.btn.Click += new System.EventHandler(this.button11_Click);
-            // 
             // btnAjouter
             // 
             this.btnAjouter.Location = new System.Drawing.Point(1331, 408);
@@ -250,7 +238,6 @@ namespace BoVloApp
             this.Controls.Add(this.turquoise);
             this.Controls.Add(this.nbreAjout);
             this.Controls.Add(this.btnAjouter);
-            this.Controls.Add(this.btn);
             this.Controls.Add(this.picture);
             this.Controls.Add(this.couleurFIxe);
             this.Controls.Add(this.button7);
@@ -263,6 +250,7 @@ namespace BoVloApp
             this.Controls.Add(this.nextVelo);
             this.Controls.Add(this.veloType);
             this.Controls.Add(this.panier);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Catalogue";
             this.Text = "Catalogue";
@@ -286,7 +274,6 @@ namespace BoVloApp
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.TextBox couleurFIxe;
         private System.Windows.Forms.PictureBox picture;
-        private System.Windows.Forms.Button btn;
         private System.Windows.Forms.Button btnAjouter;
         private System.Windows.Forms.TextBox nbreAjout;
         private System.Windows.Forms.Button turquoise;

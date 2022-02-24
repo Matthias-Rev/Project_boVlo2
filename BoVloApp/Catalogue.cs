@@ -99,13 +99,6 @@ namespace BoVloApp
         {
 
         }
-
-        private void button11_Click(object sender, EventArgs e) //btn pour back
-        {
-            Form menu = new Menu();
-            menu.ShowDialog(); 
-        }
-
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 

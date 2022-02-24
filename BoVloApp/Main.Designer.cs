@@ -34,8 +34,14 @@
             this.Logout_button = new System.Windows.Forms.Button();
             this.Menu_button = new System.Windows.Forms.Button();
             this.Main_panel = new System.Windows.Forms.Panel();
+            this.COMMANDES = new System.Windows.Forms.Button();
+            this.CALENDRIER = new System.Windows.Forms.Button();
+            this.CATALOGUE = new System.Windows.Forms.Button();
+            this.STOCK = new System.Windows.Forms.Button();
+            this.Titel = new System.Windows.Forms.Label();
             this.Topbar_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.Main_panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // Topbar_panel
@@ -105,11 +111,71 @@
             // Main_panel
             // 
             this.Main_panel.BackColor = System.Drawing.Color.Transparent;
+            this.Main_panel.Controls.Add(this.COMMANDES);
+            this.Main_panel.Controls.Add(this.CALENDRIER);
+            this.Main_panel.Controls.Add(this.CATALOGUE);
+            this.Main_panel.Controls.Add(this.STOCK);
             this.Main_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Main_panel.Location = new System.Drawing.Point(0, 63);
             this.Main_panel.Name = "Main_panel";
             this.Main_panel.Size = new System.Drawing.Size(1904, 978);
             this.Main_panel.TabIndex = 1;
+            // 
+            // COMMANDES
+            // 
+            this.COMMANDES.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.COMMANDES.Location = new System.Drawing.Point(1069, 579);
+            this.COMMANDES.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.COMMANDES.Name = "COMMANDES";
+            this.COMMANDES.Size = new System.Drawing.Size(350, 112);
+            this.COMMANDES.TabIndex = 4;
+            this.COMMANDES.Text = "COMMANDES";
+            this.COMMANDES.UseVisualStyleBackColor = true;
+            // 
+            // CALENDRIER
+            // 
+            this.CALENDRIER.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CALENDRIER.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.CALENDRIER.Location = new System.Drawing.Point(552, 579);
+            this.CALENDRIER.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CALENDRIER.Name = "CALENDRIER";
+            this.CALENDRIER.Size = new System.Drawing.Size(350, 112);
+            this.CALENDRIER.TabIndex = 6;
+            this.CALENDRIER.Text = "CALENDRIER";
+            this.CALENDRIER.UseVisualStyleBackColor = true;
+            // 
+            // CATALOGUE
+            // 
+            this.CATALOGUE.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CATALOGUE.Location = new System.Drawing.Point(552, 374);
+            this.CATALOGUE.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CATALOGUE.Name = "CATALOGUE";
+            this.CATALOGUE.Size = new System.Drawing.Size(350, 112);
+            this.CATALOGUE.TabIndex = 1;
+            this.CATALOGUE.Text = "CATALOGUE";
+            this.CATALOGUE.UseVisualStyleBackColor = true;
+            this.CATALOGUE.Click += new System.EventHandler(this.CATALOGUE_Click);
+            // 
+            // STOCK
+            // 
+            this.STOCK.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.STOCK.Location = new System.Drawing.Point(1069, 374);
+            this.STOCK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.STOCK.Name = "STOCK";
+            this.STOCK.Size = new System.Drawing.Size(350, 112);
+            this.STOCK.TabIndex = 5;
+            this.STOCK.Text = "STOCK";
+            this.STOCK.UseVisualStyleBackColor = true;
+            // 
+            // Titel
+            // 
+            this.Titel.AutoSize = true;
+            this.Titel.Font = new System.Drawing.Font("Segoe UI", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Titel.Location = new System.Drawing.Point(833, 117);
+            this.Titel.Name = "Titel";
+            this.Titel.Size = new System.Drawing.Size(199, 72);
+            this.Titel.TabIndex = 7;
+            this.Titel.Text = "BOVLO";
             // 
             // Main
             // 
@@ -126,6 +192,7 @@
             this.Topbar_panel.ResumeLayout(false);
             this.Topbar_panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Main_panel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,5 +206,10 @@
         private System.Windows.Forms.Panel Main_panel;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label Username_label;
+        private System.Windows.Forms.Button CATALOGUE;
+        private System.Windows.Forms.Button COMMANDES;
+        private System.Windows.Forms.Button CALENDRIER;
+        private System.Windows.Forms.Button STOCK;
+        private System.Windows.Forms.Label Titel;
     }
 }

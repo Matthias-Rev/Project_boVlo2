@@ -61,8 +61,5 @@ namespace BoVloApp
                 writer.Close();
             }
         }
-        static public Menu menupage = new Menu();
-        static public Catalogue cataloguepage = new Catalogue();
-        public string username;
     }
 }
