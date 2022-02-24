@@ -14,7 +14,8 @@ namespace BoVloApp
         private void login_button_Click(object sender, EventArgs e)
         {
             //check credentials in database
-            if (user_input.Text == "User" && password_input.Text == "123")
+            //if (user_input.Text == "User" && password_input.Text == "123")
+            if (password_input.Text == "123")
             {
                 GlobalVar.WriteXML("username", user_input.Text);
                 Main main = new Main();

@@ -42,19 +42,17 @@ namespace BoVloApp
             // 
             // user_input
             // 
-            this.user_input.Location = new System.Drawing.Point(100, 52);
-            this.user_input.Margin = new System.Windows.Forms.Padding(2);
+            this.user_input.Location = new System.Drawing.Point(143, 87);
             this.user_input.Name = "user_input";
-            this.user_input.Size = new System.Drawing.Size(300, 25);
+            this.user_input.Size = new System.Drawing.Size(427, 34);
             this.user_input.TabIndex = 1;
             // 
             // password_input
             // 
-            this.password_input.Location = new System.Drawing.Point(100, 101);
-            this.password_input.Margin = new System.Windows.Forms.Padding(2);
+            this.password_input.Location = new System.Drawing.Point(143, 168);
             this.password_input.Name = "password_input";
             this.password_input.PasswordChar = '*';
-            this.password_input.Size = new System.Drawing.Size(300, 25);
+            this.password_input.Size = new System.Drawing.Size(427, 34);
             this.password_input.TabIndex = 2;
             // 
             // Login_box
@@ -66,19 +64,18 @@ namespace BoVloApp
             this.Login_box.Controls.Add(this.user_input);
             this.Login_box.Controls.Add(this.password_input);
             this.Login_box.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Login_box.Location = new System.Drawing.Point(0, 0);
-            this.Login_box.Margin = new System.Windows.Forms.Padding(2);
+            this.Login_box.Location = new System.Drawing.Point(537, 340);
             this.Login_box.Name = "Login_box";
-            this.Login_box.Padding = new System.Windows.Forms.Padding(2);
-            this.Login_box.Size = new System.Drawing.Size(500, 200);
+            this.Login_box.Size = new System.Drawing.Size(714, 333);
             this.Login_box.TabIndex = 3;
             this.Login_box.TabStop = false;
             // 
             // login_button
             // 
-            this.login_button.Location = new System.Drawing.Point(175, 131);
+            this.login_button.Location = new System.Drawing.Point(250, 218);
+            this.login_button.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.login_button.Name = "login_button";
-            this.login_button.Size = new System.Drawing.Size(150, 40);
+            this.login_button.Size = new System.Drawing.Size(214, 67);
             this.login_button.TabIndex = 6;
             this.login_button.Text = "Se connecter";
             this.login_button.UseVisualStyleBackColor = true;
@@ -87,10 +84,9 @@ namespace BoVloApp
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(210, -162);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(300, -270);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 19);
+            this.label2.Size = new System.Drawing.Size(65, 28);
             this.label2.TabIndex = 0;
             this.label2.Text = "label2";
             // 
@@ -98,10 +94,10 @@ namespace BoVloApp
             // 
             this.Utilisateur.AutoSize = true;
             this.Utilisateur.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Utilisateur.Location = new System.Drawing.Point(100, 30);
+            this.Utilisateur.Location = new System.Drawing.Point(143, 50);
             this.Utilisateur.Margin = new System.Windows.Forms.Padding(0);
             this.Utilisateur.Name = "Utilisateur";
-            this.Utilisateur.Size = new System.Drawing.Size(79, 20);
+            this.Utilisateur.Size = new System.Drawing.Size(114, 30);
             this.Utilisateur.TabIndex = 4;
             this.Utilisateur.Text = "Utilisateur:";
             // 
@@ -109,10 +105,9 @@ namespace BoVloApp
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(100, 79);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(143, 132);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 20);
+            this.label1.Size = new System.Drawing.Size(149, 30);
             this.label1.TabIndex = 5;
             this.label1.Text = "Mot de passe:";
             // 
@@ -120,22 +115,20 @@ namespace BoVloApp
             // 
             this.Titel.AutoSize = true;
             this.Titel.Font = new System.Drawing.Font("Segoe UI", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Titel.Location = new System.Drawing.Point(533, 79);
-            this.Titel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Titel.Location = new System.Drawing.Point(761, 132);
             this.Titel.Name = "Titel";
-            this.Titel.Size = new System.Drawing.Size(199, 72);
+            this.Titel.Size = new System.Drawing.Size(294, 106);
             this.Titel.TabIndex = 6;
             this.Titel.Text = "BOVLO";
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.ClientSize = new System.Drawing.Size(2564, 1410);
             this.Controls.Add(this.Titel);
             this.Controls.Add(this.Login_box);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
