@@ -9,5 +9,6 @@ namespace BoVloApp
     public class Session
     {
         public string username;
+        public string titel;
     }
 }

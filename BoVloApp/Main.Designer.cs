@@ -56,7 +56,7 @@
             // 
             this.Username_label.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Username_label.AutoSize = true;
-            this.Username_label.BackColor = System.Drawing.Color.Transparent;
+            this.Username_label.BackColor = System.Drawing.Color.DimGray;
             this.Username_label.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Username_label.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Username_label.ForeColor = System.Drawing.Color.White;
@@ -104,6 +104,7 @@
             // 
             // Main_panel
             // 
+            this.Main_panel.BackColor = System.Drawing.Color.Transparent;
             this.Main_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Main_panel.Location = new System.Drawing.Point(0, 63);
             this.Main_panel.Name = "Main_panel";

@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Serialization;
 using System.IO;
-using System.Xml.Linq;
+using System.Xml.Serialization;
+using System.Xml;
 
 namespace BoVloApp
 {
@@ -35,8 +35,12 @@ namespace BoVloApp
             y = form_vertical_center - y_mid + y;
             return new Point(x,y);
         }
-        static public void ReadXML(string key)
+        static public string ReadXML(string key)
         {
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.Load(@"..\..\..\Resources\sessionvariables.xml");
+            XmlNodeList session_variables = xmlDoc.GetElementsByTagName(key);
+            return session_variables[0].InnerText.ToString();
 
         }
         static public void ResetXML()

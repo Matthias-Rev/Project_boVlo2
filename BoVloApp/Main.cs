@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
-using System.Threading;
+using System.Xml;
+using System.Drawing;
 
 namespace BoVloApp
 {
@@ -26,7 +27,9 @@ namespace BoVloApp
         }
         public void LoggedIn()
         {
-
+            Username_label.Text = GlobalVar.ReadXML("username");
+            Point point = new Point(Username_label.Location.X - Username_label.Size.Width, Username_label.Location.Y);
+            Username_label.Location = point;
         }
 
         private void Menu_button_Click(object sender, EventArgs e)
@@ -36,14 +39,14 @@ namespace BoVloApp
 
         private void Main_FormClosing(object sender, FormClosingEventArgs e)
         {
-            GlobalVar.ResetXML();
+            //GlobalVar.ResetXML();
             Application.Exit();
         }
 
         private void Logout_button_Click(object sender, EventArgs e)
         {
             Login loginpage = new Login();
-            GlobalVar.ResetXML();
+            //GlobalVar.ResetXML();
             loginpage.Show();
             Hide();
         }
