@@ -115,7 +115,24 @@ namespace BoVloApp
 
         }
 
+        private void nbreAjout_TextChanged(object sender, EventArgs e)
+        {
+ 
+        }
 
+        private void btnAjouter_Click(object sender, EventArgs e)
+        {
+            if (this.veloType.Text == "City") { BasketInfo.provisionalBasket.Add("City", this.nbreAjout.Text); }
+
+            if (this.veloType.Text == "Explorer") { BasketInfo.provisionalBasket.Add("Explorer", this.nbreAjout.Text); }
+
+            if (this.veloType.Text == "Adventure") { BasketInfo.provisionalBasket.Add("Adventure", this.nbreAjout.Text); }
+
+        }
+    }
+    public static class BasketInfo
+    {
+        public static IDictionary<string, string> provisionalBasket;
 
     }
 }
