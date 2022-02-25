@@ -84,5 +84,10 @@ namespace BoVloApp
         {
             Loadform(new Catalogue());
         }
+
+        private void COMMANDES_Click(object sender, EventArgs e)
+        {
+            Loadform(new GestionDeCommande());
+        }
     }
 }

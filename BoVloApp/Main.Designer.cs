@@ -34,11 +34,11 @@
             this.Logout_button = new System.Windows.Forms.Button();
             this.Menu_button = new System.Windows.Forms.Button();
             this.Main_panel = new System.Windows.Forms.Panel();
+            this.Titel = new System.Windows.Forms.Label();
             this.COMMANDES = new System.Windows.Forms.Button();
             this.CALENDRIER = new System.Windows.Forms.Button();
             this.CATALOGUE = new System.Windows.Forms.Button();
             this.STOCK = new System.Windows.Forms.Button();
-            this.Titel = new System.Windows.Forms.Label();
             this.Topbar_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Main_panel.SuspendLayout();
@@ -111,6 +111,7 @@
             // Main_panel
             // 
             this.Main_panel.BackColor = System.Drawing.Color.Transparent;
+            this.Main_panel.Controls.Add(this.Titel);
             this.Main_panel.Controls.Add(this.COMMANDES);
             this.Main_panel.Controls.Add(this.CALENDRIER);
             this.Main_panel.Controls.Add(this.CATALOGUE);
@@ -120,6 +121,16 @@
             this.Main_panel.Name = "Main_panel";
             this.Main_panel.Size = new System.Drawing.Size(1904, 978);
             this.Main_panel.TabIndex = 1;
+            // 
+            // Titel
+            // 
+            this.Titel.AutoSize = true;
+            this.Titel.Font = new System.Drawing.Font("Segoe UI", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Titel.Location = new System.Drawing.Point(833, 117);
+            this.Titel.Name = "Titel";
+            this.Titel.Size = new System.Drawing.Size(199, 72);
+            this.Titel.TabIndex = 7;
+            this.Titel.Text = "BOVLO";
             // 
             // COMMANDES
             // 
@@ -131,6 +142,7 @@
             this.COMMANDES.TabIndex = 4;
             this.COMMANDES.Text = "COMMANDES";
             this.COMMANDES.UseVisualStyleBackColor = true;
+            this.COMMANDES.Click += new System.EventHandler(this.COMMANDES_Click);
             // 
             // CALENDRIER
             // 
@@ -167,16 +179,6 @@
             this.STOCK.Text = "STOCK";
             this.STOCK.UseVisualStyleBackColor = true;
             // 
-            // Titel
-            // 
-            this.Titel.AutoSize = true;
-            this.Titel.Font = new System.Drawing.Font("Segoe UI", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Titel.Location = new System.Drawing.Point(833, 117);
-            this.Titel.Name = "Titel";
-            this.Titel.Size = new System.Drawing.Size(199, 72);
-            this.Titel.TabIndex = 7;
-            this.Titel.Text = "BOVLO";
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -193,6 +195,7 @@
             this.Topbar_panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.Main_panel.ResumeLayout(false);
+            this.Main_panel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
