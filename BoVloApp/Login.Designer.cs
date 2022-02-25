@@ -43,15 +43,16 @@ namespace BoVloApp
             // user_input
             // 
             this.user_input.Location = new System.Drawing.Point(100, 52);
-            this.user_input.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.user_input.Margin = new System.Windows.Forms.Padding(2);
             this.user_input.Name = "user_input";
             this.user_input.Size = new System.Drawing.Size(300, 25);
             this.user_input.TabIndex = 1;
+            this.user_input.KeyDown += new System.Windows.Forms.KeyEventHandler(this.user_input_KeyDown);
             // 
             // password_input
             // 
             this.password_input.Location = new System.Drawing.Point(100, 101);
-            this.password_input.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.password_input.Margin = new System.Windows.Forms.Padding(2);
             this.password_input.Name = "password_input";
             this.password_input.PasswordChar = '*';
             this.password_input.Size = new System.Drawing.Size(300, 25);
@@ -67,9 +68,9 @@ namespace BoVloApp
             this.Login_box.Controls.Add(this.password_input);
             this.Login_box.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Login_box.Location = new System.Drawing.Point(376, 204);
-            this.Login_box.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Login_box.Margin = new System.Windows.Forms.Padding(2);
             this.Login_box.Name = "Login_box";
-            this.Login_box.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Login_box.Padding = new System.Windows.Forms.Padding(2);
             this.Login_box.Size = new System.Drawing.Size(500, 200);
             this.Login_box.TabIndex = 3;
             this.Login_box.TabStop = false;
@@ -79,7 +80,7 @@ namespace BoVloApp
             this.login_button.Location = new System.Drawing.Point(175, 131);
             this.login_button.Name = "login_button";
             this.login_button.Size = new System.Drawing.Size(150, 40);
-            this.login_button.TabIndex = 6;
+            this.login_button.TabIndex = 3;
             this.login_button.Text = "Se connecter";
             this.login_button.UseVisualStyleBackColor = true;
             this.login_button.Click += new System.EventHandler(this.login_button_Click);
@@ -135,7 +136,7 @@ namespace BoVloApp
             this.Controls.Add(this.Titel);
             this.Controls.Add(this.Login_box);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";

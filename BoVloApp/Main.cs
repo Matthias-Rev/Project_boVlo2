@@ -34,6 +34,7 @@ namespace BoVloApp
                 if (c is Form)
                 {
                     Main_panel.Controls.Remove(c);
+                    (c as Form).Close();
                 }
             }
             Titel.Visible = true;
@@ -76,8 +77,9 @@ namespace BoVloApp
         {
             Login loginpage = new Login();
             GlobalVar.ResetXML();
-            loginpage.Show();
             Hide();
+            loginpage.ShowDialog();
+            Close();
         }
 
         private void CATALOGUE_Click(object sender, EventArgs e)
