@@ -37,7 +37,7 @@ namespace BoVloApp
             if (this.veloType.Text == "City")
             {
                 this.veloType.Text = "Adventure";
-                this.prix.Text = "700E";
+                this.labelPrixVelo.Text = "700E";
                 
                 hideCityColors();
                 unhideAdventureColors();
@@ -49,7 +49,7 @@ namespace BoVloApp
             else if (this.veloType.Text == "Adventure") 
             {
                 this.veloType.Text = "Explorer";
-                this.prix.Text = "600E";
+                this.labelPrixVelo.Text = "600E";
                 
                 hideAdventureColors();
                 unhideExplorerColors();
@@ -60,7 +60,7 @@ namespace BoVloApp
             else if (this.veloType.Text == "Explorer")
             {
                 this.veloType.Text = "City";
-                this.prix.Text = "500E";
+                this.labelPrixVelo.Text = "500E";
                 
                 unhideCityColors();
                 hideExplorerColors();
@@ -74,7 +74,7 @@ namespace BoVloApp
             if (this.veloType.Text == "City")
             {
                 this.veloType.Text = "Explorer";
-                this.prix.Text = "600E";
+                this.labelPrixVelo.Text = "600E";
                 
                 hideCityColors();
                 unhideExplorerColors();
@@ -85,7 +85,7 @@ namespace BoVloApp
             else if (this.veloType.Text == "Explorer")
             {
                 this.veloType.Text = "Adventure";
-                this.prix.Text = "700E";
+                this.labelPrixVelo.Text = "700E";
 
                 unhideAdventureColors();
                 hideExplorerColors();
@@ -97,7 +97,7 @@ namespace BoVloApp
             else if (this.veloType.Text == "Adventure")
             {
                 this.veloType.Text = "City";
-                this.prix.Text = "500E";
+                this.labelPrixVelo.Text = "500E";
 
                 hideAdventureColors();
                 unhideCityColors();
@@ -160,7 +160,12 @@ namespace BoVloApp
 
         private void btnAjouter_Click(object sender, EventArgs e)
         {
-            if (this.veloType.Text == "City") { BasketInfo.provisionalBasket.Add("City", this.nbreAjout.Text); }
+            if (this.veloType.Text == "City") 
+            { 
+                BasketInfo.provisionalBasket.Add("City", this.nbreAjout.Text);
+                
+            }
+
 
             if (this.veloType.Text == "Explorer") { BasketInfo.provisionalBasket.Add("Explorer", this.nbreAjout.Text); }
 
@@ -239,6 +244,11 @@ namespace BoVloApp
         private void button9_Click(object sender, EventArgs e)
         {
             this.picture.Image = Properties.Resources.explorer_bleu;
+        }
+
+        private void labelPrixVelo_Click(object sender, EventArgs e)
+        {
+
         }
     }
     public static class BasketInfo

@@ -33,13 +33,9 @@ namespace BoVloApp
             this.veloType = new System.Windows.Forms.Button();
             this.nextVelo = new System.Windows.Forms.Button();
             this.preVelo = new System.Windows.Forms.Button();
-            this.prixFixe = new System.Windows.Forms.TextBox();
-            this.prix = new System.Windows.Forms.TextBox();
-            this.tailleFixe = new System.Windows.Forms.TextBox();
             this.btn27 = new System.Windows.Forms.Button();
             this.btn28 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.couleurFIxe = new System.Windows.Forms.TextBox();
             this.picture = new System.Windows.Forms.PictureBox();
             this.btnAjouter = new System.Windows.Forms.Button();
             this.nbreAjout = new System.Windows.Forms.TextBox();
@@ -52,6 +48,11 @@ namespace BoVloApp
             this.button6 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.labelPrix = new System.Windows.Forms.Label();
+            this.labelPrixVelo = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.labelColor = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,33 +98,6 @@ namespace BoVloApp
             this.preVelo.UseVisualStyleBackColor = true;
             this.preVelo.Click += new System.EventHandler(this.buttonPre_Click);
             // 
-            // prixFixe
-            // 
-            this.prixFixe.Location = new System.Drawing.Point(1521, 221);
-            this.prixFixe.Name = "prixFixe";
-            this.prixFixe.Size = new System.Drawing.Size(47, 27);
-            this.prixFixe.TabIndex = 5;
-            this.prixFixe.Text = "Prix:";
-            this.prixFixe.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            // 
-            // prix
-            // 
-            this.prix.Location = new System.Drawing.Point(1521, 253);
-            this.prix.Name = "prix";
-            this.prix.Size = new System.Drawing.Size(47, 27);
-            this.prix.TabIndex = 6;
-            this.prix.Text = "500E";
-            this.prix.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // tailleFixe
-            // 
-            this.tailleFixe.Location = new System.Drawing.Point(1521, 315);
-            this.tailleFixe.Name = "tailleFixe";
-            this.tailleFixe.Size = new System.Drawing.Size(54, 27);
-            this.tailleFixe.TabIndex = 7;
-            this.tailleFixe.Text = "Taille:";
-            this.tailleFixe.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
-            // 
             // btn27
             // 
             this.btn27.Location = new System.Drawing.Point(1521, 347);
@@ -152,15 +126,6 @@ namespace BoVloApp
             this.button7.TabIndex = 10;
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // couleurFIxe
-            // 
-            this.couleurFIxe.Location = new System.Drawing.Point(1521, 413);
-            this.couleurFIxe.Name = "couleurFIxe";
-            this.couleurFIxe.Size = new System.Drawing.Size(125, 27);
-            this.couleurFIxe.TabIndex = 14;
-            this.couleurFIxe.Text = "Couleur";
-            this.couleurFIxe.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // picture
             // 
@@ -292,11 +257,62 @@ namespace BoVloApp
             this.button9.Visible = false;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(50, 20);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "label1";
+            // 
+            // labelPrix
+            // 
+            this.labelPrix.AutoSize = true;
+            this.labelPrix.Location = new System.Drawing.Point(1518, 273);
+            this.labelPrix.Name = "labelPrix";
+            this.labelPrix.Size = new System.Drawing.Size(36, 20);
+            this.labelPrix.TabIndex = 29;
+            this.labelPrix.Text = "Prix:";
+            // 
+            // labelPrixVelo
+            // 
+            this.labelPrixVelo.AutoSize = true;
+            this.labelPrixVelo.Location = new System.Drawing.Point(1565, 273);
+            this.labelPrixVelo.Name = "labelPrixVelo";
+            this.labelPrixVelo.Size = new System.Drawing.Size(41, 20);
+            this.labelPrixVelo.TabIndex = 30;
+            this.labelPrixVelo.Text = "500E";
+            this.labelPrixVelo.Click += new System.EventHandler(this.labelPrixVelo_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(1521, 324);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(46, 20);
+            this.label2.TabIndex = 31;
+            this.label2.Text = "Taille:";
+            // 
+            // labelColor
+            // 
+            this.labelColor.AutoSize = true;
+            this.labelColor.Location = new System.Drawing.Point(1521, 427);
+            this.labelColor.Name = "labelColor";
+            this.labelColor.Size = new System.Drawing.Size(63, 20);
+            this.labelColor.TabIndex = 32;
+            this.labelColor.Text = "Couleur:";
+            // 
             // Catalogue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1942, 1102);
+            this.Controls.Add(this.labelColor);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.labelPrixVelo);
+            this.Controls.Add(this.labelPrix);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button6);
@@ -309,13 +325,9 @@ namespace BoVloApp
             this.Controls.Add(this.nbreAjout);
             this.Controls.Add(this.btnAjouter);
             this.Controls.Add(this.picture);
-            this.Controls.Add(this.couleurFIxe);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.btn28);
             this.Controls.Add(this.btn27);
-            this.Controls.Add(this.tailleFixe);
-            this.Controls.Add(this.prix);
-            this.Controls.Add(this.prixFixe);
             this.Controls.Add(this.preVelo);
             this.Controls.Add(this.nextVelo);
             this.Controls.Add(this.veloType);
@@ -335,13 +347,9 @@ namespace BoVloApp
         private System.Windows.Forms.Button veloType;
         private System.Windows.Forms.Button nextVelo;
         private System.Windows.Forms.Button preVelo;
-        private System.Windows.Forms.TextBox prixFixe;
-        private System.Windows.Forms.TextBox prix;
-        private System.Windows.Forms.TextBox tailleFixe;
         private System.Windows.Forms.Button btn27;
         private System.Windows.Forms.Button btn28;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.TextBox couleurFIxe;
         private System.Windows.Forms.PictureBox picture;
         private System.Windows.Forms.Button btnAjouter;
         private System.Windows.Forms.TextBox nbreAjout;
@@ -354,5 +362,10 @@ namespace BoVloApp
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelPrix;
+        private System.Windows.Forms.Label labelPrixVelo;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelColor;
     }
 }
