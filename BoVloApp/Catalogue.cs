@@ -161,15 +161,22 @@ namespace BoVloApp
         private void btnAjouter_Click(object sender, EventArgs e)
         {
             if (this.veloType.Text == "City") 
-            { 
-                BasketInfo.provisionalBasket.Add("City", this.nbreAjout.Text);
-                
+            {
+                GlobalVar.WriteXML("City", nbreAjout.Text);
+
             }
 
 
-            if (this.veloType.Text == "Explorer") { BasketInfo.provisionalBasket.Add("Explorer", this.nbreAjout.Text); }
+            if (this.veloType.Text == "Explorer") 
+            {
+                GlobalVar.WriteXML("Explorer", nbreAjout.Text);
 
-            if (this.veloType.Text == "Adventure") { BasketInfo.provisionalBasket.Add("Adventure", this.nbreAjout.Text); }
+            }
+
+            if (this.veloType.Text == "Adventure") 
+            {
+                GlobalVar.WriteXML("Adventure", nbreAjout.Text);
+            }
 
         }
         public void hideCityColors()
@@ -250,11 +257,6 @@ namespace BoVloApp
         {
 
         }
-    }
-    public static class BasketInfo
-    {
-        public static IDictionary<string, string> provisionalBasket;
-
     }
 
 
