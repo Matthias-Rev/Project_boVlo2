@@ -15,6 +15,7 @@ namespace BoVloApp
         public GestionDeCommande()
         {
             InitializeComponent();
+            Titel.Location = GlobalVar.SetLocation(this, 0, -400, Titel);
         }
 
         private void GestionDeCommande_Load(object sender, EventArgs e)
