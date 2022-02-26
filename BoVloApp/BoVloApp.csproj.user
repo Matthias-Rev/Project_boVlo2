@@ -7,9 +7,6 @@
     <Compile Update="Commandevelo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="CommandeVélo.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Final_Catalogue.cs">
       <SubType>Form</SubType>
     </Compile>

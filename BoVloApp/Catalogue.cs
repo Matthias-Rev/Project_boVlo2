@@ -167,7 +167,7 @@ namespace BoVloApp
             }
 
 
-            if (this.veloType.Text == "Explorer") 
+            if (this.veloType.Text == "Explorer")
             {
                 GlobalVar.WriteXML("Explorer", nbreAjout.Text);
 
