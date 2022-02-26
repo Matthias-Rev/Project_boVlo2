@@ -44,17 +44,17 @@ namespace BoVloApp
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(75, 50);
+            this.label2.Location = new System.Drawing.Point(59, 47);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(161, 25);
+            this.label2.Size = new System.Drawing.Size(123, 25);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Nombre total: XXX";
+            this.label2.Text = "Nombre total:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(75, 120);
+            this.label3.Location = new System.Drawing.Point(59, 117);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 25);
             this.label3.TabIndex = 2;
@@ -63,7 +63,7 @@ namespace BoVloApp
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(75, 199);
+            this.label4.Location = new System.Drawing.Point(59, 193);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(103, 25);
             this.label4.TabIndex = 3;
@@ -72,7 +72,7 @@ namespace BoVloApp
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(75, 282);
+            this.label5.Location = new System.Drawing.Point(59, 281);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(104, 25);
             this.label5.TabIndex = 4;
@@ -82,16 +82,16 @@ namespace BoVloApp
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(465, 161);
+            this.label6.Location = new System.Drawing.Point(432, 140);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(210, 25);
+            this.label6.Size = new System.Drawing.Size(155, 25);
             this.label6.TabIndex = 5;
-            this.label6.Text = "Date attendue: XXXXXXX";
+            this.label6.Text = "Date attendue: XX";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(477, 91);
+            this.label7.Location = new System.Drawing.Point(432, 80);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(100, 25);
             this.label7.TabIndex = 6;
@@ -110,6 +110,7 @@ namespace BoVloApp
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(752, 474);
             this.panel1.TabIndex = 7;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // button1
             // 
