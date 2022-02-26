@@ -163,8 +163,10 @@ namespace BoVloApp
  
         }
 
+        public bool buttonWasClicked = false;
         private void btnAjouter_Click(object sender, EventArgs e)
         {
+
             if (this.veloType.Text == "City") 
             {
                 //article = new article
@@ -180,7 +182,7 @@ namespace BoVloApp
 
                 GlobalVar.WriteXML("panier", ArticleCity);
 
-                Console.WriteLine("yo");
+                
 
             }
 
@@ -212,6 +214,8 @@ namespace BoVloApp
             }
 
         }
+
+        
         public void hideCityColors()
         {
             this.button7.Visible = false;
