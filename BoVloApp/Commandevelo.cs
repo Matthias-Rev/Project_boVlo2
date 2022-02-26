@@ -44,6 +44,10 @@ namespace BoVloApp
             label3.Visible = true;
             label4.Visible = true;
             label5.Visible = true;
+            label6.Visible = true;
+            label7.Visible = true;
+            button1.Visible = true;
+            label8.Visible = true;
         }
         public void Loadform(object Form)
         {
@@ -52,12 +56,21 @@ namespace BoVloApp
             label3.Visible = false;
             label4.Visible = false;
             label5.Visible = false;
+            label6.Visible = false;
+            label7.Visible = false;
+            button1.Visible = false;
+            label8.Visible = false;
             Form form_to_load = Form as Form;
             form_to_load.TopLevel = false;
             form_to_load.Dock = DockStyle.Fill;
             panel1.Controls.Add(form_to_load);
             panel1.Tag = form_to_load;
             form_to_load.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
