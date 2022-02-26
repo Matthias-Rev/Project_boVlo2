@@ -36,7 +36,7 @@ namespace BoVloApp
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.Titel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,7 +51,7 @@ namespace BoVloApp
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(351, 182);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
             this.panel1.Size = new System.Drawing.Size(653, 223);
@@ -60,7 +60,7 @@ namespace BoVloApp
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(550, 35);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(78, 20);
             this.button1.TabIndex = 5;
@@ -110,32 +110,32 @@ namespace BoVloApp
             // panel2
             // 
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(653, 90);
             this.panel2.TabIndex = 5;
             // 
-            // label5
+            // Titel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(251, 63);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(760, 72);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Gestion de commande de vélo";
+            this.Titel.AutoSize = true;
+            this.Titel.Font = new System.Drawing.Font("Segoe UI", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Titel.Location = new System.Drawing.Point(251, 63);
+            this.Titel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Titel.Name = "Titel";
+            this.Titel.Size = new System.Drawing.Size(760, 72);
+            this.Titel.TabIndex = 6;
+            this.Titel.Text = "Gestion de commande de vélo";
             // 
             // GestionDeCommande
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1329, 614);
+            this.ClientSize = new System.Drawing.Size(1920, 1080);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.Titel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "GestionDeCommande";
             this.Text = "GestionDeCommande";
             this.Load += new System.EventHandler(this.GestionDeCommande_Load);
@@ -155,6 +155,6 @@ namespace BoVloApp
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label Titel;
     }
 }
