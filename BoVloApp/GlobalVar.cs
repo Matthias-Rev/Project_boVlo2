@@ -59,7 +59,7 @@ namespace BoVloApp
                 }
                 if (key == "panier")
                 {
-                    session.panier = Panier as Panierbis;
+                    session.panier = value as PanierCatalogue;
                 }
                 serializer.Serialize(writer, session);
                 writer.Close();

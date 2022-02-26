@@ -9,9 +9,9 @@ namespace BoVloApp
     internal class Article
     {
         public string type;
-        public string quantite;
-        public string couleur;
-        public string taille;
-        public string prix;
+        public string quantity;
+        public string colour;
+        public string size;
+        public string price;
     }
 }

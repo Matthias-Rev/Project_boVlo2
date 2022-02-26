@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace BoVloApp
 {
-    public class Session
+    public class PanierCatalogue
     {
-        public string username;
-        public string titel;
-        public PanierCatalogue panier;
+        List<Article> ArticlePanier = new List<Article>();
     }
 }
