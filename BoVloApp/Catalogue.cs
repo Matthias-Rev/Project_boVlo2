@@ -179,8 +179,9 @@ namespace BoVloApp
                 ArticleCity.colour = colourSizeBtn.CityColour;
                 ArticleCity.size = colourSizeBtn.CitySize;
                 ArticleCity.price = labelPrixVelo.Text;
-
-                GlobalVar.WriteXML("panier", ArticleCity);
+                string sessionkey = GlobalVar.ReadXML().key;
+                //enviyer tout dans la table 'panier'
+                //GlobalVar.WriteXML("panier", ArticleCity);
 
                 
 
@@ -196,7 +197,7 @@ namespace BoVloApp
                 ArticleExplorer.size = colourSizeBtn.ExplorerSize;
                 ArticleExplorer.price = labelPrixVelo.Text;
 
-                GlobalVar.WriteXML("panier", ArticleExplorer);
+                //GlobalVar.WriteXML("panier", ArticleExplorer);
 
             }
 
@@ -210,7 +211,7 @@ namespace BoVloApp
                 ArticleAdventure.size = colourSizeBtn.AdventureSize;
                 ArticleAdventure.price = labelPrixVelo.Text;
 
-                GlobalVar.WriteXML("panier", ArticleAdventure);
+                //GlobalVar.WriteXML("panier", ArticleAdventure);
             }
 
         }
