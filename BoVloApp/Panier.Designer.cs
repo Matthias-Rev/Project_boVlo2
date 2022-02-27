@@ -46,6 +46,7 @@ namespace BoVloApp
             this.CadreCouleur1 = new System.Windows.Forms.RichTextBox();
             this.richTextBox8 = new System.Windows.Forms.RichTextBox();
             this.richTextBox12 = new System.Windows.Forms.RichTextBox();
+            this.PanelPanier = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // buttonFinaliser
@@ -203,6 +204,13 @@ namespace BoVloApp
             this.richTextBox12.TabIndex = 21;
             this.richTextBox12.Text = "*Couleur*";
             // 
+            // PanelPanier
+            // 
+            this.PanelPanier.Location = new System.Drawing.Point(0, 0);
+            this.PanelPanier.Name = "PanelPanier";
+            this.PanelPanier.Size = new System.Drawing.Size(1942, 1102);
+            this.PanelPanier.TabIndex = 22;
+            // 
             // Panier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -225,6 +233,7 @@ namespace BoVloApp
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.buttonPlanning);
             this.Controls.Add(this.buttonFinaliser);
+            this.Controls.Add(this.PanelPanier);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Panier";
             this.Text = "Panier";
@@ -252,5 +261,6 @@ namespace BoVloApp
         private System.Windows.Forms.RichTextBox CadreCouleur1;
         private System.Windows.Forms.RichTextBox richTextBox8;
         private System.Windows.Forms.RichTextBox richTextBox12;
+        private System.Windows.Forms.Panel PanelPanier;
     }
 }
