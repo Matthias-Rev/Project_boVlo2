@@ -18,22 +18,28 @@ namespace BoVloApp
             InitializeComponent();
 
             TableLayoutPanel panier = new TableLayoutPanel();
-            panier.ColumnCount = 4;
-            panier.RowCount = 1;
 
             //Create the dynamic label
             Label type = new Label();
             type.Text = "type de vélo";
             panier.Controls.Add(type);
+
             Label taille = new Label();
             taille.Text = "taille du vélo";
             panier.Controls.Add(taille);
+
             Label quantite = new Label();
             quantite.Text = "nombre de vélo";
             panier.Controls.Add(quantite);
+
             Label couleur = new Label();
             couleur.Text = "couleur du vélo";
             panier.Controls.Add(couleur);
+
+            Label prix = new Label();
+            prix.Text = "prix du vélo";
+            panier.Controls.Add(prix);
+
             TableLayoutPanel.Controls.Add(panier);
         }
 
