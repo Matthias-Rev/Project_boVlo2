@@ -153,7 +153,7 @@
             this.Controls.Add(this.label2);
             this.Name = "CatalogueMember";
             this.Text = "CatalogueMember";
-            this.Load += new System.EventHandler(this.CatalogueMember_Load);
+
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
