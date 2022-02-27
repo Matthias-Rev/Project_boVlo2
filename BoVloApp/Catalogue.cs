@@ -167,53 +167,46 @@ namespace BoVloApp
         public bool buttonWasClicked = false;
         private void btnAjouter_Click(object sender, EventArgs e)
         {
+            
 
-
+            string insertMySQL = String.Format("INSERT INTO Panier ('Session_key', `Quantity`, `Product_type`, `Price`, `Size`, `Colour`) VALUES " +
+                "('{0}','{1}','{2}','{3}','{4}','{5}' )",GlobalVar.ReadXML().key , nbreAjout.Text, veloType.Text, labelPrixVelo.Text, size.Text, colourCIty.Text);
+            MessageBox.Show(insertMySQL);
+            GlobalVar.WriteSQL(insertMySQL);
         }
 
         
         public void hideCityColors()
         {
-            this.button7.Visible = false;
-            this.turquoise.Visible = false;
-            this.button3.Visible = false;
-            this.button2.Visible = false;
+            this.colourCIty.Visible = false;
         }
 
         public void unhideCityColors()
         {
-            this.button7.Visible = true;
-            this.turquoise.Visible = true;
-            this.button3.Visible = true;
-            this.button2.Visible = true;
+            this.colourCIty.Visible = true;
         }
 
         public void hideAdventureColors() 
         {
-            this.button1.Visible = false;
-            this.button4.Visible = false;
-            this.button5.Visible = false;
+            this.AdevntureColour.Visible = false;
         }
 
         public void unhideAdventureColors()
         {
-            this.button1.Visible = true;
-            this.button4.Visible = true;
-            this.button5.Visible = true;
+            this.AdevntureColour.Visible = true;
+
         }
 
         public void hideExplorerColors()
         {
-            this.button6.Visible = false;
-            this.button8.Visible = false;
-            this.button9.Visible = false;
+            this.explorer_colour.Visible = false;
+
         }
 
         public void unhideExplorerColors()
         {
-            this.button6.Visible = true;
-            this.button8.Visible = true;
-            this.button9.Visible = true;
+            this.explorer_colour.Visible = true;
+
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -270,21 +263,26 @@ namespace BoVloApp
 
         private void colourCIty_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (colourCIty.SelectedText.ToString() == "White") 
+            switch (colourCIty.Text)
             {
-                this.picture.Image = Properties.Resources.Velo_ville_cream;
-            }
-            if (colourCIty.SelectedText.ToString() == "Blue")
-            {
-                this.picture.Image = Properties.Resources.Velo_ville_bleu;
-            }
-            if (colourCIty.SelectedText.ToString() == "Rose")
-            {
-                this.picture.Image = Properties.Resources.Velo_ville_rose;
-            }
-            if (colourCIty.SelectedText.ToString() == "Green")
-            {
-                this.picture.Image = Properties.Resources.Velo_ville_turquoise;
+                case "White":
+
+                    this.picture.Image = Properties.Resources.Velo_ville_cream;
+                    break;
+
+                case "Blue":
+
+                    this.picture.Image = Properties.Resources.Velo_ville_bleu;
+                    break;
+                case "Rose":
+
+                    this.picture.Image = Properties.Resources.Velo_ville_rose;
+                    break;
+                case "Green":
+
+                    this.picture.Image = Properties.Resources.Velo_ville_turquoise;
+                    break;
+
             }
 
         }
@@ -292,6 +290,42 @@ namespace BoVloApp
         private void labelColor_Click(object sender, EventArgs e)
         {
             labelColor.Text = colourCIty.SelectedText.ToString();
+        }
+
+        private void explorer_colour_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (explorer_colour.Text)
+            {
+                case "White":
+                    this.picture.Image = Properties.Resources.explorer_beige;
+                    break;
+
+                case "Black":
+                    this.picture.Image = Properties.Resources.explorer_noire;
+                    break;
+
+                case "Blue":
+                    this.picture.Image = Properties.Resources.explorer_bleu;
+                    break;
+            }
+        }
+
+        private void AdevntureColour_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (explorer_colour.Text)
+            {
+                case "White":
+                    this.picture.Image = Properties.Resources.Adventure_white;
+                    break;
+
+                case "Black":
+                    this.picture.Image = Properties.Resources.Adventure_black;
+                    break;
+
+                case "Blue":
+                    this.picture.Image = Properties.Resources.Adventure_blue;
+                    break;
+            }
         }
     }
     
