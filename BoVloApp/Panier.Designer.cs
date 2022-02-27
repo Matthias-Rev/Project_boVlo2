@@ -90,18 +90,17 @@ namespace BoVloApp
             // 
             // PanelPanier
             // 
-            this.PanelPanier.Controls.Add(this.TableLayoutPanel);
             this.PanelPanier.Location = new System.Drawing.Point(0, 0);
             this.PanelPanier.Name = "PanelPanier";
-            this.PanelPanier.Size = new System.Drawing.Size(1942, 1102);
+            this.PanelPanier.Size = new System.Drawing.Size(1944, 1097);
             this.PanelPanier.TabIndex = 22;
-            this.PanelPanier.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelPanier_Paint);
+            //this.PanelPanier.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelPanier_Paint);
+            PanelPanier.Controls.Add(this.TableLayoutPanel);
             PanelPanier.Controls.Add(this.Title);
             PanelPanier.Controls.Add(this.LabelTotal);
             PanelPanier.Controls.Add(this.richTextBox1);
             PanelPanier.Controls.Add(this.buttonPlanning);
             PanelPanier.Controls.Add(this.buttonFinaliser);
-            PanelPanier.Controls.Add(this.PanelPanier);
             // 
             // TableLayoutPanel
             // 
@@ -124,12 +123,15 @@ namespace BoVloApp
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.Controls.Add(this.PanelPanier);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Panier";
             this.Text = "Panier";
+            this.Load += new System.EventHandler(this.Panier_Load);
             this.PanelPanier.ResumeLayout(false);
+            this.PanelPanier.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

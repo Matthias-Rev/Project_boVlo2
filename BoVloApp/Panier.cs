@@ -39,7 +39,7 @@ namespace BoVloApp
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonFinaliser_Click(object sender, EventArgs e)
         {
             GlobalVar.Loadform(PanelPanier, new CatalogueMember());
         }
@@ -55,6 +55,11 @@ namespace BoVloApp
         }
 
         private void PanelPanier_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Panier_Load(object sender, EventArgs e)
         {
 
         }
