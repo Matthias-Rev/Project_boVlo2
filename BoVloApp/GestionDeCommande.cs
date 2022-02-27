@@ -66,8 +66,8 @@ namespace BoVloApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Loadform(new Commandevelo());
+
+            GlobalVar.Loadform(backPanel, new GestionDeCommande());
         }
     }
-
 }
