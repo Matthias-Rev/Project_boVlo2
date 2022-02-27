@@ -20,11 +20,11 @@ namespace BoVloApp
 
         public void Clearform()
         {
-            foreach (Control c in this.Controls)
+            foreach (Control c in panelFinal.Controls)
             {
                 if (c is Form)
                 {
-                    this.Controls.Remove(c);
+                    panelFinal.Controls.Remove(c);
                     (c as Form).Close();
                 }
             }
@@ -49,8 +49,8 @@ namespace BoVloApp
             Form form_to_load = Form as Form;
             form_to_load.TopLevel = false;
             form_to_load.Dock = DockStyle.Fill;
-            this.Controls.Add(form_to_load);
-            this.Tag = form_to_load;
+            panelFinal.Controls.Add(form_to_load);
+            panelFinal.Tag = form_to_load;
             form_to_load.Show();
         }
         public void button1_Click(object sender, EventArgs e)
@@ -59,7 +59,6 @@ namespace BoVloApp
             MySqlConnection connexion = Mysqlconn.connect();
             // textBox1.Text
             connexion.Close();
-
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

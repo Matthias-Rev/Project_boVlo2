@@ -38,6 +38,7 @@ namespace BoVloApp
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.panelFinal = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // label1
@@ -76,7 +77,7 @@ namespace BoVloApp
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(1397, 52);
             this.textBox2.TabIndex = 3;
-
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label3
             // 
@@ -87,7 +88,6 @@ namespace BoVloApp
             this.label3.Size = new System.Drawing.Size(145, 46);
             this.label3.TabIndex = 4;
             this.label3.Text = "Adresse:";
-
             // 
             // textBox3
             // 
@@ -130,6 +130,13 @@ namespace BoVloApp
             this.textBox4.TabIndex = 8;
             this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
+            // panelFinal
+            // 
+            this.panelFinal.Location = new System.Drawing.Point(1, -2);
+            this.panelFinal.Name = "panelFinal";
+            this.panelFinal.Size = new System.Drawing.Size(1902, 1036);
+            this.panelFinal.TabIndex = 9;
+            // 
             // Final_Catalogue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -144,6 +151,7 @@ namespace BoVloApp
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.panelFinal);
             this.Name = "Final_Catalogue";
             this.Text = "Final_Catalogue";
             this.ResumeLayout(false);
@@ -162,5 +170,6 @@ namespace BoVloApp
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Panel panelFinal;
     }
 }

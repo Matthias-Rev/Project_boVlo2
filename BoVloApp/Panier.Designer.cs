@@ -95,14 +95,15 @@ namespace BoVloApp
             this.PanelPanier.Name = "PanelPanier";
             this.PanelPanier.Size = new System.Drawing.Size(1942, 1102);
             this.PanelPanier.TabIndex = 22;
+            this.PanelPanier.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelPanier_Paint);
             // 
             // TableLayoutPanel
             // 
             this.TableLayoutPanel.AutoScroll = true;
-            this.TableLayoutPanel.ColumnCount = 3;
-            this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+            this.TableLayoutPanel.ColumnCount = 1;
+            this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.TableLayoutPanel.Location = new System.Drawing.Point(202, 185);
             this.TableLayoutPanel.Name = "TableLayoutPanel";
             this.TableLayoutPanel.RowCount = 2;
