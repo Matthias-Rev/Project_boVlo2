@@ -37,7 +37,10 @@ namespace BoVloApp
             //if (user_input.Text == "User" && password_input.Text == "123")
             if (password_input.Text == "123")
             {
-                GlobalVar.WriteXML("username", user_input.Text);
+                Session session = new();
+                session.username = user_input.Text;
+                session.key = GlobalVar.RandomString(20);
+                GlobalVar.WriteXML(session);
                 Main main = new Main();
                 Hide();
                 main.ShowDialog();
