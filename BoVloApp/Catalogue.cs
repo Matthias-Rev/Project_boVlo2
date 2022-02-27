@@ -167,6 +167,22 @@ namespace BoVloApp
         public bool buttonWasClicked = false;
         private void btnAjouter_Click(object sender, EventArgs e)
         {
+            string connetionString = "server=pat.infolab.ecam.be;port=63316;database=Bovlo;uid=BovloUser;pwd=Bovlopass;";
+            MySqlConnection connexion = Mysqlconn.connect();
+
+            string insertMySQL  = "INSERT INTO bovlo.bike SET Quantity = '"+ nbreAjout.Text + "', Product_type = '"+ veloType.Text + "', Price = '"+ labelPrixVelo.Text + "', Size = '"+ size.Text + "', Colour = '" + colourCIty.Text + "', Product_id = '" + "1";
+
+            MySqlConnection MyConn2 = new MySqlConnection(connetionString);
+
+            MySqlCommand MyCommand2 = new MySqlCommand(insertMySQL, MyConn2);
+            MySqlDataReader MyReader2;
+            MyConn2.Open();
+            MyReader2 = MyCommand2.ExecuteReader();
+            MessageBox.Show("Save Data");
+            while (MyReader2.Read()) { }
+
+            MyConn2.Close();
+
 
 
         }
