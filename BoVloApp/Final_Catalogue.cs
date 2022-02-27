@@ -17,46 +17,11 @@ namespace BoVloApp
         {
             InitializeComponent();
         }
-
-        public void Clearform()
-        {
-            foreach (Control c in panelFinal.Controls)
-            {
-                if (c is Form)
-                {
-                    panelFinal.Controls.Remove(c);
-                    (c as Form).Close();
-                }
-            }
-            label1.Visible = true;
-            textBox1.Visible = true;
-            label2.Visible = true;
-            textBox2.Visible = true;
-            label3.Visible = true;
-            textBox3.Visible = true;
-            button1.Visible = true;
-        }
-        public void Loadform(object Form)
-        {
-            Clearform();
-            label1.Visible = false;
-            textBox1.Visible = false;
-            label2.Visible = false;
-            textBox2.Visible = false;
-            label3.Visible = false;
-            textBox3.Visible = false;
-            button1.Visible = false;
-            Form form_to_load = Form as Form;
-            form_to_load.TopLevel = false;
-            form_to_load.Dock = DockStyle.Fill;
-            panelFinal.Controls.Add(form_to_load);
-            panelFinal.Tag = form_to_load;
-            form_to_load.Show();
-        }
         public void button1_Click(object sender, EventArgs e)
         {
             // confirm and send the information on the db
             MySqlConnection connexion = Mysqlconn.connect();
+            GlobalVar.Loadform(panelFinal, new Main());
             // textBox1.Text
             connexion.Close();
         }
