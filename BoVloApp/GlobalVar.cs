@@ -8,6 +8,8 @@ using System.Windows.Forms;
 using System.IO;
 using System.Xml.Serialization;
 using System.Xml;
+using System.Data;
+using MySql.Data.MySqlClient;
 
 namespace BoVloApp
 {
@@ -93,5 +95,25 @@ namespace BoVloApp
             panel.Tag = form;
             form.Show();
         }
+        static public DataTable ReadSQL(string request)
+        {
+            MySqlConnection connexion = Mysqlconn.connect();
+            MySqlCommand command = new MySqlCommand(request, connexion);
+            MySqlDataAdapter dataAdapter = new MySqlDataAdapter(command);
+            DataTable dt = new();
+            dataAdapter.Fill(dt);
+            connexion.Close();
+            dataAdapter.Dispose();
+            return dt;
+        }
+        static public void WriteSQL(string request)
+        {
+            MySqlConnection connexion = Mysqlconn.connect();
+            MySqlDataAdapter dataAdapter = new MySqlDataAdapter();
+            dataAdapter.InsertCommand = new MySqlCommand(request, connexion);
+            dataAdapter.InsertCommand.ExecuteNonQuery();
+            connexion.Close();
+        }
+
     }
 }
