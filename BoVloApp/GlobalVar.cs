@@ -65,5 +65,33 @@ namespace BoVloApp
             return new string(Enumerable.Repeat(chars, length)
                 .Select(s => s[random.Next(s.Length)]).ToArray());
         }
+        static public void Clearform(Panel panel)
+        {
+            foreach (Control c in panel.Controls)
+            {
+                if (c is Form)
+                {
+                    panel.Controls.Remove(c);
+                    (c as Form).Close();
+                }
+                else
+                {
+                    c.Visible = true;
+                }
+            }
+        }
+        static public void Loadform(Panel panel, Form form)
+        {
+            Clearform(panel);
+            foreach (Control c in panel.Controls)
+            {
+                c.Visible = false;
+            }
+            form.TopLevel = false;
+            form.Dock = DockStyle.Fill;
+            panel.Controls.Add(form);
+            panel.Tag = form;
+            form.Show();
+        }
     }
 }
