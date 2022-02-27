@@ -34,6 +34,7 @@ namespace BoVloApp
 
         private void richTextBox3_TextChanged(object sender, EventArgs e)
         {
+            //this.richTextBox3.Text = GlobalVar.ReadXML().panier;
 
         }
     }

@@ -29,11 +29,11 @@ namespace BoVloApp
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonFinaliser = new System.Windows.Forms.Button();
+            this.buttonPlanning = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.LabelTotal = new System.Windows.Forms.Label();
+            this.Title = new System.Windows.Forms.Label();
             this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.richTextBox4 = new System.Windows.Forms.RichTextBox();
@@ -48,25 +48,25 @@ namespace BoVloApp
             this.richTextBox12 = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
-            // button1
+            // buttonFinaliser
             // 
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(1520, 890);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(230, 75);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Finaliser";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonFinaliser.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonFinaliser.Location = new System.Drawing.Point(1520, 890);
+            this.buttonFinaliser.Name = "buttonFinaliser";
+            this.buttonFinaliser.Size = new System.Drawing.Size(230, 75);
+            this.buttonFinaliser.TabIndex = 0;
+            this.buttonFinaliser.Text = "Finaliser";
+            this.buttonFinaliser.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // buttonPlanning
             // 
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(829, 890);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(400, 75);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Consulter Planning";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonPlanning.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonPlanning.Location = new System.Drawing.Point(829, 890);
+            this.buttonPlanning.Name = "buttonPlanning";
+            this.buttonPlanning.Size = new System.Drawing.Size(400, 75);
+            this.buttonPlanning.TabIndex = 1;
+            this.buttonPlanning.Text = "Consulter Planning";
+            this.buttonPlanning.UseVisualStyleBackColor = true;
             // 
             // richTextBox1
             // 
@@ -76,26 +76,26 @@ namespace BoVloApp
             this.richTextBox1.TabIndex = 2;
             this.richTextBox1.Text = "";
             // 
-            // label1
+            // LabelTotal
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(202, 899);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(122, 57);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Total:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.LabelTotal.AutoSize = true;
+            this.LabelTotal.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LabelTotal.Location = new System.Drawing.Point(202, 899);
+            this.LabelTotal.Name = "LabelTotal";
+            this.LabelTotal.Size = new System.Drawing.Size(122, 57);
+            this.LabelTotal.TabIndex = 3;
+            this.LabelTotal.Text = "Total:";
+            this.LabelTotal.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label2
+            // Title
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(861, 51);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(220, 89);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Panier";
+            this.Title.AutoSize = true;
+            this.Title.Font = new System.Drawing.Font("Segoe UI", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Title.Location = new System.Drawing.Point(861, 51);
+            this.Title.Name = "Title";
+            this.Title.Size = new System.Drawing.Size(220, 89);
+            this.Title.TabIndex = 4;
+            this.Title.Text = "Panier";
             // 
             // vScrollBar1
             // 
@@ -220,11 +220,11 @@ namespace BoVloApp
             this.Controls.Add(this.richTextBox4);
             this.Controls.Add(this.vScrollBar1);
             this.Controls.Add(this.richTextBox2);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Title);
+            this.Controls.Add(this.LabelTotal);
             this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonPlanning);
+            this.Controls.Add(this.buttonFinaliser);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Panier";
             this.Text = "Panier";
@@ -235,11 +235,11 @@ namespace BoVloApp
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonFinaliser;
+        private System.Windows.Forms.Button buttonPlanning;
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label LabelTotal;
+        private System.Windows.Forms.Label Title;
         private System.Windows.Forms.VScrollBar vScrollBar1;
         private System.Windows.Forms.RichTextBox richTextBox2;
         private System.Windows.Forms.RichTextBox richTextBox4;
