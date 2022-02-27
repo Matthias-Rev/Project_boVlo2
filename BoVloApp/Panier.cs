@@ -16,19 +16,30 @@ namespace BoVloApp
         public Panier()
         {
             InitializeComponent();
+
+            TableLayoutPanel panier = new TableLayoutPanel();
+            panier.ColumnCount = 4;
+            panier.RowCount = 1;
+
+            //Create the dynamic label
+            Label type = new Label();
+            type.Text = "type de vélo";
+            panier.Controls.Add(type);
+            Label taille = new Label();
+            taille.Text = "taille du vélo";
+            panier.Controls.Add(taille);
+            Label quantite = new Label();
+            quantite.Text = "nombre de vélo";
+            panier.Controls.Add(quantite);
+            Label couleur = new Label();
+            couleur.Text = "couleur du vélo";
+            panier.Controls.Add(couleur);
+            TableLayoutPanel.Controls.Add(panier);
         }
 
-               private void AjoutLigne()
+        private void AjoutLigne()
         {
 
-            TableLayoutPanel tlp = new TableLayoutPanel();
-            this.Controls.Add(tlp);
-            tlp.Controls.Add(buttonPlanning, 0, 0);//just a test
-            tlp.Controls.Add(buttonPlanning, 1, 0);//juste a test
-            tlp.Controls.Add(buttonPlanning, 0, 1);//juste un test
-
-            // If grid is full add extra cells by adding column
-            tlp.GrowStyle = TableLayoutPanelGrowStyle.AddColumns;
 
             //check credentials in database
             MySqlConnection connexion = Mysqlconn.connect();
@@ -64,5 +75,9 @@ namespace BoVloApp
 
         }
 
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
