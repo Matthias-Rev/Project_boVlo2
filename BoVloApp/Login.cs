@@ -35,14 +35,18 @@ namespace BoVloApp
                 "WHERE Username='{0}' AND Pass='{1}'"
                 , user_input.Text, password_input.Text);
             DataTable data = GlobalVar.ReadSQL(request);
-            Session session = new();
-            session.username = "";
-            session.key = GlobalVar.RandomString(20);
-            GlobalVar.WriteXML(session);
-            Main main = new Main();
-            Hide();
-            main.ShowDialog();
-            Close();
+            foreach(DataRow row in data.Rows)
+            {
+                Session session = new();
+                session.username = user_input.Text;
+                session.key = GlobalVar.RandomString(20);
+                GlobalVar.WriteXML(session);
+                Main main = new Main();
+                Hide();
+                main.ShowDialog();
+                Close();
+            }
+            MessageBox.Show("Données de connexion invalides");
         }
 
         private void user_input_KeyDown(object sender, KeyEventArgs e)
