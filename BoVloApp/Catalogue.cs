@@ -189,11 +189,6 @@ namespace BoVloApp
             if (this.veloType.Text == "Adventure") 
             {
 
-                ArticleAdventure.type = "Adventure";
-                ArticleAdventure.quantity = nbreAjout.Text;
-                ArticleAdventure.colour = colourSizeBtn.AdventureColour;
-                ArticleAdventure.size = colourSizeBtn.AdventureSize;
-                ArticleAdventure.price = labelPrixVelo.Text;
 
                 //GlobalVar.WriteXML("panier", ArticleAdventure);
             }
@@ -298,6 +293,7 @@ namespace BoVloApp
 
         private void colourCIty_SelectedIndexChanged(object sender, EventArgs e)
         {
+            labelColor.Text = colourCIty.Text + ".";
             if (colourCIty.SelectedText.ToString() == "White") 
             {
                 this.picture.Image = Properties.Resources.Velo_ville_cream;

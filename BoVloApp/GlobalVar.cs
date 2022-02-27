@@ -40,7 +40,7 @@ namespace BoVloApp
             XmlDocument xmlDoc = new XmlDocument();
             xmlDoc.Load(@"..\..\..\Resources\sessionvariables.xml");
             XmlNodeList session_variables = xmlDoc.GetElementsByTagName(key);
-            return session_variables[0].InnerText.ToString();
+            return "Hello";
 
         }
         static public void ResetXML()
