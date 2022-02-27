@@ -21,7 +21,7 @@ namespace BoVloApp
 
         private void button1_Click(object sender, EventArgs e) //panier
         {
-            
+            GlobalVar.Loadform(BackPanel, new Panier());
         }
 
         private void button2_Click(object sender, EventArgs e)

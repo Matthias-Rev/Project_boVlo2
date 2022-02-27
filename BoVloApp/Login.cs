@@ -18,7 +18,7 @@ namespace BoVloApp
         private void login_button_Click(object sender, EventArgs e)
         {
             Authentify();
-         }
+        }
 
         private void Login_FormClosing(object sender, FormClosingEventArgs e)
         {

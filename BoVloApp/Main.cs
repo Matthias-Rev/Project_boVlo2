@@ -27,37 +27,7 @@ namespace BoVloApp
             CATALOGUE.Location = GlobalVar.SetLocation(this, -x_space, y_space, CATALOGUE);
             CALENDRIER.Location = GlobalVar.SetLocation(this, x_space, -y_space, CALENDRIER);
         }
-        public void Clearform()
-        {
-            foreach (Control c in Main_panel.Controls)
-            {
-                if (c is Form)
-                {
-                    Main_panel.Controls.Remove(c);
-                    (c as Form).Close();
-                }
-            }
-            Titel.Visible = true;
-            COMMANDES.Visible = true;
-            STOCK.Visible = true;
-            CATALOGUE.Visible = true;
-            CALENDRIER.Visible = true;
-        }
-        public void Loadform(object Form)
-        {
-            Clearform();
-            Titel.Visible = false;
-            COMMANDES.Visible = false;
-            STOCK.Visible = false;
-            CATALOGUE.Visible = false;
-            CALENDRIER.Visible = false;
-            Form form_to_load = Form as Form;
-            form_to_load.TopLevel = false;
-            form_to_load.Dock = DockStyle.Fill;
-            Main_panel.Controls.Add(form_to_load);
-            Main_panel.Tag = form_to_load;
-            form_to_load.Show();
-        }
+      
         public void LoggedIn()
         {
             Username_label.Text = GlobalVar.ReadXML().username;
@@ -66,7 +36,7 @@ namespace BoVloApp
         }
         private void Menu_button_Click(object sender, EventArgs e)
         {
-            Clearform();
+            GlobalVar.Clearform(Main_panel);
         }
         private void Main_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -84,12 +54,12 @@ namespace BoVloApp
 
         private void CATALOGUE_Click(object sender, EventArgs e)
         {
-            Loadform(new Catalogue());
+            GlobalVar.Loadform(Main_panel,new Catalogue());
         }
 
         private void COMMANDES_Click(object sender, EventArgs e)
         {
-            Loadform(new GestionDeCommande());
+            GlobalVar.Loadform(Main_panel, new GestionDeCommande());
         }
     }
 }
