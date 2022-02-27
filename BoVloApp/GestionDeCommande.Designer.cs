@@ -36,7 +36,8 @@ namespace BoVloApp
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.Titel = new System.Windows.Forms.Label();
+            this.Title = new System.Windows.Forms.Label();
+            this.backPanel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,6 +68,7 @@ namespace BoVloApp
             this.button1.TabIndex = 5;
             this.button1.Text = "Details";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label3
             // 
@@ -112,15 +114,23 @@ namespace BoVloApp
             this.panel2.Size = new System.Drawing.Size(933, 150);
             this.panel2.TabIndex = 5;
             // 
-            // Titel
+            // Title
             // 
-            this.Titel.AutoSize = true;
-            this.Titel.Font = new System.Drawing.Font("Segoe UI", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Titel.Location = new System.Drawing.Point(359, 105);
-            this.Titel.Name = "Titel";
-            this.Titel.Size = new System.Drawing.Size(1123, 106);
-            this.Titel.TabIndex = 6;
-            this.Titel.Text = "Gestion de commande de vélo";
+            this.Title.AutoSize = true;
+            this.Title.Font = new System.Drawing.Font("Segoe UI", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Title.Location = new System.Drawing.Point(359, 105);
+            this.Title.Name = "Title";
+            this.Title.Size = new System.Drawing.Size(1123, 106);
+            this.Title.TabIndex = 6;
+            this.Title.Text = "Gestion de commande de vélo";
+            // 
+            // backPanel
+            // 
+            this.backPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.backPanel.Location = new System.Drawing.Point(0, 0);
+            this.backPanel.Name = "backPanel";
+            this.backPanel.Size = new System.Drawing.Size(2586, 1466);
+            this.backPanel.TabIndex = 7;
             // 
             // GestionDeCommande
             // 
@@ -129,7 +139,8 @@ namespace BoVloApp
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(2586, 1466);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.Titel);
+            this.Controls.Add(this.Title);
+            this.Controls.Add(this.backPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "GestionDeCommande";
             this.Text = "GestionDeCommande";
@@ -150,6 +161,7 @@ namespace BoVloApp
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label Titel;
+        private System.Windows.Forms.Label Title;
+        private System.Windows.Forms.Panel backPanel;
     }
 }

@@ -51,7 +51,7 @@
             this.label1.Size = new System.Drawing.Size(361, 35);
             this.label1.TabIndex = 0;
             this.label1.Text = "J\'ai déjà commander chez vous";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+
             // 
             // label2
             // 
@@ -153,7 +153,7 @@
             this.Controls.Add(this.label2);
             this.Name = "CatalogueMember";
             this.Text = "CatalogueMember";
-            this.Load += new System.EventHandler(this.CatalogueMember_Load);
+
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

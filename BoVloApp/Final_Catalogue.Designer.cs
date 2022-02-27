@@ -76,7 +76,7 @@ namespace BoVloApp
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(1397, 52);
             this.textBox2.TabIndex = 3;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+
             // 
             // label3
             // 
@@ -87,7 +87,7 @@ namespace BoVloApp
             this.label3.Size = new System.Drawing.Size(145, 46);
             this.label3.TabIndex = 4;
             this.label3.Text = "Adresse:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+
             // 
             // textBox3
             // 
