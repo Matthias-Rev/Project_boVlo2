@@ -59,7 +59,6 @@ namespace BoVloApp
             }
         }
         private static Random random = new Random();
-
         public static string RandomString(int length)
         {
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";

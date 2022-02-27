@@ -168,41 +168,6 @@ namespace BoVloApp
         private void btnAjouter_Click(object sender, EventArgs e)
         {
 
-            if (this.veloType.Text == "City") 
-            {
-
-                MySqlConnection connexion = Mysqlconn.connect();
-
-                ArticleCity.type = "City";
-                ArticleCity.quantity = nbreAjout.Text;
-                ArticleCity.colour = colourSizeBtn.CityColour;
-                ArticleCity.size = colourSizeBtn.CitySize;
-                ArticleCity.price = labelPrixVelo.Text;
-                string sessionkey = GlobalVar.ReadXML().key;
-                //envoyer tout dans la table 'panier'
-                //GlobalVar.WriteXML("panier", ArticleCity);
-
-            }
-
-            if (this.veloType.Text == "Explorer")
-            {
-
-
-                //GlobalVar.WriteXML("panier", ArticleExplorer);
-
-            }
-
-            if (this.veloType.Text == "Adventure") 
-            {
-
-                ArticleAdventure.type = "Adventure";
-                ArticleAdventure.quantity = nbreAjout.Text;
-                ArticleAdventure.colour = colourSizeBtn.AdventureColour;
-                ArticleAdventure.size = colourSizeBtn.AdventureSize;
-                ArticleAdventure.price = labelPrixVelo.Text;
-
-                GlobalVar.WriteXML("panier", ArticleAdventure);
-            }
 
         }
 
@@ -295,11 +260,12 @@ namespace BoVloApp
 
         private void size28_Click(object sender, EventArgs e)
         {
-            string size = "28";
+
         }
 
         private void size_SelectedIndexChanged(object sender, EventArgs e)
         {
+
         }
 
         private void colourCIty_SelectedIndexChanged(object sender, EventArgs e)
