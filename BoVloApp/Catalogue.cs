@@ -173,8 +173,14 @@ namespace BoVloApp
 
                 MySqlConnection connexion = Mysqlconn.connect();
 
-                string updateQuery = "UPDATE bovlo.bike SET Product_type = '"+veloType.Text+"', Quantity = '" +nbreAjout.Text+ "', Price ='"+labelPrixVelo.Text+"', Size ='"+ size.SelectedText + "', Colour ='"+ colourCIty.SelectedText;
-
+                ArticleCity.type = "City";
+                ArticleCity.quantity = nbreAjout.Text;
+                ArticleCity.colour = colourSizeBtn.CityColour;
+                ArticleCity.size = colourSizeBtn.CitySize;
+                ArticleCity.price = labelPrixVelo.Text;
+                string sessionkey = GlobalVar.ReadXML().key;
+                //envoyer tout dans la table 'panier'
+                //GlobalVar.WriteXML("panier", ArticleCity);
 
             }
 
@@ -190,7 +196,7 @@ namespace BoVloApp
             {
 
 
-                //GlobalVar.WriteXML("panier", ArticleAdventure);
+                GlobalVar.WriteXML("panier", ArticleAdventure);
             }
 
         }
@@ -315,7 +321,7 @@ namespace BoVloApp
 
         private void labelColor_Click(object sender, EventArgs e)
         {
-
+            labelColor.Text = colourCIty.SelectedText.ToString();
         }
     }
     

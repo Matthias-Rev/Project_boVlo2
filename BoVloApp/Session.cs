@@ -10,6 +10,6 @@ namespace BoVloApp
     {
         public string username;
         public string titel;
-        public PanierCatalogue panier;
+        public string key;
     }
 }
