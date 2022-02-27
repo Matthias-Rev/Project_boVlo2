@@ -164,8 +164,8 @@
             // 
             // panelMember
             // 
-            panelMember.Controls.Add(this.label2);
-            panelMember.Controls.Add(this.panel1);
+            this.panelMember.Controls.Add(this.label2);
+            this.panelMember.Controls.Add(this.panel1);
             this.panelMember.Location = new System.Drawing.Point(1, 1);
             this.panelMember.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelMember.Name = "panelMember";
@@ -178,6 +178,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1664, 775);
             this.Controls.Add(this.panelMember);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "CatalogueMember";
             this.Text = "CatalogueMember";

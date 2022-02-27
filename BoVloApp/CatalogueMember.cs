@@ -24,7 +24,7 @@ namespace BoVloApp
 
         private void button2_Click(object sender, EventArgs e)
         {
-            GlobalVar.Loadform(panelMember, new Main());
+            GlobalVar.Loadform(panelMember, new Final_Catalogue ());
         }
     }
 }
