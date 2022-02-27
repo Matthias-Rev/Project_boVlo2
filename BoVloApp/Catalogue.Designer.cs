@@ -54,6 +54,7 @@ namespace BoVloApp
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.size = new System.Windows.Forms.ComboBox();
             this.colourCIty = new System.Windows.Forms.ComboBox();
+            this.BackPanel = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             this.SuspendLayout();
             // 
@@ -320,34 +321,42 @@ namespace BoVloApp
             this.colourCIty.TabIndex = 39;
             this.colourCIty.SelectedIndexChanged += new System.EventHandler(this.colourCIty_SelectedIndexChanged);
             // 
+            // BackPanel
+            // 
+            this.BackPanel.Location = new System.Drawing.Point(-1, 1);
+            this.BackPanel.Name = "BackPanel";
+            this.BackPanel.Size = new System.Drawing.Size(1701, 823);
+            this.BackPanel.TabIndex = 40;
+            BackPanel.Controls.Add(this.colourCIty);
+            BackPanel.Controls.Add(this.size);
+            BackPanel.Controls.Add(this.labelColor);
+            BackPanel.Controls.Add(this.label2);
+            BackPanel.Controls.Add(this.labelPrixVelo);
+            BackPanel.Controls.Add(this.labelPrix);
+            BackPanel.Controls.Add(this.button9);
+            BackPanel.Controls.Add(this.button8);
+            BackPanel.Controls.Add(this.button6);
+            BackPanel.Controls.Add(this.button5);
+            BackPanel.Controls.Add(this.button4);
+            BackPanel.Controls.Add(this.button1);
+            BackPanel.Controls.Add(this.button3);
+            BackPanel.Controls.Add(this.button2);
+            BackPanel.Controls.Add(this.turquoise);
+            BackPanel.Controls.Add(this.nbreAjout);
+            BackPanel.Controls.Add(this.btnAjouter);
+            BackPanel.Controls.Add(this.picture);
+            BackPanel.Controls.Add(this.button7);
+            BackPanel.Controls.Add(this.preVelo);
+            BackPanel.Controls.Add(this.nextVelo);
+            BackPanel.Controls.Add(this.veloType);
+            BackPanel.Controls.Add(this.panier);
+            // 
             // Catalogue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1699, 825);
-            this.Controls.Add(this.colourCIty);
-            this.Controls.Add(this.size);
-            this.Controls.Add(this.labelColor);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.labelPrixVelo);
-            this.Controls.Add(this.labelPrix);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.turquoise);
-            this.Controls.Add(this.nbreAjout);
-            this.Controls.Add(this.btnAjouter);
-            this.Controls.Add(this.picture);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.preVelo);
-            this.Controls.Add(this.nextVelo);
-            this.Controls.Add(this.veloType);
-            this.Controls.Add(this.panier);
+            this.Controls.Add(this.BackPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Catalogue";
@@ -384,5 +393,6 @@ namespace BoVloApp
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.ComboBox size;
         private System.Windows.Forms.ComboBox colourCIty;
+        private System.Windows.Forms.Panel BackPanel;
     }
 }
