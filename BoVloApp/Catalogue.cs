@@ -25,11 +25,13 @@ namespace BoVloApp
         private void button2_Click(object sender, EventArgs e)
         {
             this.picture.Image = Properties.Resources.Velo_ville_rose;
+            colourSizeBtn.CityColour = "rose";
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             this.picture.Image = Properties.Resources.Velo_ville_turquoise;
+            colourSizeBtn.CityColour = "turquoise";
         }
 
         private void buttonPre_Click(object sender, EventArgs e)
@@ -131,6 +133,8 @@ namespace BoVloApp
         private void button7_Click(object sender, EventArgs e)
         {
             this.picture.Image = Properties.Resources.Velo_ville_cream;
+            colourSizeBtn.CityColour = "white";
+
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
@@ -150,6 +154,7 @@ namespace BoVloApp
         private void turquoise_Click(object sender, EventArgs e)
         {
             this.picture.Image = Properties.Resources.Velo_ville_bleu;
+            colourSizeBtn.CityColour = "blue";
 
         }
 
@@ -158,27 +163,59 @@ namespace BoVloApp
  
         }
 
+        public bool buttonWasClicked = false;
         private void btnAjouter_Click(object sender, EventArgs e)
         {
+
             if (this.veloType.Text == "City") 
             {
-                GlobalVar.WriteXML("City", nbreAjout.Text);
+                //article = new article
+                //article.type = ....
+
+                Article ArticleCity = new();
+
+                ArticleCity.type = "City";
+                ArticleCity.quantity = nbreAjout.Text;
+                ArticleCity.colour = colourSizeBtn.CityColour;
+                ArticleCity.size = colourSizeBtn.CitySize;
+                ArticleCity.price = labelPrixVelo.Text;
+
+                GlobalVar.WriteXML("panier", ArticleCity);
+
+                
 
             }
 
-
             if (this.veloType.Text == "Explorer")
             {
-                GlobalVar.WriteXML("Explorer", nbreAjout.Text);
+                Article ArticleExplorer = new();
+
+                ArticleExplorer.type = "Explorer";
+                ArticleExplorer.quantity = nbreAjout.Text;
+                ArticleExplorer.colour = colourSizeBtn.ExplorerColour;
+                ArticleExplorer.size = colourSizeBtn.ExplorerSize;
+                ArticleExplorer.price = labelPrixVelo.Text;
+
+                GlobalVar.WriteXML("panier", ArticleExplorer);
 
             }
 
             if (this.veloType.Text == "Adventure") 
             {
-                GlobalVar.WriteXML("Adventure", nbreAjout.Text);
+                Article ArticleAdventure = new();
+
+                ArticleAdventure.type = "Adventure";
+                ArticleAdventure.quantity = nbreAjout.Text;
+                ArticleAdventure.colour = colourSizeBtn.AdventureColour;
+                ArticleAdventure.size = colourSizeBtn.AdventureSize;
+                ArticleAdventure.price = labelPrixVelo.Text;
+
+                GlobalVar.WriteXML("panier", ArticleAdventure);
             }
 
         }
+
+        
         public void hideCityColors()
         {
             this.button7.Visible = false;
@@ -226,38 +263,90 @@ namespace BoVloApp
         private void button1_Click_1(object sender, EventArgs e)
         {
             this.picture.Image = Properties.Resources.Adventure_white;
+            colourSizeBtn.AdventureColour = "white";
         }
 
         private void button4_Click_1(object sender, EventArgs e)
         {
             this.picture.Image = Properties.Resources.Adventure_black;
+            colourSizeBtn.AdventureColour = "black";
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             this.picture.Image = Properties.Resources.Adventure_blue;
+            colourSizeBtn.AdventureColour = "blue";
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             this.picture.Image = Properties.Resources.explorer_beige;
+            colourSizeBtn.ExplorerColour = "white";
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
             this.picture.Image = Properties.Resources.explorer_noire;
+            colourSizeBtn.ExplorerColour = "black";
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
             this.picture.Image = Properties.Resources.explorer_bleu;
+            colourSizeBtn.ExplorerColour = "blue";
         }
 
         private void labelPrixVelo_Click(object sender, EventArgs e)
         {
 
         }
-    }
 
+        public static class colourSizeBtn
+        {
+            public static string CitySize = "";
+            public static string CityColour = "";
+            
+            public static string ExplorerSize = "";
+            public static string ExplorerColour = "";
+            
+            public static string AdventureSize = "";
+            public static string AdventureColour = "";
+
+        }
+
+        private void size27_Click(object sender, EventArgs e)
+        {
+            if(this.veloType.Text == "City") 
+            {
+                colourSizeBtn.CitySize = "27";
+            }
+            if (this.veloType.Text == "Explorer")
+            {
+                colourSizeBtn.ExplorerSize = "27";
+            }
+            if (this.veloType.Text == "Adventure")
+            {
+                colourSizeBtn.AdventureSize = "27";
+            }
+        }
+
+        private void size28_Click(object sender, EventArgs e)
+        {
+            if (this.veloType.Text == "City")
+            {
+                colourSizeBtn.CitySize = "28";
+            }
+            if (this.veloType.Text == "Explorer")
+            {
+                colourSizeBtn.ExplorerSize = "28";
+            }
+            if (this.veloType.Text == "Adventure")
+            {
+                colourSizeBtn.AdventureSize = "28";
+            }
+        }
+    }
+    
+    
 
 }

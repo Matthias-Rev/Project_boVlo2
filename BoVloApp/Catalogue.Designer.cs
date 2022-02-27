@@ -34,7 +34,7 @@ namespace BoVloApp
             this.nextVelo = new System.Windows.Forms.Button();
             this.preVelo = new System.Windows.Forms.Button();
             this.btn27 = new System.Windows.Forms.Button();
-            this.btn28 = new System.Windows.Forms.Button();
+            this.size28 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.picture = new System.Windows.Forms.PictureBox();
             this.btnAjouter = new System.Windows.Forms.Button();
@@ -53,6 +53,7 @@ namespace BoVloApp
             this.labelPrixVelo = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.labelColor = new System.Windows.Forms.Label();
+            this.size27 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,21 +101,20 @@ namespace BoVloApp
             // 
             // btn27
             // 
-            this.btn27.Location = new System.Drawing.Point(1521, 347);
+            this.btn27.Location = new System.Drawing.Point(0, 0);
             this.btn27.Name = "btn27";
-            this.btn27.Size = new System.Drawing.Size(41, 35);
-            this.btn27.TabIndex = 8;
-            this.btn27.Text = "27\"";
-            this.btn27.UseVisualStyleBackColor = true;
+            this.btn27.Size = new System.Drawing.Size(75, 23);
+            this.btn27.TabIndex = 33;
             // 
-            // btn28
+            // size28
             // 
-            this.btn28.Location = new System.Drawing.Point(1568, 347);
-            this.btn28.Name = "btn28";
-            this.btn28.Size = new System.Drawing.Size(41, 35);
-            this.btn28.TabIndex = 9;
-            this.btn28.Text = "28\"";
-            this.btn28.UseVisualStyleBackColor = true;
+            this.size28.Location = new System.Drawing.Point(1573, 347);
+            this.size28.Name = "size28";
+            this.size28.Size = new System.Drawing.Size(41, 35);
+            this.size28.TabIndex = 9;
+            this.size28.Text = "28\"";
+            this.size28.UseVisualStyleBackColor = true;
+            this.size28.Click += new System.EventHandler(this.size28_Click);
             // 
             // button7
             // 
@@ -193,7 +193,7 @@ namespace BoVloApp
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(1520, 451);
+            this.button1.Location = new System.Drawing.Point(1521, 451);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(25, 27);
             this.button1.TabIndex = 22;
@@ -204,7 +204,7 @@ namespace BoVloApp
             // button4
             // 
             this.button4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button4.Location = new System.Drawing.Point(1551, 451);
+            this.button4.Location = new System.Drawing.Point(1551, 453);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(24, 28);
             this.button4.TabIndex = 23;
@@ -216,7 +216,7 @@ namespace BoVloApp
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button5.Location = new System.Drawing.Point(1582, 451);
+            this.button5.Location = new System.Drawing.Point(1583, 453);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(24, 29);
             this.button5.TabIndex = 24;
@@ -227,7 +227,7 @@ namespace BoVloApp
             // button6
             // 
             this.button6.BackColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(1520, 451);
+            this.button6.Location = new System.Drawing.Point(1522, 451);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(24, 30);
             this.button6.TabIndex = 25;
@@ -238,7 +238,7 @@ namespace BoVloApp
             // button8
             // 
             this.button8.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button8.Location = new System.Drawing.Point(1551, 451);
+            this.button8.Location = new System.Drawing.Point(1551, 453);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(24, 30);
             this.button8.TabIndex = 26;
@@ -249,7 +249,7 @@ namespace BoVloApp
             // button9
             // 
             this.button9.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button9.Location = new System.Drawing.Point(1580, 454);
+            this.button9.Location = new System.Drawing.Point(1583, 454);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(26, 27);
             this.button9.TabIndex = 27;
@@ -303,11 +303,22 @@ namespace BoVloApp
             this.labelColor.TabIndex = 32;
             this.labelColor.Text = "Couleur:";
             // 
+            // size27
+            // 
+            this.size27.Location = new System.Drawing.Point(1526, 347);
+            this.size27.Name = "size27";
+            this.size27.Size = new System.Drawing.Size(41, 35);
+            this.size27.TabIndex = 34;
+            this.size27.Text = "27\"";
+            this.size27.UseVisualStyleBackColor = true;
+            this.size27.Click += new System.EventHandler(this.size27_Click);
+            // 
             // Catalogue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1942, 1102);
+            this.Controls.Add(this.size27);
             this.Controls.Add(this.labelColor);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.labelPrixVelo);
@@ -326,7 +337,7 @@ namespace BoVloApp
             this.Controls.Add(this.btnAjouter);
             this.Controls.Add(this.picture);
             this.Controls.Add(this.button7);
-            this.Controls.Add(this.btn28);
+            this.Controls.Add(this.size28);
             this.Controls.Add(this.btn27);
             this.Controls.Add(this.preVelo);
             this.Controls.Add(this.nextVelo);
@@ -348,7 +359,7 @@ namespace BoVloApp
         private System.Windows.Forms.Button nextVelo;
         private System.Windows.Forms.Button preVelo;
         private System.Windows.Forms.Button btn27;
-        private System.Windows.Forms.Button btn28;
+        private System.Windows.Forms.Button size28;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.PictureBox picture;
         private System.Windows.Forms.Button btnAjouter;
@@ -367,5 +378,6 @@ namespace BoVloApp
         private System.Windows.Forms.Label labelPrixVelo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelColor;
+        private System.Windows.Forms.Button size27;
     }
 }
