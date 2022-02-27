@@ -127,7 +127,7 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "Créer un compte client";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+
             // 
             // label3
             // 
@@ -138,7 +138,7 @@
             this.label3.Size = new System.Drawing.Size(322, 35);
             this.label3.TabIndex = 1;
             this.label3.Text = "Je n\'ai pas de compte client";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+
             // 
             // mySqlCommand1
             // 
@@ -175,7 +175,7 @@
             this.Controls.Add(this.panelMember);
             this.Name = "CatalogueMember";
             this.Text = "CatalogueMember";
-            this.Load += new System.EventHandler(this.CatalogueMember_Load);
+
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
