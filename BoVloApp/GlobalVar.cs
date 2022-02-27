@@ -47,7 +47,7 @@ namespace BoVloApp
         {
             WriteXML("", "");
         }
-        static public void WriteXML(string key, object value)
+        static public void WriteXML(string key, string value)
         {
             XmlSerializer serializer = new XmlSerializer(typeof(Session));
             using (StreamWriter writer = new StreamWriter(@"..\..\..\Resources\sessionvariables.xml"))
@@ -59,11 +59,12 @@ namespace BoVloApp
                 }
                 if (key == "panier")
                 {
-                    session.panier = Panier as Panierbis;
+                    //session.panier = Panier as zzzzPanierbis;
                 }
                 serializer.Serialize(writer, session);
                 writer.Close();
             }
         }
+
     }
 }

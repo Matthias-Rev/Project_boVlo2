@@ -6,3 +6,4 @@
 /BoVloApp/bin/*
 /BoVloApp/.vs/*
 /.vs/*
+/BoVloApp/Mysqlfunc.cs

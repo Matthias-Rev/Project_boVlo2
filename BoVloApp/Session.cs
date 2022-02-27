@@ -9,7 +9,7 @@ namespace BoVloApp
     public class Session
     {
         public string username;
-        public string titel;
-        public Panier panier;
+        //public string titel;
+        //public Panier panier;
     }
 }
