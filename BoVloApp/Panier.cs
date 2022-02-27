@@ -36,6 +36,8 @@ namespace BoVloApp
             Title.Visible = true;
             TableLayoutPanel.Visible=true;
 
+            AjoutLigne();
+
 
 
         }
@@ -55,8 +57,6 @@ namespace BoVloApp
             PanelPanier.Controls.Add(form_to_load);
             PanelPanier.Tag = form_to_load;
             form_to_load.Show();
-
-
         }
 
         private void AjoutLigne()
@@ -64,10 +64,11 @@ namespace BoVloApp
 
             TableLayoutPanel tlp = new TableLayoutPanel();
             this.Controls.Add(tlp);
-            tlp.Controls.Add(buttonFinaliser, 0, 0);//just a test
+            tlp.Controls.Add(buttonPlanning, 0, 0);//just a test
+            tlp.Controls.Add(buttonPlanning, 1, 0);//juste a test
+            tlp.Controls.Add(buttonPlanning, 0, 1);//juste un test
 
             // If grid is full add extra cells by adding column
-
             tlp.GrowStyle = TableLayoutPanelGrowStyle.AddColumns;
 
             //check credentials in database
