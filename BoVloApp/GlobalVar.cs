@@ -35,36 +35,35 @@ namespace BoVloApp
             y = form_vertical_center - y_mid + y;
             return new Point(x,y);
         }
-        static public Session ReadXML()
-        {
-            XmlSerializer reader = new XmlSerializer(typeof(Session));
-            StreamReader file = new StreamReader(@"..\..\..\Resources\sessionvariables.xml");
-            Session session = (Session)reader.Deserialize(file);
-            file.Close();
-            return session;
-        }
-        static public void ResetXML()
+        static public string ReadXML(string key)
         {
             XmlDocument xmlDoc = new XmlDocument();
             xmlDoc.Load(@"..\..\..\Resources\sessionvariables.xml");
-            xmlDoc.DocumentElement.ParentNode.RemoveAll();
+            XmlNodeList session_variables = xmlDoc.GetElementsByTagName(key);
+            return "Hello";
+
         }
-        static public void WriteXML(Session session)
+        static public void ResetXML()
+        {
+            WriteXML("", "");
+        }
+        static public void WriteXML(string key, object value)
         {
             XmlSerializer serializer = new XmlSerializer(typeof(Session));
             using (StreamWriter writer = new StreamWriter(@"..\..\..\Resources\sessionvariables.xml"))
             {
+                Session session = new Session();
+                if(key == "username")
+                {
+                    session.username = value as string;
+                }
+                if (key == "panier")
+                {
+                    session.panier = value as PanierCatalogue;
+                }
                 serializer.Serialize(writer, session);
                 writer.Close();
             }
-        }
-        private static Random random = new Random();
-
-        public static string RandomString(int length)
-        {
-            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            return new string(Enumerable.Repeat(chars, length)
-                .Select(s => s[random.Next(s.Length)]).ToArray());
         }
     }
 }
