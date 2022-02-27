@@ -169,9 +169,9 @@ namespace BoVloApp
         {
             
 
-            string insertMySQL = String.Format("INSERT INTO Panier (`Quantity`, `Product_type`, `Price`, `Size`, `Colour`) VALUES (nbreAjout.Text, veloType.Text, labelPrixVelo.Text, size.Text, colourCIty.Text )";
-
-            //"Product_id = '" + "1";
+            string insertMySQL = String.Format("INSERT INTO Panier ('Session_key', `Quantity`, `Product_type`, `Price`, `Size`, `Colour`) VALUES " +
+                "('{0}','{1}','{2}','{3}','{4}','{5}' )",GlobalVar.ReadXML().key , nbreAjout.Text, veloType.Text, labelPrixVelo.Text, size.Text, colourCIty.Text);
+            MessageBox.Show(insertMySQL);
             GlobalVar.WriteSQL(insertMySQL);
         }
 
