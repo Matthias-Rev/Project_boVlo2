@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Threading;
+using MySql.Data.MySqlClient;
+
 namespace BoVloApp
 {
     public partial class Login : Form
@@ -15,9 +17,8 @@ namespace BoVloApp
 
         private void login_button_Click(object sender, EventArgs e)
         {
-            //Authentify();
-            Mysqlconn.SQL_request();
-        }
+            Authentify();
+         }
 
         private void Login_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -27,6 +28,12 @@ namespace BoVloApp
         private void Authentify()
         {
             //check credentials in database
+            MySqlConnection connexion = Mysqlconn.connect();
+
+            //on peut ici intéragir avec l'objet 'connexion' qui est enfait le lien avec la DB.
+            // il faut conclure par :
+            connexion.Close();
+
             //if (user_input.Text == "User" && password_input.Text == "123")
             if (password_input.Text == "123")
             {
