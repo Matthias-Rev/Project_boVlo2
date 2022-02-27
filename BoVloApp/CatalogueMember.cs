@@ -24,6 +24,20 @@ namespace BoVloApp
 
         private void button2_Click(object sender, EventArgs e)
         {
+            // chercher
+            string request = String.Format(
+                "SELECT Name " +
+                "FROM Customer " +
+                "WHERE Name='{0}'"
+                , textBox1.Text);
+            DataTable dataSql = GlobalVar.ReadSQL(request);
+            foreach (DataColumn column in dataSql.Columns)
+            {
+                foreach (DataRow row in dataSql.Rows)
+                {
+                    Console.WriteLine(row[column]);
+                }
+            }
             GlobalVar.Loadform(panelMember, new Final_Catalogue ());
         }
     }
