@@ -182,11 +182,20 @@ namespace BoVloApp
             {
 
 
+                //GlobalVar.WriteXML("panier", ArticleExplorer);
+
             }
 
             if (this.veloType.Text == "Adventure") 
             {
 
+                ArticleAdventure.type = "Adventure";
+                ArticleAdventure.quantity = nbreAjout.Text;
+                ArticleAdventure.colour = colourSizeBtn.AdventureColour;
+                ArticleAdventure.size = colourSizeBtn.AdventureSize;
+                ArticleAdventure.price = labelPrixVelo.Text;
+
+                //GlobalVar.WriteXML("panier", ArticleAdventure);
             }
 
         }

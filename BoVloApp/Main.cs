@@ -60,7 +60,7 @@ namespace BoVloApp
         }
         public void LoggedIn()
         {
-            Username_label.Text = GlobalVar.ReadXML().username;
+            Username_label.Text = GlobalVar.ReadXML("username");
             Point point = new Point(Username_label.Location.X - Username_label.Size.Width, Username_label.Location.Y);
             Username_label.Location = point;
         }
