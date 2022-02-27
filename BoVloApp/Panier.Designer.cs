@@ -36,14 +36,14 @@ namespace BoVloApp
             this.Title = new System.Windows.Forms.Label();
             this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox4 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox5 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox9 = new System.Windows.Forms.RichTextBox();
+            this.CadreTaille1 = new System.Windows.Forms.RichTextBox();
+            this.CadreType1 = new System.Windows.Forms.RichTextBox();
+            this.CadreQuantite1 = new System.Windows.Forms.RichTextBox();
+            this.CadrePrix1 = new System.Windows.Forms.RichTextBox();
             this.richTextBox10 = new System.Windows.Forms.RichTextBox();
             this.richTextBox6 = new System.Windows.Forms.RichTextBox();
             this.richTextBox7 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox11 = new System.Windows.Forms.RichTextBox();
+            this.CadreCouleur1 = new System.Windows.Forms.RichTextBox();
             this.richTextBox8 = new System.Windows.Forms.RichTextBox();
             this.richTextBox12 = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
@@ -113,41 +113,41 @@ namespace BoVloApp
             this.richTextBox2.TabIndex = 6;
             this.richTextBox2.Text = "";
             // 
-            // richTextBox4
+            // CadreTaille1
             // 
-            this.richTextBox4.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.richTextBox4.Location = new System.Drawing.Point(462, 285);
-            this.richTextBox4.Name = "richTextBox4";
-            this.richTextBox4.Size = new System.Drawing.Size(625, 100);
-            this.richTextBox4.TabIndex = 8;
-            this.richTextBox4.Text = "*Taille*";
+            this.CadreTaille1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CadreTaille1.Location = new System.Drawing.Point(462, 285);
+            this.CadreTaille1.Name = "CadreTaille1";
+            this.CadreTaille1.Size = new System.Drawing.Size(625, 100);
+            this.CadreTaille1.TabIndex = 8;
+            this.CadreTaille1.Text = "*Taille*";
             // 
-            // richTextBox3
+            // CadreType1
             // 
-            this.richTextBox3.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.richTextBox3.Location = new System.Drawing.Point(462, 185);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(1250, 100);
-            this.richTextBox3.TabIndex = 9;
-            this.richTextBox3.Text = "Type de vélo";
+            this.CadreType1.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CadreType1.Location = new System.Drawing.Point(462, 185);
+            this.CadreType1.Name = "CadreType1";
+            this.CadreType1.Size = new System.Drawing.Size(1250, 100);
+            this.CadreType1.TabIndex = 9;
+            this.CadreType1.Text = "Type de vélo";
             // 
-            // richTextBox5
+            // CadreQuantite1
             // 
-            this.richTextBox5.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.richTextBox5.Location = new System.Drawing.Point(202, 185);
-            this.richTextBox5.Name = "richTextBox5";
-            this.richTextBox5.Size = new System.Drawing.Size(260, 125);
-            this.richTextBox5.TabIndex = 10;
-            this.richTextBox5.Text = "*Quantité*";
+            this.CadreQuantite1.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CadreQuantite1.Location = new System.Drawing.Point(202, 185);
+            this.CadreQuantite1.Name = "CadreQuantite1";
+            this.CadreQuantite1.Size = new System.Drawing.Size(260, 125);
+            this.CadreQuantite1.TabIndex = 10;
+            this.CadreQuantite1.Text = "*Quantité*";
             // 
-            // richTextBox9
+            // CadrePrix1
             // 
-            this.richTextBox9.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.richTextBox9.Location = new System.Drawing.Point(202, 310);
-            this.richTextBox9.Name = "richTextBox9";
-            this.richTextBox9.Size = new System.Drawing.Size(260, 75);
-            this.richTextBox9.TabIndex = 14;
-            this.richTextBox9.Text = "*prix/unité*";
+            this.CadrePrix1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CadrePrix1.Location = new System.Drawing.Point(202, 310);
+            this.CadrePrix1.Name = "CadrePrix1";
+            this.CadrePrix1.Size = new System.Drawing.Size(260, 75);
+            this.CadrePrix1.TabIndex = 14;
+            this.CadrePrix1.Text = "*prix/unité*";
             // 
             // richTextBox10
             // 
@@ -176,14 +176,14 @@ namespace BoVloApp
             this.richTextBox7.TabIndex = 18;
             this.richTextBox7.Text = "Type de vélo";
             // 
-            // richTextBox11
+            // CadreCouleur1
             // 
-            this.richTextBox11.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.richTextBox11.Location = new System.Drawing.Point(1087, 285);
-            this.richTextBox11.Name = "richTextBox11";
-            this.richTextBox11.Size = new System.Drawing.Size(625, 100);
-            this.richTextBox11.TabIndex = 19;
-            this.richTextBox11.Text = "*Couleur*";
+            this.CadreCouleur1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CadreCouleur1.Location = new System.Drawing.Point(1087, 285);
+            this.CadreCouleur1.Name = "CadreCouleur1";
+            this.CadreCouleur1.Size = new System.Drawing.Size(625, 100);
+            this.CadreCouleur1.TabIndex = 19;
+            this.CadreCouleur1.Text = "*Couleur*";
             // 
             // richTextBox8
             // 
@@ -210,14 +210,14 @@ namespace BoVloApp
             this.ClientSize = new System.Drawing.Size(1924, 1055);
             this.Controls.Add(this.richTextBox12);
             this.Controls.Add(this.richTextBox8);
-            this.Controls.Add(this.richTextBox11);
+            this.Controls.Add(this.CadreCouleur1);
             this.Controls.Add(this.richTextBox7);
             this.Controls.Add(this.richTextBox6);
             this.Controls.Add(this.richTextBox10);
-            this.Controls.Add(this.richTextBox9);
-            this.Controls.Add(this.richTextBox5);
-            this.Controls.Add(this.richTextBox3);
-            this.Controls.Add(this.richTextBox4);
+            this.Controls.Add(this.CadrePrix1);
+            this.Controls.Add(this.CadreQuantite1);
+            this.Controls.Add(this.CadreType1);
+            this.Controls.Add(this.CadreTaille1);
             this.Controls.Add(this.vScrollBar1);
             this.Controls.Add(this.richTextBox2);
             this.Controls.Add(this.Title);
@@ -242,14 +242,14 @@ namespace BoVloApp
         private System.Windows.Forms.Label Title;
         private System.Windows.Forms.VScrollBar vScrollBar1;
         private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.RichTextBox richTextBox4;
-        private System.Windows.Forms.RichTextBox richTextBox3;
-        private System.Windows.Forms.RichTextBox richTextBox5;
-        private System.Windows.Forms.RichTextBox richTextBox9;
+        private System.Windows.Forms.RichTextBox CadreTaille1;
+        private System.Windows.Forms.RichTextBox CadreType1;
+        private System.Windows.Forms.RichTextBox CadreQuantite1;
+        private System.Windows.Forms.RichTextBox CadrePrix1;
         private System.Windows.Forms.RichTextBox richTextBox10;
         private System.Windows.Forms.RichTextBox richTextBox6;
         private System.Windows.Forms.RichTextBox richTextBox7;
-        private System.Windows.Forms.RichTextBox richTextBox11;
+        private System.Windows.Forms.RichTextBox CadreCouleur1;
         private System.Windows.Forms.RichTextBox richTextBox8;
         private System.Windows.Forms.RichTextBox richTextBox12;
     }
