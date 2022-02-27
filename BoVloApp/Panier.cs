@@ -18,48 +18,7 @@ namespace BoVloApp
             InitializeComponent();
         }
 
-        public void Clearform()
-        {
-            foreach (Control c in PanelPanier.Controls)
-            {
-                if (c is Form)
-                {
-                    PanelPanier.Controls.Remove(c);
-                    (c as Form).Close();
-                }
-            }
-
-            buttonFinaliser.Visible = true;
-            buttonPlanning.Visible = true;
-            richTextBox1.Visible = true;
-            LabelTotal.Visible = true;
-            Title.Visible = true;
-            TableLayoutPanel.Visible=true;
-
-            AjoutLigne();
-
-
-
-        }
-        public void Loadform(object Form)
-        {
-            Clearform();
-            buttonFinaliser.Visible = false;
-            buttonPlanning.Visible = false;
-            richTextBox1.Visible = false;
-            LabelTotal.Visible = false;
-            Title.Visible = false;
-            TableLayoutPanel.Visible=false;
-
-            Form form_to_load = Form as Form;
-            form_to_load.TopLevel = false;
-            form_to_load.Dock = DockStyle.Fill;
-            PanelPanier.Controls.Add(form_to_load);
-            PanelPanier.Tag = form_to_load;
-            form_to_load.Show();
-        }
-
-        private void AjoutLigne()
+               private void AjoutLigne()
         {
 
             TableLayoutPanel tlp = new TableLayoutPanel();
@@ -82,7 +41,7 @@ namespace BoVloApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Loadform(new CatalogueMember());
+            GlobalVar.Loadform(PanelPanier, new CatalogueMember());
         }
 
         private void label1_Click(object sender, EventArgs e)
