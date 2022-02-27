@@ -51,7 +51,7 @@
             this.label1.Size = new System.Drawing.Size(361, 35);
             this.label1.TabIndex = 0;
             this.label1.Text = "J\'ai déjà commander chez vous";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+
             // 
             // label2
             // 

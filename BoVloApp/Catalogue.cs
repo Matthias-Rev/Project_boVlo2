@@ -175,6 +175,7 @@ namespace BoVloApp
 
                 string updateQuery = "UPDATE bovlo.bike SET Product_type = '"+veloType.Text+"', Quantity = '" +nbreAjout.Text+ "', Price ='"+labelPrixVelo.Text+"', Size ='"+ size.SelectedText + "', Colour ='"+ colourCIty.SelectedText;
 
+                connexion.Close();
 
             }
 
@@ -189,13 +190,6 @@ namespace BoVloApp
             if (this.veloType.Text == "Adventure") 
             {
 
-                ArticleAdventure.type = "Adventure";
-                ArticleAdventure.quantity = nbreAjout.Text;
-                ArticleAdventure.colour = colourSizeBtn.AdventureColour;
-                ArticleAdventure.size = colourSizeBtn.AdventureSize;
-                ArticleAdventure.price = labelPrixVelo.Text;
-
-                //GlobalVar.WriteXML("panier", ArticleAdventure);
             }
 
         }
@@ -319,7 +313,7 @@ namespace BoVloApp
 
         private void labelColor_Click(object sender, EventArgs e)
         {
-
+            labelColor.Text = colourCIty.SelectedText.ToString();
         }
     }
     
