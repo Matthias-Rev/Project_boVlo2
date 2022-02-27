@@ -138,7 +138,7 @@
             this.label3.Size = new System.Drawing.Size(322, 35);
             this.label3.TabIndex = 1;
             this.label3.Text = "Je n\'ai pas de compte client";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+
             // 
             // mySqlCommand1
             // 
