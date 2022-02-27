@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace BoVloApp
 {
@@ -33,18 +34,10 @@ namespace BoVloApp
             richTextBox1.Visible = true;
             LabelTotal.Visible = true;
             Title.Visible = true;
-            vScrollBar1.Visible = true;
-            richTextBox2.Visible = true;
-            CadreTaille1.Visible = true;
-            CadreType1.Visible = true;
-            CadreQuantite1.Visible = true;
-            CadrePrix1.Visible = true;
-            richTextBox10.Visible = true;
-            richTextBox6.Visible = true;
-            richTextBox7.Visible = true;
-            CadreCouleur1.Visible = true;
-            richTextBox8.Visible = true;
-            richTextBox12.Visible = true;
+            TableLayoutPanel.Visible=true;
+
+
+
         }
         public void Loadform(object Form)
         {
@@ -54,18 +47,7 @@ namespace BoVloApp
             richTextBox1.Visible = false;
             LabelTotal.Visible = false;
             Title.Visible = false;
-            vScrollBar1.Visible = false;
-            richTextBox2.Visible = false;
-            CadreTaille1.Visible = false;
-            CadreType1.Visible = false;
-            CadreQuantite1.Visible = false;
-            CadrePrix1.Visible = false;
-            richTextBox10.Visible = false;
-            richTextBox6.Visible = false;
-            richTextBox7.Visible = false;
-            CadreCouleur1.Visible = false;
-            richTextBox8.Visible = false;
-            richTextBox12.Visible = false;
+            TableLayoutPanel.Visible=false;
 
             Form form_to_load = Form as Form;
             form_to_load.TopLevel = false;
@@ -73,11 +55,33 @@ namespace BoVloApp
             PanelPanier.Controls.Add(form_to_load);
             PanelPanier.Tag = form_to_load;
             form_to_load.Show();
+
+
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void AjoutLigne()
         {
-            Loadform(new Final_Catalogue());
+
+            TableLayoutPanel tlp = new TableLayoutPanel();
+            this.Controls.Add(tlp);
+            tlp.Controls.Add(buttonFinaliser, 0, 0);//just a test
+
+            // If grid is full add extra cells by adding column
+
+            tlp.GrowStyle = TableLayoutPanelGrowStyle.AddColumns;
+
+            //check credentials in database
+            MySqlConnection connexion = Mysqlconn.connect();
+
+            //on peut ici intéragir avec l'objet 'connexion' qui est enfait le lien avec la DB.
+            // il faut conclure par :
+            connexion.Close();
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Loadform(new CatalogueMember());
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -85,14 +89,14 @@ namespace BoVloApp
 
         }
 
-        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void richTextBox3_TextChanged(object sender, EventArgs e)
+        private void PanelPanier_Paint(object sender, PaintEventArgs e)
         {
-            
+
         }
     }
 }

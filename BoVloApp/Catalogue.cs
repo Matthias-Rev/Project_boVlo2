@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+
 
 namespace BoVloApp
 {
@@ -25,13 +27,12 @@ namespace BoVloApp
         private void button2_Click(object sender, EventArgs e)
         {
             this.picture.Image = Properties.Resources.Velo_ville_rose;
-            colourSizeBtn.CityColour = "rose";
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             this.picture.Image = Properties.Resources.Velo_ville_turquoise;
-            colourSizeBtn.CityColour = "turquoise";
+
         }
 
         private void buttonPre_Click(object sender, EventArgs e)
@@ -82,6 +83,8 @@ namespace BoVloApp
                 unhideExplorerColors();
 
                 this.picture.Image = Properties.Resources.explorer_beige;
+
+
             }
 
             else if (this.veloType.Text == "Explorer")
@@ -133,7 +136,6 @@ namespace BoVloApp
         private void button7_Click(object sender, EventArgs e)
         {
             this.picture.Image = Properties.Resources.Velo_ville_cream;
-            colourSizeBtn.CityColour = "white";
 
         }
 
@@ -154,7 +156,6 @@ namespace BoVloApp
         private void turquoise_Click(object sender, EventArgs e)
         {
             this.picture.Image = Properties.Resources.Velo_ville_bleu;
-            colourSizeBtn.CityColour = "blue";
 
         }
 
@@ -169,10 +170,8 @@ namespace BoVloApp
 
             if (this.veloType.Text == "City") 
             {
-                //article = new article
-                //article.type = ....
 
-                Article ArticleCity = new();
+                MySqlConnection connexion = Mysqlconn.connect();
 
                 ArticleCity.type = "City";
                 ArticleCity.quantity = nbreAjout.Text;
@@ -183,19 +182,11 @@ namespace BoVloApp
                 //envoyer tout dans la table 'panier'
                 //GlobalVar.WriteXML("panier", ArticleCity);
 
-                
-
             }
 
             if (this.veloType.Text == "Explorer")
             {
-                Article ArticleExplorer = new();
 
-                ArticleExplorer.type = "Explorer";
-                ArticleExplorer.quantity = nbreAjout.Text;
-                ArticleExplorer.colour = colourSizeBtn.ExplorerColour;
-                ArticleExplorer.size = colourSizeBtn.ExplorerSize;
-                ArticleExplorer.price = labelPrixVelo.Text;
 
                 //GlobalVar.WriteXML("panier", ArticleExplorer);
 
@@ -203,7 +194,6 @@ namespace BoVloApp
 
             if (this.veloType.Text == "Adventure") 
             {
-                Article ArticleAdventure = new();
 
                 ArticleAdventure.type = "Adventure";
                 ArticleAdventure.quantity = nbreAjout.Text;
@@ -211,7 +201,7 @@ namespace BoVloApp
                 ArticleAdventure.size = colourSizeBtn.AdventureSize;
                 ArticleAdventure.price = labelPrixVelo.Text;
 
-                //GlobalVar.WriteXML("panier", ArticleAdventure);
+                GlobalVar.WriteXML("panier", ArticleAdventure);
             }
 
         }
@@ -264,87 +254,78 @@ namespace BoVloApp
         private void button1_Click_1(object sender, EventArgs e)
         {
             this.picture.Image = Properties.Resources.Adventure_white;
-            colourSizeBtn.AdventureColour = "white";
+
         }
 
         private void button4_Click_1(object sender, EventArgs e)
         {
             this.picture.Image = Properties.Resources.Adventure_black;
-            colourSizeBtn.AdventureColour = "black";
+
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             this.picture.Image = Properties.Resources.Adventure_blue;
-            colourSizeBtn.AdventureColour = "blue";
+
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             this.picture.Image = Properties.Resources.explorer_beige;
-            colourSizeBtn.ExplorerColour = "white";
+
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
             this.picture.Image = Properties.Resources.explorer_noire;
-            colourSizeBtn.ExplorerColour = "black";
+
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
             this.picture.Image = Properties.Resources.explorer_bleu;
-            colourSizeBtn.ExplorerColour = "blue";
-        }
-
-        private void labelPrixVelo_Click(object sender, EventArgs e)
-        {
 
         }
 
-        public static class colourSizeBtn
-        {
-            public static string CitySize = "";
-            public static string CityColour = "";
-            
-            public static string ExplorerSize = "";
-            public static string ExplorerColour = "";
-            
-            public static string AdventureSize = "";
-            public static string AdventureColour = "";
-
-        }
 
         private void size27_Click(object sender, EventArgs e)
         {
-            if(this.veloType.Text == "City") 
-            {
-                colourSizeBtn.CitySize = "27";
-            }
-            if (this.veloType.Text == "Explorer")
-            {
-                colourSizeBtn.ExplorerSize = "27";
-            }
-            if (this.veloType.Text == "Adventure")
-            {
-                colourSizeBtn.AdventureSize = "27";
-            }
+
         }
 
         private void size28_Click(object sender, EventArgs e)
         {
-            if (this.veloType.Text == "City")
+            string size = "28";
+        }
+
+        private void size_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void colourCIty_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (colourCIty.SelectedText.ToString() == "White") 
             {
-                colourSizeBtn.CitySize = "28";
+                this.picture.Image = Properties.Resources.Velo_ville_cream;
             }
-            if (this.veloType.Text == "Explorer")
+            if (colourCIty.SelectedText.ToString() == "Blue")
             {
-                colourSizeBtn.ExplorerSize = "28";
+                this.picture.Image = Properties.Resources.Velo_ville_bleu;
             }
-            if (this.veloType.Text == "Adventure")
+            if (colourCIty.SelectedText.ToString() == "Rose")
             {
-                colourSizeBtn.AdventureSize = "28";
+                this.picture.Image = Properties.Resources.Velo_ville_rose;
             }
+            if (colourCIty.SelectedText.ToString() == "Green")
+            {
+                this.picture.Image = Properties.Resources.Velo_ville_turquoise;
+            }
+
+        }
+
+        private void labelColor_Click(object sender, EventArgs e)
+        {
+            labelColor.Text = colourCIty.SelectedText.ToString();
         }
     }
     
