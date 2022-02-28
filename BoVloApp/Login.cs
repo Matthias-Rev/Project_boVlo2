@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using System.Threading;
 using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace BoVloApp
 {
@@ -28,17 +29,17 @@ namespace BoVloApp
         private void Authentify()
         {
             //check credentials in database
-            MySqlConnection connexion = Mysqlconn.connect();
-
-            //on peut ici intéragir avec l'objet 'connexion' qui est enfait le lien avec la DB.
-            // il faut conclure par :
-            connexion.Close();
-
-            //if (user_input.Text == "User" && password_input.Text == "123")
-            if (password_input.Text == "123")
+            string request = String.Format(
+                "SELECT User_id, Permission " +
+                "FROM Users " +
+                "WHERE Username='{0}' AND Pass='{1}'"
+                , user_input.Text, password_input.Text);
+            DataTable data = GlobalVar.ReadSQL(request);
+            foreach(DataRow row in data.Rows)
             {
                 Session session = new();
                 session.username = user_input.Text;
+                session.titel = row["Permission"].ToString();
                 session.key = GlobalVar.RandomString(20);
                 GlobalVar.WriteXML(session);
                 Main main = new Main();
@@ -46,6 +47,7 @@ namespace BoVloApp
                 main.ShowDialog();
                 Close();
             }
+            MessageBox.Show("Données de connexion invalides");
         }
 
         private void user_input_KeyDown(object sender, KeyEventArgs e)

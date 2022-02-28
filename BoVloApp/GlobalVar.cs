@@ -8,6 +8,8 @@ using System.Windows.Forms;
 using System.IO;
 using System.Xml.Serialization;
 using System.Xml;
+using System.Data;
+using MySql.Data.MySqlClient;
 
 namespace BoVloApp
 {
@@ -25,14 +27,14 @@ namespace BoVloApp
             }
             return resultList;
         }
-        static public Point SetLocation(Form f, int x, int y, Control b)
+        static public Point SetLocation(Control contenant, int x, int y, Control contenu)
         {
-            int form_horizontal_center = f.Width / 2;
-            int form_vertical_center = f.Height / 2;
-            int x_mid = b.Width / 2;
-            int y_mid = b.Height / 2;
-            x = form_horizontal_center - x_mid + x;
-            y = form_vertical_center - y_mid + y;
+            int form_horizontal_center = contenant.Width / 2;
+            int form_vertical_center = contenant.Height / 2;
+            int x_mid = contenu.Width / 2;
+            int y_mid = contenu.Height / 2;
+            x = contenant.Location.X + form_horizontal_center - x_mid + x;
+            y = contenant.Location.Y + form_vertical_center - y_mid + y;
             return new Point(x,y);
         }
         static public Session ReadXML()
@@ -93,5 +95,25 @@ namespace BoVloApp
             panel.Tag = form;
             form.Show();
         }
+        static public DataTable ReadSQL(string request)
+        {
+            MySqlConnection connexion = Mysqlconn.connect();
+            MySqlCommand command = new MySqlCommand(request, connexion);
+            MySqlDataAdapter dataAdapter = new MySqlDataAdapter(command);
+            DataTable dt = new();
+            dataAdapter.Fill(dt);
+            connexion.Close();
+            dataAdapter.Dispose();
+            return dt;
+        }
+        static public void WriteSQL(string request)
+        {
+            MySqlConnection connexion = Mysqlconn.connect();
+            MySqlDataAdapter dataAdapter = new MySqlDataAdapter();
+            dataAdapter.InsertCommand = new MySqlCommand(request, connexion);
+            dataAdapter.InsertCommand.ExecuteNonQuery();
+            connexion.Close();
+        }
+
     }
 }

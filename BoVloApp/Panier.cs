@@ -16,30 +16,28 @@ namespace BoVloApp
         public Panier()
         {
             InitializeComponent();
-        }
-
-               private void AjoutLigne()
-        {
-
-            TableLayoutPanel tlp = new TableLayoutPanel();
-            this.Controls.Add(tlp);
-            tlp.Controls.Add(buttonPlanning, 0, 0);//just a test
-            tlp.Controls.Add(buttonPlanning, 1, 0);//juste a test
-            tlp.Controls.Add(buttonPlanning, 0, 1);//juste un test
-
-            // If grid is full add extra cells by adding column
-            tlp.GrowStyle = TableLayoutPanelGrowStyle.AddColumns;
 
             //check credentials in database
-            MySqlConnection connexion = Mysqlconn.connect();
-
-            //on peut ici intéragir avec l'objet 'connexion' qui est enfait le lien avec la DB.
-            // il faut conclure par :
-            connexion.Close();
+            string request = String.Format(
+                "SELECT * " +
+                "FROM Panier " +
+                "WHERE Session_key='{0}'"
+                , GlobalVar.ReadXML().key);
+            DataTable data = GlobalVar.ReadSQL(request);
+            foreach (DataRow row in data.Rows)
+            {
+                TableLayoutPanel.Controls.Add(new Label() { Text = row["Quantity"].ToString() });
+                TableLayoutPanel.Controls.Add(new Label() { Text = row["Product_type"].ToString() });
+                TableLayoutPanel.Controls.Add(new Label() { Text = row["Price"].ToString() });
+                TableLayoutPanel.Controls.Add(new Label() { Text = row["Size"].ToString() });
+                TableLayoutPanel.Controls.Add(new Label() { Text = row["Colour"].ToString() });
+            }
+            
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        private void buttonFinaliser_Click(object sender, EventArgs e)
         {
             GlobalVar.Loadform(PanelPanier, new CatalogueMember());
         }
@@ -55,6 +53,16 @@ namespace BoVloApp
         }
 
         private void PanelPanier_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Panier_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
         {
 
         }

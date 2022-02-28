@@ -55,7 +55,10 @@ namespace BoVloApp
             this.size = new System.Windows.Forms.ComboBox();
             this.colourCIty = new System.Windows.Forms.ComboBox();
             this.BackPanel = new System.Windows.Forms.Panel();
+            this.explorer_colour = new System.Windows.Forms.ComboBox();
+            this.AdevntureColour = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
+            this.BackPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panier
@@ -323,33 +326,63 @@ namespace BoVloApp
             // 
             // BackPanel
             // 
+            this.BackPanel.Controls.Add(this.AdevntureColour);
+            this.BackPanel.Controls.Add(this.explorer_colour);
+            this.BackPanel.Controls.Add(this.colourCIty);
+            this.BackPanel.Controls.Add(this.size);
+            this.BackPanel.Controls.Add(this.labelColor);
+            this.BackPanel.Controls.Add(this.label2);
+            this.BackPanel.Controls.Add(this.labelPrixVelo);
+            this.BackPanel.Controls.Add(this.labelPrix);
+            this.BackPanel.Controls.Add(this.button9);
+            this.BackPanel.Controls.Add(this.button8);
+            this.BackPanel.Controls.Add(this.button6);
+            this.BackPanel.Controls.Add(this.button5);
+            this.BackPanel.Controls.Add(this.button4);
+            this.BackPanel.Controls.Add(this.button1);
+            this.BackPanel.Controls.Add(this.button3);
+            this.BackPanel.Controls.Add(this.button2);
+            this.BackPanel.Controls.Add(this.turquoise);
+            this.BackPanel.Controls.Add(this.nbreAjout);
+            this.BackPanel.Controls.Add(this.btnAjouter);
+            this.BackPanel.Controls.Add(this.picture);
+            this.BackPanel.Controls.Add(this.button7);
+            this.BackPanel.Controls.Add(this.preVelo);
+            this.BackPanel.Controls.Add(this.nextVelo);
+            this.BackPanel.Controls.Add(this.veloType);
+            this.BackPanel.Controls.Add(this.panier);
             this.BackPanel.Location = new System.Drawing.Point(-1, 1);
             this.BackPanel.Name = "BackPanel";
             this.BackPanel.Size = new System.Drawing.Size(1701, 823);
             this.BackPanel.TabIndex = 40;
-            BackPanel.Controls.Add(this.colourCIty);
-            BackPanel.Controls.Add(this.size);
-            BackPanel.Controls.Add(this.labelColor);
-            BackPanel.Controls.Add(this.label2);
-            BackPanel.Controls.Add(this.labelPrixVelo);
-            BackPanel.Controls.Add(this.labelPrix);
-            BackPanel.Controls.Add(this.button9);
-            BackPanel.Controls.Add(this.button8);
-            BackPanel.Controls.Add(this.button6);
-            BackPanel.Controls.Add(this.button5);
-            BackPanel.Controls.Add(this.button4);
-            BackPanel.Controls.Add(this.button1);
-            BackPanel.Controls.Add(this.button3);
-            BackPanel.Controls.Add(this.button2);
-            BackPanel.Controls.Add(this.turquoise);
-            BackPanel.Controls.Add(this.nbreAjout);
-            BackPanel.Controls.Add(this.btnAjouter);
-            BackPanel.Controls.Add(this.picture);
-            BackPanel.Controls.Add(this.button7);
-            BackPanel.Controls.Add(this.preVelo);
-            BackPanel.Controls.Add(this.nextVelo);
-            BackPanel.Controls.Add(this.veloType);
-            BackPanel.Controls.Add(this.panier);
+            // 
+            // explorer_colour
+            // 
+            this.explorer_colour.FormattingEnabled = true;
+            this.explorer_colour.Items.AddRange(new object[] {
+            "White",
+            "Black",
+            "Blue"});
+            this.explorer_colour.Location = new System.Drawing.Point(1331, 338);
+            this.explorer_colour.Name = "explorer_colour";
+            this.explorer_colour.Size = new System.Drawing.Size(121, 23);
+            this.explorer_colour.TabIndex = 40;
+            this.explorer_colour.Visible = false;
+            this.explorer_colour.SelectedIndexChanged += new System.EventHandler(this.explorer_colour_SelectedIndexChanged);
+            // 
+            // AdevntureColour
+            // 
+            this.AdevntureColour.FormattingEnabled = true;
+            this.AdevntureColour.Items.AddRange(new object[] {
+            "White",
+            "Black",
+            "Blue"});
+            this.AdevntureColour.Location = new System.Drawing.Point(1332, 338);
+            this.AdevntureColour.Name = "AdevntureColour";
+            this.AdevntureColour.Size = new System.Drawing.Size(121, 23);
+            this.AdevntureColour.TabIndex = 41;
+            this.AdevntureColour.Visible = false;
+            this.AdevntureColour.SelectedIndexChanged += new System.EventHandler(this.AdevntureColour_SelectedIndexChanged);
             // 
             // Catalogue
             // 
@@ -362,8 +395,9 @@ namespace BoVloApp
             this.Name = "Catalogue";
             this.Text = "Catalogue";
             ((System.ComponentModel.ISupportInitialize)(this.picture)).EndInit();
+            this.BackPanel.ResumeLayout(false);
+            this.BackPanel.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -394,5 +428,7 @@ namespace BoVloApp
         private System.Windows.Forms.ComboBox size;
         private System.Windows.Forms.ComboBox colourCIty;
         private System.Windows.Forms.Panel BackPanel;
+        private System.Windows.Forms.ComboBox explorer_colour;
+        private System.Windows.Forms.ComboBox AdevntureColour;
     }
 }
