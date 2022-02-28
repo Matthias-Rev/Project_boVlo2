@@ -17,30 +17,16 @@ namespace BoVloApp
         {
             InitializeComponent();
 
-            TableLayoutPanel panier = new TableLayoutPanel();
+            MySqlConnection connexion = Mysqlconn.connect();
 
-            //Create the dynamic label
-            Label type = new Label();
-            type.Text = "type de vélo";
-            panier.Controls.Add(type);
+            TableLayoutPanel.Controls.Add(new Label() { Text = "Type du Vélo" });
+            TableLayoutPanel.Controls.Add(new Label() { Text = "Taille du Vélo" });
+            TableLayoutPanel.Controls.Add(new Label() { Text = "Nombre de Vélo" });
+            TableLayoutPanel.Controls.Add(new Label() { Text = "Couleur du Vélo" });
+            TableLayoutPanel.Controls.Add(new Label() { Text = "Prix du Vélo" });
 
-            Label taille = new Label();
-            taille.Text = "taille du vélo";
-            panier.Controls.Add(taille);
 
-            Label quantite = new Label();
-            quantite.Text = "nombre de vélo";
-            panier.Controls.Add(quantite);
-
-            Label couleur = new Label();
-            couleur.Text = "couleur du vélo";
-            panier.Controls.Add(couleur);
-
-            Label prix = new Label();
-            prix.Text = "prix du vélo";
-            panier.Controls.Add(prix);
-
-            TableLayoutPanel.Controls.Add(panier);
+            connexion.Close();
         }
 
         private void AjoutLigne()
