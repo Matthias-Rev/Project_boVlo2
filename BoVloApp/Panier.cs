@@ -29,18 +29,6 @@ namespace BoVloApp
             connexion.Close();
         }
 
-        private void AjoutLigne()
-        {
-
-
-            //check credentials in database
-            MySqlConnection connexion = Mysqlconn.connect();
-
-            //on peut ici intéragir avec l'objet 'connexion' qui est enfait le lien avec la DB.
-            // il faut conclure par :
-            connexion.Close();
-
-        }
 
         private void buttonFinaliser_Click(object sender, EventArgs e)
         {
