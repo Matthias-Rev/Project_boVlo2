@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Session xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <username />
-  <key>SUGMTF3H8T5VJFE9PTBK</key>
+  <username>User</username>
+  <titel>Admin</titel>
+  <key>5KPM33UBWP6TRWL0DAQO</key>
 </Session>

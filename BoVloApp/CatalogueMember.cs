@@ -33,9 +33,29 @@ namespace BoVloApp
             DataTable dataSql = GlobalVar.ReadSQL(request);
             foreach (DataColumn column in dataSql.Columns)
             {
+
                 foreach (DataRow row in dataSql.Rows)
                 {
-                    Console.WriteLine(row[column]);
+                    int i = 0;
+                    bool condition = true;
+                    try
+                    {
+                        while (condition == true)
+                        {
+                            string name = row[i].ToString();
+                            if (name == textBox1.Text)
+                            {
+                                condition = false;
+                                MessageBox.Show("trouvé");
+                                // dans la base de donnée
+                            }
+                        }
+                                i++;
+                    }
+                    catch (IndexOutOfRangeException)
+                    {
+                        // jsp
+                    }
                 }
             }
             GlobalVar.Loadform(panelMember, new Final_Catalogue ());

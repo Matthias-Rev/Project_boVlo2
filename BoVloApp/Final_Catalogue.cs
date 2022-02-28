@@ -22,8 +22,8 @@ namespace BoVloApp
             // confirm and send the information on the db
             GlobalVar.Loadform(panelFinal, new Main());
             // addd to the database
-            string insertMySQL = String.Format("INSERT INTO Customer ('Name', `TVA`, `Adress`, `Contact`) VALUES " +
-    "('{0}','{1}','{2}','{3}' )", GlobalVar.ReadXML().key, textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text);
+            string insertMySQL = String.Format("INSERT INTO Customer (`Name`, `TVA`, `Address`, `Contact`) VALUES " +
+    "('{0}','{1}','{2}','{3}' )", textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text);
             MessageBox.Show(insertMySQL);
             GlobalVar.WriteSQL(insertMySQL);
             // textBox1.Text

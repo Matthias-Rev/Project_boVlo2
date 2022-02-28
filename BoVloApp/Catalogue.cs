@@ -167,12 +167,30 @@ namespace BoVloApp
         public bool buttonWasClicked = false;
         private void btnAjouter_Click(object sender, EventArgs e)
         {
-            
+            if(veloType.Text == "City")
+            {
+                string insertMySQL = String.Format("INSERT INTO Panier (`Session_key`, `Quantity`, `Product_type`, `Price`, `Size`, `Colour`) VALUES " +
+                    "('{0}','{1}','{2}','{3}','{4}','{5}' )", GlobalVar.ReadXML().key, nbreAjout.Text, veloType.Text, labelPrixVelo.Text, size.Text, colourCIty.Text);
+                
+                GlobalVar.WriteSQL(insertMySQL);
+            }
 
-            string insertMySQL = String.Format("INSERT INTO Panier ('Session_key', `Quantity`, `Product_type`, `Price`, `Size`, `Colour`) VALUES " +
-                "('{0}','{1}','{2}','{3}','{4}','{5}' )",GlobalVar.ReadXML().key , nbreAjout.Text, veloType.Text, labelPrixVelo.Text, size.Text, colourCIty.Text);
-            MessageBox.Show(insertMySQL);
-            GlobalVar.WriteSQL(insertMySQL);
+            if(veloType.Text == "Explorer") 
+            {
+                string insertMySQL = String.Format("INSERT INTO Panier (`Session_key`, `Quantity`, `Product_type`, `Price`, `Size`, `Colour`) VALUES " +
+                    "('{0}','{1}','{2}','{3}','{4}','{5}' )", GlobalVar.ReadXML().key, nbreAjout.Text, veloType.Text, labelPrixVelo.Text, size.Text, explorer_colour.Text);
+                
+                GlobalVar.WriteSQL(insertMySQL);
+            }
+            if (veloType.Text == "Adventure")
+            {
+                string insertMySQL = String.Format("INSERT INTO Panier (`Session_key`, `Quantity`, `Product_type`, `Price`, `Size`, `Colour`) VALUES " +
+                    "('{0}','{1}','{2}','{3}','{4}','{5}' )", GlobalVar.ReadXML().key, nbreAjout.Text, veloType.Text, labelPrixVelo.Text, size.Text, AdevntureColour.Text);
+
+                GlobalVar.WriteSQL(insertMySQL);
+            }
+
+
         }
 
         
@@ -312,7 +330,7 @@ namespace BoVloApp
 
         private void AdevntureColour_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch (explorer_colour.Text)
+            switch (AdevntureColour.Text)
             {
                 case "White":
                     this.picture.Image = Properties.Resources.Adventure_white;
