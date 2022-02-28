@@ -15,7 +15,26 @@ namespace BoVloApp
         public GestionDeCommande()
         {
             InitializeComponent();
-            Title.Location = GlobalVar.SetLocation(this, 0, -400, Title);
+
+            //check credentials in database
+            string request = String.Format(
+                "SELECT * " +
+                "FROM GestionDeCommande " +
+                "WHERE Session_key='{0}'"
+                , GlobalVar.ReadXML().key);
+            DataTable data = GlobalVar.ReadSQL(request);
+            foreach (DataRow row in data.Rows)
+            {
+                backPanel.Controls.Add(new Label() { Text = row["Nombre_total"].ToString() });
+                backPanel.Controls.Add(new Label() { Text = row["Taille"].ToString() });
+                backPanel.Controls.Add(new Label() { Text = row["Modèle"].ToString() });
+                backPanel.Controls.Add(new Label() { Text = row["Couleur"].ToString() });
+                backPanel.Controls.Add(new Label() { Text = row["Société"].ToString() });
+                backPanel.Controls.Add(new Label() { Text = row["Date_attendue"].ToString() });
+
+            }
+
+
         }
 
         private void GestionDeCommande_Load(object sender, EventArgs e)
