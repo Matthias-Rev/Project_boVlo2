@@ -27,14 +27,14 @@ namespace BoVloApp
             }
             return resultList;
         }
-        static public Point SetLocation(Form f, int x, int y, Control b)
+        static public Point SetLocation(Control contenant, int x, int y, Control contenu)
         {
-            int form_horizontal_center = f.Width / 2;
-            int form_vertical_center = f.Height / 2;
-            int x_mid = b.Width / 2;
-            int y_mid = b.Height / 2;
-            x = form_horizontal_center - x_mid + x;
-            y = form_vertical_center - y_mid + y;
+            int form_horizontal_center = contenant.Width / 2;
+            int form_vertical_center = contenant.Height / 2;
+            int x_mid = contenu.Width / 2;
+            int y_mid = contenu.Height / 2;
+            x = contenant.Location.X + form_horizontal_center - x_mid + x;
+            y = contenant.Location.Y + form_vertical_center - y_mid + y;
             return new Point(x,y);
         }
         static public Session ReadXML()

@@ -17,16 +17,23 @@ namespace BoVloApp
         {
             InitializeComponent();
 
-            MySqlConnection connexion = Mysqlconn.connect();
+            //check credentials in database
+            string request = String.Format(
+                "SELECT * " +
+                "FROM Panier " +
+                "WHERE Session_key='{0}'"
+                , GlobalVar.ReadXML().key);
+            DataTable data = GlobalVar.ReadSQL(request);
+            foreach (DataRow row in data.Rows)
+            {
+                TableLayoutPanel.Controls.Add(new Label() { Text = row["Quantity"].ToString() });
+                TableLayoutPanel.Controls.Add(new Label() { Text = row["Product_type"].ToString() });
+                TableLayoutPanel.Controls.Add(new Label() { Text = row["Price"].ToString() });
+                TableLayoutPanel.Controls.Add(new Label() { Text = row["Size"].ToString() });
+                TableLayoutPanel.Controls.Add(new Label() { Text = row["Colour"].ToString() });
+            }
+            
 
-            TableLayoutPanel.Controls.Add(new Label() { Text = "Type du Vélo" });
-            TableLayoutPanel.Controls.Add(new Label() { Text = "Taille du Vélo" });
-            TableLayoutPanel.Controls.Add(new Label() { Text = "Nombre de Vélo" });
-            TableLayoutPanel.Controls.Add(new Label() { Text = "Couleur du Vélo" });
-            TableLayoutPanel.Controls.Add(new Label() { Text = "Prix du Vélo" });
-
-
-            connexion.Close();
         }
 
 
