@@ -31,21 +31,20 @@ namespace BoVloApp
         {
             this.buttonFinaliser = new System.Windows.Forms.Button();
             this.buttonPlanning = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.LabelTotal = new System.Windows.Forms.Label();
             this.Title = new System.Windows.Forms.Label();
             this.PanelPanier = new System.Windows.Forms.Panel();
             this.TableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.LabelPrixTotal = new System.Windows.Forms.Label();
             this.PanelPanier.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonFinaliser
             // 
             this.buttonFinaliser.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonFinaliser.Location = new System.Drawing.Point(1330, 668);
-            this.buttonFinaliser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonFinaliser.Location = new System.Drawing.Point(1520, 891);
             this.buttonFinaliser.Name = "buttonFinaliser";
-            this.buttonFinaliser.Size = new System.Drawing.Size(201, 56);
+            this.buttonFinaliser.Size = new System.Drawing.Size(230, 75);
             this.buttonFinaliser.TabIndex = 0;
             this.buttonFinaliser.Text = "Finaliser";
             this.buttonFinaliser.UseVisualStyleBackColor = true;
@@ -54,30 +53,20 @@ namespace BoVloApp
             // buttonPlanning
             // 
             this.buttonPlanning.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonPlanning.Location = new System.Drawing.Point(725, 668);
-            this.buttonPlanning.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonPlanning.Location = new System.Drawing.Point(829, 891);
             this.buttonPlanning.Name = "buttonPlanning";
-            this.buttonPlanning.Size = new System.Drawing.Size(350, 56);
+            this.buttonPlanning.Size = new System.Drawing.Size(400, 75);
             this.buttonPlanning.TabIndex = 1;
             this.buttonPlanning.Text = "Consulter Planning";
             this.buttonPlanning.UseVisualStyleBackColor = true;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(310, 668);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(241, 57);
-            this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "";
             // 
             // LabelTotal
             // 
             this.LabelTotal.AutoSize = true;
             this.LabelTotal.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LabelTotal.Location = new System.Drawing.Point(177, 674);
+            this.LabelTotal.Location = new System.Drawing.Point(202, 899);
             this.LabelTotal.Name = "LabelTotal";
-            this.LabelTotal.Size = new System.Drawing.Size(99, 46);
+            this.LabelTotal.Size = new System.Drawing.Size(122, 57);
             this.LabelTotal.TabIndex = 3;
             this.LabelTotal.Text = "Total:";
             this.LabelTotal.Click += new System.EventHandler(this.label1_Click);
@@ -86,24 +75,23 @@ namespace BoVloApp
             // 
             this.Title.AutoSize = true;
             this.Title.Font = new System.Drawing.Font("Segoe UI", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Title.Location = new System.Drawing.Point(753, 38);
+            this.Title.Location = new System.Drawing.Point(861, 51);
             this.Title.Name = "Title";
-            this.Title.Size = new System.Drawing.Size(176, 72);
+            this.Title.Size = new System.Drawing.Size(220, 89);
             this.Title.TabIndex = 4;
             this.Title.Text = "Panier";
             // 
             // PanelPanier
             // 
+            this.PanelPanier.Controls.Add(this.LabelPrixTotal);
             this.PanelPanier.Controls.Add(this.TableLayoutPanel);
             this.PanelPanier.Controls.Add(this.Title);
             this.PanelPanier.Controls.Add(this.LabelTotal);
-            this.PanelPanier.Controls.Add(this.richTextBox1);
             this.PanelPanier.Controls.Add(this.buttonPlanning);
             this.PanelPanier.Controls.Add(this.buttonFinaliser);
             this.PanelPanier.Location = new System.Drawing.Point(0, 0);
-            this.PanelPanier.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PanelPanier.Name = "PanelPanier";
-            this.PanelPanier.Size = new System.Drawing.Size(1701, 823);
+            this.PanelPanier.Size = new System.Drawing.Size(1944, 1097);
             this.PanelPanier.TabIndex = 22;
             // 
             // TableLayoutPanel
@@ -115,29 +103,40 @@ namespace BoVloApp
             this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.TableLayoutPanel.Location = new System.Drawing.Point(177, 139);
-            this.TableLayoutPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TableLayoutPanel.Location = new System.Drawing.Point(202, 185);
             this.TableLayoutPanel.Name = "TableLayoutPanel";
             this.TableLayoutPanel.RowCount = 8;
-            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.TableLayoutPanel.Size = new System.Drawing.Size(1354, 470);
+            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.TableLayoutPanel.Size = new System.Drawing.Size(1547, 627);
             this.TableLayoutPanel.TabIndex = 2;
             this.TableLayoutPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
+            // LabelPrixTotal
+            // 
+            this.LabelPrixTotal.AutoSize = true;
+            this.LabelPrixTotal.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LabelPrixTotal.Location = new System.Drawing.Point(315, 909);
+            this.LabelPrixTotal.Name = "LabelPrixTotal";
+            this.LabelPrixTotal.Size = new System.Drawing.Size(68, 46);
+            this.LabelPrixTotal.TabIndex = 5;
+            this.LabelPrixTotal.Text = "xxx";
+            this.LabelPrixTotal.Click += new System.EventHandler(this.LabelPrixTotal_Click);
+            // 
             // Panier
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1556, 791);
+            this.ClientSize = new System.Drawing.Size(1778, 1055);
             this.Controls.Add(this.PanelPanier);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Panier";
             this.Text = "Panier";
             this.Load += new System.EventHandler(this.Panier_Load);
@@ -151,10 +150,10 @@ namespace BoVloApp
 
         private System.Windows.Forms.Button buttonFinaliser;
         private System.Windows.Forms.Button buttonPlanning;
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label LabelTotal;
         private System.Windows.Forms.Label Title;
         private System.Windows.Forms.Panel PanelPanier;
         private System.Windows.Forms.TableLayoutPanel TableLayoutPanel;
+        private System.Windows.Forms.Label LabelPrixTotal;
     }
 }
