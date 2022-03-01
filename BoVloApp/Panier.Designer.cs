@@ -122,7 +122,7 @@ namespace BoVloApp
             // 
             this.LabelPrixTotal.AutoSize = true;
             this.LabelPrixTotal.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LabelPrixTotal.Location = new System.Drawing.Point(315, 909);
+            this.LabelPrixTotal.Location = new System.Drawing.Point(317, 909);
             this.LabelPrixTotal.Name = "LabelPrixTotal";
             this.LabelPrixTotal.Size = new System.Drawing.Size(68, 46);
             this.LabelPrixTotal.TabIndex = 5;
