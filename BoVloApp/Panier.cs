@@ -66,5 +66,10 @@ namespace BoVloApp
         {
 
         }
+
+        private void LabelPrixTotal_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
