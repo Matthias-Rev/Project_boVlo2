@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace BoVloApp
 {
-    public class PanierCatalogue
+    class AdventureBike : Bike
     {
-        List<Bike> ArticlePanier = new List<Bike>();
     }
 }

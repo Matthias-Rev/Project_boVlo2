@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace BoVloApp
 {
-    public class PanierCatalogue
+    class ExplorerBikeCreator : Creator
     {
-        List<Bike> ArticlePanier = new List<Bike>();
+        public override Bike FactoryMethhod()
+        {
+            return new ExplorerBikeCreator();
+        }
     }
 }

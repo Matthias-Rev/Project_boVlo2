@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BoVloApp
 {
-    internal class Article
+    abstract class Bike
     {
         public string type;
         public string quantity;
