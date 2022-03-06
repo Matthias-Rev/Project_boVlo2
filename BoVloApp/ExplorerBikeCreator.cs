@@ -8,9 +8,9 @@ namespace BoVloApp
 {
     class ExplorerBikeCreator : Creator
     {
-        public override Bike FactoryMethhod()
+        public override Bike FactoryMethod()
         {
-            return new ExplorerBikeCreator();
+            return new ExplorerBike();
         }
     }
 }

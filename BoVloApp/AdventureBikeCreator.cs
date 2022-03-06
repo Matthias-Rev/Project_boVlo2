@@ -8,9 +8,10 @@ namespace BoVloApp
 {
     class AdventureBikeCreator : Creator
     {
-        public override Bike FactoryMethhod()
+        public override Bike FactoryMethod()
         {
-            return new AdventureBikeCreator();
+            
+            return new AdventureBike();
         }
     }
 }

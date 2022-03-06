@@ -115,5 +115,14 @@ namespace BoVloApp
             connexion.Close();
         }
 
+
+
+    }
+
+    enum BikeType
+    {
+        CityBike,
+        ExplorerBike,
+        AdventureBike
     }
 }

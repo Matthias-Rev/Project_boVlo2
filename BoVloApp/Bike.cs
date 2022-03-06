@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace BoVloApp
 {
-    abstract class Bike
+    // The Product interface declares the operations that all concrete products
+    // must implement.
+    public interface  Bike
     {
-        public string type;
-        public string quantity;
-        public string colour;
-        public string size;
-        public string price;
+        String GetInfo();
+
     }
 }
