@@ -20,7 +20,7 @@ namespace BoVloApp
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Login());
 
-            new Client().Main();
+            new Client().InstantiateBikes();
         }
     }
 }
