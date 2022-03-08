@@ -3,29 +3,33 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace BoVloApp
 {
     class Client
     {
-        public void Main()
+        public void InstantiateBikes()
         {
-            Console.WriteLine("App: Launched with the CityBikeCreator.");
-            ClientCode(new CityBikeCreator());
+            string requestBike = "SELECT * FROM Velo";
 
-            Console.WriteLine("");
-
-            Console.WriteLine("App: Launched with the ExplorerBikeCreator.");
-            ClientCode(new ExplorerBikeCreator());
-        }
-        // The client code works with an instance of a concrete creator, albeit
-        // through its base interface. As long as the client keeps working with
-        // the creator via the base interface, you can pass it any creator's
-        // subclass.
-
-        public void ClientCode(Creator creator)
-        {
-            Console.WriteLine("Client: I'm not aware of the creator's class" + "but it still works. \n" + creator.SomeOperation());
+            DataTable veloDispo = GlobalVar.ReadSQL(requestBike);
+            foreach (DataRow row in veloDispo.Rows)
+            {
+                if (row.ToString() == "City")
+                {
+                    CityBike City = new CityBike(); //doit-on déclarer les différentes variables? (type, prix, etc.) comment les liens entre tables sont-ils représentés sur c#?
+                }
+                if (row.ToString() == "Explorer")
+                {
+                    ExplorerBike Explorer = new ExplorerBike(); 
+                }
+                if (row.ToString() == "Adventure")
+                {
+                    AdventureBike Adventure = new AdventureBike();
+                }
+            }
         }
     }
 }
