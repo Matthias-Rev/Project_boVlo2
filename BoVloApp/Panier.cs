@@ -24,14 +24,18 @@ namespace BoVloApp
                 "WHERE Session_key='{0}'"
                 , GlobalVar.ReadXML().key);
             DataTable data = GlobalVar.ReadSQL(request);
-            foreach (DataRow row in data.Rows)
-            {
-                TableLayoutPanel.Controls.Add(new Label() { Text = row["Quantity"].ToString() });
-                TableLayoutPanel.Controls.Add(new Label() { Text = row["Product_type"].ToString() });
-                TableLayoutPanel.Controls.Add(new Label() { Text = row["Price"].ToString() });
-                TableLayoutPanel.Controls.Add(new Label() { Text = row["Size"].ToString() });
-                TableLayoutPanel.Controls.Add(new Label() { Text = row["Colour"].ToString() });
-            }
+            string[] titels = { "Quantity", "Type", "Price", "Size", "Colour" };
+            string[] columns = { "Quantity", "Product_type", "Price", "Size", "Colour" };
+            GlobalVar.DisplayTable(titels,columns, request, TableLayoutPanel);
+            //foreach (DataRow row in data.Rows)
+            //{
+
+            //    TableLayoutPanel.Controls.Add(new Label() { Text = row["Quantity"].ToString() });
+            //    TableLayoutPanel.Controls.Add(new Label() { Text = row["Product_type"].ToString() });
+            //    TableLayoutPanel.Controls.Add(new Label() { Text = row["Price"].ToString() });
+            //    TableLayoutPanel.Controls.Add(new Label() { Text = row["Size"].ToString() });
+            //    TableLayoutPanel.Controls.Add(new Label() { Text = row["Colour"].ToString() });
+            //}
             
 
         }

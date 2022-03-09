@@ -114,6 +114,26 @@ namespace BoVloApp
             dataAdapter.InsertCommand.ExecuteNonQuery();
             connexion.Close();
         }
+        static public void DisplayTable(string[] titles , string[] columns, string request, TableLayoutPanel table_panel)
+        {
+            int columncount = columns.Length;
+            table_panel.ColumnCount = columncount;
+            table_panel.RowCount = 0;
+            foreach (string title in titles)
+            {
+                table_panel.RowCount += 1;
+                table_panel.Controls.Add(new Label() { Text = title });
+            }
+            DataTable data = ReadSQL(request);
+            foreach (DataRow row in data.Rows)
+            {
+                foreach (string column in columns)
+                {
+                    table_panel.RowCount += 1;
+                    table_panel.Controls.Add(new Label() { Text = row[column].ToString() });
+                }
+            }
+        }
 
 
 
