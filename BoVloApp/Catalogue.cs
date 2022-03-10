@@ -142,7 +142,10 @@ namespace BoVloApp
             foreach (DataRow row in veloDispo.Rows)
             {
                 Bike bike = new();
-               
+                bike.type = row["Name"].ToString();
+                bike.price = row["Price"].ToString();
+                bikes.Add(bike);
+
             }
         }
     }
