@@ -181,7 +181,6 @@ namespace BoVloApp
             this.size.Name = "size";
             this.size.Size = new System.Drawing.Size(121, 23);
             this.size.TabIndex = 38;
-            this.size.SelectedIndexChanged += new System.EventHandler(this.size_SelectedIndexChanged);
             // 
             // colourCIty
             // 

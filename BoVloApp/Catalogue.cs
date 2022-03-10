@@ -14,8 +14,12 @@ namespace BoVloApp
 {
     public partial class Catalogue : Form
     {
+        int currunt_bike_id = 1;
+        int max_type_id;
+        Bike[] bikes;
         public Catalogue()
         {
+
             InitializeComponent();
         }
 
@@ -27,150 +31,33 @@ namespace BoVloApp
 
         private void buttonPre_Click(object sender, EventArgs e)
         {
-            if (this.veloType.Text == "City")
-            {
-                this.veloType.Text = "Adventure";
-                this.labelPrixVelo.Text = "700E";
-                
-                hideCityColors();
-                unhideAdventureColors();
+            currunt_bike_id -= 1;
 
-                this.picture.Image = Properties.Resources.Adventure_white;
-
-            }
-
-            else if (this.veloType.Text == "Adventure") 
-            {
-                this.veloType.Text = "Explorer";
-                this.labelPrixVelo.Text = "600E";
-                
-                hideAdventureColors();
-                unhideExplorerColors();
-
-                this.picture.Image = Properties.Resources.explorer_beige;
-            }
-
-            else if (this.veloType.Text == "Explorer")
-            {
-                this.veloType.Text = "City";
-                this.labelPrixVelo.Text = "500E";
-                
-                unhideCityColors();
-                hideExplorerColors();
-
-                this.picture.Image = Properties.Resources.Velo_ville_cream;
-            }
         }
-
-        private void buttonNext_Click(object sender, EventArgs e)
+        private void UpdateDisplay(object sender, EventArgs e)
         {
             if (this.veloType.Text == "City")
             {
                 this.veloType.Text = "Explorer";
                 this.labelPrixVelo.Text = "600E";
-                
-                hideCityColors();
-                unhideExplorerColors();
+
 
                 this.picture.Image = Properties.Resources.explorer_beige;
-
-
-            }
-
-            else if (this.veloType.Text == "Explorer")
-            {
-                this.veloType.Text = "Adventure";
-                this.labelPrixVelo.Text = "700E";
-
-                unhideAdventureColors();
-                hideExplorerColors();
-
-                this.picture.Image = Properties.Resources.Adventure_white;
-                
-            }
-
-            else if (this.veloType.Text == "Adventure")
-            {
-                this.veloType.Text = "City";
-                this.labelPrixVelo.Text = "500E";
-
-                hideAdventureColors();
-                unhideCityColors();
-
-                this.picture.Image = Properties.Resources.Velo_ville_cream;
             }
         }
-    
 
-        private void nbreAjout_TextChanged(object sender, EventArgs e)
+            private void buttonNext_Click(object sender, EventArgs e)
         {
- 
+            currunt_bike_id += 1;
         }
 
         private void btnAjouter_Click(object sender, EventArgs e)
         {
-            if(veloType.Text == "City")
-            {
-                string insertMySQL = String.Format("INSERT INTO Panier (`Session_key`, `Quantity`, `Product_type`, `Price`, `Size`, `Colour`) VALUES " +
-                    "('{0}','{1}','{2}','{3}','{4}','{5}' )", GlobalVar.ReadXML().key, nbreAjout.Text, veloType.Text, labelPrixVelo.Text, size.Text, colourCIty.Text);
+
+            string insertMySQL = String.Format("INSERT INTO Panier (`Session_key`, `Quantity`, `Product_type`, `Price`, `Size`, `Colour`) VALUES " +
+                "('{0}','{1}','{2}','{3}','{4}','{5}' )", GlobalVar.ReadXML().key, nbreAjout.Text, veloType.Text, labelPrixVelo.Text, size.Text, colourCIty.Text);
                 
-                GlobalVar.WriteSQL(insertMySQL);
-            }
-
-            if(veloType.Text == "Explorer") 
-            {
-                string insertMySQL = String.Format("INSERT INTO Panier (`Session_key`, `Quantity`, `Product_type`, `Price`, `Size`, `Colour`) VALUES " +
-                    "('{0}','{1}','{2}','{3}','{4}','{5}' )", GlobalVar.ReadXML().key, nbreAjout.Text, veloType.Text, labelPrixVelo.Text, size.Text, explorer_colour.Text);
-                
-                GlobalVar.WriteSQL(insertMySQL);
-            }
-            if (veloType.Text == "Adventure")
-            {
-                string insertMySQL = String.Format("INSERT INTO Panier (`Session_key`, `Quantity`, `Product_type`, `Price`, `Size`, `Colour`) VALUES " +
-                    "('{0}','{1}','{2}','{3}','{4}','{5}' )", GlobalVar.ReadXML().key, nbreAjout.Text, veloType.Text, labelPrixVelo.Text, size.Text, AdevntureColour.Text);
-
-                GlobalVar.WriteSQL(insertMySQL);
-            }
-
-
-        }
-
-        
-        public void hideCityColors()
-        {
-            this.colourCIty.Visible = false;
-        }
-
-        public void unhideCityColors()
-        {
-            this.colourCIty.Visible = true;
-        }
-
-        public void hideAdventureColors() 
-        {
-            this.AdevntureColour.Visible = false;
-        }
-
-        public void unhideAdventureColors()
-        {
-            this.AdevntureColour.Visible = true;
-
-        }
-
-        public void hideExplorerColors()
-        {
-            this.explorer_colour.Visible = false;
-
-        }
-
-        public void unhideExplorerColors()
-        {
-            this.explorer_colour.Visible = true;
-
-        }
-
-        private void size_SelectedIndexChanged(object sender, EventArgs e)
-        {
+            GlobalVar.WriteSQL(insertMySQL);
 
         }
 
@@ -242,10 +129,13 @@ namespace BoVloApp
         }
         public void InstantiateBikes()
         {
-            string requestBike = "SELECT * FROM Velo";
-
+            string requestBike = "SELECT * FROM Bike";
             DataTable veloDispo = GlobalVar.ReadSQL(requestBike);
-
+            foreach (DataRow row in veloDispo.Rows)
+            {
+                Bike bike = new();
+               
+            }
         }
     }
     
