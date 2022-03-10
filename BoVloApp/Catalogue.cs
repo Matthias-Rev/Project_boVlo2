@@ -14,12 +14,13 @@ namespace BoVloApp
 {
     public partial class Catalogue : Form
     {
-        int currunt_bike_id = 1;
+        int currunt_bike_id = 0;
         int max_type_id;
         Bike[] bikes;
         public Catalogue()
         {
-
+            InstantiateBikes();
+            max_type_id = bikes.Length-1;
             InitializeComponent();
         }
 
@@ -32,23 +33,30 @@ namespace BoVloApp
         private void buttonPre_Click(object sender, EventArgs e)
         {
             currunt_bike_id -= 1;
+            if (currunt_bike_id < 0)
+            {
+                currunt_bike_id = max_type_id;
+            }
+            UpdateDisplay();
 
         }
-        private void UpdateDisplay(object sender, EventArgs e)
+        private void UpdateDisplay()
         {
-            if (this.veloType.Text == "City")
-            {
-                this.veloType.Text = "Explorer";
-                this.labelPrixVelo.Text = "600E";
-
-
-                this.picture.Image = Properties.Resources.explorer_beige;
-            }
+            Bike bike = bikes[currunt_bike_id];
+            veloType.Text = bike.type;
+            labelPrixVelo.Text = bike.price;
+            picture.Image = Properties.Resources.explorer_beige;
+            
         }
 
             private void buttonNext_Click(object sender, EventArgs e)
         {
             currunt_bike_id += 1;
+            if (currunt_bike_id > max_type_id)
+            {
+                currunt_bike_id = 0;
+            }
+            UpdateDisplay();
         }
 
         private void btnAjouter_Click(object sender, EventArgs e)
