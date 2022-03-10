@@ -20,7 +20,7 @@ namespace BoVloApp
         public Catalogue()
         {
             InstantiateBikes();
-            max_type_id = bikes.Length-1;
+            //max_type_id = bikes.Length-1;
             InitializeComponent();
         }
 
@@ -28,8 +28,6 @@ namespace BoVloApp
         {
             GlobalVar.Loadform(BackPanel, new Panier());
         }
-
-
         private void buttonPre_Click(object sender, EventArgs e)
         {
             currunt_bike_id -= 1;
@@ -38,17 +36,14 @@ namespace BoVloApp
                 currunt_bike_id = max_type_id;
             }
             UpdateDisplay();
-
         }
         private void UpdateDisplay()
         {
             Bike bike = bikes[currunt_bike_id];
             veloType.Text = bike.type;
             labelPrixVelo.Text = bike.price;
-            picture.Image = Properties.Resources.explorer_beige;
-            
+            picture.Image = Properties.Resources.explorer_beige; 
         }
-
             private void buttonNext_Click(object sender, EventArgs e)
         {
             currunt_bike_id += 1;
@@ -63,78 +58,12 @@ namespace BoVloApp
         {
 
             string insertMySQL = String.Format("INSERT INTO Panier (`Session_key`, `Quantity`, `Product_type`, `Price`, `Size`, `Colour`) VALUES " +
-                "('{0}','{1}','{2}','{3}','{4}','{5}' )", GlobalVar.ReadXML().key, nbreAjout.Text, veloType.Text, labelPrixVelo.Text, size.Text, colourCIty.Text);
-                
+                "('{0}','{1}','{2}','{3}','{4}','{5}' )",
+                GlobalVar.ReadXML().key, nbreAjout.Text, veloType.Text, labelPrixVelo.Text, size_combobox.Text, color_combobox.Text);       
             GlobalVar.WriteSQL(insertMySQL);
 
         }
 
-        private void colourCIty_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            switch (colourCIty.Text)
-            {
-                case "White":
-
-                    this.picture.Image = Properties.Resources.Velo_ville_cream;
-                    break;
-
-                case "Blue":
-
-                    this.picture.Image = Properties.Resources.Velo_ville_bleu;
-                    break;
-                case "Rose":
-
-                    this.picture.Image = Properties.Resources.Velo_ville_rose;
-                    break;
-                case "Green":
-
-                    this.picture.Image = Properties.Resources.Velo_ville_turquoise;
-                    break;
-
-            }
-
-        }
-
-        private void labelColor_Click(object sender, EventArgs e)
-        {
-            labelColor.Text = colourCIty.SelectedText.ToString();
-        }
-
-        private void explorer_colour_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            switch (explorer_colour.Text)
-            {
-                case "White":
-                    this.picture.Image = Properties.Resources.explorer_beige;
-                    break;
-
-                case "Black":
-                    this.picture.Image = Properties.Resources.explorer_noire;
-                    break;
-
-                case "Blue":
-                    this.picture.Image = Properties.Resources.explorer_bleu;
-                    break;
-            }
-        }
-
-        private void AdevntureColour_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            switch (AdevntureColour.Text)
-            {
-                case "White":
-                    this.picture.Image = Properties.Resources.Adventure_white;
-                    break;
-
-                case "Black":
-                    this.picture.Image = Properties.Resources.Adventure_black;
-                    break;
-
-                case "Blue":
-                    this.picture.Image = Properties.Resources.Adventure_blue;
-                    break;
-            }
-        }
         public void InstantiateBikes()
         {
             string requestBike = "SELECT * FROM Bike";
@@ -145,8 +74,10 @@ namespace BoVloApp
                
             }
         }
-    }
-    
-    
 
+        private void labelPrix_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

@@ -42,11 +42,9 @@ namespace BoVloApp
             this.label2 = new System.Windows.Forms.Label();
             this.labelColor = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.size = new System.Windows.Forms.ComboBox();
-            this.colourCIty = new System.Windows.Forms.ComboBox();
             this.BackPanel = new System.Windows.Forms.Panel();
-            this.AdevntureColour = new System.Windows.Forms.ComboBox();
-            this.explorer_colour = new System.Windows.Forms.ComboBox();
+            this.size_combobox = new System.Windows.Forms.ComboBox();
+            this.color_combobox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             this.BackPanel.SuspendLayout();
             this.SuspendLayout();
@@ -126,25 +124,25 @@ namespace BoVloApp
             this.nbreAjout.Name = "nbreAjout";
             this.nbreAjout.Size = new System.Drawing.Size(83, 23);
             this.nbreAjout.TabIndex = 18;
-            this.nbreAjout.TextChanged += new System.EventHandler(this.nbreAjout_TextChanged);
             // 
             // labelPrix
             // 
             this.labelPrix.AutoSize = true;
             this.labelPrix.Location = new System.Drawing.Point(1328, 205);
             this.labelPrix.Name = "labelPrix";
-            this.labelPrix.Size = new System.Drawing.Size(30, 15);
+            this.labelPrix.Size = new System.Drawing.Size(47, 15);
             this.labelPrix.TabIndex = 29;
-            this.labelPrix.Text = "Prix:";
+            this.labelPrix.Text = "Prix (€):";
+            this.labelPrix.Click += new System.EventHandler(this.labelPrix_Click);
             // 
             // labelPrixVelo
             // 
             this.labelPrixVelo.AutoSize = true;
-            this.labelPrixVelo.Location = new System.Drawing.Point(1369, 205);
+            this.labelPrixVelo.Location = new System.Drawing.Point(1381, 205);
             this.labelPrixVelo.Name = "labelPrixVelo";
-            this.labelPrixVelo.Size = new System.Drawing.Size(31, 15);
+            this.labelPrixVelo.Size = new System.Drawing.Size(41, 15);
             this.labelPrixVelo.TabIndex = 30;
-            this.labelPrixVelo.Text = "500E";
+            this.labelPrixVelo.Text = "(price)";
             // 
             // label2
             // 
@@ -163,7 +161,6 @@ namespace BoVloApp
             this.labelColor.Size = new System.Drawing.Size(52, 15);
             this.labelColor.TabIndex = 32;
             this.labelColor.Text = "Couleur:";
-            this.labelColor.Click += new System.EventHandler(this.labelColor_Click);
             // 
             // imageList1
             // 
@@ -171,37 +168,10 @@ namespace BoVloApp
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
-            // size
-            // 
-            this.size.FormattingEnabled = true;
-            this.size.Items.AddRange(new object[] {
-            "27",
-            "28"});
-            this.size.Location = new System.Drawing.Point(1332, 261);
-            this.size.Name = "size";
-            this.size.Size = new System.Drawing.Size(121, 23);
-            this.size.TabIndex = 38;
-            // 
-            // colourCIty
-            // 
-            this.colourCIty.FormattingEnabled = true;
-            this.colourCIty.Items.AddRange(new object[] {
-            "White",
-            "Blue",
-            "Rose",
-            "Green"});
-            this.colourCIty.Location = new System.Drawing.Point(1332, 338);
-            this.colourCIty.Name = "colourCIty";
-            this.colourCIty.Size = new System.Drawing.Size(121, 23);
-            this.colourCIty.TabIndex = 39;
-            this.colourCIty.SelectedIndexChanged += new System.EventHandler(this.colourCIty_SelectedIndexChanged);
-            // 
             // BackPanel
             // 
-            this.BackPanel.Controls.Add(this.AdevntureColour);
-            this.BackPanel.Controls.Add(this.explorer_colour);
-            this.BackPanel.Controls.Add(this.colourCIty);
-            this.BackPanel.Controls.Add(this.size);
+            this.BackPanel.Controls.Add(this.color_combobox);
+            this.BackPanel.Controls.Add(this.size_combobox);
             this.BackPanel.Controls.Add(this.labelColor);
             this.BackPanel.Controls.Add(this.label2);
             this.BackPanel.Controls.Add(this.labelPrixVelo);
@@ -218,33 +188,27 @@ namespace BoVloApp
             this.BackPanel.Size = new System.Drawing.Size(1701, 823);
             this.BackPanel.TabIndex = 40;
             // 
-            // AdevntureColour
+            // size_combobox
             // 
-            this.AdevntureColour.FormattingEnabled = true;
-            this.AdevntureColour.Items.AddRange(new object[] {
-            "White",
-            "Black",
-            "Blue"});
-            this.AdevntureColour.Location = new System.Drawing.Point(1332, 338);
-            this.AdevntureColour.Name = "AdevntureColour";
-            this.AdevntureColour.Size = new System.Drawing.Size(121, 23);
-            this.AdevntureColour.TabIndex = 41;
-            this.AdevntureColour.Visible = false;
-            this.AdevntureColour.SelectedIndexChanged += new System.EventHandler(this.AdevntureColour_SelectedIndexChanged);
+            this.size_combobox.FormattingEnabled = true;
+            this.size_combobox.Items.AddRange(new object[] {
+            "27",
+            "28"});
+            this.size_combobox.Location = new System.Drawing.Point(1332, 261);
+            this.size_combobox.Name = "size_combobox";
+            this.size_combobox.Size = new System.Drawing.Size(121, 23);
+            this.size_combobox.TabIndex = 38;
             // 
-            // explorer_colour
+            // color_combobox
             // 
-            this.explorer_colour.FormattingEnabled = true;
-            this.explorer_colour.Items.AddRange(new object[] {
-            "White",
-            "Black",
-            "Blue"});
-            this.explorer_colour.Location = new System.Drawing.Point(1331, 338);
-            this.explorer_colour.Name = "explorer_colour";
-            this.explorer_colour.Size = new System.Drawing.Size(121, 23);
-            this.explorer_colour.TabIndex = 40;
-            this.explorer_colour.Visible = false;
-            this.explorer_colour.SelectedIndexChanged += new System.EventHandler(this.explorer_colour_SelectedIndexChanged);
+            this.color_combobox.FormattingEnabled = true;
+            this.color_combobox.Items.AddRange(new object[] {
+            "27",
+            "28"});
+            this.color_combobox.Location = new System.Drawing.Point(1332, 338);
+            this.color_combobox.Name = "color_combobox";
+            this.color_combobox.Size = new System.Drawing.Size(121, 23);
+            this.color_combobox.TabIndex = 39;
             // 
             // Catalogue
             // 
@@ -277,10 +241,8 @@ namespace BoVloApp
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelColor;
         private System.Windows.Forms.ImageList imageList1;
-        private System.Windows.Forms.ComboBox size;
-        private System.Windows.Forms.ComboBox colourCIty;
         private System.Windows.Forms.Panel BackPanel;
-        private System.Windows.Forms.ComboBox explorer_colour;
-        private System.Windows.Forms.ComboBox AdevntureColour;
+        private System.Windows.Forms.ComboBox color_combobox;
+        private System.Windows.Forms.ComboBox size_combobox;
     }
 }
