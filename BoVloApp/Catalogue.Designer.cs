@@ -34,19 +34,9 @@ namespace BoVloApp
             this.veloType = new System.Windows.Forms.Button();
             this.nextVelo = new System.Windows.Forms.Button();
             this.preVelo = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.picture = new System.Windows.Forms.PictureBox();
             this.btnAjouter = new System.Windows.Forms.Button();
             this.nbreAjout = new System.Windows.Forms.TextBox();
-            this.turquoise = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
             this.labelPrix = new System.Windows.Forms.Label();
             this.labelPrixVelo = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -55,8 +45,8 @@ namespace BoVloApp
             this.size = new System.Windows.Forms.ComboBox();
             this.colourCIty = new System.Windows.Forms.ComboBox();
             this.BackPanel = new System.Windows.Forms.Panel();
-            this.explorer_colour = new System.Windows.Forms.ComboBox();
             this.AdevntureColour = new System.Windows.Forms.ComboBox();
+            this.explorer_colour = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             this.BackPanel.SuspendLayout();
             this.SuspendLayout();
@@ -107,18 +97,6 @@ namespace BoVloApp
             this.preVelo.UseVisualStyleBackColor = true;
             this.preVelo.Click += new System.EventHandler(this.buttonPre_Click);
             // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.White;
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(1327, 492);
-            this.button7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(21, 20);
-            this.button7.TabIndex = 10;
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
             // picture
             // 
             this.picture.Image = global::BoVloApp.Properties.Resources.Velo_ville_cream;
@@ -129,7 +107,6 @@ namespace BoVloApp
             this.picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picture.TabIndex = 15;
             this.picture.TabStop = false;
-            this.picture.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // btnAjouter
             // 
@@ -150,110 +127,6 @@ namespace BoVloApp
             this.nbreAjout.Size = new System.Drawing.Size(83, 23);
             this.nbreAjout.TabIndex = 18;
             this.nbreAjout.TextChanged += new System.EventHandler(this.nbreAjout_TextChanged);
-            // 
-            // turquoise
-            // 
-            this.turquoise.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.turquoise.Location = new System.Drawing.Point(1354, 492);
-            this.turquoise.Name = "turquoise";
-            this.turquoise.Size = new System.Drawing.Size(21, 20);
-            this.turquoise.TabIndex = 19;
-            this.turquoise.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.turquoise.UseVisualStyleBackColor = false;
-            this.turquoise.Click += new System.EventHandler(this.turquoise_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button2.Location = new System.Drawing.Point(1380, 492);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(21, 20);
-            this.button2.TabIndex = 20;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.button3.Location = new System.Drawing.Point(1407, 492);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(21, 20);
-            this.button3.TabIndex = 21;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(1325, 527);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(22, 20);
-            this.button1.TabIndex = 22;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Visible = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button4.Location = new System.Drawing.Point(1353, 526);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(21, 21);
-            this.button4.TabIndex = 23;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Visible = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click_1);
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button5.Location = new System.Drawing.Point(1379, 525);
-            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(21, 22);
-            this.button5.TabIndex = 24;
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Visible = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(1325, 562);
-            this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(21, 22);
-            this.button6.TabIndex = 25;
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Visible = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // button8
-            // 
-            this.button8.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button8.Location = new System.Drawing.Point(1354, 562);
-            this.button8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(21, 22);
-            this.button8.TabIndex = 26;
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Visible = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
-            // button9
-            // 
-            this.button9.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button9.Location = new System.Drawing.Point(1381, 562);
-            this.button9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(23, 20);
-            this.button9.TabIndex = 27;
-            this.button9.UseVisualStyleBackColor = false;
-            this.button9.Visible = false;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // labelPrix
             // 
@@ -334,19 +207,9 @@ namespace BoVloApp
             this.BackPanel.Controls.Add(this.label2);
             this.BackPanel.Controls.Add(this.labelPrixVelo);
             this.BackPanel.Controls.Add(this.labelPrix);
-            this.BackPanel.Controls.Add(this.button9);
-            this.BackPanel.Controls.Add(this.button8);
-            this.BackPanel.Controls.Add(this.button6);
-            this.BackPanel.Controls.Add(this.button5);
-            this.BackPanel.Controls.Add(this.button4);
-            this.BackPanel.Controls.Add(this.button1);
-            this.BackPanel.Controls.Add(this.button3);
-            this.BackPanel.Controls.Add(this.button2);
-            this.BackPanel.Controls.Add(this.turquoise);
             this.BackPanel.Controls.Add(this.nbreAjout);
             this.BackPanel.Controls.Add(this.btnAjouter);
             this.BackPanel.Controls.Add(this.picture);
-            this.BackPanel.Controls.Add(this.button7);
             this.BackPanel.Controls.Add(this.preVelo);
             this.BackPanel.Controls.Add(this.nextVelo);
             this.BackPanel.Controls.Add(this.veloType);
@@ -355,20 +218,6 @@ namespace BoVloApp
             this.BackPanel.Name = "BackPanel";
             this.BackPanel.Size = new System.Drawing.Size(1701, 823);
             this.BackPanel.TabIndex = 40;
-            // 
-            // explorer_colour
-            // 
-            this.explorer_colour.FormattingEnabled = true;
-            this.explorer_colour.Items.AddRange(new object[] {
-            "White",
-            "Black",
-            "Blue"});
-            this.explorer_colour.Location = new System.Drawing.Point(1331, 338);
-            this.explorer_colour.Name = "explorer_colour";
-            this.explorer_colour.Size = new System.Drawing.Size(121, 23);
-            this.explorer_colour.TabIndex = 40;
-            this.explorer_colour.Visible = false;
-            this.explorer_colour.SelectedIndexChanged += new System.EventHandler(this.explorer_colour_SelectedIndexChanged);
             // 
             // AdevntureColour
             // 
@@ -383,6 +232,20 @@ namespace BoVloApp
             this.AdevntureColour.TabIndex = 41;
             this.AdevntureColour.Visible = false;
             this.AdevntureColour.SelectedIndexChanged += new System.EventHandler(this.AdevntureColour_SelectedIndexChanged);
+            // 
+            // explorer_colour
+            // 
+            this.explorer_colour.FormattingEnabled = true;
+            this.explorer_colour.Items.AddRange(new object[] {
+            "White",
+            "Black",
+            "Blue"});
+            this.explorer_colour.Location = new System.Drawing.Point(1331, 338);
+            this.explorer_colour.Name = "explorer_colour";
+            this.explorer_colour.Size = new System.Drawing.Size(121, 23);
+            this.explorer_colour.TabIndex = 40;
+            this.explorer_colour.Visible = false;
+            this.explorer_colour.SelectedIndexChanged += new System.EventHandler(this.explorer_colour_SelectedIndexChanged);
             // 
             // Catalogue
             // 
@@ -407,19 +270,9 @@ namespace BoVloApp
         private System.Windows.Forms.Button veloType;
         private System.Windows.Forms.Button nextVelo;
         private System.Windows.Forms.Button preVelo;
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.PictureBox picture;
         private System.Windows.Forms.Button btnAjouter;
         private System.Windows.Forms.TextBox nbreAjout;
-        private System.Windows.Forms.Button turquoise;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Label labelPrix;
         private System.Windows.Forms.Label labelPrixVelo;
         private System.Windows.Forms.Label label2;

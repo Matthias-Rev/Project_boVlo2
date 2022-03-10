@@ -24,16 +24,6 @@ namespace BoVloApp
             GlobalVar.Loadform(BackPanel, new Panier());
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.picture.Image = Properties.Resources.Velo_ville_rose;
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.picture.Image = Properties.Resources.Velo_ville_turquoise;
-
-        }
 
         private void buttonPre_Click(object sender, EventArgs e)
         {
@@ -112,59 +102,11 @@ namespace BoVloApp
         }
     
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            this.picture.Image = Properties.Resources.Velo_ville_cream;
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void turquoise_Click(object sender, EventArgs e)
-        {
-            this.picture.Image = Properties.Resources.Velo_ville_bleu;
-
-        }
-
         private void nbreAjout_TextChanged(object sender, EventArgs e)
         {
  
         }
 
-        public bool buttonWasClicked = false;
         private void btnAjouter_Click(object sender, EventArgs e)
         {
             if(veloType.Text == "City")
@@ -224,53 +166,6 @@ namespace BoVloApp
         public void unhideExplorerColors()
         {
             this.explorer_colour.Visible = true;
-
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            this.picture.Image = Properties.Resources.Adventure_white;
-
-        }
-
-        private void button4_Click_1(object sender, EventArgs e)
-        {
-            this.picture.Image = Properties.Resources.Adventure_black;
-
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            this.picture.Image = Properties.Resources.Adventure_blue;
-
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            this.picture.Image = Properties.Resources.explorer_beige;
-
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            this.picture.Image = Properties.Resources.explorer_noire;
-
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-            this.picture.Image = Properties.Resources.explorer_bleu;
-
-        }
-
-
-        private void size27_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void size28_Click(object sender, EventArgs e)
-        {
 
         }
 
@@ -343,6 +238,27 @@ namespace BoVloApp
                 case "Blue":
                     this.picture.Image = Properties.Resources.Adventure_blue;
                     break;
+            }
+        }
+        public void InstantiateBikes()
+        {
+            string requestBike = "SELECT * FROM Velo";
+
+            DataTable veloDispo = GlobalVar.ReadSQL(requestBike);
+            foreach (DataRow row in veloDispo.Rows)
+            {
+                if (row.ToString() == "City")
+                {
+                    CityBike City = new CityBike(); //doit-on déclarer les différentes variables? (type, prix, etc.) comment les liens entre tables sont-ils représentés sur c#?
+                }
+                if (row.ToString() == "Explorer")
+                {
+                    ExplorerBike Explorer = new ExplorerBike();
+                }
+                if (row.ToString() == "Adventure")
+                {
+                    AdventureBike Adventure = new AdventureBike();
+                }
             }
         }
     }
