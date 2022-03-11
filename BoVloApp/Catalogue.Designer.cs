@@ -214,6 +214,7 @@ namespace BoVloApp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
             this.Controls.Add(this.BackPanel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Catalogue";
             this.Text = "Catalogue";
             ((System.ComponentModel.ISupportInitialize)(this.picture)).EndInit();
