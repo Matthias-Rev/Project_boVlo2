@@ -69,11 +69,17 @@ namespace BoVloApp
 
         private void btnAjouter_Click(object sender, EventArgs e)
         {
-
-            string insertMySQL = String.Format("INSERT INTO Panier (`Session_key`, `Quantity`, `Product_type`, `Price`, `Size`, `Colour`) VALUES " +
-                "('{0}','{1}','{2}','{3}','{4}','{5}' )",
-                GlobalVar.ReadXML().key, nbreAjout.Text, veloType.Text, labelPrixVelo.Text, size_combobox.Text, color_combobox.Text);       
-            GlobalVar.WriteSQL(insertMySQL);
+            for (int i = 0; i < bikes.Count; i++ )
+            {
+                //if (label.Text == "City") {
+                //
+                //}
+            }
+            //string insertMySQL = String.Format("INSERT INTO Basket (`idBike`, `idColor`, `idSize`, `Quantity`, 'SessionKey') VALUES " +
+                //"('{0}','{1}','{2}','{3}', {4)",
+                 //nbreAjout.Text, veloType.Text, labelPrixVelo.Text, size_combobox.Text, color_combobox.Text, GlobalVar.ReadXML().key);
+                 //bike.id, GlobalVar.ReadXML().key);
+            //GlobalVar.WriteSQL(insertMySQL);
 
         }
 
@@ -125,9 +131,6 @@ namespace BoVloApp
             }
         }
 
-        private void labelPrix_Click(object sender, EventArgs e)
-        {
 
-        }
     }
 }

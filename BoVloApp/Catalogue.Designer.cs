@@ -53,9 +53,10 @@ namespace BoVloApp
             // 
             this.panier.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.panier.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.panier.Location = new System.Drawing.Point(1643, 45);
+            this.panier.Location = new System.Drawing.Point(1438, 34);
+            this.panier.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panier.Name = "panier";
-            this.panier.Size = new System.Drawing.Size(123, 51);
+            this.panier.Size = new System.Drawing.Size(108, 38);
             this.panier.TabIndex = 0;
             this.panier.Text = "Panier";
             this.panier.UseVisualStyleBackColor = false;
@@ -64,18 +65,20 @@ namespace BoVloApp
             // veloType
             // 
             this.veloType.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.veloType.Location = new System.Drawing.Point(997, 53);
+            this.veloType.Location = new System.Drawing.Point(872, 40);
+            this.veloType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.veloType.Name = "veloType";
-            this.veloType.Size = new System.Drawing.Size(166, 44);
+            this.veloType.Size = new System.Drawing.Size(145, 33);
             this.veloType.TabIndex = 1;
             this.veloType.Text = "City";
             this.veloType.UseVisualStyleBackColor = true;
             // 
             // nextVelo
             // 
-            this.nextVelo.Location = new System.Drawing.Point(1158, 53);
+            this.nextVelo.Location = new System.Drawing.Point(1013, 40);
+            this.nextVelo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nextVelo.Name = "nextVelo";
-            this.nextVelo.Size = new System.Drawing.Size(59, 43);
+            this.nextVelo.Size = new System.Drawing.Size(52, 32);
             this.nextVelo.TabIndex = 2;
             this.nextVelo.Text = "-->";
             this.nextVelo.UseVisualStyleBackColor = true;
@@ -83,9 +86,10 @@ namespace BoVloApp
             // 
             // preVelo
             // 
-            this.preVelo.Location = new System.Drawing.Point(939, 53);
+            this.preVelo.Location = new System.Drawing.Point(822, 40);
+            this.preVelo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.preVelo.Name = "preVelo";
-            this.preVelo.Size = new System.Drawing.Size(59, 43);
+            this.preVelo.Size = new System.Drawing.Size(52, 32);
             this.preVelo.TabIndex = 3;
             this.preVelo.Text = "<--";
             this.preVelo.UseVisualStyleBackColor = true;
@@ -94,18 +98,20 @@ namespace BoVloApp
             // picture
             // 
             this.picture.Image = global::BoVloApp.Properties.Resources.Velo_ville_cream;
-            this.picture.Location = new System.Drawing.Point(752, 179);
+            this.picture.Location = new System.Drawing.Point(658, 134);
+            this.picture.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picture.Name = "picture";
-            this.picture.Size = new System.Drawing.Size(550, 479);
+            this.picture.Size = new System.Drawing.Size(481, 359);
             this.picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picture.TabIndex = 15;
             this.picture.TabStop = false;
             // 
             // btnAjouter
             // 
-            this.btnAjouter.Location = new System.Drawing.Point(1521, 544);
+            this.btnAjouter.Location = new System.Drawing.Point(1331, 408);
+            this.btnAjouter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAjouter.Name = "btnAjouter";
-            this.btnAjouter.Size = new System.Drawing.Size(138, 44);
+            this.btnAjouter.Size = new System.Drawing.Size(121, 33);
             this.btnAjouter.TabIndex = 17;
             this.btnAjouter.Text = "Ajouter";
             this.btnAjouter.UseVisualStyleBackColor = true;
@@ -113,45 +119,45 @@ namespace BoVloApp
             // 
             // nbreAjout
             // 
-            this.nbreAjout.Location = new System.Drawing.Point(1419, 552);
+            this.nbreAjout.Location = new System.Drawing.Point(1242, 414);
+            this.nbreAjout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nbreAjout.Name = "nbreAjout";
-            this.nbreAjout.Size = new System.Drawing.Size(94, 27);
+            this.nbreAjout.Size = new System.Drawing.Size(83, 23);
             this.nbreAjout.TabIndex = 18;
             // 
             // labelPrix
             // 
             this.labelPrix.AutoSize = true;
-            this.labelPrix.Location = new System.Drawing.Point(1518, 273);
+            this.labelPrix.Location = new System.Drawing.Point(1328, 205);
             this.labelPrix.Name = "labelPrix";
-            this.labelPrix.Size = new System.Drawing.Size(58, 20);
+            this.labelPrix.Size = new System.Drawing.Size(47, 15);
             this.labelPrix.TabIndex = 29;
             this.labelPrix.Text = "Prix (€):";
-            this.labelPrix.Click += new System.EventHandler(this.labelPrix_Click);
             // 
             // labelPrixVelo
             // 
             this.labelPrixVelo.AutoSize = true;
-            this.labelPrixVelo.Location = new System.Drawing.Point(1578, 273);
+            this.labelPrixVelo.Location = new System.Drawing.Point(1381, 205);
             this.labelPrixVelo.Name = "labelPrixVelo";
-            this.labelPrixVelo.Size = new System.Drawing.Size(52, 20);
+            this.labelPrixVelo.Size = new System.Drawing.Size(41, 15);
             this.labelPrixVelo.TabIndex = 30;
             this.labelPrixVelo.Text = "(price)";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1521, 324);
+            this.label2.Location = new System.Drawing.Point(1331, 243);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 20);
+            this.label2.Size = new System.Drawing.Size(36, 15);
             this.label2.TabIndex = 31;
             this.label2.Text = "Taille:";
             // 
             // labelColor
             // 
             this.labelColor.AutoSize = true;
-            this.labelColor.Location = new System.Drawing.Point(1521, 427);
+            this.labelColor.Location = new System.Drawing.Point(1331, 320);
             this.labelColor.Name = "labelColor";
-            this.labelColor.Size = new System.Drawing.Size(63, 20);
+            this.labelColor.Size = new System.Drawing.Size(52, 15);
             this.labelColor.TabIndex = 32;
             this.labelColor.Text = "Couleur:";
             // 
@@ -177,9 +183,8 @@ namespace BoVloApp
             this.BackPanel.Controls.Add(this.veloType);
             this.BackPanel.Controls.Add(this.panier);
             this.BackPanel.Location = new System.Drawing.Point(-1, 1);
-            this.BackPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BackPanel.Name = "BackPanel";
-            this.BackPanel.Size = new System.Drawing.Size(1944, 1097);
+            this.BackPanel.Size = new System.Drawing.Size(1701, 823);
             this.BackPanel.TabIndex = 40;
             // 
             // color_combobox
@@ -189,10 +194,9 @@ namespace BoVloApp
             this.color_combobox.Items.AddRange(new object[] {
             "27",
             "28"});
-            this.color_combobox.Location = new System.Drawing.Point(1522, 451);
-            this.color_combobox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.color_combobox.Location = new System.Drawing.Point(1332, 338);
             this.color_combobox.Name = "color_combobox";
-            this.color_combobox.Size = new System.Drawing.Size(138, 28);
+            this.color_combobox.Size = new System.Drawing.Size(121, 23);
             this.color_combobox.TabIndex = 39;
             // 
             // size_combobox
@@ -202,19 +206,19 @@ namespace BoVloApp
             this.size_combobox.Items.AddRange(new object[] {
             "27",
             "28"});
-            this.size_combobox.Location = new System.Drawing.Point(1522, 348);
-            this.size_combobox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.size_combobox.Location = new System.Drawing.Point(1332, 261);
             this.size_combobox.Name = "size_combobox";
-            this.size_combobox.Size = new System.Drawing.Size(138, 28);
+            this.size_combobox.Size = new System.Drawing.Size(121, 23);
             this.size_combobox.TabIndex = 38;
             // 
             // Catalogue
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.ClientSize = new System.Drawing.Size(1684, 791);
             this.Controls.Add(this.BackPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Catalogue";
             this.Text = "Catalogue";
             ((System.ComponentModel.ISupportInitialize)(this.picture)).EndInit();

@@ -20,8 +20,8 @@ namespace BoVloApp
             //check credentials in database
             string request = String.Format(
                 "SELECT * " +
-                "FROM Panier " +
-                "WHERE Session_key='{0}'"
+                "FROM Basket " +
+                "WHERE SessionKey='{0}'"
                 , GlobalVar.ReadXML().key);
             DataTable data = GlobalVar.ReadSQL(request);
             string[] titels = { "Quantity", "Type", "Price", "Size", "Colour" };
