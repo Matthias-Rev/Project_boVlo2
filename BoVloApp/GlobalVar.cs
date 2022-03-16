@@ -15,6 +15,9 @@ namespace BoVloApp
 {
     public class GlobalVar
     {
+        static public DataTable types = ReadSQL("SELECT * FROM Bike");
+        static public DataTable colors = ReadSQL("SELECT * FROM Color");
+        static public DataTable sizes = ReadSQL("SELECT * FROM Size");
         static public List<Button> GetAllButtons(Form f)
         {
             List<Button> resultList = new List<Button>();
@@ -127,12 +130,39 @@ namespace BoVloApp
             DataTable data = ReadSQL(request);
             foreach (DataRow row in data.Rows)
             {
+                table_panel.RowCount += 1;
                 foreach (string column in columns)
                 {
-                    table_panel.RowCount += 1;
                     table_panel.Controls.Add(new Label() { Text = row[column].ToString() });
                 }
             }
+        }
+        static public void DisplayTableByData(string[] titles, DataTable data, TableLayoutPanel table_panel)
+        {
+            int columncount = titles.Length;
+            table_panel.ColumnCount = columncount;
+            table_panel.RowCount = 1;
+            foreach (string title in titles)
+            {
+                table_panel.Controls.Add(new Label() { Text = title });
+            }
+            foreach (DataRow row in data.Rows)
+            {
+                table_panel.RowCount += 1;
+                for (int i = 0; i < data.Columns.Count; i++)
+                {
+                    table_panel.Controls.Add(new Label() { Text = row[i].ToString() });
+                }
+            }
+        }
+        static public void UpdateCombobox(ComboBox combobox, List<string> content)
+        {
+            combobox.Items.Clear();
+            foreach (string item in content)
+            {
+                combobox.Items.Add(item);
+            }
+            combobox.Text = content[0];
         }
 
 

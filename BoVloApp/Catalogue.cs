@@ -43,18 +43,9 @@ namespace BoVloApp
             Bike bike = bikes[currunt_bike_id];
             veloType.Text = bike.type;
             labelPrixVelo.Text = bike.price;
-            color_combobox.Items.Clear();
-            foreach (string colour in bike.available_colours)
-            {
-                color_combobox.Items.Add(colour);
-            }
-            color_combobox.Text = bike.available_colours[0];
-            size_combobox.Items.Clear();
-            foreach (string size in bike.available_sizes)
-            {
-                size_combobox.Items.Add(size);
-            }
-            size_combobox.Text = bike.available_sizes[0];
+            GlobalVar.UpdateCombobox(color_combobox, bike.available_colours);
+            GlobalVar.UpdateCombobox(size_combobox, bike.available_sizes);
+            //update message
             picture.Image = Properties.Resources.explorer_beige;
         }
             private void buttonNext_Click(object sender, EventArgs e)
@@ -69,58 +60,33 @@ namespace BoVloApp
 
         private void btnAjouter_Click(object sender, EventArgs e)
         {
-
-            string insertMySQL = String.Format("INSERT INTO Panier (`Session_key`, `Quantity`, `Product_type`, `Price`, `Size`, `Colour`) VALUES " +
-                "('{0}','{1}','{2}','{3}','{4}','{5}' )",
-                GlobalVar.ReadXML().key, nbreAjout.Text, veloType.Text, labelPrixVelo.Text, size_combobox.Text, color_combobox.Text);       
+            string idbike = GlobalVar.types.Select(String.Format("Name = '{0}'", veloType.Text))[0]["idBike"].ToString();
+            string idcolor = GlobalVar.colors.Select(String.Format("Name = '{0}'", color_combobox.Text))[0]["idColor"].ToString();
+            string insertMySQL = String.Format("INSERT INTO Basket (`SessionKey`, `Quantity`, `idBike`, `Size`, `idColor`) VALUES " +
+                "('{0}','{1}','{2}','{3}','{4}')",
+                GlobalVar.ReadXML().key, nbreAjout.Text, idbike, Int32.Parse(size_combobox.Text) , idcolor);       
             GlobalVar.WriteSQL(insertMySQL);
 
         }
 
         public void InstantiateBikes()
         {
-            string requestBike = "SELECT * FROM Bike";
-            DataTable veloDispo = GlobalVar.ReadSQL(requestBike);
-            foreach (DataRow row in veloDispo.Rows)
+            foreach (DataRow row in GlobalVar.types.Rows)
             {
                 Bike bike = new();
                 bike.type = row["Name"].ToString();
                 bike.price = row["Price"].ToString();
                 string id = row["idBike"].ToString();
-                DataTable colors = GlobalVar.ReadSQL("SELECT * FROM Color");
-                DataTable availablecolors = GlobalVar.ReadSQL(string.Format("SELECT * FROM Bike_color WHERE idBike = '{0}'", id));
-                List<string> availablecolorsid = new();
-                foreach (DataRow colorrow in availablecolors.Rows)
+                void SetAvailability(List<string> list, DataTable datatable, string link_table_name, string target_id_name, string target_column_name)
                 {
-                    availablecolorsid.Add(colorrow["idColor"].ToString());
-                }
-                foreach (DataRow colorrow in colors.Rows)
-                {
-                    foreach (string element in availablecolorsid)
+                    DataTable available = GlobalVar.ReadSQL(string.Format("SELECT * FROM {1} WHERE idBike = '{0}'", id, link_table_name));
+                    foreach (DataRow available_item in available.Rows)
                     {
-                        if (element == colorrow["idColor"].ToString())
-                        {
-                            bike.available_colours.Add(colorrow["Name"].ToString());
-                        }
+                        list.Add(datatable.Select(String.Format("{0} = '{1}'", target_id_name, available_item[target_id_name].ToString()))[0][target_column_name].ToString());
                     }
                 }
-                DataTable sizes = GlobalVar.ReadSQL("SELECT * FROM Size");
-                DataTable availablesizes = GlobalVar.ReadSQL(string.Format("SELECT * FROM Bike_Size WHERE idBike = '{0}'", id));
-                List<string> availablesizesid = new();
-                foreach (DataRow sizerow in availablesizes.Rows)
-                {
-                    availablesizesid.Add(sizerow["idSize"].ToString());
-                }
-                foreach (DataRow sizerow in sizes.Rows)
-                {
-                    foreach (string element in availablecolorsid)
-                    {
-                        if (element == sizerow["idSize"].ToString())
-                        {
-                            bike.available_sizes.Add(sizerow["Size"].ToString());
-                        }
-                    }
-                }
+                SetAvailability(bike.available_colours, GlobalVar.colors, "Bike_color", "idColor", "Name");
+                SetAvailability(bike.available_sizes, GlobalVar.sizes, "Bike_Size", "Size", "Size");
                 bikes.Add(bike);
             }
         }
