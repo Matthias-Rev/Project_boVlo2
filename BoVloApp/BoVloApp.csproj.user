@@ -25,6 +25,12 @@
     <Compile Update="Panier.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="StockVélo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Stock_Pieces.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="test.cs">
       <SubType>Form</SubType>
     </Compile>
