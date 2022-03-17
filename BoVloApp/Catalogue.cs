@@ -46,7 +46,61 @@ namespace BoVloApp
             GlobalVar.UpdateCombobox(color_combobox, bike.available_colours);
             GlobalVar.UpdateCombobox(size_combobox, bike.available_sizes);
             //update message
-            picture.Image = Properties.Resources.explorer_beige;
+
+            switch(veloType.Text)
+            {
+                case "City":
+                    switch(color_combobox.Text)
+                    {
+                        case "White":
+                            picture.Image = Properties.Resources.Velo_ville_cream;
+                            break;
+                        case "Red":
+                            picture.Image = Properties.Resources.Velo_ville_rose;
+                            break;
+                        case "Blue":
+                            picture.Image = Properties.Resources.Velo_ville_bleu;
+                            break;
+                        case "Black":
+                            picture.Image = Properties.Resources.Velo_ville_turquoise;
+                            break;
+                    }
+                    break;
+                case "Explorer":
+                    switch (color_combobox.Text)
+                    {
+                        case "White":
+                            picture.Image = Properties.Resources.explorer_beige;
+                            break;
+                        case "Red":
+                            picture.Image = Properties.Resources.explorer_beige;
+                            break;
+                        case "Blue":
+                            picture.Image = Properties.Resources.explorer_bleu;
+                            break;
+                        case "Black":
+                            picture.Image = Properties.Resources.explorer_noire;
+                            break;
+                    }
+                    break;
+                case "Adevnture":
+                    switch (color_combobox.Text)
+                    {
+                        case "White":
+                            picture.Image = Properties.Resources.Adventure_white;
+                            break;
+                        case "Red":
+                            picture.Image = Properties.Resources.explorer_beige;
+                            break;
+                        case "Blue":
+                            picture.Image = Properties.Resources.Adventure_blue;
+                            break;
+                        case "Black":
+                            picture.Image = Properties.Resources.Adventure_black;
+                            break;
+                    }
+                    break;
+            }
         }
             private void buttonNext_Click(object sender, EventArgs e)
         {
