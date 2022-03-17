@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BoVloApp
 {
-    public partial class Stock_Pieces : Form
+    public partial class Stock : Form
     {
-        public Stock_Pieces()
+        public Stock()
         {
             InitializeComponent();
             //check credentials in database
