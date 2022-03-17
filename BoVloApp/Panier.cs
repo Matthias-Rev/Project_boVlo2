@@ -42,6 +42,7 @@ namespace BoVloApp
                 LabelPrixTotal.Text = (Int32.Parse(row["Quantity"].ToString())* Int32.Parse(datarow["Price"].ToString()) + Int32.Parse(LabelPrixTotal.Text)).ToString();
             }
             GlobalVar.DisplayTableByData(titels, data, TableLayoutPanel);
+            GlobalVar.SetLocation(this, -100, 0, TableLayoutPanel);
             //foreach (DataRow row in data.Rows)
             //{
 
@@ -51,7 +52,7 @@ namespace BoVloApp
             //    TableLayoutPanel.Controls.Add(new Label() { Text = row["Size"].ToString() });
             //    TableLayoutPanel.Controls.Add(new Label() { Text = row["Colour"].ToString() });
             //}
-            
+
 
         }
 

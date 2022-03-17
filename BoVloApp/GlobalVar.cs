@@ -117,9 +117,9 @@ namespace BoVloApp
             dataAdapter.InsertCommand.ExecuteNonQuery();
             connexion.Close();
         }
-        static public void DisplayTable(string[] titles , string[] columns, string request, TableLayoutPanel table_panel)
+        static public void DisplayTable_title(string[] titles,TableLayoutPanel table_panel)
         {
-            int columncount = columns.Length;
+            int columncount = titles.Length;
             table_panel.ColumnCount = columncount;
             table_panel.RowCount = 0;
             foreach (string title in titles)
@@ -127,6 +127,10 @@ namespace BoVloApp
                 table_panel.RowCount += 1;
                 table_panel.Controls.Add(new Label() { Text = title });
             }
+        }
+        static public void DisplayTable(string[] titles , string[] columns, string request, TableLayoutPanel table_panel)
+        {
+            DisplayTable_title(titles, table_panel);
             DataTable data = ReadSQL(request);
             foreach (DataRow row in data.Rows)
             {
@@ -139,13 +143,7 @@ namespace BoVloApp
         }
         static public void DisplayTableByData(string[] titles, DataTable data, TableLayoutPanel table_panel)
         {
-            int columncount = titles.Length;
-            table_panel.ColumnCount = columncount;
-            table_panel.RowCount = 1;
-            foreach (string title in titles)
-            {
-                table_panel.Controls.Add(new Label() { Text = title });
-            }
+            DisplayTable_title(titles, table_panel);
             foreach (DataRow row in data.Rows)
             {
                 table_panel.RowCount += 1;
