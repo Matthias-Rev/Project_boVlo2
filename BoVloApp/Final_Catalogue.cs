@@ -20,7 +20,7 @@ namespace BoVloApp
         public void button1_Click(object sender, EventArgs e)
         {
             // confirm and send the information on the db
-            //GlobalVar.Loadform(panelFinal, new Main());
+            GlobalVar.Loadform(panelFinal, new Main());
             // addd to the database
             string insertMySQL = String.Format("INSERT INTO Customer (`Name`, `TVA`, `Address`, `Contact`) VALUES " +
     "('{0}','{1}','{2}','{3}' )", textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text);
