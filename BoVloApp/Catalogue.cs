@@ -23,6 +23,7 @@ namespace BoVloApp
             max_type_id = bikes.Count() - 1;
             InitializeComponent();
             UpdateDisplay();
+            updateImage();
         }
 
         private void button1_Click(object sender, EventArgs e) //panier
@@ -46,7 +47,10 @@ namespace BoVloApp
             GlobalVar.UpdateCombobox(color_combobox, bike.available_colours);
             GlobalVar.UpdateCombobox(size_combobox, bike.available_sizes);
             //update message
-            picture.Image = Properties.Resources.explorer_beige;
+            updateImage();
+
+
+
         }
             private void buttonNext_Click(object sender, EventArgs e)
         {
@@ -94,6 +98,75 @@ namespace BoVloApp
         private void labelPrix_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void labelTest_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void color_combobox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            updateImage();
+        }
+
+        private void updateImage()
+        {
+            switch (veloType.Text)
+            {
+                case "City":
+                    switch (color_combobox.Text)
+                    {
+                        case "White":
+                            picture.Image = Properties.Resources.Velo_ville_cream;
+                            break;
+                        case "Red":
+                            picture.Image = Properties.Resources.Velo_ville_rose;
+                            break;
+
+                        case "Blue":
+                            picture.Image = Properties.Resources.Velo_ville_bleu;
+                            break;
+                        case "Black":
+                            picture.Image = Properties.Resources.Velo_ville_turquoise;
+                            break;
+                    }
+                    break;
+                case "Explorer":
+                    switch (color_combobox.Text)
+                    {
+                        case "White":
+                            picture.Image = Properties.Resources.explorer_beige;
+                            break;
+                        case "Red":
+                            picture.Image = Properties.Resources.explorer_beige;
+                            break;
+                        case "Blue":
+                            picture.Image = Properties.Resources.explorer_bleu;
+                            break;
+                        case "Black":
+                            picture.Image = Properties.Resources.explorer_noire;
+                            break;
+                    }
+                    break;
+                case "Adventure":
+                    switch (color_combobox.Text)
+                    {
+                        case "White":
+                            picture.Image = Properties.Resources.Adventure_white;
+                            break;
+                        case "Red":
+                            picture.Image = Properties.Resources.explorer_beige;
+                            break;
+                        case "Blue":
+                            picture.Image = Properties.Resources.Adventure_blue;
+                            break;
+                        case "Black":
+                            picture.Image = Properties.Resources.Adventure_black;
+                            break;
+                    }
+                    break;
+            }
         }
     }
 }

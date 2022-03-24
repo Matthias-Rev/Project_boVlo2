@@ -198,6 +198,7 @@ namespace BoVloApp
             this.color_combobox.Name = "color_combobox";
             this.color_combobox.Size = new System.Drawing.Size(121, 23);
             this.color_combobox.TabIndex = 39;
+            this.color_combobox.SelectedIndexChanged += new System.EventHandler(this.color_combobox_SelectedIndexChanged);
             // 
             // size_combobox
             // 
