@@ -144,14 +144,18 @@ namespace BoVloApp
         static public void DisplayTableByData(string[] titles, DataTable data, TableLayoutPanel table_panel)
         {
             DisplayTable_title(titles, table_panel);
-            foreach (DataRow row in data.Rows)
+            if(data.Rows.Count > 0)
             {
-                table_panel.RowCount += 1;
-                for (int i = 0; i < data.Columns.Count; i++)
+                foreach (DataRow row in data.Rows)
                 {
-                    table_panel.Controls.Add(new Label() { Text = row[i].ToString() });
+                    table_panel.RowCount += 1;
+                    for (int i = 0; i < data.Columns.Count; i++)
+                    {
+                        table_panel.Controls.Add(new Label() { Text = row[i].ToString() });
+                    }
                 }
             }
+                
         }
         static public void UpdateCombobox(ComboBox combobox, List<string> content)
         {
