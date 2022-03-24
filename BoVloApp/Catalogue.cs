@@ -64,13 +64,20 @@ namespace BoVloApp
 
         private void btnAjouter_Click(object sender, EventArgs e)
         {
-            string idbike = GlobalVar.types.Select(String.Format("Name = '{0}'", veloType.Text))[0]["idBike"].ToString();
-            string idcolor = GlobalVar.colors.Select(String.Format("Name = '{0}'", color_combobox.Text))[0]["idColor"].ToString();
-            string insertMySQL = String.Format("INSERT INTO Basket (`SessionKey`, `Quantity`, `idBike`, `Size`, `idColor`) VALUES " +
-                "('{0}','{1}','{2}','{3}','{4}')",
-                GlobalVar.ReadXML().key, nbreAjout.Text, idbike, Int32.Parse(size_combobox.Text) , idcolor);       
-            GlobalVar.WriteSQL(insertMySQL);
-
+            if (nbreAjout.Text.Length > 0)
+            {
+                string idbike = GlobalVar.types.Select(String.Format("Name = '{0}'", veloType.Text))[0]["idBike"].ToString();
+                string idcolor = GlobalVar.colors.Select(String.Format("Name = '{0}'", color_combobox.Text))[0]["idColor"].ToString();
+                string insertMySQL = String.Format("INSERT INTO Basket (`SessionKey`, `Quantity`, `idBike`, `Size`, `idColor`) VALUES " +
+                    "('{0}','{1}','{2}','{3}','{4}')",
+                    GlobalVar.ReadXML().key, nbreAjout.Text, idbike, Int32.Parse(size_combobox.Text), idcolor);
+                nbreAjout.Text = "";
+                GlobalVar.WriteSQL(insertMySQL);
+            }
+            else
+            {
+                nbreAjout.BackColor = Color.Red;
+            }
         }
 
         public void InstantiateBikes()
@@ -167,6 +174,11 @@ namespace BoVloApp
                     }
                     break;
             }
+        }
+
+        private void nbreAjout_TextChanged(object sender, EventArgs e)
+        {
+            nbreAjout.BackColor = Color.White;
         }
     }
 }

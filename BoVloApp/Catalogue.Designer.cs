@@ -124,6 +124,7 @@ namespace BoVloApp
             this.nbreAjout.Name = "nbreAjout";
             this.nbreAjout.Size = new System.Drawing.Size(83, 23);
             this.nbreAjout.TabIndex = 18;
+            this.nbreAjout.TextChanged += new System.EventHandler(this.nbreAjout_TextChanged);
             // 
             // labelPrix
             // 

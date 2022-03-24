@@ -103,6 +103,9 @@ namespace BoVloApp
         private void DisplayBikeStock()
         {
             HideAll();
+            type_combobox.SelectedItem = null;
+            color_combobox.SelectedItem = null;
+            size_combobox.SelectedItem = null;
             foreach (Control control in bike_supply_components)
             {
                 control.Visible = true;
