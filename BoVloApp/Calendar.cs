@@ -18,8 +18,7 @@ namespace BoVloApp
 
             string request = String.Format(
             "SELECT * " +
-            "FROM calendar " +
-            "WHERE SessionKey='{0}'"
+            "FROM calendar "
     ,       GlobalVar.ReadXML().key);
             DataTable calendar = GlobalVar.ReadSQL(request);
             string[] titels = { "Command_id", "Start date", "End date"};
@@ -34,11 +33,7 @@ namespace BoVloApp
                 datarow["Command_id"] = row["idOrder"].ToString();
                 datarow["Start date"] = row["start"].ToString();
                 datarow["End date"] = row["end"].ToString();
-                //datarow["Price"] = Int32.Parse(GlobalVar.types.Select(String.Format("idBike = '{0}'", row["idBike"].ToString()))[0]["Price"].ToString());
-                //datarow["Size"] = row["Size"].ToString();
-                //datarow["Color"] = GlobalVar.colors.Select(String.Format("idColor = '{0}'", row["idColor"].ToString()))[0]["Name"].ToString();
                 data.Rows.Add(datarow);
-                //LabelPrixTotal.Text = (Int32.Parse(row["Quantity"].ToString()) * Int32.Parse(datarow["Price"].ToString()) + Int32.Parse(LabelPrixTotal.Text)).ToString();
             }
             GlobalVar.DisplayTableByData(titels, data, tableLayoutPanel1);
             GlobalVar.SetLocation(this, -100, 0, tableLayoutPanel1);

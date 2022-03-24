@@ -21,7 +21,7 @@ namespace BoVloApp
                 "FROM Piece "
                 , GlobalVar.ReadXML().key);
             DataTable basket = GlobalVar.ReadSQL(request);
-            string[] titels = { "NamePiece",'id' };
+            string[] titels = { "NamePiece","id" };
             DataTable data = new();
             foreach (string titel in titels)
             {

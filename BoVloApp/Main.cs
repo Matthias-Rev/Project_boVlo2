@@ -61,5 +61,10 @@ namespace BoVloApp
         {
             GlobalVar.Loadform(Main_panel, new GestionDeCommande());
         }
+
+        private void CALENDRIER_Click(object sender, EventArgs e)
+        {
+            GlobalVar.Loadform(Main_panel, new Calendar());
+        }
     }
 }

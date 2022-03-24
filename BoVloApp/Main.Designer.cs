@@ -155,6 +155,7 @@
             this.CALENDRIER.TabIndex = 6;
             this.CALENDRIER.Text = "CALENDRIER";
             this.CALENDRIER.UseVisualStyleBackColor = true;
+            this.CALENDRIER.Click += new System.EventHandler(this.CALENDRIER_Click);
             // 
             // CATALOGUE
             // 
