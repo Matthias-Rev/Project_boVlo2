@@ -28,6 +28,7 @@ namespace BoVloApp
             List<string> Availablilty(DataTable table, string target_column_name)
             {
                 List<string> result = new();
+                result.Add("");
                 foreach (DataRow available_item in table.Rows)
                 {
                     result.Add(available_item[target_column_name].ToString());
@@ -63,15 +64,15 @@ namespace BoVloApp
             CleanGridview();
             string request = "SELECT * FROM BikeStock";
             List<string> condition = new();
-            if (type_combobox.SelectedItem != null)
+            if (type_combobox.SelectedItem != null && type_combobox.SelectedItem.ToString() != "")
             {
                 condition.Add(String.Format("idBike = '{0}'", GlobalVar.types.Select(String.Format("Name = '{0}'", type_combobox.Text))[0]["idBike"].ToString()));
             }
-            if (color_combobox.SelectedItem != null)
+            if (color_combobox.SelectedItem != null && color_combobox.SelectedItem.ToString() != "")
             {
                condition.Add(String.Format("idColor = '{0}'", GlobalVar.colors.Select(String.Format("Name = '{0}'", color_combobox.Text))[0]["idColor"].ToString()));
             }
-            if (size_combobox.SelectedItem != null)
+            if (size_combobox.SelectedItem != null && size_combobox.SelectedItem.ToString() != "")
             {
                 condition.Add(String.Format("Size = '{0}'", size_combobox.Text));
             }
