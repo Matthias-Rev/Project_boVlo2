@@ -24,7 +24,7 @@ namespace BoVloApp
 
         private void button2_Click(object sender, EventArgs e)
         {
-            // chercher
+            // search the name of the society in the db
             string request = String.Format(
                 "SELECT Name " +
                 "FROM Customer " +
@@ -47,14 +47,19 @@ namespace BoVloApp
                             {
                                 condition = false;
                                 MessageBox.Show("trouvé");
-                                // dans la base de donnée
+                                string request_command = String.Format(
+                                        "SELECT * " +
+                                        "FROM Order ",
+                                        GlobalVar.ReadXML().key);
+                                DataTable calendar = GlobalVar.ReadSQL(request);
                             }
                         }
                                 i++;
                     }
                     catch (IndexOutOfRangeException)
                     {
-                        // jsp
+                        label5.Visible = true;
+                        textBox1.Text = "";
                     }
                 }
             }
