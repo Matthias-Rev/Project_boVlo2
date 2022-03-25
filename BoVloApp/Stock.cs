@@ -102,20 +102,6 @@ namespace BoVloApp
             dataGridView1.DataSource = data;
         }
 
-        private void UpdatePieceData()
-        {
-            CleanGridview();
-            string request = "SELECT * FROM Piece";
-            List<string> condition = new();
-            for(int n in String.Format("Name")) 
-            {
-                if (search_textbox.Text.Contains())
-                {
-
-                }
-                }
-
-        }
 
         private void DisplayBikeStock()
         {
