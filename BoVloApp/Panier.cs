@@ -54,6 +54,8 @@ namespace BoVloApp
             //}
 
 
+            panierData.DataSource = GetBasket();
+
         }
 
 
@@ -62,5 +64,21 @@ namespace BoVloApp
             GlobalVar.Loadform(PanelPanier, new CatalogueMember());
         }
 
+        private DataTable GetBasket()
+        {
+            string request = String.Format("SELECT Bike.Name, Basket.Size, Basket.Quantity, Bike.Price " +
+                "FROM Basket, Bike " +
+                "WHERE Basket.SessionKey='{0}' " +
+                "AND Basket.idBike = Bike.idBike"
+            , GlobalVar.ReadXML().key);
+            DataTable basket = GlobalVar.ReadSQL(request);
+
+            return basket;
+
+        }
+        private void panierData_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
