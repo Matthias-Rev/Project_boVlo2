@@ -84,23 +84,23 @@ namespace BoVloApp
         //
         //---------------------------------------------------------bouton pour update la db
         //
-        //private void updateDb_Click(object sender, EventArgs e)
-        //{
-        //    using (SqlBulkCopy bulkCopy = new SqlBulkCopy(Mysqlconn.connect()))
-        //    {
-        //        foreach (DataColumn c in panierData.Columns)
-        //            bulkCopy.ColumnMappings.Add(c.ColumnName, c.ColumnName);
+        private void updateDb_Click(object sender, EventArgs e)
+        {
+            //using (SqlBulkCopy bulkCopy = new SqlBulkCopy(Mysqlconn.connect()))
+            //{
+            //    foreach (DataColumn c in panierData.Columns)
+            //        bulkCopy.ColumnMappings.Add(c.ColumnName, c.ColumnName);
 
-        //        bulkCopy.DestinationTableName = panierData.TableName;
-        //        try
-        //        {
-        //            bulkCopy.WriteToServer(panierData);
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            Console.WriteLine(ex.Message);
-        //        }
-        //    }
-        //}
+            //    bulkCopy.DestinationTableName = panierData.TableName;
+            //    try
+            //    {
+            //        bulkCopy.WriteToServer(panierData);
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        Console.WriteLine(ex.Message);
+            //    }
+            //}
+        }
     }
 }

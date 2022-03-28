@@ -34,10 +34,10 @@ namespace BoVloApp
             this.LabelTotal = new System.Windows.Forms.Label();
             this.Title = new System.Windows.Forms.Label();
             this.PanelPanier = new System.Windows.Forms.Panel();
+            this.updateDb = new System.Windows.Forms.Button();
             this.panierData = new System.Windows.Forms.DataGridView();
             this.LabelPrixTotal = new System.Windows.Forms.Label();
             this.TableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.updateDb = new System.Windows.Forms.Button();
             this.PanelPanier.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panierData)).BeginInit();
             this.SuspendLayout();
@@ -101,6 +101,17 @@ namespace BoVloApp
             this.PanelPanier.Size = new System.Drawing.Size(1701, 823);
             this.PanelPanier.TabIndex = 22;
             // 
+            // updateDb
+            // 
+            this.updateDb.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.updateDb.Location = new System.Drawing.Point(753, 573);
+            this.updateDb.Name = "updateDb";
+            this.updateDb.Size = new System.Drawing.Size(165, 45);
+            this.updateDb.TabIndex = 7;
+            this.updateDb.Text = "Update Cart";
+            this.updateDb.UseVisualStyleBackColor = true;
+            this.updateDb.Click += new System.EventHandler(this.updateDb_Click);
+            // 
             // panierData
             // 
             this.panierData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -110,7 +121,7 @@ namespace BoVloApp
             this.panierData.Location = new System.Drawing.Point(142, 145);
             this.panierData.Name = "panierData";
             this.panierData.RowTemplate.Height = 25;
-            this.panierData.Size = new System.Drawing.Size(1389, 432);
+            this.panierData.Size = new System.Drawing.Size(1389, 411);
             this.panierData.TabIndex = 6;
             // 
             // LabelPrixTotal
@@ -149,17 +160,6 @@ namespace BoVloApp
             this.TableLayoutPanel.Size = new System.Drawing.Size(1000, 470);
             this.TableLayoutPanel.TabIndex = 2;
             this.TableLayoutPanel.Visible = false;
-            // 
-            // updateDb
-            // 
-            this.updateDb.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.updateDb.Location = new System.Drawing.Point(753, 602);
-            this.updateDb.Name = "updateDb";
-            this.updateDb.Size = new System.Drawing.Size(165, 45);
-            this.updateDb.TabIndex = 7;
-            this.updateDb.Text = "Update Cart";
-            this.updateDb.UseVisualStyleBackColor = true;
-            this.updateDb.Click += new System.EventHandler(this.updateDb_Click);
             // 
             // Panier
             // 
