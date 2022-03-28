@@ -82,25 +82,35 @@ namespace BoVloApp
 
         }
         //
-        //---------------------------------------------------------bouton pour update la db
+        //---------------------------------------------------------bouton pour update la db--------------------------------------------
         //
         private void updateDb_Click(object sender, EventArgs e)
         {
-            //using (SqlBulkCopy bulkCopy = new SqlBulkCopy(Mysqlconn.connect()))
+            //using (SqlBulkCopy bulkcopy = new SqlBulkCopy(Mysqlconn.connect()))
             //{
             //    foreach (DataColumn c in panierData.Columns)
-            //        bulkCopy.ColumnMappings.Add(c.ColumnName, c.ColumnName);
+            //        bulkcopy.ColumnMappings.Add(c.ColumnName, c.ColumnName);
 
-            //    bulkCopy.DestinationTableName = panierData.TableName;
+            //    bulkcopy.DestinationTableName = panierData.TableName;
             //    try
             //    {
-            //        bulkCopy.WriteToServer(panierData);
+            //        bulkcopy.WriteToServer(DataTable);
             //    }
             //    catch (Exception ex)
             //    {
             //        Console.WriteLine(ex.Message);
             //    }
             //}
+
+            foreach (DataRow row in GetBasket().Rows)
+            {
+                string query = "Insert INTO temp_table (Name, Size, Quantity, Price ) values (" 
+                    + row["Name"] + ", " 
+                    + row["Size"] + ", " 
+                    + row["Quantity"] + ", " 
+                    + row["Price"] + ")";
+                GlobalVar.WriteSQL(query);
+            }
         }
     }
 }
