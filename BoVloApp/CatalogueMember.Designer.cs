@@ -1,4 +1,4 @@
-﻿0namespace BoVloApp
+﻿namespace BoVloApp
 {
     partial class CatalogueMember
     {
