@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BoVloApp
 {
-    public partial class AchatPiece : Form
+    public partial class PartsOrder : Form
     {
-        public AchatPiece()
+        public PartsOrder()
         {
             InitializeComponent();
             dataPiece.DataSource = getPiece();
