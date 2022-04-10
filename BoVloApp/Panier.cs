@@ -49,10 +49,6 @@ namespace BoVloApp
             DataTable basket = GlobalVar.ReadSQL(request);
             return basket;
         }
-        private void panierData_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
         //
         //---------------------------------------------------------bouton pour update la db--------------------------------------------
         //
@@ -77,7 +73,7 @@ namespace BoVloApp
             foreach (DataRow row in GetBasket().Rows)
             {
                 string query = "Insert INTO temp_table (Name, Size, Quantity, Price ) values (" 
-                    + row["Name"] + ", " 
+                    + row["Name"] + ", "    
                     + row["Size"] + ", " 
                     + row["Quantity"] + ", " 
                     + row["Price"] + ")";
