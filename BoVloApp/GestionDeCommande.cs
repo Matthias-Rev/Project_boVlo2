@@ -23,12 +23,12 @@ namespace BoVloApp
         //----------------------------------------------------can't access "Order" Table-----------------
         private DataTable GetOrder()
         {
-            //string request = "SELECT Customer.Name, Order.Date, Order.status " +
-            //    "FROM Order, Customer " +
-            //    "WHERE Order.Customer_id = Customer.Customer_id ";
+            string request = "SELECT Customer.Name, Orders.Date, Orders.status " +
+                "FROM Orders, Customer " +
+                "WHERE Orders.Customer_id = Customer.Customer_id ";
 
-            string request = "SELECT * " +
-                "FROM Order ";
+            //string request = "SELECT * " +
+            //    "FROM Orders ";
                
             DataTable order = GlobalVar.ReadSQL(request);
 

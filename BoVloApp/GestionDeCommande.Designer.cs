@@ -64,10 +64,10 @@ namespace BoVloApp
             this.orderTable.BackgroundColor = System.Drawing.SystemColors.Menu;
             this.orderTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.orderTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.orderTable.Location = new System.Drawing.Point(401, 189);
+            this.orderTable.Location = new System.Drawing.Point(394, 158);
             this.orderTable.Name = "orderTable";
             this.orderTable.RowTemplate.Height = 25;
-            this.orderTable.Size = new System.Drawing.Size(912, 374);
+            this.orderTable.Size = new System.Drawing.Size(1075, 480);
             this.orderTable.TabIndex = 0;
             // 
             // GestionDeCommande
