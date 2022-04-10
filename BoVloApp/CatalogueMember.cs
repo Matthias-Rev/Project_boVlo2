@@ -12,14 +12,16 @@ namespace BoVloApp
 {
     public partial class CatalogueMember : Form
     {
-        public CatalogueMember()
+        Main main = null;
+        public CatalogueMember(Main main)
         {
+            this.main = main;
             InitializeComponent();
             label5.Visible = false;
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            GlobalVar.Loadform(panelMember, new Final_Catalogue());
+            GlobalVar.Loadform(panelMember, new Final_Catalogue(main));
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -63,7 +65,7 @@ namespace BoVloApp
                     }
                 }
             }
-            GlobalVar.Loadform(panelMember, new Final_Catalogue ());
+            GlobalVar.Loadform(panelMember, new Final_Catalogue (main));
         }
     }
 }

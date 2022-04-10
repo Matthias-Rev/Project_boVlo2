@@ -17,8 +17,10 @@ namespace BoVloApp
         int currunt_bike_id = 0;
         int max_type_id;
         List<Bike> bikes = new();
-        public Catalogue()
+        Main main = null;
+        public Catalogue(Main main)
         {
+            this.main = main;
             InstantiateBikes();
             max_type_id = bikes.Count() - 1;
             InitializeComponent();
@@ -28,7 +30,7 @@ namespace BoVloApp
 
         private void button1_Click(object sender, EventArgs e) //panier
         {
-            GlobalVar.Loadform(BackPanel, new Panier());
+            GlobalVar.Loadform(BackPanel, new Panier(main));
         }
         private void buttonPre_Click(object sender, EventArgs e)
         {
@@ -48,9 +50,6 @@ namespace BoVloApp
             GlobalVar.UpdateCombobox(size_combobox, bike.available_sizes);
             //update message
             updateImage();
-
-
-
         }
             private void buttonNext_Click(object sender, EventArgs e)
         {

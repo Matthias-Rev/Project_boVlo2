@@ -59,7 +59,6 @@ namespace BoVloApp
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(1397, 43);
             this.textBox1.TabIndex = 1;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label2
             // 
@@ -78,7 +77,6 @@ namespace BoVloApp
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(1397, 43);
             this.textBox2.TabIndex = 3;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label3
             // 
@@ -97,7 +95,6 @@ namespace BoVloApp
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(1397, 43);
             this.textBox3.TabIndex = 5;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // button1
             // 
@@ -107,7 +104,7 @@ namespace BoVloApp
             this.button1.Location = new System.Drawing.Point(531, 603);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(491, 126);
-            this.button1.TabIndex = 6;
+            this.button1.TabIndex = 7;
             this.button1.Text = "Confirmer";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -128,8 +125,7 @@ namespace BoVloApp
             this.textBox4.Location = new System.Drawing.Point(139, 503);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(1397, 43);
-            this.textBox4.TabIndex = 8;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.textBox4.TabIndex = 6;
             // 
             // panelFinal
             // 

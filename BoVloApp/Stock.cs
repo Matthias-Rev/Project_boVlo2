@@ -35,11 +35,11 @@ namespace BoVloApp
                 }
                 return result;
             }
-            GlobalVar.UpdateCombobox(type_combobox, Availablilty(GlobalVar.types,"Name"));
+            GlobalVar.UpdateCombobox(type_combobox, Availablilty(GlobalVar.ReadSQL("SELECT * FROM Bike"), "Name"));
             type_combobox.SelectedItem = null;
-            GlobalVar.UpdateCombobox(color_combobox, Availablilty(GlobalVar.colors, "Name"));
+            GlobalVar.UpdateCombobox(color_combobox, Availablilty(GlobalVar.ReadSQL("SELECT * FROM Color"), "Name"));
             color_combobox.SelectedItem = null;
-            GlobalVar.UpdateCombobox(size_combobox, Availablilty(GlobalVar.sizes, "Size"));
+            GlobalVar.UpdateCombobox(size_combobox, Availablilty(GlobalVar.ReadSQL("SELECT * FROM Size"), "Size"));
             size_combobox.SelectedItem = null;
             HideAll();
             dataGridView1.DataSource = null;

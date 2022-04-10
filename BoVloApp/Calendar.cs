@@ -35,7 +35,7 @@ namespace BoVloApp
                 datarow["End date"] = row["end"].ToString();
                 data.Rows.Add(datarow);
             }
-            GlobalVar.DisplayTableByData(titels, data, tableLayoutPanel1);
+            //GlobalVar.DisplayTableByData(titels, data, tableLayoutPanel1);
             GlobalVar.SetLocation(this, -100, 0, tableLayoutPanel1);
         }
     }

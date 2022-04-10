@@ -34,9 +34,13 @@ namespace BoVloApp
             Point point = new Point(Username_label.Location.X - Username_label.Size.Width, Username_label.Location.Y);
             Username_label.Location = point;
         }
-        private void Menu_button_Click(object sender, EventArgs e)
+        public void clear()
         {
             GlobalVar.Clearform(Main_panel);
+        }
+        private void Menu_button_Click(object sender, EventArgs e)
+        {
+            clear();
         }
         private void Main_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -54,7 +58,7 @@ namespace BoVloApp
 
         private void CATALOGUE_Click(object sender, EventArgs e)
         {
-            GlobalVar.Loadform(Main_panel,new Catalogue());
+            GlobalVar.Loadform(Main_panel,new Catalogue(this));
         }
 
         private void COMMANDES_Click(object sender, EventArgs e)

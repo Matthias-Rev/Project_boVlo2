@@ -14,68 +14,40 @@ namespace BoVloApp
 {
     public partial class Panier : Form
     {
-        public Panier()
+        Main main = null;
+        public Panier(Main main)
         {
+            this.main = main;
             InitializeComponent();
-
-            //check credentials in database
-            string request = String.Format(
-                "SELECT * " +
-                "FROM Basket " +
-                "WHERE SessionKey='{0}'"
-                , GlobalVar.ReadXML().key);
-            DataTable basket = GlobalVar.ReadSQL(request);
-            string[] titels = { "Quantity", "Type", "Price", "Size", "Color" };
-            DataTable data = new();
-            foreach(string titel in titels)
-            {
-                data.Columns.Add(titel);
-            }
+            DisplayBasket();
+        }
+        private void DisplayBasket()
+        {
+            DataTable basket = GetBasket();
+            panierData.DataSource = basket;
+            int prixtotal = 0;
             foreach(DataRow row in basket.Rows)
             {
-                DataRow datarow = data.NewRow();
-                datarow["Quantity"] = row["Quantity"].ToString();
-                datarow["Type"] = GlobalVar.types.Select(String.Format("idBike = '{0}'", row["idBike"].ToString()))[0]["Name"].ToString();
-                datarow["Price"] = Int32.Parse(GlobalVar.types.Select(String.Format("idBike = '{0}'", row["idBike"].ToString()))[0]["Price"].ToString());
-                datarow["Size"] = row["Size"].ToString();
-                datarow["Color"] = GlobalVar.colors.Select(String.Format("idColor = '{0}'", row["idColor"].ToString()))[0]["Name"].ToString();
-                data.Rows.Add(datarow);
-                LabelPrixTotal.Text = (Int32.Parse(row["Quantity"].ToString())* Int32.Parse(datarow["Price"].ToString()) + Int32.Parse(LabelPrixTotal.Text)).ToString();
+                prixtotal += Int32.Parse(row["Price"].ToString()) * Int32.Parse(row["Quantity"].ToString());
             }
-            GlobalVar.DisplayTableByData(titels, data, TableLayoutPanel);
-            GlobalVar.SetLocation(this, -100, 0, TableLayoutPanel);
-            //foreach (DataRow row in data.Rows)
-            //{
-
-            //    TableLayoutPanel.Controls.Add(new Label() { Text = row["Quantity"].ToString() });
-            //    TableLayoutPanel.Controls.Add(new Label() { Text = row["Product_type"].ToString() });
-            //    TableLayoutPanel.Controls.Add(new Label() { Text = row["Price"].ToString() });
-            //    TableLayoutPanel.Controls.Add(new Label() { Text = row["Size"].ToString() });
-            //    TableLayoutPanel.Controls.Add(new Label() { Text = row["Colour"].ToString() });
-            //}
-
-
-            panierData.DataSource = GetBasket();
-
+            LabelPrixTotal.Text = prixtotal.ToString();
         }
 
 
         private void buttonFinaliser_Click(object sender, EventArgs e)
         {
-            GlobalVar.Loadform(PanelPanier, new CatalogueMember());
+            GlobalVar.Loadform(PanelPanier, new CatalogueMember(main));
         }
 
         private DataTable GetBasket()
         {
-            string request = String.Format("SELECT Bike.Name, Basket.Size, Basket.Quantity, Bike.Price " +
+            string request = String.Format("SELECT Bike.Name, Basket.Size, Bike.Price, Basket.Quantity " +
                 "FROM Basket, Bike " +
                 "WHERE Basket.SessionKey='{0}' " +
                 "AND Basket.idBike = Bike.idBike"
             , GlobalVar.ReadXML().key);
             DataTable basket = GlobalVar.ReadSQL(request);
-
             return basket;
-
         }
         private void panierData_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
