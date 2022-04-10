@@ -43,7 +43,9 @@ namespace BoVloApp
             this.size_label = new System.Windows.Forms.Label();
             this.size_combobox = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.stockPiece = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockPiece)).BeginInit();
             this.SuspendLayout();
             // 
             // title_label
@@ -61,7 +63,7 @@ namespace BoVloApp
             // 
             this.bike_button.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bike_button.Location = new System.Drawing.Point(603, 216);
-            this.bike_button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bike_button.Margin = new System.Windows.Forms.Padding(2);
             this.bike_button.Name = "bike_button";
             this.bike_button.Size = new System.Drawing.Size(83, 32);
             this.bike_button.TabIndex = 2;
@@ -72,7 +74,7 @@ namespace BoVloApp
             // search_textbox
             // 
             this.search_textbox.Location = new System.Drawing.Point(711, 186);
-            this.search_textbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.search_textbox.Margin = new System.Windows.Forms.Padding(2);
             this.search_textbox.Name = "search_textbox";
             this.search_textbox.Size = new System.Drawing.Size(512, 23);
             this.search_textbox.TabIndex = 4;
@@ -81,12 +83,13 @@ namespace BoVloApp
             // 
             this.piece_button.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.piece_button.Location = new System.Drawing.Point(517, 216);
-            this.piece_button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.piece_button.Margin = new System.Windows.Forms.Padding(2);
             this.piece_button.Name = "piece_button";
             this.piece_button.Size = new System.Drawing.Size(83, 32);
             this.piece_button.TabIndex = 5;
             this.piece_button.Text = "Pieces";
             this.piece_button.UseVisualStyleBackColor = true;
+            this.piece_button.Click += new System.EventHandler(this.piece_button_Click_1);
             // 
             // search_button
             // 
@@ -172,11 +175,25 @@ namespace BoVloApp
             this.dataGridView1.Size = new System.Drawing.Size(780, 406);
             this.dataGridView1.TabIndex = 13;
             // 
+            // stockPiece
+            // 
+            this.stockPiece.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.stockPiece.BackgroundColor = System.Drawing.SystemColors.Menu;
+            this.stockPiece.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.stockPiece.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.stockPiece.Location = new System.Drawing.Point(495, 306);
+            this.stockPiece.Name = "stockPiece";
+            this.stockPiece.RowTemplate.Height = 25;
+            this.stockPiece.Size = new System.Drawing.Size(728, 306);
+            this.stockPiece.TabIndex = 14;
+            this.stockPiece.Visible = false;
+            // 
             // Stock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1699, 825);
+            this.Controls.Add(this.stockPiece);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.size_label);
             this.Controls.Add(this.size_combobox);
@@ -190,10 +207,11 @@ namespace BoVloApp
             this.Controls.Add(this.bike_button);
             this.Controls.Add(this.title_label);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Stock";
             this.Text = "Supply";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockPiece)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,5 +232,6 @@ namespace BoVloApp
         private System.Windows.Forms.Label size_label;
         private System.Windows.Forms.ComboBox size_combobox;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView stockPiece;
     }
 }

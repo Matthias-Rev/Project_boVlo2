@@ -77,10 +77,6 @@ namespace BoVloApp
             return basket;
 
         }
-        private void panierData_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
         //
         //---------------------------------------------------------bouton pour update la db--------------------------------------------
         //

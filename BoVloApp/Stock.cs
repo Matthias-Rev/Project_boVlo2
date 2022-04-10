@@ -12,6 +12,7 @@ namespace BoVloApp
 {
     public partial class Stock : Form
     {
+//--------------------------------------------------------Initializing the variables that will be used afterwards------------------------------------
         List<Control> bike_supply_components = new();
         List<Control> piece_supply_components = new();
         public Stock()
@@ -43,23 +44,12 @@ namespace BoVloApp
             size_combobox.SelectedItem = null;
             HideAll();
             dataGridView1.DataSource = null;
-        }
-        private void HideAll()
-        {
-            foreach (Control control in bike_supply_components)
-            {
-                control.Visible = false;
-            }
-            foreach (Control control in piece_supply_components)
-            {
-                control.Visible = false;
-            }
-        }
-        private void CleanGridview()
-        {
-            dataGridView1.DataSource = null;
+
+
+            stockPiece.DataSource = GetPiece();
         }
 
+//--------------------------------------------------------Get/Update information regarding the bike stock--------------------------------------------
         private void UpdateBikeSupplyData()
         {
             CleanGridview();
@@ -71,7 +61,7 @@ namespace BoVloApp
             }
             if (color_combobox.SelectedItem != null && color_combobox.SelectedItem.ToString() != "")
             {
-               condition.Add(String.Format("idColor = '{0}'", GlobalVar.colors.Select(String.Format("Name = '{0}'", color_combobox.Text))[0]["idColor"].ToString()));
+                condition.Add(String.Format("idColor = '{0}'", GlobalVar.colors.Select(String.Format("Name = '{0}'", color_combobox.Text))[0]["idColor"].ToString()));
             }
             if (size_combobox.SelectedItem != null && size_combobox.SelectedItem.ToString() != "")
             {
@@ -103,32 +93,6 @@ namespace BoVloApp
         }
 
 
-        private void DisplayBikeStock()
-        {
-            HideAll();
-            type_combobox.SelectedItem = null;
-            color_combobox.SelectedItem = null;
-            size_combobox.SelectedItem = null;
-            foreach (Control control in bike_supply_components)
-            {
-                control.Visible = true;
-            }
-            UpdateBikeSupplyData();
-        }
-        private void DisplayPieceStock()
-        {
-            HideAll();
-            foreach (Control control in piece_supply_components)
-            {
-                control.Visible = true;
-            }
-        }
-
-        private void piece_button_Click(object sender, EventArgs e)
-        {
-            DisplayPieceStock();
-        }
-
         private void type_combobox_SelectedIndexChanged(object sender, EventArgs e)
         {
             UpdateBikeSupplyData();
@@ -144,9 +108,97 @@ namespace BoVloApp
             UpdateBikeSupplyData();
         }
 
+//-----------------------------------------------------------------Button effect manager-------------------------------------------------------------
+
         private void bike_button_Click(object sender, EventArgs e)
         {
             DisplayBikeStock();
+            unHideBikes();
+            HidePiece();
+        }
+
+        private void piece_button_Click_1(object sender, EventArgs e)
+        {
+            HideAll();
+            HideBikes();
+            unHidePiece();
+        }
+
+        private void piece_button_Click(object sender, EventArgs e)
+        {
+            DisplayPieceStock();
+        }
+
+//------------------------------------------------------------------Update Display------------------------------------------------------------------
+        private void HideAll()
+        {
+            foreach (Control control in bike_supply_components)
+            {
+                control.Visible = false;
+            }
+            foreach (Control control in piece_supply_components)
+            {
+                control.Visible = false;
+            }
+        }
+
+        private void HideBikes()
+        {
+            dataGridView1.Visible = false;
+        }
+
+        private void unHideBikes()
+        {
+            dataGridView1.Visible = true;
+        }
+
+        private void CleanGridview()
+        {
+            dataGridView1.DataSource = null;
+        }
+
+        private void DisplayBikeStock()
+        {
+            HideAll();
+            type_combobox.SelectedItem = null;
+            color_combobox.SelectedItem = null;
+            size_combobox.SelectedItem = null;
+            foreach (Control control in bike_supply_components)
+            {
+                control.Visible = true;
+            }
+            UpdateBikeSupplyData();
+        }
+
+        private void DisplayPieceStock()
+        {
+            HideAll();
+            foreach (Control control in piece_supply_components)
+            {
+                control.Visible = true;
+            }
+        }
+
+        private void HidePiece()
+        {
+            stockPiece.Visible = false;
+        }
+
+        private void unHidePiece()
+        {
+            stockPiece.Visible = true;
+        }
+
+//--------------------------------------------------------------Get piece data from the db---------------------------------------------------------
+        private DataTable GetPiece()
+        {
+            string request = "SELECT Piece.NamePiece, Piece_Size.Size, Piece_Color.idColor, Bike_Piece.Quantity " +
+                "FROM Piece, Piece_Size, Piece_Color, Bike_Piece " +
+                "WHERE Piece.idPiece = Piece_Size.idPiece";
+            DataTable piece = GlobalVar.ReadSQL(request);
+
+            return piece;
+
         }
     }
 }
