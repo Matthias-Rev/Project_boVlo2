@@ -31,8 +31,12 @@ namespace BoVloApp
         {
             this.Title = new System.Windows.Forms.Label();
             this.backPanel = new System.Windows.Forms.Panel();
+            this.detailsTable = new System.Windows.Forms.DataGridView();
             this.orderTable = new System.Windows.Forms.DataGridView();
+            this.mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
+            this.label = new System.Windows.Forms.Label();
             this.backPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.detailsTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderTable)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,6 +53,8 @@ namespace BoVloApp
             // 
             // backPanel
             // 
+            this.backPanel.Controls.Add(this.label);
+            this.backPanel.Controls.Add(this.detailsTable);
             this.backPanel.Controls.Add(this.Title);
             this.backPanel.Controls.Add(this.orderTable);
             this.backPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -57,6 +63,20 @@ namespace BoVloApp
             this.backPanel.Name = "backPanel";
             this.backPanel.Size = new System.Drawing.Size(1810, 660);
             this.backPanel.TabIndex = 7;
+            // 
+            // detailsTable
+            // 
+            this.detailsTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.detailsTable.BackgroundColor = System.Drawing.SystemColors.Menu;
+            this.detailsTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.detailsTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.detailsTable.Location = new System.Drawing.Point(394, 208);
+            this.detailsTable.Name = "detailsTable";
+            this.detailsTable.RowTemplate.Height = 25;
+            this.detailsTable.Size = new System.Drawing.Size(1075, 289);
+            this.detailsTable.TabIndex = 7;
+            this.detailsTable.Visible = false;
+            this.detailsTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.detailsTable_CellClick);
             // 
             // orderTable
             // 
@@ -69,6 +89,23 @@ namespace BoVloApp
             this.orderTable.RowTemplate.Height = 25;
             this.orderTable.Size = new System.Drawing.Size(1075, 480);
             this.orderTable.TabIndex = 0;
+            this.orderTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.orderTable_CellClick);
+            // 
+            // mySqlCommand1
+            // 
+            this.mySqlCommand1.CacheAge = 0;
+            this.mySqlCommand1.Connection = null;
+            this.mySqlCommand1.EnableCaching = false;
+            this.mySqlCommand1.Transaction = null;
+            // 
+            // label
+            // 
+            this.label.AutoSize = true;
+            this.label.Location = new System.Drawing.Point(237, 320);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(38, 15);
+            this.label.TabIndex = 8;
+            this.label.Text = "label1";
             // 
             // GestionDeCommande
             // 
@@ -83,6 +120,7 @@ namespace BoVloApp
             this.Text = "GestionDeCommande";
             this.backPanel.ResumeLayout(false);
             this.backPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.detailsTable)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderTable)).EndInit();
             this.ResumeLayout(false);
 
@@ -92,5 +130,8 @@ namespace BoVloApp
         private System.Windows.Forms.Label Title;
         private System.Windows.Forms.Panel backPanel;
         private System.Windows.Forms.DataGridView orderTable;
+        private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
+        private System.Windows.Forms.DataGridView detailsTable;
+        private System.Windows.Forms.Label label;
     }
 }
