@@ -16,21 +16,8 @@ namespace BoVloApp
         {
             InitializeComponent();
             DisplayOrder();
-            DisplayDetails();
         }
 
-    
-        private void DisplayDetails()
-        {
-            DataTable orderDetail = GetDetails();
-            detailsTable.DataSource = orderDetail;
-            DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
-            detailsTable.Columns.Add(btn);
-            btn.HeaderText = "";
-            btn.Text = "Close";
-            btn.Name = "btn";
-            btn.UseColumnTextForButtonValue = true;
-        }
         private void DisplayOrder()
         {
             DataTable order = GetOrder();
@@ -48,8 +35,21 @@ namespace BoVloApp
             DataGridView theOrder = sender as DataGridView;
             if (theOrder != null)
             {
-                detailsTable.Visible = true;
+                var val = this.detailsTable[e.ColumnIndex, e.RowIndex].Value.ToString();
+                label.Text = val;
+                string request = "SELECT *  FROM OrderDetails WHERE idOrder="+val ;
+
+                DataTable orderDetail = GlobalVar.ReadSQL(request);
+                
+                detailsTable.DataSource = orderDetail;
+
+
+                
             }
+            
+            detailsTable.Visible = true;
+            orderTable.Visible = false;
+
         }
 
         private void detailsTable_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -58,25 +58,26 @@ namespace BoVloApp
             if (theDetail != null)
             {
                 detailsTable.Visible = false;
+                orderTable.Visible = true;
             }
         }
         
-        private DataTable GetDetails()
-        {
-            //  string request = "SELECT * " +
-            //      "FROM OrderDetails, Orders, Customer, Basket, Color " +
-            //      "WHERE OrderDetails.idOrder = Orders.idOrder ";
-            //      "AND OrderDetails.idArticle = Basket.idArticle "+
-            //      "AND OrderDetails.idBike = Bike.idBike "+
-            //      "AND OrdeDetails.idColor = Color.idColor ";
+        //private DataTable GetDetails()
+        //{
+        //    //  string request = "SELECT * " +
+        //    //      "FROM OrderDetails, Orders, Customer, Basket, Color " +
+        //    //      "WHERE OrderDetails.idOrder = Orders.idOrder ";
+        //    //      "AND OrderDetails.idArticle = Basket.idArticle "+
+        //    //      "AND OrderDetails.idBike = Bike.idBike "+
+        //    //      "AND OrdeDetails.idColor = Color.idColor ";
 
-            string request = "SELECT *  FROM OrderDetails";
+        //    string request = "SELECT *  FROM OrderDetails";
 
-            DataTable orderDetail = GlobalVar.ReadSQL(request);
+        //    DataTable orderDetail = GlobalVar.ReadSQL(request);
 
-            return orderDetail;
+        //    return orderDetail;
 
-        }
+        //}
         private DataTable GetOrder()
         {
             string request = "SELECT Customer.Name, Orders.Date, Orders.status " +
