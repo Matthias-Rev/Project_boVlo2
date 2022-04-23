@@ -31,10 +31,10 @@ namespace BoVloApp
         {
             this.Title = new System.Windows.Forms.Label();
             this.backPanel = new System.Windows.Forms.Panel();
+            this.label = new System.Windows.Forms.Label();
             this.detailsTable = new System.Windows.Forms.DataGridView();
             this.orderTable = new System.Windows.Forms.DataGridView();
             this.mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
-            this.label = new System.Windows.Forms.Label();
             this.backPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.detailsTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderTable)).BeginInit();
@@ -64,30 +64,36 @@ namespace BoVloApp
             this.backPanel.Size = new System.Drawing.Size(1810, 660);
             this.backPanel.TabIndex = 7;
             // 
+            // label
+            // 
+            this.label.AutoSize = true;
+            this.label.Location = new System.Drawing.Point(105, 90);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(38, 15);
+            this.label.TabIndex = 8;
+            this.label.Text = "label1";
+            // 
             // detailsTable
             // 
             this.detailsTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.detailsTable.BackgroundColor = System.Drawing.SystemColors.Menu;
-            this.detailsTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.detailsTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.detailsTable.Location = new System.Drawing.Point(394, 208);
+            this.detailsTable.Location = new System.Drawing.Point(870, 168);
             this.detailsTable.Name = "detailsTable";
             this.detailsTable.RowTemplate.Height = 25;
-            this.detailsTable.Size = new System.Drawing.Size(1075, 289);
+            this.detailsTable.Size = new System.Drawing.Size(889, 480);
             this.detailsTable.TabIndex = 7;
-            this.detailsTable.Visible = false;
-            this.detailsTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.detailsTable_CellClick);
+
             // 
             // orderTable
             // 
             this.orderTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.orderTable.BackgroundColor = System.Drawing.SystemColors.Menu;
-            this.orderTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.orderTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.orderTable.Location = new System.Drawing.Point(394, 158);
+            this.orderTable.Location = new System.Drawing.Point(52, 168);
             this.orderTable.Name = "orderTable";
             this.orderTable.RowTemplate.Height = 25;
-            this.orderTable.Size = new System.Drawing.Size(1075, 480);
+            this.orderTable.Size = new System.Drawing.Size(798, 480);
             this.orderTable.TabIndex = 0;
             this.orderTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.orderTable_CellClick);
             // 
@@ -97,15 +103,6 @@ namespace BoVloApp
             this.mySqlCommand1.Connection = null;
             this.mySqlCommand1.EnableCaching = false;
             this.mySqlCommand1.Transaction = null;
-            // 
-            // label
-            // 
-            this.label.AutoSize = true;
-            this.label.Location = new System.Drawing.Point(237, 320);
-            this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(38, 15);
-            this.label.TabIndex = 8;
-            this.label.Text = "label1";
             // 
             // GestionDeCommande
             // 
