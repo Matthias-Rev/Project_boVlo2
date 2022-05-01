@@ -108,28 +108,31 @@ namespace BoVloApp
             UpdateBikeSupplyData();
         }
 
-//-----------------------------------------------------------------Button effect manager-------------------------------------------------------------
-
+//-----------------------------------------------------------------Button effects-------------------------------------------------------------
+    //----------------------------------Get the bikes stock tables-------------------------------
         private void bike_button_Click(object sender, EventArgs e)
         {
             DisplayBikeStock();
-            unHideBikes();
+            UnHideBikes();
             HidePiece();
         }
 
+        //--------------------------------Hide Bike related buttons and unhide Piece related ones-----------------
         private void piece_button_Click_1(object sender, EventArgs e)
         {
             HideAll();
             HideBikes();
-            unHidePiece();
+            UnHidePiece();
         }
 
+        //-----------------------------Display the Piece stock data------------------------
         private void piece_button_Click(object sender, EventArgs e)
         {
             DisplayPieceStock();
         }
 
 //------------------------------------------------------------------Update Display------------------------------------------------------------------
+        //-----------------------Hides every btn---------------------------
         private void HideAll()
         {
             foreach (Control control in bike_supply_components)
@@ -142,21 +145,26 @@ namespace BoVloApp
             }
         }
 
+        //-------------------------Hides bike datagrideview-------------------------
         private void HideBikes()
         {
             dataGridView1.Visible = false;
         }
 
-        private void unHideBikes()
+        //-------------------------Unides bike datagrideview-------------------------
+
+        private void UnHideBikes()
         {
             dataGridView1.Visible = true;
         }
 
+        //------------------------Set the bike datagridview source data to null, resulting in an empty table------
         private void CleanGridview()
         {
             dataGridView1.DataSource = null;
         }
 
+        //-----------------------------Dsiplay Bike Stock-----------------------------------
         private void DisplayBikeStock()
         {
             HideAll();
@@ -170,6 +178,7 @@ namespace BoVloApp
             UpdateBikeSupplyData();
         }
 
+        //---------------------Dsiplays Piece Stock--------------------------------
         private void DisplayPieceStock()
         {
             HideAll();
@@ -179,12 +188,14 @@ namespace BoVloApp
             }
         }
 
+        //---------------------Hides Piece Datagridview-----------------
         private void HidePiece()
         {
             stockPiece.Visible = false;
         }
 
-        private void unHidePiece()
+        //---------------------Unhides Piece Datagridview-----------------
+        private void UnHidePiece()
         {
             stockPiece.Visible = true;
         }
