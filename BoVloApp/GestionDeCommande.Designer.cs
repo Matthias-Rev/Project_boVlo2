@@ -95,7 +95,7 @@ namespace BoVloApp
             this.orderTable.RowTemplate.Height = 25;
             this.orderTable.Size = new System.Drawing.Size(798, 480);
             this.orderTable.TabIndex = 0;
-            this.orderTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.orderTable_CellClick);
+            this.orderTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DisplayOrderDetails);
             // 
             // mySqlCommand1
             // 
