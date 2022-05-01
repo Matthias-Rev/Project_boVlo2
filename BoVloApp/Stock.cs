@@ -47,6 +47,7 @@ namespace BoVloApp
 
 
             stockPiece.DataSource = GetPiece();
+            AvailablePiece.DataSource = GetAvailablePiece();
         }
 
 //--------------------------------------------------------Get/Update information regarding the bike stock--------------------------------------------
@@ -192,12 +193,16 @@ namespace BoVloApp
         private void HidePiece()
         {
             stockPiece.Visible = false;
+            OrderPiece.Visible = false;
+            AvailablePiece.Visible = false;
         }
 
         //---------------------Unhides Piece Datagridview-----------------
         private void UnHidePiece()
         {
             stockPiece.Visible = true;
+            OrderPiece.Visible = true;
+            AvailablePiece.Visible = false;
         }
 
 //--------------------------------------------------------------Get piece data from the db---------------------------------------------------------
@@ -210,6 +215,21 @@ namespace BoVloApp
 
             return piece;
 
+        }
+
+        private DataTable GetAvailablePiece()
+        {
+            string request = "SELECT Piece.NamePiece FROM Piece";
+            DataTable availablePiece = GlobalVar.ReadSQL(request);
+
+            return availablePiece;
+
+        }
+
+        private void OrderPiece_Click(object sender, EventArgs e)
+        {
+            AvailablePiece.Visible = true;
+            stockPiece.Visible = false;
         }
     }
 }
