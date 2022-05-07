@@ -253,10 +253,7 @@ namespace BoVloApp
                     items.Add(row.Cells["NamePiece"].Value.ToString(), row.Cells["Amount"].Value.ToString());
                 }
             }
-
             label1.Text = MyDictionaryToJson(items);
-
-
         }
 
         string MyDictionaryToJson(Dictionary<string, string> dict)
