@@ -15,6 +15,8 @@ namespace BoVloApp
 //--------------------------------------------------------Initializing the variables that will be used afterwards------------------------------------
         List<Control> bike_supply_components = new();
         List<Control> piece_supply_components = new();
+        Dictionary<string, string> items = new Dictionary<string, string>();
+
         public Stock()
         {
             InitializeComponent();
@@ -48,6 +50,7 @@ namespace BoVloApp
 
             stockPiece.DataSource = GetPiece();
             AvailablePiece.DataSource = GetAvailablePiece();
+            AddNumberColumnPieceOrder();
         }
 
 //--------------------------------------------------------Get/Update information regarding the bike stock--------------------------------------------
@@ -109,6 +112,7 @@ namespace BoVloApp
             UpdateBikeSupplyData();
         }
 
+
 //-----------------------------------------------------------------Button effects-------------------------------------------------------------
     //----------------------------------Get the bikes stock tables-------------------------------
         private void bike_button_Click(object sender, EventArgs e)
@@ -132,7 +136,15 @@ namespace BoVloApp
             DisplayPieceStock();
         }
 
-//------------------------------------------------------------------Update Display------------------------------------------------------------------
+        private void OrderPiece_Click(object sender, EventArgs e)
+        {
+            AvailablePiece.Visible = true;
+            stockPiece.Visible = false;
+            GenerateOrder.Visible = true;
+        }
+
+
+        //------------------------------------------------------------------Update Display------------------------------------------------------------------
         //-----------------------Hides every btn---------------------------
         private void HideAll()
         {
@@ -189,6 +201,12 @@ namespace BoVloApp
             }
         }
 
+        //----------------------Adds a column to the piece datatable----------------
+        void AddNumberColumnPieceOrder()
+        {
+            AvailablePiece.Columns.Add("Amount", "Amount");
+        }
+
         //---------------------Hides Piece Datagridview-----------------
         private void HidePiece()
         {
@@ -226,10 +244,26 @@ namespace BoVloApp
 
         }
 
-        private void OrderPiece_Click(object sender, EventArgs e)
+        private void GenerateOrder_Click(object sender, EventArgs e)
         {
-            AvailablePiece.Visible = true;
-            stockPiece.Visible = false;
+            foreach (DataGridViewRow row in AvailablePiece.Rows)
+            {
+                if (row.Cells["Amount"].Value != null)
+                {
+                    items.Add(row.Cells["NamePiece"].Value.ToString(), row.Cells["Amount"].Value.ToString());
+                }
+            }
+
+            label1.Text = MyDictionaryToJson(items);
+
+
+        }
+
+        string MyDictionaryToJson(Dictionary<string, string> dict)
+        {
+            var entries = dict.Select(d =>
+                string.Format("\"{0}\": [{1}]", d.Key, string.Join(",", d.Value)));
+            return "{" + string.Join(",", entries) + "}";
         }
     }
 }

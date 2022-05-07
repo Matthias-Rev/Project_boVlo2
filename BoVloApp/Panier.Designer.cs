@@ -37,7 +37,6 @@ namespace BoVloApp
             this.updateDb = new System.Windows.Forms.Button();
             this.panierData = new System.Windows.Forms.DataGridView();
             this.LabelPrixTotal = new System.Windows.Forms.Label();
-            this.TableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.PanelPanier.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panierData)).BeginInit();
             this.SuspendLayout();
@@ -90,7 +89,6 @@ namespace BoVloApp
             this.PanelPanier.Controls.Add(this.updateDb);
             this.PanelPanier.Controls.Add(this.panierData);
             this.PanelPanier.Controls.Add(this.LabelPrixTotal);
-            this.PanelPanier.Controls.Add(this.TableLayoutPanel);
             this.PanelPanier.Controls.Add(this.Title);
             this.PanelPanier.Controls.Add(this.LabelTotal);
             this.PanelPanier.Controls.Add(this.buttonPlanning);
@@ -134,33 +132,6 @@ namespace BoVloApp
             this.LabelPrixTotal.TabIndex = 5;
             this.LabelPrixTotal.Text = "0";
             // 
-            // TableLayoutPanel
-            // 
-            this.TableLayoutPanel.AutoScroll = true;
-            this.TableLayoutPanel.ColumnCount = 5;
-            this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.TableLayoutPanel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TableLayoutPanel.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
-            this.TableLayoutPanel.Location = new System.Drawing.Point(363, 756);
-            this.TableLayoutPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TableLayoutPanel.Name = "TableLayoutPanel";
-            this.TableLayoutPanel.RowCount = 8;
-            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
-            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
-            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
-            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
-            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
-            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
-            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
-            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
-            this.TableLayoutPanel.Size = new System.Drawing.Size(1000, 470);
-            this.TableLayoutPanel.TabIndex = 2;
-            this.TableLayoutPanel.Visible = false;
-            // 
             // Panier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -184,7 +155,6 @@ namespace BoVloApp
         private System.Windows.Forms.Label LabelTotal;
         private System.Windows.Forms.Label Title;
         private System.Windows.Forms.Panel PanelPanier;
-        private System.Windows.Forms.TableLayoutPanel TableLayoutPanel;
         private System.Windows.Forms.Label LabelPrixTotal;
         private System.Windows.Forms.DataGridView panierData;
         private System.Windows.Forms.Button updateDb;
