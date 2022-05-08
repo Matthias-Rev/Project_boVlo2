@@ -18,7 +18,7 @@ namespace BoVloApp
 
             string request = String.Format(
             "SELECT * " +
-            "FROM calendar "
+            "FROM Calendar "
     ,       GlobalVar.ReadXML().key);
             DataTable calendar = GlobalVar.ReadSQL(request);
             string[] titels = { "Command_id", "Start date", "End date"};
