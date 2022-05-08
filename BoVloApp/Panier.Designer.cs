@@ -39,6 +39,7 @@ namespace BoVloApp
             this.label1 = new System.Windows.Forms.Label();
             this.panierData = new System.Windows.Forms.DataGridView();
             this.LabelPrixTotal = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.PanelPanier.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panierData)).BeginInit();
             this.SuspendLayout();
@@ -88,6 +89,7 @@ namespace BoVloApp
             // 
             // PanelPanier
             // 
+            this.PanelPanier.Controls.Add(this.label4);
             this.PanelPanier.Controls.Add(this.label3);
             this.PanelPanier.Controls.Add(this.label2);
             this.PanelPanier.Controls.Add(this.label1);
@@ -153,6 +155,15 @@ namespace BoVloApp
             this.LabelPrixTotal.TabIndex = 5;
             this.LabelPrixTotal.Text = "0";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(288, 112);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(38, 15);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "label4";
+            // 
             // Panier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -181,5 +192,6 @@ namespace BoVloApp
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
