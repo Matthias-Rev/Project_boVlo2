@@ -34,7 +34,9 @@ namespace BoVloApp
             this.LabelTotal = new System.Windows.Forms.Label();
             this.Title = new System.Windows.Forms.Label();
             this.PanelPanier = new System.Windows.Forms.Panel();
-            this.updateDb = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panierData = new System.Windows.Forms.DataGridView();
             this.LabelPrixTotal = new System.Windows.Forms.Label();
             this.PanelPanier.SuspendLayout();
@@ -86,7 +88,9 @@ namespace BoVloApp
             // 
             // PanelPanier
             // 
-            this.PanelPanier.Controls.Add(this.updateDb);
+            this.PanelPanier.Controls.Add(this.label3);
+            this.PanelPanier.Controls.Add(this.label2);
+            this.PanelPanier.Controls.Add(this.label1);
             this.PanelPanier.Controls.Add(this.panierData);
             this.PanelPanier.Controls.Add(this.LabelPrixTotal);
             this.PanelPanier.Controls.Add(this.Title);
@@ -99,16 +103,32 @@ namespace BoVloApp
             this.PanelPanier.Size = new System.Drawing.Size(1701, 823);
             this.PanelPanier.TabIndex = 22;
             // 
-            // updateDb
+            // label3
             // 
-            this.updateDb.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.updateDb.Location = new System.Drawing.Point(753, 573);
-            this.updateDb.Name = "updateDb";
-            this.updateDb.Size = new System.Drawing.Size(165, 45);
-            this.updateDb.TabIndex = 7;
-            this.updateDb.Text = "Update Cart";
-            this.updateDb.UseVisualStyleBackColor = true;
-            this.updateDb.Click += new System.EventHandler(this.updateDb_Click);
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(540, 38);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(38, 15);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "label3";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(398, 38);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 15);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "cellValue";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(195, 38);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 15);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "columnName";
             // 
             // panierData
             // 
@@ -121,6 +141,7 @@ namespace BoVloApp
             this.panierData.RowTemplate.Height = 25;
             this.panierData.Size = new System.Drawing.Size(1389, 411);
             this.panierData.TabIndex = 6;
+            this.panierData.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.panierData_CellValueChanged);
             // 
             // LabelPrixTotal
             // 
@@ -157,6 +178,8 @@ namespace BoVloApp
         private System.Windows.Forms.Panel PanelPanier;
         private System.Windows.Forms.Label LabelPrixTotal;
         private System.Windows.Forms.DataGridView panierData;
-        private System.Windows.Forms.Button updateDb;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
     }
 }
