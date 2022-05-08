@@ -55,7 +55,7 @@ namespace BoVloApp
         private void panierData_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             string columnName = panierData.CurrentCell.OwningColumn.Name;
-            string cellValue = panierData.CurrentCell.Value.ToString();
+            string cellValue = Int32.Parse(panierData.CurrentCell.Value.ToString());
             string currentIdArticle = panierData.Rows[panierData.CurrentCell.RowIndex].Cells["idArticle"].Value.ToString();
 
             label1.Text = columnName;
@@ -63,7 +63,7 @@ namespace BoVloApp
             label3.Text = currentIdArticle;
 
             string query = "UPDATE Bovlo.Basket" +
-                "SET " + columnName + " = " + cellValue +
+                "SET " + columnName + " = " + "cellValue" +
                 " WHERE Basket.idArticle = " + currentIdArticle;
             GlobalVar.WriteSQL(query);
         }
