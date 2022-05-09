@@ -18,6 +18,7 @@ namespace BoVloApp
             DisplayOrder();
         }
 
+<<<<<<< HEAD
         private void DisplayOrder()
         {
             DataTable order = GetMore();
@@ -63,6 +64,20 @@ namespace BoVloApp
         {
             DataGridView update = sender as DataGridView;
             if (update.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+=======
+            string request = String.Format(
+            "SELECT * " +
+            "FROM Calendar "
+    ,       GlobalVar.ReadXML().key);
+            DataTable calendar = GlobalVar.ReadSQL(request);
+            string[] titels = { "Command_id", "Start date", "End date"};
+            DataTable data = new();
+            foreach (string titel in titels)
+            {
+                data.Columns.Add(titel);
+            }
+            foreach (DataRow row in calendar.Rows)
+>>>>>>> bcd9de73f17aae232d0b26841957090f3a49d6b1
             {
 
                 update.CurrentRow.Selected = true;

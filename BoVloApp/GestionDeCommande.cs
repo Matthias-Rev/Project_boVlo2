@@ -19,7 +19,7 @@ namespace BoVloApp
             DisplayOrder();
         }
 
-        //-----------------------------------Get the data source for the datagridview "Orders---------------
+        //-----------------------------------Get the data source for the datagridview "Orders"---------------
         private void DisplayOrder()
         {
             DataTable order = GetOrder();
@@ -27,7 +27,7 @@ namespace BoVloApp
             CreateBtn();
         }
         
-        //-------------------------------Create a Buttonn on each row-------------------------------
+        //----------------------------------Create a Buttonn on each row-------------------------------
         private void CreateBtn()
         {
             DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
@@ -62,7 +62,7 @@ namespace BoVloApp
 
                 detailsTable.DataSource = orderDetail;
 
-                //-------------------------This label is used for debugging purposes
+                //-------------------------This label is used for debugging purposes----------------------
                 //label.Text = theOrder.Rows[e.RowIndex].Cells["idOrder"].FormattedValue.ToString();
 
             }

@@ -34,10 +34,12 @@ namespace BoVloApp
             this.LabelTotal = new System.Windows.Forms.Label();
             this.Title = new System.Windows.Forms.Label();
             this.PanelPanier = new System.Windows.Forms.Panel();
-            this.updateDb = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panierData = new System.Windows.Forms.DataGridView();
             this.LabelPrixTotal = new System.Windows.Forms.Label();
-            this.TableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.label4 = new System.Windows.Forms.Label();
             this.PanelPanier.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panierData)).BeginInit();
             this.SuspendLayout();
@@ -87,10 +89,12 @@ namespace BoVloApp
             // 
             // PanelPanier
             // 
-            this.PanelPanier.Controls.Add(this.updateDb);
+            this.PanelPanier.Controls.Add(this.label4);
+            this.PanelPanier.Controls.Add(this.label3);
+            this.PanelPanier.Controls.Add(this.label2);
+            this.PanelPanier.Controls.Add(this.label1);
             this.PanelPanier.Controls.Add(this.panierData);
             this.PanelPanier.Controls.Add(this.LabelPrixTotal);
-            this.PanelPanier.Controls.Add(this.TableLayoutPanel);
             this.PanelPanier.Controls.Add(this.Title);
             this.PanelPanier.Controls.Add(this.LabelTotal);
             this.PanelPanier.Controls.Add(this.buttonPlanning);
@@ -101,16 +105,32 @@ namespace BoVloApp
             this.PanelPanier.Size = new System.Drawing.Size(1701, 823);
             this.PanelPanier.TabIndex = 22;
             // 
-            // updateDb
+            // label3
             // 
-            this.updateDb.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.updateDb.Location = new System.Drawing.Point(753, 573);
-            this.updateDb.Name = "updateDb";
-            this.updateDb.Size = new System.Drawing.Size(165, 45);
-            this.updateDb.TabIndex = 7;
-            this.updateDb.Text = "Update Cart";
-            this.updateDb.UseVisualStyleBackColor = true;
-            this.updateDb.Click += new System.EventHandler(this.updateDb_Click);
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(540, 38);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(38, 15);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "label3";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(398, 38);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 15);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "cellValue";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(195, 38);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 15);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "columnName";
             // 
             // panierData
             // 
@@ -123,6 +143,7 @@ namespace BoVloApp
             this.panierData.RowTemplate.Height = 25;
             this.panierData.Size = new System.Drawing.Size(1389, 411);
             this.panierData.TabIndex = 6;
+            this.panierData.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.panierData_CellValueChanged);
             // 
             // LabelPrixTotal
             // 
@@ -134,32 +155,14 @@ namespace BoVloApp
             this.LabelPrixTotal.TabIndex = 5;
             this.LabelPrixTotal.Text = "0";
             // 
-            // TableLayoutPanel
+            // label4
             // 
-            this.TableLayoutPanel.AutoScroll = true;
-            this.TableLayoutPanel.ColumnCount = 5;
-            this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.TableLayoutPanel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TableLayoutPanel.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
-            this.TableLayoutPanel.Location = new System.Drawing.Point(363, 756);
-            this.TableLayoutPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TableLayoutPanel.Name = "TableLayoutPanel";
-            this.TableLayoutPanel.RowCount = 8;
-            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
-            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
-            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
-            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
-            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
-            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
-            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
-            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
-            this.TableLayoutPanel.Size = new System.Drawing.Size(1000, 470);
-            this.TableLayoutPanel.TabIndex = 2;
-            this.TableLayoutPanel.Visible = false;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(288, 112);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(38, 15);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "label4";
             // 
             // Panier
             // 
@@ -184,9 +187,11 @@ namespace BoVloApp
         private System.Windows.Forms.Label LabelTotal;
         private System.Windows.Forms.Label Title;
         private System.Windows.Forms.Panel PanelPanier;
-        private System.Windows.Forms.TableLayoutPanel TableLayoutPanel;
         private System.Windows.Forms.Label LabelPrixTotal;
         private System.Windows.Forms.DataGridView panierData;
-        private System.Windows.Forms.Button updateDb;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

@@ -25,14 +25,18 @@ namespace BoVloApp
         {
             DataTable basket = GetBasket();
             panierData.DataSource = basket;
+            CalculatePrice(basket);
+        }
+
+        private void CalculatePrice(DataTable basket)
+        {
             int prixtotal = 0;
-            foreach(DataRow row in basket.Rows)
+            foreach (DataRow row in basket.Rows)
             {
                 prixtotal += Int32.Parse(row["Price"].ToString()) * Int32.Parse(row["Quantity"].ToString());
             }
             LabelPrixTotal.Text = prixtotal.ToString();
         }
-
 
         private void buttonFinaliser_Click(object sender, EventArgs e)
         {
@@ -41,7 +45,7 @@ namespace BoVloApp
 
         private DataTable GetBasket()
         {
-            string request = String.Format("SELECT Bike.Name, Basket.Size, Bike.Price, Basket.Quantity " +
+            string request = String.Format("SELECT Basket.idArticle, Bike.Name, Basket.Size, Bike.Price, Basket.Quantity " +
                 "FROM Basket, Bike " +
                 "WHERE Basket.SessionKey='{0}' " +
                 "AND Basket.idBike = Bike.idBike"
@@ -52,33 +56,23 @@ namespace BoVloApp
         //
         //---------------------------------------------------------bouton pour update la db--------------------------------------------
         //
-        private void updateDb_Click(object sender, EventArgs e)
+        private void panierData_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            //using (SqlBulkCopy bulkcopy = new SqlBulkCopy(Mysqlconn.connect()))
-            //{
-            //    foreach (DataColumn c in panierData.Columns)
-            //        bulkcopy.ColumnMappings.Add(c.ColumnName, c.ColumnName);
+            string columnName = panierData.CurrentCell.OwningColumn.Name;
+            int cellValue = Int16.Parse(panierData.CurrentCell.Value.ToString());
+            string currentIdArticle = panierData.Rows[panierData.CurrentCell.RowIndex].Cells["idArticle"].Value.ToString();
 
-            //    bulkcopy.DestinationTableName = panierData.TableName;
-            //    try
-            //    {
-            //        bulkcopy.WriteToServer(DataTable);
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        Console.WriteLine(ex.Message);
-            //    }
-            //}
+            label1.Text = columnName;
+            label2.Text = cellValue.ToString();
+            label3.Text = currentIdArticle;
 
-            foreach (DataRow row in GetBasket().Rows)
-            {
-                string query = "Insert INTO temp_table (Name, Size, Quantity, Price ) values (" 
-                    + row["Name"] + ", "    
-                    + row["Size"] + ", " 
-                    + row["Quantity"] + ", " 
-                    + row["Price"] + ")";
-                GlobalVar.WriteSQL(query);
-            }
+            string query = String.Format("UPDATE Bovlo.Basket SET `{0}` = '{1}' WHERE (`idArticle` = '{2}')", columnName, cellValue, currentIdArticle);
+
+            GlobalVar.WriteSQL(query);
+
+            label4.Text = query;
+
         }
+
     }
 }
