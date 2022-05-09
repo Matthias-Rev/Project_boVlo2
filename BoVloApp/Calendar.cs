@@ -12,31 +12,83 @@ namespace BoVloApp
 {
     public partial class Calendar : Form
     {
-        public Calendar()
+            public Calendar()
         {
             InitializeComponent();
+            DisplayOrder();
+        }
 
-            string request = String.Format(
-            "SELECT * " +
-            "FROM calendar "
-    ,       GlobalVar.ReadXML().key);
-            DataTable calendar = GlobalVar.ReadSQL(request);
-            string[] titels = { "Command_id", "Start date", "End date"};
-            DataTable data = new();
-            foreach (string titel in titels)
+        private void DisplayOrder()
+        {
+            DataTable order = GetMore();
+            //DataTable order = GetCalendar();
+            Calendar_grid.DataSource = order;
+            Calendar_grid.Columns["Start"].DefaultCellStyle.Format = "yyyy/MM/dd";
+        }
+
+            
+        private DataTable GetCalendar()
+        {
+            string request = "SELECT Calendar " +
+                "FROM Calendar ";
+            DataTable dates = GlobalVar.ReadSQL(request);
+
+            return dates;
+
+        }
+        private DataTable GetMore()
+        {
+            string request = "SELECT Customer.Name, Calendar.idOrder,Calendar.Start, Calendar.End " +
+                "FROM Orders, Customer, Calendar " +
+                "WHERE Calendar.idOrder = Orders.idOrder " +
+                "AND Orders.Customer_id = Customer.Customer_id";
+
+            DataTable order = GlobalVar.ReadSQL(request);
+
+
+            return order;
+
+        }
+        private DataTable Update_date()
+        {
+            string request = "SELECT Customer.Name ,Calendar.idOrder, Calendar.Start, Calendar.End " +
+                "FROM Orders, Customer, Calendar " +
+                "WHERE Calendar.idOrder = Orders.idOrder " +
+                "AND Orders.Customer_id = Customer.Customer_id";
+            DataTable order = GlobalVar.ReadSQL(request);
+            return order;
+        }
+
+        private void Calendar_grid_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView update = sender as DataGridView;
+            if (update.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
             {
-                data.Columns.Add(titel);
+
+                update.CurrentRow.Selected = true;
+                var val = update.Rows[e.RowIndex].Cells[e.ColumnIndex].FormattedValue.ToString();
+                var name_col = update.Columns[e.ColumnIndex].Name;
+                var name_column = update.Rows[e.RowIndex].Cells["idOrder"].FormattedValue.ToString();
+
+                //------------------Marche pas-----------------------
+                //string request = "SELECT * " +
+                //    "FROM OrderDetails, Orders, Customer, Basket, Color " +
+                //    "WHERE OrderDetails.idOrder = Orders.idOrder " +
+                //    "AND OrderDetails.idArticle = Basket.idArticle " +
+                //    "AND OrderDetails.idBike = Bike.idBike " +
+                //    "AND OrdeDetails.idColor = Color.idColor ";
+                //----------------------------------------------------
+
+                string request = "UPDATE Calendar SET " + name_col + " = CAST("+ val +" AS DATETIME) WHERE idOrder = " + name_column;
+                DataTable orderDetail = GlobalVar.ReadSQL(request);
+
+                update.DataSource = orderDetail;
+                GetMore();
+
+                //-------------------------This label is used for debugging purposes
+                //label2.Text = val.ToString();
+
             }
-            foreach (DataRow row in calendar.Rows)
-            {
-                DataRow datarow = data.NewRow();
-                datarow["Command_id"] = row["idOrder"].ToString();
-                datarow["Start date"] = row["start"].ToString();
-                datarow["End date"] = row["end"].ToString();
-                data.Rows.Add(datarow);
-            }
-            //GlobalVar.DisplayTableByData(titels, data, tableLayoutPanel1);
-            GlobalVar.SetLocation(this, -100, 0, tableLayoutPanel1);
         }
     }
 }
