@@ -31,7 +31,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Panel_calendar = new System.Windows.Forms.Panel();
             this.Calendar_grid = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
             this.Panel_calendar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Calendar_grid)).BeginInit();
             this.SuspendLayout();
@@ -48,7 +47,6 @@
             // 
             // Panel_calendar
             // 
-            this.Panel_calendar.Controls.Add(this.label2);
             this.Panel_calendar.Controls.Add(this.Calendar_grid);
             this.Panel_calendar.Location = new System.Drawing.Point(1, -1);
             this.Panel_calendar.Name = "Panel_calendar";
@@ -64,16 +62,8 @@
             this.Calendar_grid.RowTemplate.Height = 25;
             this.Calendar_grid.Size = new System.Drawing.Size(912, 554);
             this.Calendar_grid.TabIndex = 3;
+            this.Calendar_grid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Validate_command);
             this.Calendar_grid.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.Calendar_grid_CellEndEdit);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1009, 52);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 15);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "label2";
             // 
             // Calendar
             // 
@@ -86,7 +76,6 @@
             this.Name = "Calendar";
             this.Text = "Calendar";
             this.Panel_calendar.ResumeLayout(false);
-            this.Panel_calendar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Calendar_grid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -98,6 +87,5 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel Panel_calendar;
         private System.Windows.Forms.DataGridView Calendar_grid;
-        private System.Windows.Forms.Label label2;
     }
 }
