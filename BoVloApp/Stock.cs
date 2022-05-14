@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -255,6 +256,7 @@ namespace BoVloApp
                         items.Add(row.Cells["NamePiece"].Value.ToString(), row.Cells["Amount"].Value.ToString());
                     }
                 }
+                File.WriteAllText(@"C:\Users\edgar\Desktop\Order.txt", MyDictionaryToJson(items));
             }
             catch (Exception ex)
             {
