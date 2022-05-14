@@ -224,7 +224,7 @@ namespace BoVloApp
             this.GenerateOrder.Name = "GenerateOrder";
             this.GenerateOrder.Size = new System.Drawing.Size(101, 30);
             this.GenerateOrder.TabIndex = 17;
-            this.GenerateOrder.Text = "GenerateOrder";
+            this.GenerateOrder.Text = "Generate order";
             this.GenerateOrder.UseVisualStyleBackColor = true;
             this.GenerateOrder.Visible = false;
             this.GenerateOrder.Click += new System.EventHandler(this.GenerateOrder_Click);
