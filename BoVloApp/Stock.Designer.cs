@@ -34,7 +34,7 @@ namespace BoVloApp
             this.bike_button = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.search_textbox = new System.Windows.Forms.TextBox();
-            this.piece_button = new System.Windows.Forms.Button();
+            this.btnParts = new System.Windows.Forms.Button();
             this.search_button = new System.Windows.Forms.Button();
             this.type_combobox = new System.Windows.Forms.ComboBox();
             this.type_label = new System.Windows.Forms.Label();
@@ -47,7 +47,6 @@ namespace BoVloApp
             this.OrderPiece = new System.Windows.Forms.Button();
             this.AvailablePiece = new System.Windows.Forms.DataGridView();
             this.GenerateOrder = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockPiece)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AvailablePiece)).BeginInit();
@@ -84,17 +83,17 @@ namespace BoVloApp
             this.search_textbox.Size = new System.Drawing.Size(512, 23);
             this.search_textbox.TabIndex = 4;
             // 
-            // piece_button
+            // btnParts
             // 
-            this.piece_button.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.piece_button.Location = new System.Drawing.Point(517, 216);
-            this.piece_button.Margin = new System.Windows.Forms.Padding(2);
-            this.piece_button.Name = "piece_button";
-            this.piece_button.Size = new System.Drawing.Size(83, 32);
-            this.piece_button.TabIndex = 5;
-            this.piece_button.Text = "Pieces";
-            this.piece_button.UseVisualStyleBackColor = true;
-            this.piece_button.Click += new System.EventHandler(this.piece_button_Click_1);
+            this.btnParts.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnParts.Location = new System.Drawing.Point(517, 216);
+            this.btnParts.Margin = new System.Windows.Forms.Padding(2);
+            this.btnParts.Name = "btnParts";
+            this.btnParts.Size = new System.Drawing.Size(83, 32);
+            this.btnParts.TabIndex = 5;
+            this.btnParts.Text = "Parts";
+            this.btnParts.UseVisualStyleBackColor = true;
+            this.btnParts.Click += new System.EventHandler(this.piece_button_Click_1);
             // 
             // search_button
             // 
@@ -230,21 +229,11 @@ namespace BoVloApp
             this.GenerateOrder.Visible = false;
             this.GenerateOrder.Click += new System.EventHandler(this.GenerateOrder_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1216, 88);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 15);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "label1";
-            // 
             // Stock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1699, 825);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.GenerateOrder);
             this.Controls.Add(this.AvailablePiece);
             this.Controls.Add(this.OrderPiece);
@@ -257,7 +246,7 @@ namespace BoVloApp
             this.Controls.Add(this.type_label);
             this.Controls.Add(this.type_combobox);
             this.Controls.Add(this.search_button);
-            this.Controls.Add(this.piece_button);
+            this.Controls.Add(this.btnParts);
             this.Controls.Add(this.search_textbox);
             this.Controls.Add(this.bike_button);
             this.Controls.Add(this.title_label);
@@ -279,7 +268,7 @@ namespace BoVloApp
         private System.Windows.Forms.Button bike_button;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.TextBox search_textbox;
-        private System.Windows.Forms.Button piece_button;
+        private System.Windows.Forms.Button btnParts;
         private System.Windows.Forms.Button search_button;
         private System.Windows.Forms.ComboBox type_combobox;
         private System.Windows.Forms.Label type_label;
@@ -292,6 +281,5 @@ namespace BoVloApp
         private System.Windows.Forms.Button OrderPiece;
         private System.Windows.Forms.DataGridView AvailablePiece;
         private System.Windows.Forms.Button GenerateOrder;
-        private System.Windows.Forms.Label label1;
     }
 }

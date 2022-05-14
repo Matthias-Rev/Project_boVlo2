@@ -84,6 +84,7 @@ namespace BoVloApp
             this.orderTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.orderTable.Location = new System.Drawing.Point(52, 168);
             this.orderTable.Name = "orderTable";
+            this.orderTable.ReadOnly = true;
             this.orderTable.RowTemplate.Height = 25;
             this.orderTable.Size = new System.Drawing.Size(798, 480);
             this.orderTable.TabIndex = 0;

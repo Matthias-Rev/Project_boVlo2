@@ -223,7 +223,7 @@ namespace BoVloApp
             AvailablePiece.Visible = false;
         }
 
-//--------------------------------------------------------------Get piece data from the db---------------------------------------------------------
+//--------------------------------------------------------------Get parts data from the db---------------------------------------------------------
         private DataTable GetPiece()
         {
             string request = "SELECT Piece.NamePiece, Piece_Size.Size, Piece_Color.idColor, Bike_Piece.Quantity " +
@@ -246,14 +246,21 @@ namespace BoVloApp
 
         private void GenerateOrder_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in AvailablePiece.Rows)
+            try
             {
-                if (row.Cells["Amount"].Value != null)
+                foreach (DataGridViewRow row in AvailablePiece.Rows)
                 {
-                    items.Add(row.Cells["NamePiece"].Value.ToString(), row.Cells["Amount"].Value.ToString());
+                    if (row.Cells["Amount"].Value != null)
+                    {
+                        items.Add(row.Cells["NamePiece"].Value.ToString(), row.Cells["Amount"].Value.ToString());
+                    }
                 }
             }
-            label1.Text = MyDictionaryToJson(items);
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         string MyDictionaryToJson(Dictionary<string, string> dict)

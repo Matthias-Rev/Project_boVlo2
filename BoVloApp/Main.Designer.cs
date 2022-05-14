@@ -126,7 +126,7 @@
             // 
             this.Titel.AutoSize = true;
             this.Titel.Font = new System.Drawing.Font("Segoe UI", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Titel.Location = new System.Drawing.Point(833, 117);
+            this.Titel.Location = new System.Drawing.Point(885, 176);
             this.Titel.Name = "Titel";
             this.Titel.Size = new System.Drawing.Size(199, 72);
             this.Titel.TabIndex = 7;
