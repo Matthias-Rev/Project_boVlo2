@@ -29,7 +29,7 @@ namespace BoVloApp
 //-------------------------------Navigates to new customer window upon pressing this btn---------------------
         private void BecomeCustomer(object sender, EventArgs e)
         {
-            GlobalVar.Loadform(panelMember, new Final_Catalogue(main));
+            GlobalVar.Loadform(panelMember, new Final_Catalog(main));
         }
 
 //--------------------------Search the name of the company in the db------------------------------------------
@@ -73,7 +73,7 @@ namespace BoVloApp
                     }
                 }
             }
-            GlobalVar.Loadform(panelMember, new Final_Catalogue (main));
+            GlobalVar.Loadform(panelMember, new Final_Catalog (main));
         }
     }
 }
