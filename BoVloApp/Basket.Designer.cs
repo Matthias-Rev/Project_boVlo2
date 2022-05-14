@@ -99,12 +99,15 @@ namespace BoVloApp
             // 
             // panierData
             // 
+            this.panierData.AllowUserToAddRows = false;
             this.panierData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.panierData.BackgroundColor = System.Drawing.SystemColors.Menu;
             this.panierData.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.panierData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.panierData.Location = new System.Drawing.Point(142, 145);
             this.panierData.Name = "panierData";
+            this.panierData.ReadOnly = true;
+            this.panierData.RowHeadersVisible = false;
             this.panierData.RowTemplate.Height = 25;
             this.panierData.Size = new System.Drawing.Size(1389, 411);
             this.panierData.TabIndex = 6;

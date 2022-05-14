@@ -46,9 +46,7 @@ namespace BoVloApp
             GlobalVar.UpdateCombobox(size_combobox, Availablilty(GlobalVar.ReadSQL("SELECT * FROM Size"), "Size"));
             size_combobox.SelectedItem = null;
             HideAll();
-            dataGridView1.DataSource = null;
-
-
+            dataGridViewBikes.DataSource = null;
             stockPiece.DataSource = GetPiece();
             AvailablePiece.DataSource = GetAvailablePiece();
             AddNumberColumnPieceOrder();
@@ -94,7 +92,7 @@ namespace BoVloApp
                 datarow["Quantity"] = row["Quantity"].ToString();
                 data.Rows.Add(datarow);
             }
-            dataGridView1.DataSource = data;
+            dataGridViewBikes.DataSource = data;
         }
 
 
@@ -162,20 +160,20 @@ namespace BoVloApp
         //-------------------------Hides bike datagrideview-------------------------
         private void HideBikes()
         {
-            dataGridView1.Visible = false;
+            dataGridViewBikes.Visible = false;
         }
 
         //-------------------------Unides bike datagrideview-------------------------
 
         private void UnHideBikes()
         {
-            dataGridView1.Visible = true;
+            dataGridViewBikes.Visible = true;
         }
 
         //------------------------Set the bike datagridview source data to null, resulting in an empty table------
         private void CleanGridview()
         {
-            dataGridView1.DataSource = null;
+            dataGridViewBikes.DataSource = null;
         }
 
         //-----------------------------Dsiplay Bike Stock-----------------------------------

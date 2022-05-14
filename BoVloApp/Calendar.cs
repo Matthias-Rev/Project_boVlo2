@@ -51,15 +51,12 @@ namespace BoVloApp
             DataGridView update = sender as DataGridView;
             if (update.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
             {
-
                 update.CurrentRow.Selected = true;
                 var val = update.Rows[e.RowIndex].Cells[e.ColumnIndex].FormattedValue.ToString();
                 var name_col = update.Columns[e.ColumnIndex].Name;
                 var name_column = update.Rows[e.RowIndex].Cells["idOrder"].FormattedValue.ToString();
-
                 string request = "UPDATE Calendar SET " + name_col + " = CAST("+ val +" AS DATETIME) WHERE idOrder = " + name_column;
                 DataTable calendarUpdate = GlobalVar.ReadSQL(request);
-
                 update.DataSource = calendarUpdate;
                 GetCalendar();
             }
