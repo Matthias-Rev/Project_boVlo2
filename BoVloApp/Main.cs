@@ -22,10 +22,10 @@ namespace BoVloApp
             int x_space = 300;
             int y_space = 100;
             Titel.Location = GlobalVar.SetLocation(this, 0, -400, Titel);
-            COMMANDES.Location = GlobalVar.SetLocation(this, -x_space, -y_space, COMMANDES);
+            Orders.Location = GlobalVar.SetLocation(this, -x_space, -y_space, Orders);
             STOCK.Location = GlobalVar.SetLocation(this, x_space, y_space, STOCK);
-            CATALOGUE.Location = GlobalVar.SetLocation(this, -x_space, y_space, CATALOGUE);
-            CALENDRIER.Location = GlobalVar.SetLocation(this, x_space, -y_space, CALENDRIER);
+            Catalog.Location = GlobalVar.SetLocation(this, -x_space, y_space, Catalog);
+            Calendar.Location = GlobalVar.SetLocation(this, x_space, -y_space, Calendar);
         }
       
         public void LoggedIn()
