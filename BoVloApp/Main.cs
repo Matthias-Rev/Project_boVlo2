@@ -30,7 +30,8 @@ namespace BoVloApp
       
         public void LoggedIn()
         {
-            Username_label.Text = GlobalVar.ReadXML().username;
+            //username can be used if session and permissions are added
+            //Username_label.Text = GlobalVar.ReadXML().username;
             Point point = new Point(Username_label.Location.X - Username_label.Size.Width, Username_label.Location.Y);
             Username_label.Location = point;
         }
@@ -41,11 +42,6 @@ namespace BoVloApp
         private void Menu_button_Click(object sender, EventArgs e)
         {
             clear();
-        }
-        private void Main_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            GlobalVar.ResetXML();
-            Application.Exit();
         }
         private void Logout_button_Click(object sender, EventArgs e)
         {

@@ -1,7 +1,7 @@
 ﻿
 namespace BoVloApp
 {
-    partial class Panier
+    partial class Basket
     {
         /// <summary>
         /// Required designer variable.

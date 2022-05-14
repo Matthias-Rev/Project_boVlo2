@@ -56,12 +56,8 @@ namespace BoVloApp
                             if (name == companyNameInput.Text)
                             {
                                 condition = false;
-                                MessageBox.Show("Found!");
-                                string request_command = String.Format(
-                                        "SELECT * " +
-                                        "FROM Order ",
-                                        GlobalVar.ReadXML().key);
-                                DataTable calendar = GlobalVar.ReadSQL(request);
+                                string request_command = "SELECT * FROM Order ";
+                                DataTable calendar = GlobalVar.ReadSQL(request_command);
                             }
                         }
                                 i++;
