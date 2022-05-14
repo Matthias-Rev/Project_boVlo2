@@ -134,13 +134,16 @@ namespace BoVloApp
         {
             if (inputBox.Text.Length > 0)
             {
-                string idbike = GlobalVar.types.Select(String.Format("Name = '{0}'", veloType.Text))[0]["idBike"].ToString();
-                string idcolor = GlobalVar.colors.Select(String.Format("Name = '{0}'", color_combobox.Text))[0]["idColor"].ToString();
-                string insertMySQL = String.Format("INSERT INTO Basket (`SessionKey`, `Quantity`, `idBike`, `Size`, `idColor`) VALUES " +
-                    "('{0}','{1}','{2}','{3}','{4}')",
-                    GlobalVar.ReadXML().key, inputBox.Text, idbike, Int32.Parse(size_combobox.Text), idcolor);
-                inputBox.Text = "";
-                GlobalVar.WriteSQL(insertMySQL);
+                string idbike = veloType.Text;
+                string idcolor = color_combobox.Text;
+                string size = size_combobox.Text;
+                int quantity = int.Parse(inputBox.Text);
+                string reference = idbike + "_" + idcolor + "_" + size;
+                if (Program.basket.ContainsKey(reference))
+                {
+                    Program.basket[reference] += quantity;
+                }
+                else { Program.basket.Add(reference, quantity); }
             }
             else
             {
