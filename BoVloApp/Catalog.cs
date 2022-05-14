@@ -144,6 +144,7 @@ namespace BoVloApp
                     Program.basket[reference] += quantity;
                 }
                 else { Program.basket.Add(reference, quantity); }
+                veloType.Text = reference;
             }
             else
             {
