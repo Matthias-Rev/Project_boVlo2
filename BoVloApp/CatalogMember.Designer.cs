@@ -172,7 +172,7 @@
             this.panelMember.Size = new System.Drawing.Size(1664, 774);
             this.panelMember.TabIndex = 3;
             // 
-            // CatalogueMember
+            // CatalogMember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -180,7 +180,7 @@
             this.Controls.Add(this.panelMember);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "CatalogueMember";
+            this.Name = "CatalogMember";
             this.Text = "CatalogueMember";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

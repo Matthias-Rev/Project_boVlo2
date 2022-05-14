@@ -35,41 +35,61 @@ namespace BoVloApp
 //--------------------------Search the name of the company in the db------------------------------------------
         private void LookUpCustomer(object sender, EventArgs e)
         {
-            string request = String.Format(
-                "SELECT Name " +
-                "FROM Customer " +
-                "WHERE Name='{0}'"
-                , companyNameInput.Text);
-            DataTable dataSql = GlobalVar.ReadSQL(request);
-            foreach (DataColumn column in dataSql.Columns)
-            {
+            //string request = String.Format(
+            //    "SELECT Name " +
+            //    "FROM Customer " +
+            //    "WHERE Name='{0}'"
+            //    , companyNameInput.Text);
+            //DataTable dataSql = GlobalVar.ReadSQL(request);
+            //foreach (DataColumn column in dataSql.Columns)
+            //{
 
-                foreach (DataRow row in dataSql.Rows)
-                {
-                    int i = 0;
-                    bool condition = true;
-                    try
-                    {
-                        while (condition == true)
-                        {
-                            string name = row[i].ToString();
-                            if (name == companyNameInput.Text)
-                            {
-                                condition = false;
-                                string request_command = "SELECT * FROM Order ";
-                                DataTable calendar = GlobalVar.ReadSQL(request_command);
-                            }
-                        }
-                                i++;
-                    }
-                    catch (IndexOutOfRangeException)
-                    {
-                        labelNotInDB.Visible = true;
-                        companyNameInput.Text = "";
-                    }
-                }
-            }
-            GlobalVar.Loadform(panelMember, new Final_Catalog (main));
+            //    foreach (DataRow row in dataSql.Rows)
+            //    {
+            //        int i = 0;
+            //        bool condition = true;
+            //        try
+            //        {
+            //            while (condition == true)
+            //            {
+            //                string name = row[i].ToString();
+            //                if (name == companyNameInput.Text)
+            //                {
+            //                    condition = false;
+            //                    string request_command = "SELECT * FROM Order ";
+            //                    DataTable calendar = GlobalVar.ReadSQL(request_command);
+            //                }
+            //            }
+            //                    i++;
+            //        }
+            //        catch (IndexOutOfRangeException)
+            //        {
+            //            labelNotInDB.Visible = true;
+            //            companyNameInput.Text = "";
+            //        }
+            //    }
+            //}
+            //GlobalVar.Loadform(panelMember, new Final_Catalog (main));
+            string input = companyNameInput.Text;
+            string lookUp = String.Format("SELECT Name " +
+                "FROM Customer " +
+                "WHERE EXISTS" +
+                "(SELECT Name FROM Customer WHERE NAME = {0})", input);
+
+            DataTable isCustomer = GlobalVar.ReadSQL(lookUp);
+            if (isCustomer != null) { MessageBox.Show("Found you;)"); }
+        }
+
+        void Look()
+        {
+            string input = companyNameInput.Text;
+            string lookUp = String.Format("SELECT Name " +
+                "FROM Customer " +
+                "WHERE EXISTS" +
+                "(SELECT Name FROM Customer WHERE NAME = {0})", input);
+
+            DataTable isCustomer = GlobalVar.ReadSQL(lookUp);
+            if(isCustomer != null) { MessageBox.Show("Found you;)"); }
         }
     }
 }
