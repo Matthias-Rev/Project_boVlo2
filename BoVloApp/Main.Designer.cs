@@ -119,7 +119,7 @@
             this.Main_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Main_panel.Location = new System.Drawing.Point(0, 63);
             this.Main_panel.Name = "Main_panel";
-            this.Main_panel.Size = new System.Drawing.Size(1904, 733);
+            this.Main_panel.Size = new System.Drawing.Size(1904, 978);
             this.Main_panel.TabIndex = 1;
             // 
             // Titel
@@ -186,7 +186,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1904, 796);
+            this.ClientSize = new System.Drawing.Size(1904, 1041);
             this.Controls.Add(this.Main_panel);
             this.Controls.Add(this.Topbar_panel);
             this.Name = "Main";

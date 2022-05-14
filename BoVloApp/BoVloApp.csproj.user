@@ -16,7 +16,7 @@
     <Compile Update="Login.cs">
       <SubType>Form</SubType>
     </Compile>
-     <Compile Update="Final_Catalog.cs">
+    <Compile Update="Final_Catalog.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Main.cs">
@@ -31,13 +31,7 @@
     <Compile Update="PartsOrder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Popup.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Stock.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="test.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
