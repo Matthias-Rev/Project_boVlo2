@@ -1,7 +1,7 @@
 ﻿
 namespace BoVloApp
 {
-    partial class Catalogue
+    partial class Catalog
     {
         /// <summary>
         /// Required designer variable.
@@ -30,17 +30,17 @@ namespace BoVloApp
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.panier = new System.Windows.Forms.Button();
+            this.basketBtn = new System.Windows.Forms.Button();
             this.veloType = new System.Windows.Forms.Button();
             this.nextVelo = new System.Windows.Forms.Button();
             this.preVelo = new System.Windows.Forms.Button();
             this.picture = new System.Windows.Forms.PictureBox();
-            this.btnAjouter = new System.Windows.Forms.Button();
-            this.nbreAjout = new System.Windows.Forms.TextBox();
-            this.labelPrix = new System.Windows.Forms.Label();
-            this.labelPrixVelo = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.labelColor = new System.Windows.Forms.Label();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.inputBox = new System.Windows.Forms.TextBox();
+            this.labelPrice = new System.Windows.Forms.Label();
+            this.labelPriceBike = new System.Windows.Forms.Label();
+            this.labelSize = new System.Windows.Forms.Label();
+            this.labelColour = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.BackPanel = new System.Windows.Forms.Panel();
             this.color_combobox = new System.Windows.Forms.ComboBox();
@@ -49,18 +49,18 @@ namespace BoVloApp
             this.BackPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panier
+            // basketBtn
             // 
-            this.panier.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.panier.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.panier.Location = new System.Drawing.Point(1438, 34);
-            this.panier.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panier.Name = "panier";
-            this.panier.Size = new System.Drawing.Size(108, 38);
-            this.panier.TabIndex = 0;
-            this.panier.Text = "Panier";
-            this.panier.UseVisualStyleBackColor = false;
-            this.panier.Click += new System.EventHandler(this.button1_Click);
+            this.basketBtn.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.basketBtn.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.basketBtn.Location = new System.Drawing.Point(1438, 34);
+            this.basketBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.basketBtn.Name = "basketBtn";
+            this.basketBtn.Size = new System.Drawing.Size(108, 38);
+            this.basketBtn.TabIndex = 0;
+            this.basketBtn.Text = "Basket";
+            this.basketBtn.UseVisualStyleBackColor = false;
+            this.basketBtn.Click += new System.EventHandler(this.GoToBasket);
             // 
             // veloType
             // 
@@ -106,61 +106,61 @@ namespace BoVloApp
             this.picture.TabIndex = 15;
             this.picture.TabStop = false;
             // 
-            // btnAjouter
+            // btnAdd
             // 
-            this.btnAjouter.Location = new System.Drawing.Point(1331, 408);
-            this.btnAjouter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAjouter.Name = "btnAjouter";
-            this.btnAjouter.Size = new System.Drawing.Size(121, 33);
-            this.btnAjouter.TabIndex = 17;
-            this.btnAjouter.Text = "Ajouter";
-            this.btnAjouter.UseVisualStyleBackColor = true;
-            this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
+            this.btnAdd.Location = new System.Drawing.Point(1331, 408);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(121, 33);
+            this.btnAdd.TabIndex = 17;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.AddBtn);
             // 
-            // nbreAjout
+            // inputBox
             // 
-            this.nbreAjout.Location = new System.Drawing.Point(1242, 414);
-            this.nbreAjout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.nbreAjout.Name = "nbreAjout";
-            this.nbreAjout.Size = new System.Drawing.Size(83, 23);
-            this.nbreAjout.TabIndex = 18;
-            this.nbreAjout.TextChanged += new System.EventHandler(this.nbreAjout_TextChanged);
+            this.inputBox.Location = new System.Drawing.Point(1242, 414);
+            this.inputBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.inputBox.Name = "inputBox";
+            this.inputBox.Size = new System.Drawing.Size(83, 23);
+            this.inputBox.TabIndex = 18;
+            this.inputBox.TextChanged += new System.EventHandler(this.InputBoxColorChange);
             // 
-            // labelPrix
+            // labelPrice
             // 
-            this.labelPrix.AutoSize = true;
-            this.labelPrix.Location = new System.Drawing.Point(1328, 205);
-            this.labelPrix.Name = "labelPrix";
-            this.labelPrix.Size = new System.Drawing.Size(47, 15);
-            this.labelPrix.TabIndex = 29;
-            this.labelPrix.Text = "Prix (€):";
+            this.labelPrice.AutoSize = true;
+            this.labelPrice.Location = new System.Drawing.Point(1328, 205);
+            this.labelPrice.Name = "labelPrice";
+            this.labelPrice.Size = new System.Drawing.Size(53, 15);
+            this.labelPrice.TabIndex = 29;
+            this.labelPrice.Text = "Price (€):";
             // 
-            // labelPrixVelo
+            // labelPriceBike
             // 
-            this.labelPrixVelo.AutoSize = true;
-            this.labelPrixVelo.Location = new System.Drawing.Point(1381, 205);
-            this.labelPrixVelo.Name = "labelPrixVelo";
-            this.labelPrixVelo.Size = new System.Drawing.Size(41, 15);
-            this.labelPrixVelo.TabIndex = 30;
-            this.labelPrixVelo.Text = "(price)";
+            this.labelPriceBike.AutoSize = true;
+            this.labelPriceBike.Location = new System.Drawing.Point(1381, 205);
+            this.labelPriceBike.Name = "labelPriceBike";
+            this.labelPriceBike.Size = new System.Drawing.Size(41, 15);
+            this.labelPriceBike.TabIndex = 30;
+            this.labelPriceBike.Text = "(price)";
             // 
-            // label2
+            // labelSize
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1331, 243);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 15);
-            this.label2.TabIndex = 31;
-            this.label2.Text = "Taille:";
+            this.labelSize.AutoSize = true;
+            this.labelSize.Location = new System.Drawing.Point(1331, 243);
+            this.labelSize.Name = "labelSize";
+            this.labelSize.Size = new System.Drawing.Size(30, 15);
+            this.labelSize.TabIndex = 31;
+            this.labelSize.Text = "Size:";
             // 
-            // labelColor
+            // labelColour
             // 
-            this.labelColor.AutoSize = true;
-            this.labelColor.Location = new System.Drawing.Point(1331, 320);
-            this.labelColor.Name = "labelColor";
-            this.labelColor.Size = new System.Drawing.Size(52, 15);
-            this.labelColor.TabIndex = 32;
-            this.labelColor.Text = "Couleur:";
+            this.labelColour.AutoSize = true;
+            this.labelColour.Location = new System.Drawing.Point(1331, 320);
+            this.labelColour.Name = "labelColour";
+            this.labelColour.Size = new System.Drawing.Size(46, 15);
+            this.labelColour.TabIndex = 32;
+            this.labelColour.Text = "Colour:";
             // 
             // imageList1
             // 
@@ -172,17 +172,17 @@ namespace BoVloApp
             // 
             this.BackPanel.Controls.Add(this.color_combobox);
             this.BackPanel.Controls.Add(this.size_combobox);
-            this.BackPanel.Controls.Add(this.labelColor);
-            this.BackPanel.Controls.Add(this.label2);
-            this.BackPanel.Controls.Add(this.labelPrixVelo);
-            this.BackPanel.Controls.Add(this.labelPrix);
-            this.BackPanel.Controls.Add(this.nbreAjout);
-            this.BackPanel.Controls.Add(this.btnAjouter);
+            this.BackPanel.Controls.Add(this.labelColour);
+            this.BackPanel.Controls.Add(this.labelSize);
+            this.BackPanel.Controls.Add(this.labelPriceBike);
+            this.BackPanel.Controls.Add(this.labelPrice);
+            this.BackPanel.Controls.Add(this.inputBox);
+            this.BackPanel.Controls.Add(this.btnAdd);
             this.BackPanel.Controls.Add(this.picture);
             this.BackPanel.Controls.Add(this.preVelo);
             this.BackPanel.Controls.Add(this.nextVelo);
             this.BackPanel.Controls.Add(this.veloType);
-            this.BackPanel.Controls.Add(this.panier);
+            this.BackPanel.Controls.Add(this.basketBtn);
             this.BackPanel.Location = new System.Drawing.Point(-1, 1);
             this.BackPanel.Name = "BackPanel";
             this.BackPanel.Size = new System.Drawing.Size(1701, 823);
@@ -232,17 +232,17 @@ namespace BoVloApp
 
         #endregion
 
-        private System.Windows.Forms.Button panier;
+        private System.Windows.Forms.Button basketBtn;
         private System.Windows.Forms.Button veloType;
         private System.Windows.Forms.Button nextVelo;
         private System.Windows.Forms.Button preVelo;
         private System.Windows.Forms.PictureBox picture;
-        private System.Windows.Forms.Button btnAjouter;
-        private System.Windows.Forms.TextBox nbreAjout;
-        private System.Windows.Forms.Label labelPrix;
-        private System.Windows.Forms.Label labelPrixVelo;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label labelColor;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.TextBox inputBox;
+        private System.Windows.Forms.Label labelPrice;
+        private System.Windows.Forms.Label labelPriceBike;
+        private System.Windows.Forms.Label labelSize;
+        private System.Windows.Forms.Label labelColour;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Panel BackPanel;
         private System.Windows.Forms.ComboBox color_combobox;
