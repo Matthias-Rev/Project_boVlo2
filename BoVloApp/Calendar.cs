@@ -16,9 +16,16 @@ namespace BoVloApp
         {
             InitializeComponent();
             DisplayCalendar();
+            ReadOnlyCertainColumns();
         }
 
-//------------------------------------------------------------Fetches the datatable containing the db data concerning the production calendar---------------------------
+        void ReadOnlyCertainColumns()
+        {
+            Calendar_grid.Columns["Name"].ReadOnly = true;
+            Calendar_grid.Columns["idOrder"].ReadOnly = true;
+        }
+
+        //------------------------------------------------------------Fetches the datatable containing the db data concerning the production calendar---------------------------
         private void DisplayCalendar()
         {
             Calendar_grid.DataSource = GetCalendar(); ;

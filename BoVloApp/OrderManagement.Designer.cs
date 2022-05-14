@@ -71,6 +71,7 @@ namespace BoVloApp
             this.detailsTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.detailsTable.Location = new System.Drawing.Point(870, 168);
             this.detailsTable.Name = "detailsTable";
+            this.detailsTable.ReadOnly = true;
             this.detailsTable.RowTemplate.Height = 25;
             this.detailsTable.Size = new System.Drawing.Size(889, 480);
             this.detailsTable.TabIndex = 7;
