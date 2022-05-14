@@ -54,7 +54,7 @@ namespace BoVloApp
 
         private void CATALOGUE_Click(object sender, EventArgs e)
         {
-            GlobalVar.Loadform(Main_panel,new Catalogue(this));
+            GlobalVar.Loadform(Main_panel,new Catalog(this));
         }
 
         private void COMMANDES_Click(object sender, EventArgs e)
