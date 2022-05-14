@@ -62,8 +62,6 @@ namespace BoVloApp
 
                 detailsTable.DataSource = orderDetail;
 
-                //-------------------------This label is used for debugging purposes----------------------
-                //label.Text = theOrder.Rows[e.RowIndex].Cells["idOrder"].FormattedValue.ToString();
 
             }
         }
