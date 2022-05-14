@@ -134,17 +134,17 @@ namespace BoVloApp
         {
             if (inputBox.Text.Length > 0)
             {
-                string idbike = veloType.Text;
-                string idcolor = color_combobox.Text;
+                string type = veloType.Text;
+                string color = color_combobox.Text;
                 string size = size_combobox.Text;
                 int quantity = int.Parse(inputBox.Text);
-                string reference = idbike + "_" + idcolor + "_" + size;
+                string reference = type + "_" + color + "_" + size;
                 if (Program.basket.ContainsKey(reference))
                 {
                     Program.basket[reference] += quantity;
                 }
                 else { Program.basket.Add(reference, quantity); }
-                veloType.Text = reference;
+                inputBox.Text = ""; 
             }
             else
             {
@@ -173,7 +173,7 @@ namespace BoVloApp
                     DataTable available = GlobalVar.ReadSQL(string.Format("SELECT * FROM {1} WHERE idBike = '{0}'", id, link_table_name));
                     foreach (DataRow available_item in available.Rows)
                     {
-                        list.Add(datatable.Select(String.Format("{0} = '{1}'", target_id_name, available_item[target_id_name].ToString()))[0][target_column_name].ToString());
+                        list.Add(datatable.Select(string.Format("{0} = '{1}'", target_id_name, available_item[target_id_name].ToString()))[0][target_column_name].ToString());
                     }
                 }
                 SetAvailability(bike.available_colours, GlobalVar.colors, "Bike_color", "idColor", "Name");

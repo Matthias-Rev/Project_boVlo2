@@ -29,7 +29,7 @@ namespace BoVloApp
         private void Authentify()
         {
             //check credentials in database
-            string request = String.Format(
+            string request = string.Format(
                 "SELECT User_id, Permission " +
                 "FROM Users " +
                 "WHERE Username='{0}' AND Pass='{1}'"

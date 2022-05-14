@@ -55,7 +55,7 @@ namespace BoVloApp
                 var val = update.Rows[e.RowIndex].Cells[e.ColumnIndex].FormattedValue.ToString();
                 var name_col = update.Columns[e.ColumnIndex].Name;
                 var name_column = update.Rows[e.RowIndex].Cells["idOrder"].FormattedValue.ToString();
-                string request = "UPDATE Calendar SET " + name_col + " = CAST("+ val +" AS DATETIME) WHERE idOrder = " + name_column;
+                string request = "UPDATE Calendar SET " + name_col + " = CAST("+ val +" AS DATE) WHERE idOrder = " + name_column;
                 DataTable calendarUpdate = GlobalVar.ReadSQL(request);
                 update.DataSource = calendarUpdate;
                 GetCalendar();

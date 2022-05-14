@@ -33,8 +33,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelNotInDB = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.labelCompanyName = new System.Windows.Forms.Label();
-            this.companyNameInput = new System.Windows.Forms.TextBox();
+            this.labelCompanyVAT = new System.Windows.Forms.Label();
+            this.companyVATInput = new System.Windows.Forms.TextBox();
             this.lookUpCompany = new System.Windows.Forms.Button();
             this.btnBecomeMember = new System.Windows.Forms.Button();
             this.labelNotCustomer = new System.Windows.Forms.Label();
@@ -69,8 +69,8 @@
             // 
             this.panel1.Controls.Add(this.labelNotInDB);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.labelCompanyName);
-            this.panel1.Controls.Add(this.companyNameInput);
+            this.panel1.Controls.Add(this.labelCompanyVAT);
+            this.panel1.Controls.Add(this.companyVATInput);
             this.panel1.Controls.Add(this.lookUpCompany);
             this.panel1.Controls.Add(this.btnBecomeMember);
             this.panel1.Controls.Add(this.labelNotCustomer);
@@ -91,6 +91,7 @@
             this.labelNotInDB.Size = new System.Drawing.Size(197, 21);
             this.labelNotInDB.TabIndex = 6;
             this.labelNotInDB.Text = "You\'re not in our database!";
+            this.labelNotInDB.Visible = false;
             // 
             // pictureBox1
             // 
@@ -102,24 +103,24 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
-            // labelCompanyName
+            // labelCompanyVAT
             // 
-            this.labelCompanyName.AutoSize = true;
-            this.labelCompanyName.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelCompanyName.Location = new System.Drawing.Point(41, 155);
-            this.labelCompanyName.Name = "labelCompanyName";
-            this.labelCompanyName.Size = new System.Drawing.Size(222, 28);
-            this.labelCompanyName.TabIndex = 5;
-            this.labelCompanyName.Text = "Name of your company:";
+            this.labelCompanyVAT.AutoSize = true;
+            this.labelCompanyVAT.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelCompanyVAT.Location = new System.Drawing.Point(41, 155);
+            this.labelCompanyVAT.Name = "labelCompanyVAT";
+            this.labelCompanyVAT.Size = new System.Drawing.Size(264, 28);
+            this.labelCompanyVAT.TabIndex = 5;
+            this.labelCompanyVAT.Text = "VAT number of the company:";
             // 
-            // companyNameInput
+            // companyVATInput
             // 
-            this.companyNameInput.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.companyNameInput.Location = new System.Drawing.Point(41, 202);
-            this.companyNameInput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.companyNameInput.Name = "companyNameInput";
-            this.companyNameInput.Size = new System.Drawing.Size(321, 34);
-            this.companyNameInput.TabIndex = 4;
+            this.companyVATInput.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.companyVATInput.Location = new System.Drawing.Point(41, 202);
+            this.companyVATInput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.companyVATInput.Name = "companyVATInput";
+            this.companyVATInput.Size = new System.Drawing.Size(321, 34);
+            this.companyVATInput.TabIndex = 4;
             // 
             // lookUpCompany
             // 
@@ -200,8 +201,8 @@
         private System.Windows.Forms.Label labelNotCustomer;
         private System.Windows.Forms.Button lookUpCompany;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label labelCompanyName;
-        private System.Windows.Forms.TextBox companyNameInput;
+        private System.Windows.Forms.Label labelCompanyVAT;
+        private System.Windows.Forms.TextBox companyVATInput;
         private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
         private System.Windows.Forms.Panel panelMember;
         private System.Windows.Forms.Label labelNotInDB;
