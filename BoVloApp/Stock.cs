@@ -60,15 +60,15 @@ namespace BoVloApp
             List<string> condition = new();
             if (type_combobox.SelectedItem != null && type_combobox.SelectedItem.ToString() != "")
             {
-                condition.Add(String.Format("idBike = '{0}'", GlobalVar.types.Select(String.Format("Name = '{0}'", type_combobox.Text))[0]["idBike"].ToString()));
+                condition.Add(string.Format("idBike = '{0}'", GlobalVar.types.Select(string.Format("Name = '{0}'", type_combobox.Text))[0]["idBike"].ToString()));
             }
             if (color_combobox.SelectedItem != null && color_combobox.SelectedItem.ToString() != "")
             {
-                condition.Add(String.Format("idColor = '{0}'", GlobalVar.colors.Select(String.Format("Name = '{0}'", color_combobox.Text))[0]["idColor"].ToString()));
+                condition.Add(string.Format("idColor = '{0}'", GlobalVar.colors.Select(string.Format("Name = '{0}'", color_combobox.Text))[0]["idColor"].ToString()));
             }
             if (size_combobox.SelectedItem != null && size_combobox.SelectedItem.ToString() != "")
             {
-                condition.Add(String.Format("Size = '{0}'", size_combobox.Text));
+                condition.Add(string.Format("Size = '{0}'", size_combobox.Text));
             }
             if (condition.Count > 0)
             {
@@ -86,8 +86,8 @@ namespace BoVloApp
             foreach (DataRow row in supply.Rows)
             {
                 DataRow datarow = data.NewRow();
-                datarow["Type"] = GlobalVar.types.Select(String.Format("idBike = '{0}'", row["idBike"].ToString()))[0]["Name"].ToString();
-                datarow["Color"] = GlobalVar.colors.Select(String.Format("idColor = '{0}'", row["idColor"].ToString()))[0]["Name"].ToString();
+                datarow["Type"] = GlobalVar.types.Select(string.Format("idBike = '{0}'", row["idBike"].ToString()))[0]["Name"].ToString();
+                datarow["Color"] = GlobalVar.colors.Select(string.Format("idColor = '{0}'", row["idColor"].ToString()))[0]["Name"].ToString();
                 datarow["Size"] = row["Size"].ToString();
                 datarow["Quantity"] = row["Quantity"].ToString();
                 data.Rows.Add(datarow);

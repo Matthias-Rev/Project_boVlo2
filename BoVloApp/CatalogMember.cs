@@ -17,72 +17,36 @@ namespace BoVloApp
         {
             this.main = main;
             InitializeComponent();
-            InitialValueNotInDBLbl();
         }
-
-//--------------------------------Initializes the "Customer not found" label to be not visible----------------
-        private void InitialValueNotInDBLbl()
-        {
-            labelNotInDB.Visible = false;
-        }
-
 //-------------------------------Navigates to new customer window upon pressing this btn---------------------
         private void BecomeCustomer(object sender, EventArgs e)
         {
             GlobalVar.Loadform(panelMember, new Final_Catalog(main));
         }
 
-//--------------------------Search the name of the company in the db------------------------------------------
+        //--------------------------Search the name of the company in the db------------------------------------------
         private void LookUpCustomer(object sender, EventArgs e)
         {
-            //string request = String.Format(
-            //    "SELECT Name " +
-            //    "FROM Customer " +
-            //    "WHERE Name='{0}'"
-            //    , companyNameInput.Text);
-            //DataTable dataSql = GlobalVar.ReadSQL(request);
-            //foreach (DataColumn column in dataSql.Columns)
-            //{
-
-            //    foreach (DataRow row in dataSql.Rows)
-            //    {
-            //        int i = 0;
-            //        bool condition = true;
-            //        try
-            //        {
-            //            while (condition == true)
-            //            {
-            //                string name = row[i].ToString();
-            //                if (name == companyNameInput.Text)
-            //                {
-            //                    condition = false;
-            //                    string request_command = "SELECT * FROM Order ";
-            //                    DataTable calendar = GlobalVar.ReadSQL(request_command);
-            //                }
-            //            }
-            //                    i++;
-            //        }
-            //        catch (IndexOutOfRangeException)
-            //        {
-            //            labelNotInDB.Visible = true;
-            //            companyNameInput.Text = "";
-            //        }
-            //    }
-            //}
-            //GlobalVar.Loadform(panelMember, new Final_Catalog (main));
-            string input = companyNameInput.Text;
-            string lookUp = String.Format("SELECT Customer.Name " +
-                "FROM Bovlo.Customer " +
-                "WHERE NAME = '{0}'", input);
-
-            DataTable isCustomer = GlobalVar.ReadSQL(lookUp);
-            
-            if (isCustomer != null && isCustomer.Rows.Count != 0) 
+            string request = string.Format(
+                   "SELECT * " +
+                   "FROM Customer " +
+                   "WHERE VAT='{0}'"
+                   , companyVATInput.Text);
+            DataTable dataSql = GlobalVar.ReadSQL(request);
+            if (dataSql.Rows.Count == 0)
             {
-                MessageBox.Show("Found you!"); 
+                labelNotInDB.Visible = true;
             }
-
-            else { MessageBox.Show("You are not a registered customer."); }
+            else
+            {
+                List<string> list = new List<string>();
+                list.Add(dataSql.Rows[0]["Name"].ToString());
+                list.Add(dataSql.Rows[0]["VAT"].ToString());
+                list.Add(dataSql.Rows[0]["Address"].ToString());
+                list.Add(dataSql.Rows[0]["Contact"].ToString());
+                GlobalVar.Loadform(panelMember, new Final_Catalog(main, list));
+            }
         }
+
     }
 }

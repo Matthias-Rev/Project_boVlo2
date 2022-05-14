@@ -15,9 +15,9 @@ namespace BoVloApp
         public string price;
         public List<string> available_colours = new();
         public List<string> available_sizes = new();
-        public String GetInfo()
+        public string GetInfo()
         {
-            return String.Format("Type is {0}, quantity is {1}, colours is {2}, size is {3} and price is {4}.", type, quantity, colour, size, price);
+            return string.Format("Type is {0}, quantity is {1}, colours is {2}, size is {3} and price is {4}.", type, quantity, colour, size, price);
         }
 
     }

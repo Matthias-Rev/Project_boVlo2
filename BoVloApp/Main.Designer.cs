@@ -81,6 +81,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Visible = false;
             // 
             // Logout_button
             // 
@@ -93,6 +94,7 @@
             this.Logout_button.TabIndex = 2;
             this.Logout_button.Text = "Se déconnecter";
             this.Logout_button.UseVisualStyleBackColor = false;
+            this.Logout_button.Visible = false;
             this.Logout_button.Click += new System.EventHandler(this.Logout_button_Click);
             // 
             // Menu_button
