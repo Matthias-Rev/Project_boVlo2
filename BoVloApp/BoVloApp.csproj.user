@@ -1,9 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Compile Update="Basket.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Calendar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -16,16 +13,19 @@
     <Compile Update="Commandevelo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Final_Catalog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="OrderManagement.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Login.cs">
       <SubType>Form</SubType>
     </Compile>
+     <Compile Update="Final_Catalog.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Basket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="OrderManagement.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="PartsOrder.cs">

@@ -26,30 +26,30 @@ namespace BoVloApp
             // confirm and send the information on the db
             // addd to the database
             bool inputs_valid = true;
-            if (name_textbox.Text.Length == 0)
+            if (companyNameInput.Text.Length == 0)
             {
-                name_textbox.BackColor = Color.Red;
+                companyNameInput.BackColor = Color.Red;
                 inputs_valid = false;
             }
-            if(VAT_textbox.Text.Length == 0)
+            if(VATInput.Text.Length == 0)
             {
-                VAT_textbox.BackColor = Color.Red;
+                VATInput.BackColor = Color.Red;
                 inputs_valid = false;
             }
-            if(address_textbox.Text.Length == 0)
+            if(addressInput.Text.Length == 0)
             {
-                address_textbox.BackColor = Color.Red; 
+                addressInput.BackColor = Color.Red; 
                 inputs_valid = false;
             }
-            if(email_textbox.Text.Length == 0)
+            if(emailInput.Text.Length == 0)
             {
-                email_textbox.BackColor = Color.Red; 
+                emailInput.BackColor = Color.Red; 
                 inputs_valid = false;
             }
             if (inputs_valid == true)
             {
                 string insertMySQL = String.Format("INSERT INTO Customer (`Name`, `TVA`, `Address`, `Contact`) VALUES " +
-                    "('{0}','{1}','{2}','{3}' )", name_textbox.Text, VAT_textbox.Text, address_textbox.Text, email_textbox.Text);
+                    "('{0}','{1}','{2}','{3}' )", companyNameInput.Text, VATInput.Text, addressInput.Text, emailInput.Text);
                 GlobalVar.WriteSQL(insertMySQL);
                 main.clear();
                 Close();
@@ -59,24 +59,24 @@ namespace BoVloApp
         // To map elements with id : string idbike = GlobalVar.types.Select(String.Format("Name = '{0}'", veloType.Text))[0]["idBike"].ToString();
         //string idcolor = GlobalVar.colors.Select(String.Format("Name = '{0}'", color_combobox.Text))[0]["idColor"].ToString();
 
-        private void name_textbox_TextChanged(object sender, EventArgs e)
+        private void companyNameInput_TextChanged(object sender, EventArgs e)
         {
-            name_textbox.BackColor = Color.White;
+            companyNameInput.BackColor = Color.White;
         }
 
-        private void VAT_textbox_TextChanged(object sender, EventArgs e)
+        private void VATInput_TextChanged(object sender, EventArgs e)
         {
-            VAT_textbox.BackColor = Color.White;
+            VATInput.BackColor = Color.White;
         }
 
-        private void address_textbox_TextChanged(object sender, EventArgs e)
+        private void addressInput_TextChanged(object sender, EventArgs e)
         {
-            address_textbox.BackColor = Color.White;
+            addressInput.BackColor = Color.White;
         }
 
-        private void email_textbox_TextChanged(object sender, EventArgs e)
+        private void emailInput_TextChanged(object sender, EventArgs e)
         {
-            email_textbox.BackColor = Color.White;
+            emailInput.BackColor = Color.White;
         }
     }
 }

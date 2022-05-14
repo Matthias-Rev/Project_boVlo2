@@ -31,13 +31,13 @@ namespace BoVloApp
         {
             this.labelCompanyName = new System.Windows.Forms.Label();
             this.companyNameInput = new System.Windows.Forms.TextBox();
-            this.labelTVA = new System.Windows.Forms.Label();
-            this.tvaInput = new System.Windows.Forms.TextBox();
+            this.labelVAT = new System.Windows.Forms.Label();
+            this.VATInput = new System.Windows.Forms.TextBox();
             this.labelAddress = new System.Windows.Forms.Label();
             this.addressInput = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
-            this.labelContact = new System.Windows.Forms.Label();
-            this.contactInput = new System.Windows.Forms.TextBox();
+            this.labelEmail = new System.Windows.Forms.Label();
+            this.emailInput = new System.Windows.Forms.TextBox();
             this.panelFinal = new System.Windows.Forms.Panel();
             this.panelFinal.SuspendLayout();
             this.SuspendLayout();
@@ -60,23 +60,23 @@ namespace BoVloApp
             this.companyNameInput.Size = new System.Drawing.Size(1397, 43);
             this.companyNameInput.TabIndex = 1;
             // 
-            // labelTVA
+            // labelVAT
             // 
-            this.labelTVA.AutoSize = true;
-            this.labelTVA.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelTVA.Location = new System.Drawing.Point(139, 160);
-            this.labelTVA.Name = "labelTVA";
-            this.labelTVA.Size = new System.Drawing.Size(112, 37);
-            this.labelTVA.TabIndex = 2;
-            this.labelTVA.Text = "Nr. TVA:";
+            this.labelVAT.AutoSize = true;
+            this.labelVAT.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelVAT.Location = new System.Drawing.Point(139, 160);
+            this.labelVAT.Name = "labelVAT";
+            this.labelVAT.Size = new System.Drawing.Size(173, 37);
+            this.labelVAT.TabIndex = 2;
+            this.labelVAT.Text = "VAT number :";
             // 
-            // tvaInput
+            // VATInput
             // 
-            this.tvaInput.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tvaInput.Location = new System.Drawing.Point(139, 220);
-            this.tvaInput.Name = "tvaInput";
-            this.tvaInput.Size = new System.Drawing.Size(1397, 43);
-            this.tvaInput.TabIndex = 3;
+            this.VATInput.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.VATInput.Location = new System.Drawing.Point(139, 220);
+            this.VATInput.Name = "VATInput";
+            this.VATInput.Size = new System.Drawing.Size(1397, 43);
+            this.VATInput.TabIndex = 3;
             // 
             // labelAddress
             // 
@@ -109,33 +109,33 @@ namespace BoVloApp
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.SubmitBtn);
             // 
-            // labelContact
+            // labelEmail
             // 
-            this.labelContact.AutoSize = true;
-            this.labelContact.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelContact.Location = new System.Drawing.Point(139, 432);
-            this.labelContact.Name = "labelContact";
-            this.labelContact.Size = new System.Drawing.Size(122, 37);
-            this.labelContact.TabIndex = 7;
-            this.labelContact.Text = "Contact :";
+            this.labelEmail.AutoSize = true;
+            this.labelEmail.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelEmail.Location = new System.Drawing.Point(139, 432);
+            this.labelEmail.Name = "labelEmail";
+            this.labelEmail.Size = new System.Drawing.Size(106, 37);
+            this.labelEmail.TabIndex = 7;
+            this.labelEmail.Text = "E-mail :";
             // 
-            // contactInput
+            // emailInput
             // 
-            this.contactInput.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.contactInput.Location = new System.Drawing.Point(139, 503);
-            this.contactInput.Name = "contactInput";
-            this.contactInput.Size = new System.Drawing.Size(1397, 43);
-            this.contactInput.TabIndex = 6;
+            this.emailInput.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.emailInput.Location = new System.Drawing.Point(139, 503);
+            this.emailInput.Name = "emailInput";
+            this.emailInput.Size = new System.Drawing.Size(1397, 43);
+            this.emailInput.TabIndex = 6;
             // 
             // panelFinal
             // 
-            this.panelFinal.Controls.Add(this.contactInput);
-            this.panelFinal.Controls.Add(this.labelContact);
+            this.panelFinal.Controls.Add(this.emailInput);
+            this.panelFinal.Controls.Add(this.labelEmail);
             this.panelFinal.Controls.Add(this.btnSubmit);
             this.panelFinal.Controls.Add(this.addressInput);
             this.panelFinal.Controls.Add(this.labelAddress);
-            this.panelFinal.Controls.Add(this.tvaInput);
-            this.panelFinal.Controls.Add(this.labelTVA);
+            this.panelFinal.Controls.Add(this.VATInput);
+            this.panelFinal.Controls.Add(this.labelVAT);
             this.panelFinal.Controls.Add(this.companyNameInput);
             this.panelFinal.Controls.Add(this.labelCompanyName);
             this.panelFinal.Location = new System.Drawing.Point(0, 0);
@@ -143,7 +143,7 @@ namespace BoVloApp
             this.panelFinal.Size = new System.Drawing.Size(1664, 774);
             this.panelFinal.TabIndex = 9;
             // 
-            // Final_Catalogue
+            // Final_Catalog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -151,7 +151,7 @@ namespace BoVloApp
             this.Controls.Add(this.panelFinal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "Final_Catalogue";
+            this.Name = "Final_Catalog";
             this.Text = "Final_Catalogue";
             this.panelFinal.ResumeLayout(false);
             this.panelFinal.PerformLayout();
@@ -163,13 +163,13 @@ namespace BoVloApp
 
         private System.Windows.Forms.Label labelCompanyName;
         private System.Windows.Forms.TextBox companyNameInput;
-        private System.Windows.Forms.Label labelTVA;
-        private System.Windows.Forms.TextBox tvaInput;
+        private System.Windows.Forms.Label labelVAT;
+        private System.Windows.Forms.TextBox VATInput;
         private System.Windows.Forms.Label labelAddress;
         private System.Windows.Forms.TextBox addressInput;
         private System.Windows.Forms.Button btnSubmit;
-        private System.Windows.Forms.Label labelContact;
-        private System.Windows.Forms.TextBox contactInput;
+        private System.Windows.Forms.Label labelEmail;
+        private System.Windows.Forms.TextBox emailInput;
         private System.Windows.Forms.Panel panelFinal;
     }
 }
