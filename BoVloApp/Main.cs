@@ -59,7 +59,7 @@ namespace BoVloApp
 
         private void COMMANDES_Click(object sender, EventArgs e)
         {
-            GlobalVar.Loadform(Main_panel, new GestionDeCommande());
+            GlobalVar.Loadform(Main_panel, new OrderManagement());
         }
         private void CALENDRIER_Click(object sender, EventArgs e)
         {

@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace BoVloApp
 {
-    public partial class GestionDeCommande : Form
+    public partial class OrderManagement : Form
     {
-        public GestionDeCommande()
+        public OrderManagement()
         {
             InitializeComponent();
             DisplayOrder();

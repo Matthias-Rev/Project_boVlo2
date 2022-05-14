@@ -1,7 +1,7 @@
 ﻿
 namespace BoVloApp
 {
-    partial class GestionDeCommande
+    partial class OrderManagement
     {
         /// <summary>
         /// Required designer variable.
@@ -64,6 +64,7 @@ namespace BoVloApp
             // 
             // detailsTable
             // 
+            this.detailsTable.AllowUserToAddRows = false;
             this.detailsTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.detailsTable.BackgroundColor = System.Drawing.SystemColors.Menu;
             this.detailsTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -76,6 +77,7 @@ namespace BoVloApp
             // 
             // orderTable
             // 
+            this.orderTable.AllowUserToAddRows = false;
             this.orderTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.orderTable.BackgroundColor = System.Drawing.SystemColors.Menu;
             this.orderTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -94,7 +96,7 @@ namespace BoVloApp
             this.mySqlCommand1.EnableCaching = false;
             this.mySqlCommand1.Transaction = null;
             // 
-            // GestionDeCommande
+            // OrderManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -103,7 +105,7 @@ namespace BoVloApp
             this.Controls.Add(this.backPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "GestionDeCommande";
+            this.Name = "OrderManagement";
             this.Text = "GestionDeCommande";
             this.backPanel.ResumeLayout(false);
             this.backPanel.PerformLayout();
