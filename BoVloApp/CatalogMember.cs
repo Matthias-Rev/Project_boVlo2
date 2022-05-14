@@ -36,40 +36,26 @@ namespace BoVloApp
         private void LookUpCustomer(object sender, EventArgs e)
         {
             string request = String.Format(
-                "SELECT Name " +
+                "SELECT Name, VAT, Address, Contact " +
                 "FROM Customer " +
-                "WHERE Name='{0}'"
-                , companyNameInput.Text);
+                "WHERE VAT='{0}'"
+                , companyVATInput.Text);
             DataTable dataSql = GlobalVar.ReadSQL(request);
-            foreach (DataColumn column in dataSql.Columns)
+            if(dataSql.Rows.Count == 0)
             {
-
-                foreach (DataRow row in dataSql.Rows)
-                {
-                    int i = 0;
-                    bool condition = true;
-                    try
-                    {
-                        while (condition == true)
-                        {
-                            string name = row[i].ToString();
-                            if (name == companyNameInput.Text)
-                            {
-                                condition = false;
-                                string request_command = "SELECT * FROM Order ";
-                                DataTable calendar = GlobalVar.ReadSQL(request_command);
-                            }
-                        }
-                                i++;
-                    }
-                    catch (IndexOutOfRangeException)
-                    {
-                        labelNotInDB.Visible = true;
-                        companyNameInput.Text = "";
-                    }
-                }
+                labelNotInDB.Visible = true;
             }
-            GlobalVar.Loadform(panelMember, new Final_Catalog (main));
+            else
+            {
+                DataRow data = dataSql.Rows[0];
+                Dictionary<string, string> predefined = new();
+                predefined.Add("Name", data["Name"].ToString());
+                predefined.Add("VAT", data["VAT"].ToString());
+                predefined.Add("Address", data["Address"].ToString());
+                predefined.Add("Contact", data["Contact"].ToString());
+                GlobalVar.Loadform(panelMember, new Final_Catalog(main, predefined));
+            }
+
         }
     }
 }

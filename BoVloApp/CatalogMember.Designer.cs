@@ -29,12 +29,11 @@
         private void InitializeComponent()
         {
             this.labelAlreadyClient = new System.Windows.Forms.Label();
-            this.labelTitle = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelNotInDB = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.labelCompanyName = new System.Windows.Forms.Label();
-            this.companyNameInput = new System.Windows.Forms.TextBox();
+            this.labelCompanyVAT = new System.Windows.Forms.Label();
+            this.companyVATInput = new System.Windows.Forms.TextBox();
             this.lookUpCompany = new System.Windows.Forms.Button();
             this.btnBecomeMember = new System.Windows.Forms.Button();
             this.labelNotCustomer = new System.Windows.Forms.Label();
@@ -49,28 +48,18 @@
             // 
             this.labelAlreadyClient.AutoSize = true;
             this.labelAlreadyClient.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelAlreadyClient.Location = new System.Drawing.Point(41, 77);
+            this.labelAlreadyClient.Location = new System.Drawing.Point(124, 71);
             this.labelAlreadyClient.Name = "labelAlreadyClient";
-            this.labelAlreadyClient.Size = new System.Drawing.Size(238, 28);
+            this.labelAlreadyClient.Size = new System.Drawing.Size(165, 28);
             this.labelAlreadyClient.TabIndex = 0;
-            this.labelAlreadyClient.Text = "Already bought from you:";
-            // 
-            // labelTitle
-            // 
-            this.labelTitle.AutoSize = true;
-            this.labelTitle.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelTitle.Location = new System.Drawing.Point(620, 161);
-            this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(507, 54);
-            this.labelTitle.TabIndex = 1;
-            this.labelTitle.Text = "Are you already a member?";
+            this.labelAlreadyClient.Text = "Existing customer";
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.labelNotInDB);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.labelCompanyName);
-            this.panel1.Controls.Add(this.companyNameInput);
+            this.panel1.Controls.Add(this.labelCompanyVAT);
+            this.panel1.Controls.Add(this.companyVATInput);
             this.panel1.Controls.Add(this.lookUpCompany);
             this.panel1.Controls.Add(this.btnBecomeMember);
             this.panel1.Controls.Add(this.labelNotCustomer);
@@ -88,9 +77,9 @@
             this.labelNotInDB.ForeColor = System.Drawing.Color.Red;
             this.labelNotInDB.Location = new System.Drawing.Point(41, 256);
             this.labelNotInDB.Name = "labelNotInDB";
-            this.labelNotInDB.Size = new System.Drawing.Size(197, 21);
+            this.labelNotInDB.Size = new System.Drawing.Size(221, 21);
             this.labelNotInDB.TabIndex = 6;
-            this.labelNotInDB.Text = "You\'re not in our database!";
+            this.labelNotInDB.Text = "Customer not in our database!";
             // 
             // pictureBox1
             // 
@@ -102,24 +91,24 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
-            // labelCompanyName
+            // labelCompanyVAT
             // 
-            this.labelCompanyName.AutoSize = true;
-            this.labelCompanyName.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelCompanyName.Location = new System.Drawing.Point(41, 155);
-            this.labelCompanyName.Name = "labelCompanyName";
-            this.labelCompanyName.Size = new System.Drawing.Size(222, 28);
-            this.labelCompanyName.TabIndex = 5;
-            this.labelCompanyName.Text = "Name of your company:";
+            this.labelCompanyVAT.AutoSize = true;
+            this.labelCompanyVAT.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelCompanyVAT.Location = new System.Drawing.Point(41, 155);
+            this.labelCompanyVAT.Name = "labelCompanyVAT";
+            this.labelCompanyVAT.Size = new System.Drawing.Size(264, 28);
+            this.labelCompanyVAT.TabIndex = 5;
+            this.labelCompanyVAT.Text = "VAT number of the company:";
             // 
-            // companyNameInput
+            // companyVATInput
             // 
-            this.companyNameInput.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.companyNameInput.Location = new System.Drawing.Point(41, 202);
-            this.companyNameInput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.companyNameInput.Name = "companyNameInput";
-            this.companyNameInput.Size = new System.Drawing.Size(321, 34);
-            this.companyNameInput.TabIndex = 4;
+            this.companyVATInput.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.companyVATInput.Location = new System.Drawing.Point(41, 202);
+            this.companyVATInput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.companyVATInput.Name = "companyVATInput";
+            this.companyVATInput.Size = new System.Drawing.Size(321, 34);
+            this.companyVATInput.TabIndex = 4;
             // 
             // lookUpCompany
             // 
@@ -141,7 +130,7 @@
             this.btnBecomeMember.Name = "btnBecomeMember";
             this.btnBecomeMember.Size = new System.Drawing.Size(265, 71);
             this.btnBecomeMember.TabIndex = 2;
-            this.btnBecomeMember.Text = "Become one!";
+            this.btnBecomeMember.Text = "Create";
             this.btnBecomeMember.UseVisualStyleBackColor = true;
             this.btnBecomeMember.Click += new System.EventHandler(this.BecomeCustomer);
             // 
@@ -149,11 +138,11 @@
             // 
             this.labelNotCustomer.AutoSize = true;
             this.labelNotCustomer.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelNotCustomer.Location = new System.Drawing.Point(547, 127);
+            this.labelNotCustomer.Location = new System.Drawing.Point(553, 71);
             this.labelNotCustomer.Name = "labelNotCustomer";
-            this.labelNotCustomer.Size = new System.Drawing.Size(147, 28);
+            this.labelNotCustomer.Size = new System.Drawing.Size(137, 28);
             this.labelNotCustomer.TabIndex = 1;
-            this.labelNotCustomer.Text = "Not a customer";
+            this.labelNotCustomer.Text = "New customer";
             // 
             // mySqlCommand1
             // 
@@ -164,7 +153,6 @@
             // 
             // panelMember
             // 
-            this.panelMember.Controls.Add(this.labelTitle);
             this.panelMember.Controls.Add(this.panel1);
             this.panelMember.Location = new System.Drawing.Point(1, 1);
             this.panelMember.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -172,7 +160,7 @@
             this.panelMember.Size = new System.Drawing.Size(1664, 774);
             this.panelMember.TabIndex = 3;
             // 
-            // CatalogueMember
+            // CatalogMember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -180,13 +168,12 @@
             this.Controls.Add(this.panelMember);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "CatalogueMember";
+            this.Name = "CatalogMember";
             this.Text = "CatalogueMember";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelMember.ResumeLayout(false);
-            this.panelMember.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -194,14 +181,13 @@
         #endregion
 
         private System.Windows.Forms.Label labelAlreadyClient;
-        private System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnBecomeMember;
         private System.Windows.Forms.Label labelNotCustomer;
         private System.Windows.Forms.Button lookUpCompany;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label labelCompanyName;
-        private System.Windows.Forms.TextBox companyNameInput;
+        private System.Windows.Forms.Label labelCompanyVAT;
+        private System.Windows.Forms.TextBox companyVATInput;
         private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
         private System.Windows.Forms.Panel panelMember;
         private System.Windows.Forms.Label labelNotInDB;

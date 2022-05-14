@@ -14,10 +14,23 @@ namespace BoVloApp
     public partial class Final_Catalog : Form
     {
         Main main = null;
-        public Final_Catalog(Main main)
+        bool add_new_customer = true;
+        public Final_Catalog(Main main, Dictionary<string, string> predefined = null)
         {
             this.main = main;
             InitializeComponent();
+            if (predefined != null)
+            {
+                companyNameInput.Text = predefined["Name"];
+                VATInput.Text = predefined["VAT"];
+                addressInput.Text = predefined["Address"];
+                emailInput.Text = predefined["Contact"];
+                companyNameInput.ReadOnly = true;
+                VATInput.ReadOnly = true;
+                addressInput.ReadOnly = true;
+                emailInput.ReadOnly = true;
+                add_new_customer =false;
+            }
         }
 
 //---------------------------Add new customer to db----------------------------------------------
@@ -48,9 +61,13 @@ namespace BoVloApp
             }
             if (inputs_valid == true)
             {
-                string insertMySQL = String.Format("INSERT INTO Customer (`Name`, `TVA`, `Address`, `Contact`) VALUES " +
+                if (add_new_customer)
+                {
+                    string insertMySQL = String.Format("INSERT INTO Customer (`Name`, `TVA`, `Address`, `Contact`) VALUES " +
                     "('{0}','{1}','{2}','{3}' )", companyNameInput.Text, VATInput.Text, addressInput.Text, emailInput.Text);
-                GlobalVar.WriteSQL(insertMySQL);
+                    GlobalVar.WriteSQL(insertMySQL);
+                }
+                //create and add order to DB
                 main.clear();
                 Close();
             }

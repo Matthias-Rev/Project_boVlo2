@@ -81,6 +81,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Visible = false;
             // 
             // Logout_button
             // 
@@ -93,6 +94,7 @@
             this.Logout_button.TabIndex = 2;
             this.Logout_button.Text = "Se déconnecter";
             this.Logout_button.UseVisualStyleBackColor = false;
+            this.Logout_button.Visible = false;
             this.Logout_button.Click += new System.EventHandler(this.Logout_button_Click);
             // 
             // Menu_button
@@ -119,7 +121,7 @@
             this.Main_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Main_panel.Location = new System.Drawing.Point(0, 63);
             this.Main_panel.Name = "Main_panel";
-            this.Main_panel.Size = new System.Drawing.Size(1904, 733);
+            this.Main_panel.Size = new System.Drawing.Size(1904, 978);
             this.Main_panel.TabIndex = 1;
             // 
             // Titel
@@ -186,7 +188,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1904, 796);
+            this.ClientSize = new System.Drawing.Size(1904, 1041);
             this.Controls.Add(this.Main_panel);
             this.Controls.Add(this.Topbar_panel);
             this.Name = "Main";
