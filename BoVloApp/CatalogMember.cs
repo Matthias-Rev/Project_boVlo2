@@ -71,25 +71,18 @@ namespace BoVloApp
             //}
             //GlobalVar.Loadform(panelMember, new Final_Catalog (main));
             string input = companyNameInput.Text;
-            string lookUp = String.Format("SELECT Name " +
-                "FROM Customer " +
-                "WHERE EXISTS" +
-                "(SELECT Name FROM Customer WHERE NAME = {0})", input);
+            string lookUp = String.Format("SELECT Customer.Name " +
+                "FROM Bovlo.Customer " +
+                "WHERE NAME = '{0}'", input);
 
             DataTable isCustomer = GlobalVar.ReadSQL(lookUp);
-            if (isCustomer != null) { MessageBox.Show("Found you;)"); }
-        }
+            
+            if (isCustomer != null && isCustomer.Rows.Count != 0) 
+            {
+                MessageBox.Show("Found you!"); 
+            }
 
-        void Look()
-        {
-            string input = companyNameInput.Text;
-            string lookUp = String.Format("SELECT Name " +
-                "FROM Customer " +
-                "WHERE EXISTS" +
-                "(SELECT Name FROM Customer WHERE NAME = {0})", input);
-
-            DataTable isCustomer = GlobalVar.ReadSQL(lookUp);
-            if(isCustomer != null) { MessageBox.Show("Found you;)"); }
+            else { MessageBox.Show("You are not a registered customer."); }
         }
     }
 }
