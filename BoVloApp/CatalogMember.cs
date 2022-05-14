@@ -10,28 +10,36 @@ using System.Windows.Forms;
 
 namespace BoVloApp
 {
-    public partial class CatalogueMember : Form
+    public partial class CatalogMember : Form
     {
         Main main = null;
-        public CatalogueMember(Main main)
+        public CatalogMember(Main main)
         {
             this.main = main;
             InitializeComponent();
-            label5.Visible = false;
-        }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            GlobalVar.Loadform(panelMember, new Final_Catalogue(main));
+            InitialValueNotInDBLbl();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+//--------------------------------Initializes the "Customer not found" label to be not visible----------------
+        private void InitialValueNotInDBLbl()
         {
-            // search the name of the society in the db
+            labelNotInDB.Visible = false;
+        }
+
+//-------------------------------Navigates to new customer window upon pressing this btn---------------------
+        private void BecomeCustomer(object sender, EventArgs e)
+        {
+            GlobalVar.Loadform(panelMember, new Final_Catalog(main));
+        }
+
+//--------------------------Search the name of the company in the db------------------------------------------
+        private void LookUpCustomer(object sender, EventArgs e)
+        {
             string request = String.Format(
                 "SELECT Name " +
                 "FROM Customer " +
                 "WHERE Name='{0}'"
-                , textBox1.Text);
+                , companyNameInput.Text);
             DataTable dataSql = GlobalVar.ReadSQL(request);
             foreach (DataColumn column in dataSql.Columns)
             {
@@ -45,7 +53,7 @@ namespace BoVloApp
                         while (condition == true)
                         {
                             string name = row[i].ToString();
-                            if (name == textBox1.Text)
+                            if (name == companyNameInput.Text)
                             {
                                 condition = false;
                                 string request_command = "SELECT * FROM Order ";
@@ -56,12 +64,12 @@ namespace BoVloApp
                     }
                     catch (IndexOutOfRangeException)
                     {
-                        label5.Visible = true;
-                        textBox1.Text = "";
+                        labelNotInDB.Visible = true;
+                        companyNameInput.Text = "";
                     }
                 }
             }
-            GlobalVar.Loadform(panelMember, new Final_Catalogue (main));
+            GlobalVar.Loadform(panelMember, new Final_Catalog (main));
         }
     }
 }

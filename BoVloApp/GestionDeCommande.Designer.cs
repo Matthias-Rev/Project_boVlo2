@@ -29,9 +29,8 @@ namespace BoVloApp
         /// </summary>
         private void InitializeComponent()
         {
-            this.Title = new System.Windows.Forms.Label();
+            this.labelTitle = new System.Windows.Forms.Label();
             this.backPanel = new System.Windows.Forms.Panel();
-            this.label = new System.Windows.Forms.Label();
             this.detailsTable = new System.Windows.Forms.DataGridView();
             this.orderTable = new System.Windows.Forms.DataGridView();
             this.mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
@@ -40,22 +39,21 @@ namespace BoVloApp
             ((System.ComponentModel.ISupportInitialize)(this.orderTable)).BeginInit();
             this.SuspendLayout();
             // 
-            // Title
+            // labelTitle
             // 
-            this.Title.AutoSize = true;
-            this.Title.Font = new System.Drawing.Font("Segoe UI", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Title.Location = new System.Drawing.Point(467, 55);
-            this.Title.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.Title.Name = "Title";
-            this.Title.Size = new System.Drawing.Size(760, 72);
-            this.Title.TabIndex = 6;
-            this.Title.Text = "Gestion de commande de vélo";
+            this.labelTitle.AutoSize = true;
+            this.labelTitle.Font = new System.Drawing.Font("Segoe UI", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelTitle.Location = new System.Drawing.Point(635, 46);
+            this.labelTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelTitle.Name = "labelTitle";
+            this.labelTitle.Size = new System.Drawing.Size(501, 72);
+            this.labelTitle.TabIndex = 6;
+            this.labelTitle.Text = "Order Management";
             // 
             // backPanel
             // 
-            this.backPanel.Controls.Add(this.label);
             this.backPanel.Controls.Add(this.detailsTable);
-            this.backPanel.Controls.Add(this.Title);
+            this.backPanel.Controls.Add(this.labelTitle);
             this.backPanel.Controls.Add(this.orderTable);
             this.backPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.backPanel.Location = new System.Drawing.Point(0, 0);
@@ -64,31 +62,23 @@ namespace BoVloApp
             this.backPanel.Size = new System.Drawing.Size(1810, 660);
             this.backPanel.TabIndex = 7;
             // 
-            // label
-            // 
-            this.label.AutoSize = true;
-            this.label.Location = new System.Drawing.Point(105, 90);
-            this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(38, 15);
-            this.label.TabIndex = 8;
-            this.label.Text = "label1";
-            // 
             // detailsTable
             // 
             this.detailsTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.detailsTable.BackgroundColor = System.Drawing.SystemColors.Menu;
+            this.detailsTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.detailsTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.detailsTable.Location = new System.Drawing.Point(870, 168);
             this.detailsTable.Name = "detailsTable";
             this.detailsTable.RowTemplate.Height = 25;
             this.detailsTable.Size = new System.Drawing.Size(889, 480);
             this.detailsTable.TabIndex = 7;
-
             // 
             // orderTable
             // 
             this.orderTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.orderTable.BackgroundColor = System.Drawing.SystemColors.Menu;
+            this.orderTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.orderTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.orderTable.Location = new System.Drawing.Point(52, 168);
             this.orderTable.Name = "orderTable";
@@ -124,11 +114,10 @@ namespace BoVloApp
         }
 
         #endregion
-        private System.Windows.Forms.Label Title;
+        private System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.Panel backPanel;
         private System.Windows.Forms.DataGridView orderTable;
         private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
         private System.Windows.Forms.DataGridView detailsTable;
-        private System.Windows.Forms.Label label;
     }
 }

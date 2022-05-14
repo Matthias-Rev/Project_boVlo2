@@ -11,15 +11,17 @@ using MySql.Data.MySqlClient;
 
 namespace BoVloApp
 {
-    public partial class Final_Catalogue : Form
+    public partial class Final_Catalog : Form
     {
         Main main = null;
-        public Final_Catalogue(Main main)
+        public Final_Catalog(Main main)
         {
             this.main = main;
             InitializeComponent();
         }
-        public void button1_Click(object sender, EventArgs e)
+
+//---------------------------Add new customer to db----------------------------------------------
+        public void SubmitBtn(object sender, EventArgs e)
         {
             // confirm and send the information on the db
             // addd to the database

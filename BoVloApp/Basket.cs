@@ -40,7 +40,7 @@ namespace BoVloApp
 
         private void buttonFinaliser_Click(object sender, EventArgs e)
         {
-            GlobalVar.Loadform(PanelPanier, new CatalogueMember(main));
+            GlobalVar.Loadform(PanelPanier, new CatalogMember(main));
         }
 
         private DataTable GetBasket()
