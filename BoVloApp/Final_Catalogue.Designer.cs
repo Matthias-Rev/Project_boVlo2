@@ -29,72 +29,75 @@ namespace BoVloApp
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.name_label = new System.Windows.Forms.Label();
+            this.name_textbox = new System.Windows.Forms.TextBox();
+            this.VAT_label = new System.Windows.Forms.Label();
+            this.VAT_textbox = new System.Windows.Forms.TextBox();
+            this.address_lebel = new System.Windows.Forms.Label();
+            this.address_textbox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.email_label = new System.Windows.Forms.Label();
+            this.email_textbox = new System.Windows.Forms.TextBox();
             this.panelFinal = new System.Windows.Forms.Panel();
             this.panelFinal.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // name_label
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(139, 43);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(240, 37);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nom de la Société:";
+            this.name_label.AutoSize = true;
+            this.name_label.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.name_label.Location = new System.Drawing.Point(139, 43);
+            this.name_label.Name = "name_label";
+            this.name_label.Size = new System.Drawing.Size(217, 37);
+            this.name_label.TabIndex = 0;
+            this.name_label.Text = "Company name :";
             // 
-            // textBox1
+            // name_textbox
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(139, 93);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(1397, 43);
-            this.textBox1.TabIndex = 1;
+            this.name_textbox.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.name_textbox.Location = new System.Drawing.Point(139, 93);
+            this.name_textbox.Name = "name_textbox";
+            this.name_textbox.Size = new System.Drawing.Size(1397, 43);
+            this.name_textbox.TabIndex = 1;
+            this.name_textbox.TextChanged += new System.EventHandler(this.name_textbox_TextChanged);
             // 
-            // label2
+            // VAT_label
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(139, 160);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 37);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Nr. TVA:";
+            this.VAT_label.AutoSize = true;
+            this.VAT_label.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.VAT_label.Location = new System.Drawing.Point(139, 160);
+            this.VAT_label.Name = "VAT_label";
+            this.VAT_label.Size = new System.Drawing.Size(166, 37);
+            this.VAT_label.TabIndex = 2;
+            this.VAT_label.Text = "VAT number:";
             // 
-            // textBox2
+            // VAT_textbox
             // 
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.Location = new System.Drawing.Point(139, 220);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(1397, 43);
-            this.textBox2.TabIndex = 3;
+            this.VAT_textbox.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.VAT_textbox.Location = new System.Drawing.Point(139, 220);
+            this.VAT_textbox.Name = "VAT_textbox";
+            this.VAT_textbox.Size = new System.Drawing.Size(1397, 43);
+            this.VAT_textbox.TabIndex = 3;
+            this.VAT_textbox.TextChanged += new System.EventHandler(this.VAT_textbox_TextChanged);
             // 
-            // label3
+            // address_lebel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(139, 296);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(115, 37);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Adresse:";
+            this.address_lebel.AutoSize = true;
+            this.address_lebel.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.address_lebel.Location = new System.Drawing.Point(139, 296);
+            this.address_lebel.Name = "address_lebel";
+            this.address_lebel.Size = new System.Drawing.Size(117, 37);
+            this.address_lebel.TabIndex = 4;
+            this.address_lebel.Text = "Address:";
             // 
-            // textBox3
+            // address_textbox
             // 
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox3.Location = new System.Drawing.Point(139, 359);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(1397, 43);
-            this.textBox3.TabIndex = 5;
+            this.address_textbox.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.address_textbox.Location = new System.Drawing.Point(139, 359);
+            this.address_textbox.Name = "address_textbox";
+            this.address_textbox.Size = new System.Drawing.Size(1397, 43);
+            this.address_textbox.TabIndex = 5;
+            this.address_textbox.TextChanged += new System.EventHandler(this.address_textbox_TextChanged);
             // 
             // button1
             // 
@@ -109,35 +112,36 @@ namespace BoVloApp
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label4
+            // email_label
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(139, 432);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(122, 37);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Contact :";
+            this.email_label.AutoSize = true;
+            this.email_label.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.email_label.Location = new System.Drawing.Point(139, 432);
+            this.email_label.Name = "email_label";
+            this.email_label.Size = new System.Drawing.Size(95, 37);
+            this.email_label.TabIndex = 7;
+            this.email_label.Text = "Email :";
             // 
-            // textBox4
+            // email_textbox
             // 
-            this.textBox4.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox4.Location = new System.Drawing.Point(139, 503);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(1397, 43);
-            this.textBox4.TabIndex = 6;
+            this.email_textbox.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.email_textbox.Location = new System.Drawing.Point(139, 503);
+            this.email_textbox.Name = "email_textbox";
+            this.email_textbox.Size = new System.Drawing.Size(1397, 43);
+            this.email_textbox.TabIndex = 6;
+            this.email_textbox.TextChanged += new System.EventHandler(this.email_textbox_TextChanged);
             // 
             // panelFinal
             // 
-            this.panelFinal.Controls.Add(this.textBox4);
-            this.panelFinal.Controls.Add(this.label4);
+            this.panelFinal.Controls.Add(this.email_textbox);
+            this.panelFinal.Controls.Add(this.email_label);
             this.panelFinal.Controls.Add(this.button1);
-            this.panelFinal.Controls.Add(this.textBox3);
-            this.panelFinal.Controls.Add(this.label3);
-            this.panelFinal.Controls.Add(this.textBox2);
-            this.panelFinal.Controls.Add(this.label2);
-            this.panelFinal.Controls.Add(this.textBox1);
-            this.panelFinal.Controls.Add(this.label1);
+            this.panelFinal.Controls.Add(this.address_textbox);
+            this.panelFinal.Controls.Add(this.address_lebel);
+            this.panelFinal.Controls.Add(this.VAT_textbox);
+            this.panelFinal.Controls.Add(this.VAT_label);
+            this.panelFinal.Controls.Add(this.name_textbox);
+            this.panelFinal.Controls.Add(this.name_label);
             this.panelFinal.Location = new System.Drawing.Point(0, 0);
             this.panelFinal.Name = "panelFinal";
             this.panelFinal.Size = new System.Drawing.Size(1664, 774);
@@ -161,15 +165,15 @@ namespace BoVloApp
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label name_label;
+        private System.Windows.Forms.TextBox name_textbox;
+        private System.Windows.Forms.Label VAT_label;
+        private System.Windows.Forms.TextBox VAT_textbox;
+        private System.Windows.Forms.Label address_lebel;
+        private System.Windows.Forms.TextBox address_textbox;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label email_label;
+        private System.Windows.Forms.TextBox email_textbox;
         private System.Windows.Forms.Panel panelFinal;
     }
 }

@@ -30,7 +30,7 @@ namespace BoVloApp
 
         private void button1_Click(object sender, EventArgs e) //panier
         {
-            GlobalVar.Loadform(BackPanel, new Panier(main));
+            GlobalVar.Loadform(BackPanel, new Basket(main));
         }
         private void buttonPre_Click(object sender, EventArgs e)
         {
@@ -65,13 +65,16 @@ namespace BoVloApp
         {
             if (nbreAjout.Text.Length > 0)
             {
-                string idbike = GlobalVar.types.Select(String.Format("Name = '{0}'", veloType.Text))[0]["idBike"].ToString();
-                string idcolor = GlobalVar.colors.Select(String.Format("Name = '{0}'", color_combobox.Text))[0]["idColor"].ToString();
-                string insertMySQL = String.Format("INSERT INTO Basket (`SessionKey`, `Quantity`, `idBike`, `Size`, `idColor`) VALUES " +
-                    "('{0}','{1}','{2}','{3}','{4}')",
-                    GlobalVar.ReadXML().key, nbreAjout.Text, idbike, Int32.Parse(size_combobox.Text), idcolor);
-                nbreAjout.Text = "";
-                GlobalVar.WriteSQL(insertMySQL);
+                string idbike = veloType.Text;
+                string idcolor = color_combobox.Text;
+                string size = size_combobox.Text;
+                int quantity = int.Parse(nbreAjout.Text);
+                string reference = idbike + "_" + idcolor + "_" + size;
+                if (Program.basket.ContainsKey(reference))
+                {
+                    Program.basket[reference] += quantity;
+                }
+                else { Program.basket.Add(reference, quantity); }
             }
             else
             {

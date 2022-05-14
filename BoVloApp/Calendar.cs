@@ -82,10 +82,7 @@ namespace BoVloApp
             DataGridView update = sender as DataGridView;
             if (update.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
             {
-                string request = String.Format(
-                "SELECT * " +
-                "FROM Calendar ",
-                GlobalVar.ReadXML().key);
+                string request = "SELECT * FROM Calendar ";
                 DataTable calendar = GlobalVar.ReadSQL(request);
                 string[] titels = { "Command_id", "Start date", "End date" };
                 DataTable data = new();

@@ -23,12 +23,58 @@ namespace BoVloApp
         {
             // confirm and send the information on the db
             // addd to the database
-            string insertMySQL = String.Format("INSERT INTO Customer (`Name`, `TVA`, `Address`, `Contact`) VALUES " +
-            "('{0}','{1}','{2}','{3}' )", textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text);
-            MessageBox.Show(insertMySQL);
-            GlobalVar.WriteSQL(insertMySQL);
-            main.clear();
-            Close();
+            bool inputs_valid = true;
+            if (name_textbox.Text.Length == 0)
+            {
+                name_textbox.BackColor = Color.Red;
+                inputs_valid = false;
+            }
+            if(VAT_textbox.Text.Length == 0)
+            {
+                VAT_textbox.BackColor = Color.Red;
+                inputs_valid = false;
+            }
+            if(address_textbox.Text.Length == 0)
+            {
+                address_textbox.BackColor = Color.Red; 
+                inputs_valid = false;
+            }
+            if(email_textbox.Text.Length == 0)
+            {
+                email_textbox.BackColor = Color.Red; 
+                inputs_valid = false;
+            }
+            if (inputs_valid == true)
+            {
+                string insertMySQL = String.Format("INSERT INTO Customer (`Name`, `TVA`, `Address`, `Contact`) VALUES " +
+                    "('{0}','{1}','{2}','{3}' )", name_textbox.Text, VAT_textbox.Text, address_textbox.Text, email_textbox.Text);
+                GlobalVar.WriteSQL(insertMySQL);
+                main.clear();
+                Close();
+            }
+            
+        }
+        // To map elements with id : string idbike = GlobalVar.types.Select(String.Format("Name = '{0}'", veloType.Text))[0]["idBike"].ToString();
+        //string idcolor = GlobalVar.colors.Select(String.Format("Name = '{0}'", color_combobox.Text))[0]["idColor"].ToString();
+
+        private void name_textbox_TextChanged(object sender, EventArgs e)
+        {
+            name_textbox.BackColor = Color.White;
+        }
+
+        private void VAT_textbox_TextChanged(object sender, EventArgs e)
+        {
+            VAT_textbox.BackColor = Color.White;
+        }
+
+        private void address_textbox_TextChanged(object sender, EventArgs e)
+        {
+            address_textbox.BackColor = Color.White;
+        }
+
+        private void email_textbox_TextChanged(object sender, EventArgs e)
+        {
+            email_textbox.BackColor = Color.White;
         }
     }
 }

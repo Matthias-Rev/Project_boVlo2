@@ -12,10 +12,10 @@ using System.Data.SqlClient;
 
 namespace BoVloApp
 {
-    public partial class Panier : Form
+    public partial class Basket : Form
     {
         Main main = null;
-        public Panier(Main main)
+        public Basket(Main main)
         {
             this.main = main;
             InitializeComponent();
@@ -45,12 +45,8 @@ namespace BoVloApp
 
         private DataTable GetBasket()
         {
-            string request = String.Format("SELECT Basket.idArticle, Bike.Name, Basket.Size, Bike.Price, Basket.Quantity " +
-                "FROM Basket, Bike " +
-                "WHERE Basket.SessionKey='{0}' " +
-                "AND Basket.idBike = Bike.idBike"
-            , GlobalVar.ReadXML().key);
-            DataTable basket = GlobalVar.ReadSQL(request);
+            DataTable basket = new();
+
             return basket;
         }
         //
@@ -70,7 +66,7 @@ namespace BoVloApp
 
             GlobalVar.WriteSQL(query);
 
-            label4.Text = query;
+            //label4.Text = query;
 
         }
 
