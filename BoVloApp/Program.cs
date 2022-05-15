@@ -1,12 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
-using System.IO;
-using System.Xml.Serialization;
-using System.Xml;
 using System.Data;
 using MySql.Data.MySqlClient;
 namespace BoVloApp
@@ -38,29 +34,6 @@ namespace BoVloApp
             x = contenant.Location.X + form_horizontal_center - x_mid + x;
             y = contenant.Location.Y + form_vertical_center - y_mid + y;
             return new Point(x, y);
-        }
-        static public Session ReadXML()
-        {
-            XmlSerializer reader = new XmlSerializer(typeof(Session));
-            StreamReader file = new StreamReader(@"..\..\..\Resources\sessionvariables.xml");
-            Session session = (Session)reader.Deserialize(file);
-            file.Close();
-            return session;
-        }
-        static public void ResetXML()
-        {
-            XmlDocument xmlDoc = new XmlDocument();
-            xmlDoc.Load(@"..\..\..\Resources\sessionvariables.xml");
-            xmlDoc.DocumentElement.ParentNode.RemoveAll();
-        }
-        static public void WriteXML(Session session)
-        {
-            XmlSerializer serializer = new XmlSerializer(typeof(Session));
-            using (StreamWriter writer = new StreamWriter(@"..\..\..\Resources\sessionvariables.xml"))
-            {
-                serializer.Serialize(writer, session);
-                writer.Close();
-            }
         }
         private static Random random = new Random();
         public static string RandomString(int length)

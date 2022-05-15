@@ -31,7 +31,7 @@ namespace BoVloApp
 //---------------------------------------Navigate to the basket window------------------------------------
         private void GoToBasket(object sender, EventArgs e)
         {
-            Program.Loadform(BackPanel, new Basket(main));
+            main.display(new Basket(main));
         }
 
 //-------------------------------------Buttons that allow to cycle through the bike selection-----------

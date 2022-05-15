@@ -39,6 +39,11 @@ namespace BoVloApp
         {
             Program.Clearform(Main_panel);
         }
+        public void display(Form form)
+        {
+            Program.Clearform(Main_panel);
+            Program.Loadform(Main_panel, form);
+        }
         private void Menu_button_Click(object sender, EventArgs e)
         {
             clear();
@@ -46,7 +51,6 @@ namespace BoVloApp
         private void Logout_button_Click(object sender, EventArgs e)
         {
             Login loginpage = new Login();
-            Program.ResetXML();
             Hide();
             loginpage.ShowDialog();
             Close();

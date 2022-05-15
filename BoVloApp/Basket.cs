@@ -80,5 +80,10 @@ namespace BoVloApp
             CalculatePrice(basket);
         }
 
+        private void catalog_button_Click(object sender, EventArgs e)
+        {
+            main.display(new Catalog(main));
+            Close();
+        }
     }
 }

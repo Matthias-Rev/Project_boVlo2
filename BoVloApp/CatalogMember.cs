@@ -48,5 +48,14 @@ namespace BoVloApp
             }
         }
 
+        private void catalog_button_Click(object sender, EventArgs e)
+        {
+            main.display(new Catalog(main));
+        }
+
+        private void basket_button_Click(object sender, EventArgs e)
+        {
+            main.display(new Basket(main));
+        }
     }
 }

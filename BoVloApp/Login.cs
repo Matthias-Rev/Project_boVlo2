@@ -41,7 +41,7 @@ namespace BoVloApp
                 session.username = user_input.Text;
                 session.titel = row["Permission"].ToString();
                 session.key = Program.RandomString(20);
-                Program.WriteXML(session);
+                //create session element in program can be added later
                 Main main = new Main();
                 Hide();
                 main.ShowDialog();

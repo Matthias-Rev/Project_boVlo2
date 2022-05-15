@@ -40,6 +40,8 @@
             this.labelNotCustomer = new System.Windows.Forms.Label();
             this.mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
             this.panelMember = new System.Windows.Forms.Panel();
+            this.catalog_button = new System.Windows.Forms.Button();
+            this.basket_button = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelMember.SuspendLayout();
@@ -165,6 +167,8 @@
             // 
             // panelMember
             // 
+            this.panelMember.Controls.Add(this.basket_button);
+            this.panelMember.Controls.Add(this.catalog_button);
             this.panelMember.Controls.Add(this.labelTitle);
             this.panelMember.Controls.Add(this.panel1);
             this.panelMember.Location = new System.Drawing.Point(1, 1);
@@ -172,6 +176,28 @@
             this.panelMember.Name = "panelMember";
             this.panelMember.Size = new System.Drawing.Size(1664, 774);
             this.panelMember.TabIndex = 3;
+            // 
+            // catalog_button
+            // 
+            this.catalog_button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.catalog_button.Location = new System.Drawing.Point(38, 44);
+            this.catalog_button.Name = "catalog_button";
+            this.catalog_button.Size = new System.Drawing.Size(213, 48);
+            this.catalog_button.TabIndex = 3;
+            this.catalog_button.Text = "Catalog";
+            this.catalog_button.UseVisualStyleBackColor = true;
+            this.catalog_button.Click += new System.EventHandler(this.catalog_button_Click);
+            // 
+            // basket_button
+            // 
+            this.basket_button.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.basket_button.Location = new System.Drawing.Point(38, 117);
+            this.basket_button.Name = "basket_button";
+            this.basket_button.Size = new System.Drawing.Size(213, 48);
+            this.basket_button.TabIndex = 4;
+            this.basket_button.Text = "Basket";
+            this.basket_button.UseVisualStyleBackColor = true;
+            this.basket_button.Click += new System.EventHandler(this.basket_button_Click);
             // 
             // CatalogMember
             // 
@@ -206,5 +232,7 @@
         private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
         private System.Windows.Forms.Panel panelMember;
         private System.Windows.Forms.Label labelNotInDB;
+        private System.Windows.Forms.Button basket_button;
+        private System.Windows.Forms.Button catalog_button;
     }
 }

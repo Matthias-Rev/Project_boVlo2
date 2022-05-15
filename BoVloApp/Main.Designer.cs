@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.Main_panel = new System.Windows.Forms.Panel();
             this.Topbar_panel = new System.Windows.Forms.Panel();
             this.Username_label = new System.Windows.Forms.Label();
             this.Logout_button = new System.Windows.Forms.Button();
             this.Menu_button = new System.Windows.Forms.Button();
-            this.Main_panel = new System.Windows.Forms.Panel();
             this.Titel = new System.Windows.Forms.Label();
             this.Orders = new System.Windows.Forms.Button();
             this.Calendar = new System.Windows.Forms.Button();

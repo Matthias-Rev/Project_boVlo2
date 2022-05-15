@@ -36,6 +36,7 @@ namespace BoVloApp
             this.PanelPanier = new System.Windows.Forms.Panel();
             this.panierData = new System.Windows.Forms.DataGridView();
             this.LabelPrixTotal = new System.Windows.Forms.Label();
+            this.catalog_button = new System.Windows.Forms.Button();
             this.PanelPanier.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panierData)).BeginInit();
             this.SuspendLayout();
@@ -85,6 +86,7 @@ namespace BoVloApp
             // 
             // PanelPanier
             // 
+            this.PanelPanier.Controls.Add(this.catalog_button);
             this.PanelPanier.Controls.Add(this.panierData);
             this.PanelPanier.Controls.Add(this.LabelPrixTotal);
             this.PanelPanier.Controls.Add(this.Title);
@@ -122,6 +124,17 @@ namespace BoVloApp
             this.LabelPrixTotal.TabIndex = 5;
             this.LabelPrixTotal.Text = "0";
             // 
+            // catalog_button
+            // 
+            this.catalog_button.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.catalog_button.Location = new System.Drawing.Point(51, 60);
+            this.catalog_button.Name = "catalog_button";
+            this.catalog_button.Size = new System.Drawing.Size(187, 50);
+            this.catalog_button.TabIndex = 7;
+            this.catalog_button.Text = "Catalog";
+            this.catalog_button.UseVisualStyleBackColor = true;
+            this.catalog_button.Click += new System.EventHandler(this.catalog_button_Click);
+            // 
             // Basket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -147,5 +160,6 @@ namespace BoVloApp
         private System.Windows.Forms.Panel PanelPanier;
         private System.Windows.Forms.Label LabelPrixTotal;
         private System.Windows.Forms.DataGridView panierData;
+        private System.Windows.Forms.Button catalog_button;
     }
 }
