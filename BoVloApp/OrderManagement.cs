@@ -58,28 +58,22 @@ namespace BoVloApp
 
                 string request = "SELECT *  FROM OrderDetails WHERE idOrder=" + val;
 
-                DataTable orderDetail = Program.ReadSQL(request);
-
-
-                foreach(DataColumn col in orderDetail.Columns)
+                DataTable raw_orderDetail = Program.ReadSQL(request);
+                DataTable orderDetail = new();
+                orderDetail.Columns.Add("Type");
+                orderDetail.Columns.Add("Color");
+                orderDetail.Columns.Add("Size");
+                orderDetail.Columns.Add("Quantity");
+                foreach (DataRow row in raw_orderDetail.Rows)
                 {
-                    if (col.ColumnName == "idBike")
-                    {
-                        foreach (DataRow row in orderDetail.Rows)
-                        {
-                            string cur = theOrder.Rows[e.RowIndex].Cells["idOrder"].FormattedValue.ToString();
-                            string idbike = Program.types.Select("SELECT * FROM types WHERE idBike = '" + cur + "'").ToString();
-
-                            MessageBox.Show(idbike);
-                            orderDetail.Rows[Convert.ToInt32(row)][col.Ordinal] = idbike;
-                        }
-
-                    }
-                    detailsTable.DataSource = orderDetail;
+                    DataRow new_row = orderDetail.NewRow();
+                    new_row["Type"] = Program.types.Select(string.Format("idBike = '{0}'", row["idBike"].ToString()))[0]["Name"].ToString();
+                    new_row["Color"] = Program.colors.Select(string.Format("idColor = '{0}'", row["idColor".ToString()]))[0]["Name"].ToString();
+                    new_row["Size"] = row["Size"];
+                    new_row["Quantity"] = row["Quantity"];
+                    orderDetail.Rows.Add(new_row);
                 }
-
-
-                
+                detailsTable.DataSource = orderDetail;
             }
         }
 
