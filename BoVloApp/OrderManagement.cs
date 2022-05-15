@@ -69,7 +69,7 @@ namespace BoVloApp
         //-----------------------SQL query to get the the table "Orders" from the db
         private DataTable GetOrder()
         {
-            string request = "SELECT Orders.idOrder, Customer.Name, Orders.Date, Orders.status " +
+            string request = "SELECT Orders.idOrder, Customer.Name, Orders.Start_Date, Orders.status " +
                 "FROM Orders, Customer " +
                 "WHERE Orders.Customer_id = Customer.Customer_id ";
 
