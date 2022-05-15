@@ -58,7 +58,7 @@ namespace BoVloApp
 
                 string request = "SELECT *  FROM OrderDetails WHERE idOrder=" + val;
 
-                DataTable orderDetail = GlobalVar.ReadSQL(request);
+                DataTable orderDetail = Program.ReadSQL(request);
 
                 detailsTable.DataSource = orderDetail;
 
@@ -73,7 +73,7 @@ namespace BoVloApp
                 "FROM Orders, Customer " +
                 "WHERE Orders.Customer_id = Customer.Customer_id ";
 
-            DataTable order = GlobalVar.ReadSQL(request);
+            DataTable order = Program.ReadSQL(request);
 
             return order;
 

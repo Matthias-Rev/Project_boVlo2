@@ -41,7 +41,7 @@ namespace BoVloApp
                 "WHERE (Calendar.idOrder = Orders.idOrder AND Orders.Customer_id = Customer.Customer_id) " +
                 "AND Calendar.Validate = 'false'";
 
-            DataTable calendar = GlobalVar.ReadSQL(request);
+            DataTable calendar = Program.ReadSQL(request);
 
             return calendar;
         }
@@ -68,7 +68,7 @@ namespace BoVloApp
 
                 string request = "UPDATE Calendar SET Calendar.Validate = 'true' WHERE idOrder = " + name_column;
 
-                DataTable orderDetail = GlobalVar.ReadSQL(request);
+                DataTable orderDetail = Program.ReadSQL(request);
 
                 update_validate.DataSource = orderDetail;
 
@@ -88,7 +88,7 @@ namespace BoVloApp
                 var name_col = update.Columns[e.ColumnIndex].Name;
                 var name_column = update.Rows[e.RowIndex].Cells["idOrder"].FormattedValue.ToString();
                 string request = "UPDATE Calendar SET " + name_col + " = CAST("+ val +" AS DATE) WHERE idOrder = " + name_column;
-                DataTable calendarUpdate = GlobalVar.ReadSQL(request);
+                DataTable calendarUpdate = Program.ReadSQL(request);
                 update.DataSource = calendarUpdate;
                 GetCalendar();
             }

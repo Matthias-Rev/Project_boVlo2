@@ -34,7 +34,6 @@ namespace BoVloApp
             this.veloType = new System.Windows.Forms.Button();
             this.nextVelo = new System.Windows.Forms.Button();
             this.preVelo = new System.Windows.Forms.Button();
-            this.picture = new System.Windows.Forms.PictureBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.inputBox = new System.Windows.Forms.TextBox();
             this.labelPrice = new System.Windows.Forms.Label();
@@ -45,7 +44,6 @@ namespace BoVloApp
             this.BackPanel = new System.Windows.Forms.Panel();
             this.color_combobox = new System.Windows.Forms.ComboBox();
             this.size_combobox = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             this.BackPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,17 +92,6 @@ namespace BoVloApp
             this.preVelo.Text = "<--";
             this.preVelo.UseVisualStyleBackColor = true;
             this.preVelo.Click += new System.EventHandler(this.buttonPre_Click);
-            // 
-            // picture
-            // 
-            this.picture.Image = global::BoVloApp.Properties.Resources.Velo_ville_cream;
-            this.picture.Location = new System.Drawing.Point(658, 134);
-            this.picture.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.picture.Name = "picture";
-            this.picture.Size = new System.Drawing.Size(481, 359);
-            this.picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picture.TabIndex = 15;
-            this.picture.TabStop = false;
             // 
             // btnAdd
             // 
@@ -178,7 +165,6 @@ namespace BoVloApp
             this.BackPanel.Controls.Add(this.labelPrice);
             this.BackPanel.Controls.Add(this.inputBox);
             this.BackPanel.Controls.Add(this.btnAdd);
-            this.BackPanel.Controls.Add(this.picture);
             this.BackPanel.Controls.Add(this.preVelo);
             this.BackPanel.Controls.Add(this.nextVelo);
             this.BackPanel.Controls.Add(this.veloType);
@@ -199,7 +185,6 @@ namespace BoVloApp
             this.color_combobox.Name = "color_combobox";
             this.color_combobox.Size = new System.Drawing.Size(121, 23);
             this.color_combobox.TabIndex = 39;
-            this.color_combobox.SelectedIndexChanged += new System.EventHandler(this.color_combobox_SelectedIndexChanged);
             // 
             // size_combobox
             // 
@@ -213,7 +198,7 @@ namespace BoVloApp
             this.size_combobox.Size = new System.Drawing.Size(121, 23);
             this.size_combobox.TabIndex = 38;
             // 
-            // Catalogue
+            // Catalog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -221,9 +206,8 @@ namespace BoVloApp
             this.Controls.Add(this.BackPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "Catalogue";
+            this.Name = "Catalog";
             this.Text = "Catalogue";
-            ((System.ComponentModel.ISupportInitialize)(this.picture)).EndInit();
             this.BackPanel.ResumeLayout(false);
             this.BackPanel.PerformLayout();
             this.ResumeLayout(false);
@@ -236,7 +220,6 @@ namespace BoVloApp
         private System.Windows.Forms.Button veloType;
         private System.Windows.Forms.Button nextVelo;
         private System.Windows.Forms.Button preVelo;
-        private System.Windows.Forms.PictureBox picture;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.TextBox inputBox;
         private System.Windows.Forms.Label labelPrice;

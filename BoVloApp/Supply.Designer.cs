@@ -1,7 +1,7 @@
 ﻿
 namespace BoVloApp
 {
-    partial class Stock
+    partial class Supply
     {
         /// <summary>
         /// Required designer variable.
