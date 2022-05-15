@@ -254,7 +254,7 @@ namespace BoVloApp
                         items.Add(row.Cells["NamePiece"].Value.ToString(), row.Cells["Amount"].Value.ToString());
                     }
                 }
-                File.WriteAllText(@"C:\Users\edgar\Desktop\Order.txt", MyDictionaryToJson(items));
+                File.WriteAllText(@"C:\Order.txt", MyDictionaryToJson(items));
             }
             catch (Exception ex)
             {
