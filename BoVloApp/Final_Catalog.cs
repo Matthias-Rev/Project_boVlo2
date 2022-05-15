@@ -34,8 +34,8 @@ namespace BoVloApp
 //---------------------------Add new customer to db----------------------------------------------
         public void SubmitBtn(object sender, EventArgs e)
         {
-            // confirm and send the information on the db
-            // addd to the database
+            // confirm and send the information to the db
+            // add to the database
             bool inputs_valid = true;
             if (companyNameInput.Text.Length == 0)
             {

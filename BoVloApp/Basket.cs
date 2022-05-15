@@ -69,7 +69,7 @@ namespace BoVloApp
             // Transform working day in working hours considering 7 hours of work per day
             float raw_needed_working_days = totalworktime/7;
             
-            // Devide the working-days by the amount of workshops
+            // Divide the working-days by the amount of workshops
             string get_workshops_request = "SELECT * FROM Workshop";
             DataTable get_workshops_response = Program.ReadSQL(get_workshops_request);
             int workshops_amount = get_workshops_response.Rows.Count;
