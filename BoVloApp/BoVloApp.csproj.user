@@ -28,7 +28,7 @@
     <Compile Update="PartsOrder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Stock.cs">
+    <Compile Update="Supply.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

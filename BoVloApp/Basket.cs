@@ -53,7 +53,7 @@ namespace BoVloApp
             foreach (DataRow row in basket.Rows)
             {
                 int quantity = int.Parse(row["Quantity"].ToString());
-                int price = int.Parse(GlobalVar.types.Select(string.Format("Name = '{0}'", row["Type"]))[0]["Price"].ToString());
+                int price = int.Parse(Program.types.Select(string.Format("Name = '{0}'", row["Type"]))[0]["Price"].ToString());
                 prixtotal += price * quantity;
             }
             LabelPrixTotal.Text = prixtotal.ToString();
@@ -61,7 +61,7 @@ namespace BoVloApp
 
         private void buttonFinaliser_Click(object sender, EventArgs e)
         {
-            GlobalVar.Loadform(PanelPanier, new CatalogMember(main));
+            Program.Loadform(PanelPanier, new CatalogMember(main));
         }
 
         private DataTable GetBasket()
@@ -80,5 +80,10 @@ namespace BoVloApp
             CalculatePrice(basket);
         }
 
+        private void catalog_button_Click(object sender, EventArgs e)
+        {
+            main.display(new Catalog(main));
+            Close();
+        }
     }
 }

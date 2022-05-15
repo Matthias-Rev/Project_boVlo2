@@ -22,7 +22,7 @@ namespace BoVloApp
         {
             string request = "SELECT Piece.NamePiece " +
                 "FROM Piece ";
-            DataTable piece = GlobalVar.ReadSQL(request);
+            DataTable piece = Program.ReadSQL(request);
             
             piece.Columns.Add("Quantity", typeof(String));
             piece.Columns["NamePiece"].ColumnName = "Name";

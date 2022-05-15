@@ -28,19 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.Main_panel = new System.Windows.Forms.Panel();
             this.Topbar_panel = new System.Windows.Forms.Panel();
             this.Username_label = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Logout_button = new System.Windows.Forms.Button();
             this.Menu_button = new System.Windows.Forms.Button();
-            this.Main_panel = new System.Windows.Forms.Panel();
             this.Titel = new System.Windows.Forms.Label();
             this.Orders = new System.Windows.Forms.Button();
             this.Calendar = new System.Windows.Forms.Button();
             this.Catalog = new System.Windows.Forms.Button();
             this.STOCK = new System.Windows.Forms.Button();
             this.Topbar_panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Main_panel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,13 +47,12 @@
             this.Topbar_panel.AutoSize = true;
             this.Topbar_panel.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Topbar_panel.Controls.Add(this.Username_label);
-            this.Topbar_panel.Controls.Add(this.pictureBox1);
             this.Topbar_panel.Controls.Add(this.Logout_button);
             this.Topbar_panel.Controls.Add(this.Menu_button);
             this.Topbar_panel.Dock = System.Windows.Forms.DockStyle.Top;
             this.Topbar_panel.Location = new System.Drawing.Point(0, 0);
             this.Topbar_panel.Name = "Topbar_panel";
-            this.Topbar_panel.Size = new System.Drawing.Size(1904, 63);
+            this.Topbar_panel.Size = new System.Drawing.Size(1904, 71);
             this.Topbar_panel.TabIndex = 0;
             // 
             // Username_label
@@ -66,33 +63,22 @@
             this.Username_label.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Username_label.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Username_label.ForeColor = System.Drawing.Color.White;
-            this.Username_label.Location = new System.Drawing.Point(1618, 16);
+            this.Username_label.Location = new System.Drawing.Point(1618, 41);
             this.Username_label.Name = "Username_label";
             this.Username_label.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Username_label.Size = new System.Drawing.Size(0, 30);
             this.Username_label.TabIndex = 4;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::BoVloApp.Properties.Resources.Login_icon;
-            this.pictureBox1.Location = new System.Drawing.Point(1624, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(73, 58);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Visible = false;
             // 
             // Logout_button
             // 
             this.Logout_button.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Logout_button.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Logout_button.ForeColor = System.Drawing.SystemColors.Control;
-            this.Logout_button.Location = new System.Drawing.Point(1713, 9);
+            this.Logout_button.Location = new System.Drawing.Point(1712, 9);
             this.Logout_button.Name = "Logout_button";
             this.Logout_button.Size = new System.Drawing.Size(178, 45);
             this.Logout_button.TabIndex = 2;
-            this.Logout_button.Text = "Se déconnecter";
+            this.Logout_button.Text = "Disconnect";
             this.Logout_button.UseVisualStyleBackColor = false;
             this.Logout_button.Visible = false;
             this.Logout_button.Click += new System.EventHandler(this.Logout_button_Click);
@@ -119,9 +105,9 @@
             this.Main_panel.Controls.Add(this.Catalog);
             this.Main_panel.Controls.Add(this.STOCK);
             this.Main_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Main_panel.Location = new System.Drawing.Point(0, 63);
+            this.Main_panel.Location = new System.Drawing.Point(0, 71);
             this.Main_panel.Name = "Main_panel";
-            this.Main_panel.Size = new System.Drawing.Size(1904, 978);
+            this.Main_panel.Size = new System.Drawing.Size(1904, 970);
             this.Main_panel.TabIndex = 1;
             // 
             // Titel
@@ -179,7 +165,7 @@
             this.STOCK.Name = "STOCK";
             this.STOCK.Size = new System.Drawing.Size(350, 112);
             this.STOCK.TabIndex = 5;
-            this.STOCK.Text = "STOCK";
+            this.STOCK.Text = "SUPPLY";
             this.STOCK.UseVisualStyleBackColor = true;
             this.STOCK.Click += new System.EventHandler(this.STOCK_Click);
             // 
@@ -196,7 +182,6 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Topbar_panel.ResumeLayout(false);
             this.Topbar_panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.Main_panel.ResumeLayout(false);
             this.Main_panel.PerformLayout();
             this.ResumeLayout(false);
@@ -208,14 +193,13 @@
 
         private System.Windows.Forms.Panel Topbar_panel;
         private System.Windows.Forms.Button Menu_button;
-        private System.Windows.Forms.Button Logout_button;
         private System.Windows.Forms.Panel Main_panel;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label Username_label;
         private System.Windows.Forms.Button Catalog;
         private System.Windows.Forms.Button Orders;
         private System.Windows.Forms.Button Calendar;
         private System.Windows.Forms.Button STOCK;
         private System.Windows.Forms.Label Titel;
+        private System.Windows.Forms.Button Logout_button;
     }
 }

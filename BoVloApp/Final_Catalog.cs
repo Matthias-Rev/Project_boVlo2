@@ -64,7 +64,7 @@ namespace BoVloApp
                     string insertMySQL = string.Format("INSERT INTO" +
                     " Customer (`Name`, `VAT`, `Address`, `Contact`)" +
                     " VALUES ('{0}','{1}','{2}','{3}' )", companyNameInput.Text, VATInput.Text, addressInput.Text, emailInput.Text);
-                    GlobalVar.WriteSQL(insertMySQL);
+                    Program.WriteSQL(insertMySQL);
                 }
                 CreateOrder();
                 main.clear();
@@ -92,18 +92,18 @@ namespace BoVloApp
         }
         private void CreateOrder()
         {
-            // To map elements with id : string idbike = GlobalVar.types.Select(string.Format("Name = '{0}'", veloType.Text))[0]["idBike"].ToString();
-            //string idcolor = GlobalVar.colors.Select(string.Format("Name = '{0}'", color_combobox.Text))[0]["idColor"].ToString();
+            // To map elements with id : string idbike = Program.types.Select(string.Format("Name = '{0}'", veloType.Text))[0]["idBike"].ToString();
+            //string idcolor = Program.colors.Select(string.Format("Name = '{0}'", color_combobox.Text))[0]["idColor"].ToString();
             string request = string.Format(
                    "SELECT Customer_id " +
                    "FROM Customer " +
                    "WHERE VAT='{0}'"
                    , VATInput.Text);
-            DataTable dataSql = GlobalVar.ReadSQL(request);
+            DataTable dataSql = Program.ReadSQL(request);
             string customer_id = dataSql.Rows[0]["Customer_id"].ToString();
             string date = DateTime.UtcNow.ToString("yyyy-MM-dd");
             string insertMySQL = string.Format("INSERT INTO Orders (`Customer_id`, `Date`) VALUES ('{0}',CAST('{1}' AS DATE));SELECT LAST_INSERT_ID();", customer_id, date);
-            DataTable newEntry = GlobalVar.ReadSQL(insertMySQL);
+            DataTable newEntry = Program.ReadSQL(insertMySQL);
             int orderID = int.Parse(newEntry.Rows[0]["LAST_INSERT_ID()"].ToString());
             foreach (string article in Program.basket.Keys)
             {
@@ -112,12 +112,12 @@ namespace BoVloApp
                 string color = variables[1];
                 int size = int.Parse(variables[2]);
                 int quantity = Program.basket[article];
-                int idBike = int.Parse(GlobalVar.types.Select(string.Format("Name = '{0}'", type))[0]["idBike"].ToString());
-                int idColor = int.Parse(GlobalVar.colors.Select(string.Format("Name = '{0}'", color))[0]["idColor"].ToString());
+                int idBike = int.Parse(Program.types.Select(string.Format("Name = '{0}'", type))[0]["idBike"].ToString());
+                int idColor = int.Parse(Program.colors.Select(string.Format("Name = '{0}'", color))[0]["idColor"].ToString());
                 string orderdetailrequest = string.Format("INSERT INTO" +
                   " OrderDetails (`idOrder`, `idBike`, `idColor`, `Quantity`,`Size`)" +
                   " VALUES ('{0}','{1}','{2}','{3}','{4}' )", orderID, idBike, idColor, quantity, size);
-                GlobalVar.WriteSQL(orderdetailrequest);
+                Program.WriteSQL(orderdetailrequest);
 
             }
         }

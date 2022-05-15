@@ -21,7 +21,7 @@ namespace BoVloApp
 //-------------------------------Navigates to new customer window upon pressing this btn---------------------
         private void BecomeCustomer(object sender, EventArgs e)
         {
-            GlobalVar.Loadform(panelMember, new Final_Catalog(main));
+            Program.Loadform(panelMember, new Final_Catalog(main));
         }
 
         //--------------------------Search the name of the company in the db------------------------------------------
@@ -32,7 +32,7 @@ namespace BoVloApp
                    "FROM Customer " +
                    "WHERE VAT='{0}'"
                    , companyVATInput.Text);
-            DataTable dataSql = GlobalVar.ReadSQL(request);
+            DataTable dataSql = Program.ReadSQL(request);
             if (dataSql.Rows.Count == 0)
             {
                 labelNotInDB.Visible = true;
@@ -44,9 +44,18 @@ namespace BoVloApp
                 list.Add(dataSql.Rows[0]["VAT"].ToString());
                 list.Add(dataSql.Rows[0]["Address"].ToString());
                 list.Add(dataSql.Rows[0]["Contact"].ToString());
-                GlobalVar.Loadform(panelMember, new Final_Catalog(main, list));
+                Program.Loadform(panelMember, new Final_Catalog(main, list));
             }
         }
 
+        private void catalog_button_Click(object sender, EventArgs e)
+        {
+            main.display(new Catalog(main));
+        }
+
+        private void basket_button_Click(object sender, EventArgs e)
+        {
+            main.display(new Basket(main));
+        }
     }
 }

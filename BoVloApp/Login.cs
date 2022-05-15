@@ -11,8 +11,8 @@ namespace BoVloApp
         public Login()
         {
             InitializeComponent();
-            Titel.Location = GlobalVar.SetLocation(this, 0, -400, Titel);
-            Login_box.Location = GlobalVar.SetLocation(this, 0, 0, Login_box);
+            Titel.Location = Program.SetLocation(this, 0, -400, Titel);
+            Login_box.Location = Program.SetLocation(this, 0, 0, Login_box);
             AcceptButton = login_button;
         }
 
@@ -34,14 +34,14 @@ namespace BoVloApp
                 "FROM Users " +
                 "WHERE Username='{0}' AND Pass='{1}'"
                 , user_input.Text, password_input.Text);
-            DataTable data = GlobalVar.ReadSQL(request);
+            DataTable data = Program.ReadSQL(request);
             foreach(DataRow row in data.Rows)
             {
                 Session session = new();
                 session.username = user_input.Text;
                 session.titel = row["Permission"].ToString();
-                session.key = GlobalVar.RandomString(20);
-                GlobalVar.WriteXML(session);
+                session.key = Program.RandomString(20);
+                //create session element in program can be added later
                 Main main = new Main();
                 Hide();
                 main.ShowDialog();

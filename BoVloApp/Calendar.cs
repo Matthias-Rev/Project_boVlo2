@@ -49,7 +49,7 @@ namespace BoVloApp
                 "FROM Orders, Customer " +
                 "WHERE (Orders.Customer_id = Customer.Customer_id AND Orders.Status = 'To Do') ";
 
-            DataTable calendar = GlobalVar.ReadSQL(request);
+            DataTable calendar = Program.ReadSQL(request);
 
             return calendar;
         }
@@ -76,7 +76,7 @@ namespace BoVloApp
 
                 string request = "UPDATE Orders SET Orders.Status = 'Done' WHERE idOrder = " + name_column;
 
-                DataTable orderDetail = GlobalVar.ReadSQL(request);
+                DataTable orderDetail = Program.ReadSQL(request);
 
                 update_validate.DataSource = orderDetail;
 

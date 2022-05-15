@@ -11,14 +11,14 @@ using System.Windows.Forms;
 
 namespace BoVloApp
 {
-    public partial class Stock : Form
+    public partial class Supply : Form
     {
 //--------------------------------------------------------Initializing the variables that will be used afterwards------------------------------------
         List<Control> bike_supply_components = new();
         List<Control> piece_supply_components = new();
         Dictionary<string, string> items = new Dictionary<string, string>();
 
-        public Stock()
+        public Supply()
         {
             InitializeComponent();
             bike_supply_components.Add(type_label);
@@ -39,11 +39,11 @@ namespace BoVloApp
                 }
                 return result;
             }
-            GlobalVar.UpdateCombobox(type_combobox, Availablilty(GlobalVar.ReadSQL("SELECT * FROM Bike"), "Name"));
+            Program.UpdateCombobox(type_combobox, Availablilty(Program.ReadSQL("SELECT * FROM Bike"), "Name"));
             type_combobox.SelectedItem = null;
-            GlobalVar.UpdateCombobox(color_combobox, Availablilty(GlobalVar.ReadSQL("SELECT * FROM Color"), "Name"));
+            Program.UpdateCombobox(color_combobox, Availablilty(Program.ReadSQL("SELECT * FROM Color"), "Name"));
             color_combobox.SelectedItem = null;
-            GlobalVar.UpdateCombobox(size_combobox, Availablilty(GlobalVar.ReadSQL("SELECT * FROM Size"), "Size"));
+            Program.UpdateCombobox(size_combobox, Availablilty(Program.ReadSQL("SELECT * FROM Size"), "Size"));
             size_combobox.SelectedItem = null;
             HideAll();
             dataGridViewBikes.DataSource = null;
@@ -60,11 +60,11 @@ namespace BoVloApp
             List<string> condition = new();
             if (type_combobox.SelectedItem != null && type_combobox.SelectedItem.ToString() != "")
             {
-                condition.Add(string.Format("idBike = '{0}'", GlobalVar.types.Select(string.Format("Name = '{0}'", type_combobox.Text))[0]["idBike"].ToString()));
+                condition.Add(string.Format("idBike = '{0}'", Program.types.Select(string.Format("Name = '{0}'", type_combobox.Text))[0]["idBike"].ToString()));
             }
             if (color_combobox.SelectedItem != null && color_combobox.SelectedItem.ToString() != "")
             {
-                condition.Add(string.Format("idColor = '{0}'", GlobalVar.colors.Select(string.Format("Name = '{0}'", color_combobox.Text))[0]["idColor"].ToString()));
+                condition.Add(string.Format("idColor = '{0}'", Program.colors.Select(string.Format("Name = '{0}'", color_combobox.Text))[0]["idColor"].ToString()));
             }
             if (size_combobox.SelectedItem != null && size_combobox.SelectedItem.ToString() != "")
             {
@@ -75,7 +75,7 @@ namespace BoVloApp
                 request += " WHERE ";
                 request += String.Join(" AND ", condition.ToArray());
             }
-            DataTable supply = GlobalVar.ReadSQL(request);
+            DataTable supply = Program.ReadSQL(request);
             DataTable data = new();
             string[] titels = { "Type", "Color", "Size", "Quantity" };
 
@@ -86,8 +86,8 @@ namespace BoVloApp
             foreach (DataRow row in supply.Rows)
             {
                 DataRow datarow = data.NewRow();
-                datarow["Type"] = GlobalVar.types.Select(string.Format("idBike = '{0}'", row["idBike"].ToString()))[0]["Name"].ToString();
-                datarow["Color"] = GlobalVar.colors.Select(string.Format("idColor = '{0}'", row["idColor"].ToString()))[0]["Name"].ToString();
+                datarow["Type"] = Program.types.Select(string.Format("idBike = '{0}'", row["idBike"].ToString()))[0]["Name"].ToString();
+                datarow["Color"] = Program.colors.Select(string.Format("idColor = '{0}'", row["idColor"].ToString()))[0]["Name"].ToString();
                 datarow["Size"] = row["Size"].ToString();
                 datarow["Quantity"] = row["Quantity"].ToString();
                 data.Rows.Add(datarow);
@@ -228,7 +228,7 @@ namespace BoVloApp
             string request = "SELECT Piece.NamePiece, Piece_Size.Size, Piece_Color.idColor, Bike_Piece.Quantity " +
                 "FROM Piece, Piece_Size, Piece_Color, Bike_Piece " +
                 "WHERE Piece.idPiece = Piece_Size.idPiece";
-            DataTable piece = GlobalVar.ReadSQL(request);
+            DataTable piece = Program.ReadSQL(request);
 
             return piece;
 
@@ -237,7 +237,7 @@ namespace BoVloApp
         private DataTable GetAvailablePiece()
         {
             string request = "SELECT Piece.NamePiece FROM Piece";
-            DataTable availablePiece = GlobalVar.ReadSQL(request);
+            DataTable availablePiece = Program.ReadSQL(request);
 
             return availablePiece;
 
@@ -254,7 +254,7 @@ namespace BoVloApp
                         items.Add(row.Cells["NamePiece"].Value.ToString(), row.Cells["Amount"].Value.ToString());
                     }
                 }
-                File.WriteAllText(@"C:\Users\edgar\Desktop\Order.txt", MyDictionaryToJson(items));
+                File.WriteAllText(@"C:\Order.txt", MyDictionaryToJson(items));
             }
             catch (Exception ex)
             {
