@@ -14,10 +14,21 @@ namespace BoVloApp
     public partial class Final_Catalog : Form
     {
         Main main = null;
-        public Final_Catalog(Main main)
+        public Final_Catalog(Main main, List<string> variables = null)
         {
             this.main = main;
             InitializeComponent();
+            if(variables != null)
+            {
+                companyNameInput.Text=variables[0];
+                companyNameInput.ReadOnly=true;
+                VATInput.Text = variables[1];
+                VATInput.ReadOnly = true;
+                addressInput.Text = variables[2];
+                addressInput.ReadOnly = true;
+                emailInput.Text = variables[3];
+                emailInput.ReadOnly = true;
+            }
         }
 
 //---------------------------Add new customer to db----------------------------------------------
@@ -48,17 +59,18 @@ namespace BoVloApp
             }
             if (inputs_valid == true)
             {
-                string insertMySQL = String.Format("INSERT INTO Customer (`Name`, `TVA`, `Address`, `Contact`) VALUES " +
-                    "('{0}','{1}','{2}','{3}' )", companyNameInput.Text, VATInput.Text, addressInput.Text, emailInput.Text);
-                GlobalVar.WriteSQL(insertMySQL);
+                if(emailInput.ReadOnly == false)
+                {
+                    string insertMySQL = string.Format("INSERT INTO" +
+                    " Customer (`Name`, `VAT`, `Address`, `Contact`)" +
+                    " VALUES ('{0}','{1}','{2}','{3}' )", companyNameInput.Text, VATInput.Text, addressInput.Text, emailInput.Text);
+                    GlobalVar.WriteSQL(insertMySQL);
+                }
+                CreateOrder();
                 main.clear();
                 Close();
-            }
-            
-        }
-        // To map elements with id : string idbike = GlobalVar.types.Select(String.Format("Name = '{0}'", veloType.Text))[0]["idBike"].ToString();
-        //string idcolor = GlobalVar.colors.Select(String.Format("Name = '{0}'", color_combobox.Text))[0]["idColor"].ToString();
-
+            }   
+        }        
         private void companyNameInput_TextChanged(object sender, EventArgs e)
         {
             companyNameInput.BackColor = Color.White;
@@ -77,6 +89,37 @@ namespace BoVloApp
         private void emailInput_TextChanged(object sender, EventArgs e)
         {
             emailInput.BackColor = Color.White;
+        }
+        private void CreateOrder()
+        {
+            // To map elements with id : string idbike = GlobalVar.types.Select(string.Format("Name = '{0}'", veloType.Text))[0]["idBike"].ToString();
+            //string idcolor = GlobalVar.colors.Select(string.Format("Name = '{0}'", color_combobox.Text))[0]["idColor"].ToString();
+            string request = string.Format(
+                   "SELECT Customer_id " +
+                   "FROM Customer " +
+                   "WHERE VAT='{0}'"
+                   , VATInput.Text);
+            DataTable dataSql = GlobalVar.ReadSQL(request);
+            string customer_id = dataSql.Rows[0]["Customer_id"].ToString();
+            string date = DateTime.UtcNow.ToString("yyyy-MM-dd");
+            string insertMySQL = string.Format("INSERT INTO Orders (`Customer_id`, `Date`) VALUES ('{0}',CAST('{1}' AS DATE));SELECT LAST_INSERT_ID();", customer_id, date);
+            DataTable newEntry = GlobalVar.ReadSQL(insertMySQL);
+            int orderID = int.Parse(newEntry.Rows[0]["LAST_INSERT_ID()"].ToString());
+            foreach (string article in Program.basket.Keys)
+            {
+                string[] variables = article.Split('_');
+                string type = variables[0];
+                string color = variables[1];
+                int size = int.Parse(variables[2]);
+                int quantity = Program.basket[article];
+                int idBike = int.Parse(GlobalVar.types.Select(string.Format("Name = '{0}'", type))[0]["idBike"].ToString());
+                int idColor = int.Parse(GlobalVar.colors.Select(string.Format("Name = '{0}'", color))[0]["idColor"].ToString());
+                string orderdetailrequest = string.Format("INSERT INTO" +
+                  " OrderDetails (`idOrder`, `idBike`, `idColor`, `Quantity`,`Size`)" +
+                  " VALUES ('{0}','{1}','{2}','{3}','{4}' )", orderID, idBike, idColor, quantity, size);
+                GlobalVar.WriteSQL(orderdetailrequest);
+
+            }
         }
     }
 }

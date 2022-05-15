@@ -42,12 +42,12 @@ namespace BoVloApp
             this.color_combobox = new System.Windows.Forms.ComboBox();
             this.size_label = new System.Windows.Forms.Label();
             this.size_combobox = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewBikes = new System.Windows.Forms.DataGridView();
             this.stockPiece = new System.Windows.Forms.DataGridView();
             this.OrderPiece = new System.Windows.Forms.Button();
             this.AvailablePiece = new System.Windows.Forms.DataGridView();
             this.GenerateOrder = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBikes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockPiece)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AvailablePiece)).BeginInit();
             this.SuspendLayout();
@@ -165,19 +165,22 @@ namespace BoVloApp
             this.size_combobox.TabIndex = 11;
             this.size_combobox.SelectedIndexChanged += new System.EventHandler(this.size_combobox_SelectedIndexChanged);
             // 
-            // dataGridView1
+            // dataGridViewBikes
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Menu;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(517, 268);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(780, 406);
-            this.dataGridView1.TabIndex = 13;
+            this.dataGridViewBikes.AllowUserToAddRows = false;
+            this.dataGridViewBikes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewBikes.BackgroundColor = System.Drawing.SystemColors.Menu;
+            this.dataGridViewBikes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridViewBikes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewBikes.Location = new System.Drawing.Point(517, 268);
+            this.dataGridViewBikes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridViewBikes.Name = "dataGridViewBikes";
+            this.dataGridViewBikes.ReadOnly = true;
+            this.dataGridViewBikes.RowHeadersVisible = false;
+            this.dataGridViewBikes.RowHeadersWidth = 51;
+            this.dataGridViewBikes.RowTemplate.Height = 29;
+            this.dataGridViewBikes.Size = new System.Drawing.Size(780, 406);
+            this.dataGridViewBikes.TabIndex = 13;
             // 
             // stockPiece
             // 
@@ -238,7 +241,7 @@ namespace BoVloApp
             this.Controls.Add(this.AvailablePiece);
             this.Controls.Add(this.OrderPiece);
             this.Controls.Add(this.stockPiece);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewBikes);
             this.Controls.Add(this.size_label);
             this.Controls.Add(this.size_combobox);
             this.Controls.Add(this.color_label);
@@ -254,7 +257,7 @@ namespace BoVloApp
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Stock";
             this.Text = "Supply";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBikes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockPiece)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AvailablePiece)).EndInit();
             this.ResumeLayout(false);
@@ -276,7 +279,7 @@ namespace BoVloApp
         private System.Windows.Forms.ComboBox color_combobox;
         private System.Windows.Forms.Label size_label;
         private System.Windows.Forms.ComboBox size_combobox;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewBikes;
         private System.Windows.Forms.DataGridView stockPiece;
         private System.Windows.Forms.Button OrderPiece;
         private System.Windows.Forms.DataGridView AvailablePiece;

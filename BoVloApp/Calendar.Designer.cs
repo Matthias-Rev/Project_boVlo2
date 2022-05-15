@@ -66,6 +66,7 @@
             this.Calendar_grid.RowTemplate.Height = 25;
             this.Calendar_grid.Size = new System.Drawing.Size(912, 554);
             this.Calendar_grid.TabIndex = 3;
+            this.Calendar_grid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Validation);
             this.Calendar_grid.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.Calendar_grid_CellEndEdit);
             // 
             // Calendar

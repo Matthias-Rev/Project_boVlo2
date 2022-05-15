@@ -17,6 +17,7 @@ namespace BoVloApp
             InitializeComponent();
             DisplayCalendar();
             ReadOnlyCertainColumns();
+            CreateBtn();
         }
 
         void ReadOnlyCertainColumns()
@@ -37,29 +38,57 @@ namespace BoVloApp
         {
             string request = "SELECT Customer.Name, Calendar.idOrder,Calendar.Start, Calendar.End " +
                 "FROM Orders, Customer, Calendar " +
-                "WHERE Calendar.idOrder = Orders.idOrder " +
-                "AND Orders.Customer_id = Customer.Customer_id";
+                "WHERE (Calendar.idOrder = Orders.idOrder AND Orders.Customer_id = Customer.Customer_id) " +
+                "AND Calendar.Validate = 'false'";
 
             DataTable calendar = GlobalVar.ReadSQL(request);
 
             return calendar;
         }
 
-//------------------------------------------------Allows to edit the datatable and to update the db with new data---------------------------------------------
+        //----------------------------------Create a Buttonn on each row-------------------------------
+        private void CreateBtn()
+        {
+            DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
+            Calendar_grid.Columns.Add(btn);
+            btn.HeaderText = "";
+            btn.Text = "Validate ?";
+            btn.Name = "btn";
+            btn.UseColumnTextForButtonValue = true;
+        }
+
+        //------------------------Upon clicking on the "Validate ?" btn, will change the value of Libary.Validate of the given order-----
+        private void Validation(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView update_validate = sender as DataGridView;
+            if (update_validate.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            {
+                update_validate.CurrentRow.Selected = true;
+                var name_column = update_validate.Rows[e.RowIndex].Cells["idOrder"].FormattedValue.ToString();
+
+                string request = "UPDATE Calendar SET Calendar.Validate = 'true' WHERE idOrder = " + name_column;
+
+                DataTable orderDetail = GlobalVar.ReadSQL(request);
+
+                update_validate.DataSource = orderDetail;
+
+
+            }
+        }
+
+
+        //------------------------------------------------Allows to edit the datatable and to update the db with new data---------------------------------------------
         private void Calendar_grid_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             DataGridView update = sender as DataGridView;
             if (update.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
             {
-
                 update.CurrentRow.Selected = true;
                 var val = update.Rows[e.RowIndex].Cells[e.ColumnIndex].FormattedValue.ToString();
                 var name_col = update.Columns[e.ColumnIndex].Name;
                 var name_column = update.Rows[e.RowIndex].Cells["idOrder"].FormattedValue.ToString();
-
-                string request = "UPDATE Calendar SET " + name_col + " = CAST("+ val +" AS DATETIME) WHERE idOrder = " + name_column;
+                string request = "UPDATE Calendar SET " + name_col + " = CAST("+ val +" AS DATE) WHERE idOrder = " + name_column;
                 DataTable calendarUpdate = GlobalVar.ReadSQL(request);
-
                 update.DataSource = calendarUpdate;
                 GetCalendar();
             }

@@ -15,16 +15,35 @@ namespace BoVloApp
     public partial class Basket : Form
     {
         Main main = null;
+        DataTable basket;
         public Basket(Main main)
         {
             this.main = main;
             InitializeComponent();
+            basket = GetBasket();
+            basket.Columns.Add("Type");
+            basket.Columns.Add("Color");
+            basket.Columns.Add("Size");
+            basket.Columns.Add("Quantity");
+            foreach (string article in Program.basket.Keys)
+            {
+                string[] variables = article.Split('_');
+                DataRow row = basket.NewRow();
+                row["Type"] = variables[0];
+                row["Color"] = variables[1];
+                row["Size"] = variables[2];
+                row["Quantity"] = Program.basket[article];
+                basket.Rows.Add(row);
+            }
             DisplayBasket();
         }
         private void DisplayBasket()
         {
-            DataTable basket = GetBasket();
+            
             panierData.DataSource = basket;
+            panierData.Columns["Type"].ReadOnly = true;
+            panierData.Columns["Color"].ReadOnly = true;
+            panierData.Columns["Size"].ReadOnly = true;
             CalculatePrice(basket);
         }
 
@@ -33,7 +52,9 @@ namespace BoVloApp
             int prixtotal = 0;
             foreach (DataRow row in basket.Rows)
             {
-                prixtotal += Int32.Parse(row["Price"].ToString()) * Int32.Parse(row["Quantity"].ToString());
+                int quantity = int.Parse(row["Quantity"].ToString());
+                int price = int.Parse(GlobalVar.types.Select(string.Format("Name = '{0}'", row["Type"]))[0]["Price"].ToString());
+                prixtotal += price * quantity;
             }
             LabelPrixTotal.Text = prixtotal.ToString();
         }
@@ -46,7 +67,6 @@ namespace BoVloApp
         private DataTable GetBasket()
         {
             DataTable basket = new();
-
             return basket;
         }
         //
@@ -54,20 +74,10 @@ namespace BoVloApp
         //
         private void panierData_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            string columnName = panierData.CurrentCell.OwningColumn.Name;
-            int cellValue = Int16.Parse(panierData.CurrentCell.Value.ToString());
-            string currentIdArticle = panierData.Rows[panierData.CurrentCell.RowIndex].Cells["idArticle"].Value.ToString();
-
-            label1.Text = columnName;
-            label2.Text = cellValue.ToString();
-            label3.Text = currentIdArticle;
-
-            string query = String.Format("UPDATE Bovlo.Basket SET `{0}` = '{1}' WHERE (`idArticle` = '{2}')", columnName, cellValue, currentIdArticle);
-
-            GlobalVar.WriteSQL(query);
-
-            //label4.Text = query;
-
+            DataRow row = basket.Rows[panierData.CurrentCell.RowIndex];
+            string reference = row["Type"] + "_" + row["Color"] + "_" + row["Size"];
+            Program.basket[reference] = int.Parse(panierData.CurrentCell.Value.ToString());
+            CalculatePrice(basket);
         }
 
     }
