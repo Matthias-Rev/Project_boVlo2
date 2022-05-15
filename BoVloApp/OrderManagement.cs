@@ -60,9 +60,26 @@ namespace BoVloApp
 
                 DataTable orderDetail = Program.ReadSQL(request);
 
-                detailsTable.DataSource = orderDetail;
+
+                foreach(DataColumn col in orderDetail.Columns)
+                {
+                    if (col.ColumnName == "idBike")
+                    {
+                        foreach (DataRow row in orderDetail.Rows)
+                        {
+                            string cur = theOrder.Rows[e.RowIndex].Cells["idOrder"].FormattedValue.ToString();
+                            string idbike = Program.types.Select("SELECT * FROM types WHERE idBike = '" + cur + "'").ToString();
+
+                            MessageBox.Show(idbike);
+                            orderDetail.Rows[Convert.ToInt32(row)][col.Ordinal] = idbike;
+                        }
+
+                    }
+                    detailsTable.DataSource = orderDetail;
+                }
 
 
+                
             }
         }
 
@@ -74,6 +91,8 @@ namespace BoVloApp
                 "WHERE Orders.Customer_id = Customer.Customer_id ";
 
             DataTable order = Program.ReadSQL(request);
+
+            //string idbike = Program.types.Select(string.Format("Name = '{0}'", veloType.Text))[0]["idBike"].ToString
 
             return order;
 

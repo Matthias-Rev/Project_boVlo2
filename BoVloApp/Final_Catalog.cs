@@ -92,7 +92,7 @@ namespace BoVloApp
         }
         private void CreateOrder()
         {
-            // To map elements with id : string idbike = Program.types.Select(string.Format("Name = '{0}'", veloType.Text))[0]["idBike"].ToString();
+            //To map elements with id : string idbike = Program.types.Select(string.Format("Name = '{0}'", veloType.Text))[0]["idBike"].ToString();
             //string idcolor = Program.colors.Select(string.Format("Name = '{0}'", color_combobox.Text))[0]["idColor"].ToString();
             string request = string.Format(
                    "SELECT Customer_id " +
