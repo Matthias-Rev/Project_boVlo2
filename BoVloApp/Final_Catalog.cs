@@ -102,7 +102,10 @@ namespace BoVloApp
             DataTable dataSql = Program.ReadSQL(request);
             string customer_id = dataSql.Rows[0]["Customer_id"].ToString();
             string date = DateTime.UtcNow.ToString("yyyy-MM-dd");
-            string insertMySQL = string.Format("INSERT INTO Orders (`Customer_id`, `Date`) VALUES ('{0}',CAST('{1}' AS DATE));SELECT LAST_INSERT_ID();", customer_id, date);
+            string insertMySQL = string.Format("INSERT INTO"+
+                " Orders (`Customer_id`, `Start_Date`, `End_Date`)"+
+                " VALUES ('{0}',CAST('{1}' AS DATE), CAST('{2}' AS DATE));SELECT LAST_INSERT_ID();",
+                customer_id, date, Program.estimate_delivery_date.ToString("yyyy-MM-dd"));
             DataTable newEntry = Program.ReadSQL(insertMySQL);
             int orderID = int.Parse(newEntry.Rows[0]["LAST_INSERT_ID()"].ToString());
             foreach (string article in Program.basket.Keys)
