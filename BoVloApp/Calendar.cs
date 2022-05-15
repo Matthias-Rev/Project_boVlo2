@@ -15,9 +15,17 @@ namespace BoVloApp
         public Calendar()
         {
             InitializeComponent();
+            CreateBtn();
             DisplayCalendar();
             ReadOnlyCertainColumns();
-            CreateBtn();
+            
+        }
+
+        void main_Call()
+        {
+            //CreateBtn();
+            DisplayCalendar();
+            
         }
 
         void ReadOnlyCertainColumns()
@@ -30,16 +38,16 @@ namespace BoVloApp
         private void DisplayCalendar()
         {
             Calendar_grid.DataSource = GetCalendar(); ;
-            Calendar_grid.Columns["Start"].DefaultCellStyle.Format = "yyyy/MM/dd";
+            Calendar_grid.Columns["Start_Date"].DefaultCellStyle.Format = "yyyy/MM/dd";
+            Calendar_grid.Columns["End_Date"].DefaultCellStyle.Format = "yyyy/MM/dd";
         }
 
 //--------------------------------------------------------Fetches the production calendar data from the db----------------------------------------------------------
         private DataTable GetCalendar()
         {
-            string request = "SELECT Customer.Name, Calendar.idOrder,Calendar.Start, Calendar.End " +
-                "FROM Orders, Customer, Calendar " +
-                "WHERE (Calendar.idOrder = Orders.idOrder AND Orders.Customer_id = Customer.Customer_id) " +
-                "AND Calendar.Validate = 'false'";
+            string request = "SELECT Customer.Name, Orders.idOrder,Orders.Start_Date, Orders.End_Date " +
+                "FROM Orders, Customer " +
+                "WHERE (Orders.Customer_id = Customer.Customer_id AND Orders.Status = 'To Do') ";
 
             DataTable calendar = Program.ReadSQL(request);
 
@@ -66,11 +74,13 @@ namespace BoVloApp
                 update_validate.CurrentRow.Selected = true;
                 var name_column = update_validate.Rows[e.RowIndex].Cells["idOrder"].FormattedValue.ToString();
 
-                string request = "UPDATE Calendar SET Calendar.Validate = 'true' WHERE idOrder = " + name_column;
+                string request = "UPDATE Orders SET Orders.Status = 'Done' WHERE idOrder = " + name_column;
 
                 DataTable orderDetail = Program.ReadSQL(request);
 
                 update_validate.DataSource = orderDetail;
+
+                main_Call();
 
 
             }
@@ -87,10 +97,11 @@ namespace BoVloApp
                 var val = update.Rows[e.RowIndex].Cells[e.ColumnIndex].FormattedValue.ToString();
                 var name_col = update.Columns[e.ColumnIndex].Name;
                 var name_column = update.Rows[e.RowIndex].Cells["idOrder"].FormattedValue.ToString();
-                string request = "UPDATE Calendar SET " + name_col + " = CAST("+ val +" AS DATE) WHERE idOrder = " + name_column;
-                DataTable calendarUpdate = Program.ReadSQL(request);
+                //string request = "UPDATE 'Orders' SET " + name_col + " = CAST('+ val +' AS DATE) WHERE idOrder = " + name_column;
+                string request = string.Format("UPDATE Orders SET {0} = CAST('{1}' AS DATE) WHERE idOrder = '{2}'",name_col, val, name_column);
+                DataTable calendarUpdate = GlobalVar.ReadSQL(request);
                 update.DataSource = calendarUpdate;
-                GetCalendar();
+                main_Call();
             }
         }
     }
