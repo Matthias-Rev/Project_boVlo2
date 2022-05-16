@@ -87,14 +87,22 @@ namespace BoVloApp
 
         private void button_search_Click(object sender, EventArgs e)
         {
-            DataRow[] row = order.Select("idOrder = '" + textBox_search.Text + "'");
-            if(row.Length == 0)
+            int num;
+            if (int.TryParse(textBox_search.Text, out num))
             {
-                MessageBox.Show("The ID of this order doesn't exist");
+                DataRow[] row = order.Select("idOrder = '" + textBox_search.Text + "'");
+                if (row.Length == 0)
+                {
+                    MessageBox.Show("The ID of this order doesn't exist");
+                }
+                else
+                {
+                    DisplayOrderDetails(textBox_search.Text);
+                }
             }
             else
             {
-                DisplayOrderDetails(textBox_search.Text);
+                MessageBox.Show("Input is not valid!");
             }
         }
     }
