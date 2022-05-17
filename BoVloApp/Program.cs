@@ -13,6 +13,7 @@ namespace BoVloApp
         static public DataTable types = ReadSQL("SELECT * FROM Bike");
         static public DataTable colors = ReadSQL("SELECT * FROM Color");
         static public DataTable sizes = ReadSQL("SELECT * FROM Size");
+        static public DateTime estimate_delivery_date;
         static public List<Button> GetAllButtons(Form f)
         {
             List<Button> resultList = new List<Button>();

@@ -47,7 +47,7 @@ namespace BoVloApp
         {
             string request = "SELECT Customer.Name, Orders.idOrder,Orders.Start_Date, Orders.End_Date " +
                 "FROM Orders, Customer " +
-                "WHERE (Orders.Customer_id = Customer.Customer_id AND Orders.Status = 'To Do') ";
+                "WHERE (Orders.Customer_id = Customer.Customer_id AND Orders.Status <> 'Delivered') ";
 
             DataTable calendar = Program.ReadSQL(request);
 
@@ -74,7 +74,7 @@ namespace BoVloApp
                 update_validate.CurrentRow.Selected = true;
                 var name_column = update_validate.Rows[e.RowIndex].Cells["idOrder"].FormattedValue.ToString();
 
-                string request = "UPDATE Orders SET Orders.Status = 'Done' WHERE idOrder = " + name_column;
+                string request = "UPDATE Orders SET Orders.Status = 'Delivered' WHERE idOrder = " + name_column;
 
                 DataTable orderDetail = Program.ReadSQL(request);
 
@@ -98,7 +98,7 @@ namespace BoVloApp
                 var name_col = update.Columns[e.ColumnIndex].Name;
                 var name_column = update.Rows[e.RowIndex].Cells["idOrder"].FormattedValue.ToString();
                 string request = string.Format("UPDATE Orders SET {0} = CAST('{1}' AS DATE) WHERE idOrder = '{2}'",name_col, val, name_column);
-                DataTable calendarUpdate = GlobalVar.ReadSQL(request);
+                DataTable calendarUpdate = Program.ReadSQL(request);
                 update.DataSource = calendarUpdate;
                 main_Call();
             }

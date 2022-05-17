@@ -30,13 +30,14 @@ namespace BoVloApp
         private void InitializeComponent()
         {
             this.buttonFinaliser = new System.Windows.Forms.Button();
-            this.buttonPlanning = new System.Windows.Forms.Button();
             this.LabelTotal = new System.Windows.Forms.Label();
             this.Title = new System.Windows.Forms.Label();
             this.PanelPanier = new System.Windows.Forms.Panel();
+            this.label_estimate_date = new System.Windows.Forms.Label();
+            this.label_deliverytitle = new System.Windows.Forms.Label();
+            this.catalog_button = new System.Windows.Forms.Button();
             this.panierData = new System.Windows.Forms.DataGridView();
             this.LabelPrixTotal = new System.Windows.Forms.Label();
-            this.catalog_button = new System.Windows.Forms.Button();
             this.PanelPanier.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panierData)).BeginInit();
             this.SuspendLayout();
@@ -53,22 +54,11 @@ namespace BoVloApp
             this.buttonFinaliser.UseVisualStyleBackColor = true;
             this.buttonFinaliser.Click += new System.EventHandler(this.buttonFinaliser_Click);
             // 
-            // buttonPlanning
-            // 
-            this.buttonPlanning.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonPlanning.Location = new System.Drawing.Point(656, 668);
-            this.buttonPlanning.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonPlanning.Name = "buttonPlanning";
-            this.buttonPlanning.Size = new System.Drawing.Size(350, 56);
-            this.buttonPlanning.TabIndex = 1;
-            this.buttonPlanning.Text = "Consulter Planning";
-            this.buttonPlanning.UseVisualStyleBackColor = true;
-            // 
             // LabelTotal
             // 
             this.LabelTotal.AutoSize = true;
             this.LabelTotal.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LabelTotal.Location = new System.Drawing.Point(177, 674);
+            this.LabelTotal.Location = new System.Drawing.Point(175, 591);
             this.LabelTotal.Name = "LabelTotal";
             this.LabelTotal.Size = new System.Drawing.Size(155, 46);
             this.LabelTotal.TabIndex = 3;
@@ -86,18 +76,49 @@ namespace BoVloApp
             // 
             // PanelPanier
             // 
+            this.PanelPanier.Controls.Add(this.label_estimate_date);
+            this.PanelPanier.Controls.Add(this.label_deliverytitle);
             this.PanelPanier.Controls.Add(this.catalog_button);
             this.PanelPanier.Controls.Add(this.panierData);
             this.PanelPanier.Controls.Add(this.LabelPrixTotal);
             this.PanelPanier.Controls.Add(this.Title);
             this.PanelPanier.Controls.Add(this.LabelTotal);
-            this.PanelPanier.Controls.Add(this.buttonPlanning);
             this.PanelPanier.Controls.Add(this.buttonFinaliser);
             this.PanelPanier.Location = new System.Drawing.Point(0, 0);
             this.PanelPanier.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PanelPanier.Name = "PanelPanier";
             this.PanelPanier.Size = new System.Drawing.Size(1701, 823);
             this.PanelPanier.TabIndex = 22;
+            // 
+            // label_estimate_date
+            // 
+            this.label_estimate_date.AutoSize = true;
+            this.label_estimate_date.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label_estimate_date.Location = new System.Drawing.Point(565, 662);
+            this.label_estimate_date.Name = "label_estimate_date";
+            this.label_estimate_date.Size = new System.Drawing.Size(0, 37);
+            this.label_estimate_date.TabIndex = 9;
+            // 
+            // label_deliverytitle
+            // 
+            this.label_deliverytitle.AutoSize = true;
+            this.label_deliverytitle.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label_deliverytitle.Location = new System.Drawing.Point(175, 653);
+            this.label_deliverytitle.Name = "label_deliverytitle";
+            this.label_deliverytitle.Size = new System.Drawing.Size(384, 46);
+            this.label_deliverytitle.TabIndex = 8;
+            this.label_deliverytitle.Text = "Estimated delivery date :";
+            // 
+            // catalog_button
+            // 
+            this.catalog_button.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.catalog_button.Location = new System.Drawing.Point(51, 60);
+            this.catalog_button.Name = "catalog_button";
+            this.catalog_button.Size = new System.Drawing.Size(187, 50);
+            this.catalog_button.TabIndex = 7;
+            this.catalog_button.Text = "Catalog";
+            this.catalog_button.UseVisualStyleBackColor = true;
+            this.catalog_button.Click += new System.EventHandler(this.catalog_button_Click);
             // 
             // panierData
             // 
@@ -118,22 +139,10 @@ namespace BoVloApp
             // 
             this.LabelPrixTotal.AutoSize = true;
             this.LabelPrixTotal.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LabelPrixTotal.Location = new System.Drawing.Point(329, 680);
+            this.LabelPrixTotal.Location = new System.Drawing.Point(345, 597);
             this.LabelPrixTotal.Name = "LabelPrixTotal";
-            this.LabelPrixTotal.Size = new System.Drawing.Size(32, 37);
+            this.LabelPrixTotal.Size = new System.Drawing.Size(0, 37);
             this.LabelPrixTotal.TabIndex = 5;
-            this.LabelPrixTotal.Text = "0";
-            // 
-            // catalog_button
-            // 
-            this.catalog_button.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.catalog_button.Location = new System.Drawing.Point(51, 60);
-            this.catalog_button.Name = "catalog_button";
-            this.catalog_button.Size = new System.Drawing.Size(187, 50);
-            this.catalog_button.TabIndex = 7;
-            this.catalog_button.Text = "Catalog";
-            this.catalog_button.UseVisualStyleBackColor = true;
-            this.catalog_button.Click += new System.EventHandler(this.catalog_button_Click);
             // 
             // Basket
             // 
@@ -154,12 +163,13 @@ namespace BoVloApp
         #endregion
 
         private System.Windows.Forms.Button buttonFinaliser;
-        private System.Windows.Forms.Button buttonPlanning;
         private System.Windows.Forms.Label LabelTotal;
         private System.Windows.Forms.Label Title;
         private System.Windows.Forms.Panel PanelPanier;
         private System.Windows.Forms.Label LabelPrixTotal;
         private System.Windows.Forms.DataGridView panierData;
         private System.Windows.Forms.Button catalog_button;
+        private System.Windows.Forms.Label label_estimate_date;
+        private System.Windows.Forms.Label label_deliverytitle;
     }
 }
