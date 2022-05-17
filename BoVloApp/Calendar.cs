@@ -97,7 +97,6 @@ namespace BoVloApp
                 var val = update.Rows[e.RowIndex].Cells[e.ColumnIndex].FormattedValue.ToString();
                 var name_col = update.Columns[e.ColumnIndex].Name;
                 var name_column = update.Rows[e.RowIndex].Cells["idOrder"].FormattedValue.ToString();
-                //string request = "UPDATE 'Orders' SET " + name_col + " = CAST('+ val +' AS DATE) WHERE idOrder = " + name_column;
                 string request = string.Format("UPDATE Orders SET {0} = CAST('{1}' AS DATE) WHERE idOrder = '{2}'",name_col, val, name_column);
                 DataTable calendarUpdate = GlobalVar.ReadSQL(request);
                 update.DataSource = calendarUpdate;
