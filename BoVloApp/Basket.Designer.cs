@@ -50,7 +50,7 @@ namespace BoVloApp
             this.buttonFinaliser.Name = "buttonFinaliser";
             this.buttonFinaliser.Size = new System.Drawing.Size(201, 56);
             this.buttonFinaliser.TabIndex = 0;
-            this.buttonFinaliser.Text = "Finaliser";
+            this.buttonFinaliser.Text = "Finalize";
             this.buttonFinaliser.UseVisualStyleBackColor = true;
             this.buttonFinaliser.Click += new System.EventHandler(this.buttonFinaliser_Click);
             // 
